@@ -1,0 +1,46 @@
+# What this repo reverses. Originals are never committed; they live in R2 under these keys
+# and every tool verifies the sha256 before use.
+
+project = "iw8"
+title = "Call of Duty: Modern Warfare (2019) (PC, x64)"
+graph = "re_iw8"
+r2_public = "https://r2.houseofkublai.com/"
+ghidra = "12.1.4"
+# Compiler: from the exe's Rich header and debug directory (docs/builds.md).
+compiler = "VS2019 16.9 (cl 19.28.29918 dominant in the Rich header, linker 14.28), x64, LTCG (POGO debug record)"
+# Original source roots, for turning PDB/MAP paths into repo paths. No symbol build of IW8 is known yet.
+source_roots = []
+
+# kind: "retail"    = the final target (the build the user names; usually the final retail exe).
+#       "reference" = has symbols (PDB and/or MAP): the build reconstructed first and matched to the target.
+#       "related"   = no symbols, but helpful (other platforms or versions, community-named builds).
+# `analyze = true` puts a build in the next Ghidra pipeline run (.github/workflows/ghidra.yml); a manual run can
+# name any builds instead.
+#
+# `protection = "arxan"`: the code is encrypted on disk and decrypted by the entry stub at startup.
+# tools/unpack/arxan.py emulates that stub (docs/arxan.md). `unpacked_sha256` pins the result, so the unpacked image
+# is reproducible from the original.
+#
+# More game files are still being uploaded to R2 (mw2019/); each build gets an entry once hashed (docs/builds.md).
+
+# Battle.net build 1.63.3.12428344 (product "odin"), as uploaded by the user from a copy labelled "1.63 by purrplee".
+# Activision Authenticode digest matches the file: an unmodified original. One exe for MP, SP, CP and Warzone
+# ("game_dx12_ship"). Arxan-protected: both .text sections are encrypted on disk (entropy 8.0). No symbols.
+[[build]]
+id = "ModernWarfare_BNet"
+kind = "retail"
+analyze = true
+protection = "arxan"
+version = "1.63.3.12428344"
+timestamp = "2022-09-13T20:51:44Z"
+original_name = "ModernWarfare.exe"
+pdb_path = 'e:\workspace\iw8\game\pc_dx12\game_dx12_ship.pdb'
+pdb_guid = "520C9102-599D-40A8-AC07-682F1844674D"
+pdb_age = 2
+exe = { key = "mw2019/Call of Duty Modern Warfare 1.63 by purrplee/Call of Duty Modern Warfare/ModernWarfare.exe", sha256 = "9eec03288a0774fb9f91f276df23bf1c2aa8ff65827352a499ddd8e806b56063" }
+# tools/unpack/arxan.py output (~7 min locally): game .text decrypted (docs/arxan.md); identical on repeated runs
+unpacked_sha256 = "81921e01a7dc060e18628b71b578f5f9c55e5555dbd9bb994d5b71682700a21a"
+# Arxan's own code (the second .text section). Removed before Ghidra's analysis (tools/ghidra/DropBlocks.java) and
+# kept out of the published tables (tools/ghidra/publish.py).
+exclude = [{ name = "arxan", start = "159A09000", end = "160B07000" }]
+ghidra_drop_excluded = true
