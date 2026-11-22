@@ -6,7 +6,7 @@ ghosts-decomp did for IW6 (its docs/fastfiles.md and docs/assets/).
 
 Rules (as in ghosts-decomp):
 
-- Every rule in `docs/assets/<kind>.md` names the function (address in ModernWarfare_BNet) it comes from, or says
+- Every rule in `docs/assets/<kind>.md` names the function (address in ModernWarfare_TU67) it comes from, or says
   "measured on <file>"; anything else is *unverified*. Community format knowledge (docs/prior-art.md) is a lead to
   check against the code, never a source on its own.
 - The reference readers in `tools/assets/` are plain Python. They are checked against the game itself: the exe's own
@@ -17,7 +17,7 @@ Rules (as in ghosts-decomp):
 ## Where the data is
 
 The install is Battle.net CASC (`.build.info`, `Data/`), not loose fastfiles. Inside it, IW8 keeps zones (fastfiles)
-and streamed `.xpak` packages; the exe has the `.xpak` strings at 146F37CA8 onward. The data files are still being
+and streamed `.xpak` packages; the exe has `.xpak` strings. The data files are still being
 uploaded to R2; the first step once they land is a CASC reader (`tools/assets/casc.py`) that lists and extracts
 files by name, verified against `.build.info`'s build key.
 
@@ -32,7 +32,7 @@ Order of work:
 
 ## Asset types
 
-The XAssetType enum, from the name table at 146F1D670 (122 entries; each type's default asset name follows the table
+The XAssetType enum, from the name table at 147627730 in TU67 (146F1D670 in TU63; identical, 122 entries; each type's default asset name follows the table
 in the same order). Grouped by what Forge needs:
 
 | Forge need | IW8 asset types (enum value) |

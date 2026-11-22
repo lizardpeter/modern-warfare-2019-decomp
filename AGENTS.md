@@ -81,7 +81,7 @@ visible isn't a finding.
 ## Addresses
 
 x64 virtual addresses at the image base 0x140000000, written as 9 upper-case hex digits without `0x`
-(`146D19AEC`). Every tool uses that form.
+(`14741A28C`). Every tool uses that form.
 
 ## Protected builds
 

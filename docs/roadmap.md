@@ -7,7 +7,7 @@ Planned work, in order. Enhanced-build features are listed with what must be dec
 
 1. **Ghidra pipeline on the decrypted image** (docs/arxan.md). Then check function coverage against `.pdata`
    (126,634 entries) and identify the high-entropy ranges left in `.text`.
-2. **Names without symbols**: the asset-type table (146F1D670), dvar registrations, console commands, script
+2. **Names without symbols**: the asset-type table (147627730), dvar registrations, console commands, script
    function tables, Lua bindings and assert/log strings give names to large parts of the exe. Record each in
    records/names.tsv with method and evidence. Look for a symbol build of any later IW engine title as a reference.
 3. **Asset formats** (docs/assets.md): containers first (CASC, zones, `.xpak`), then weapons, animations, models,

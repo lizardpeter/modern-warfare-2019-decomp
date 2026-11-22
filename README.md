@@ -1,6 +1,6 @@
 # modern-warfare-2019-decomp
 
-Decompilation of Call of Duty: Modern Warfare (2019) (IW8, PC, x64, Battle.net 1.63), and a complete, verified
+Decompilation of Call of Duty: Modern Warfare (2019) (IW8, PC, x64, Battle.net title update 67, with the 1.63 install's data), and a complete, verified
 description of its asset formats for the Forge engine's importer.
 
 - **AGENTS.md**: rules, layout, status ladder. Read it first.

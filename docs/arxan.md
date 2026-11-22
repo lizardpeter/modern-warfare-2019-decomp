@@ -1,6 +1,9 @@
 # Arxan
 
-`ModernWarfare.exe` is Arxan-protected: on disk the game's `.text` (0x6ED8000 bytes) and a second `.text` of
+Both `ModernWarfare.exe` builds (TU67, the target, and TU63) are Arxan-protected with the same stub. The details
+below were measured on TU63; TU67's are in the table at the end.
+
+TU63's exe is Arxan-protected: on disk the game's `.text` (0x6ED8000 bytes) and a second `.text` of
 0x70FE000 bytes holding Arxan's own code are encrypted (entropy 7.99 and 7.97). Ghidra analyses the decrypted image,
 never the raw file.
 
@@ -46,3 +49,23 @@ Arxan's section (159A09000–160B07000) is as large as the game's code. target.t
 analysed it and filtered 333k fragments out afterwards; here that would double a run that is already the largest
 of these projects). Arxan's inserted calls and jumps in game code then point at missing memory, which is correct:
 they are not game code and are in neither build.
+
+## TU67
+
+Same stub, same behaviour: entry 14741A28C is the patched CRT entry, `VirtualProtect` on every section, stop at
+`GetSystemTimeAsFileTime`, no `rdtsc`. ~8 min locally; two runs gave the same image (pinned in target.toml).
+
+| section | changed bytes | entropy before | after |
+|---|---:|---:|---:|
+| .text (game) | 119,301,392 | 7.99 | 7.00 |
+| .rdata | 22,784 | 5.93 | 5.93 |
+| .data | 0 | 0.26 | 0.26 |
+| .pdata | 397 | 7.19 | 7.19 |
+| _RDATA | 510 | 5.61 | 5.61 |
+| .rsrc | 279 | 1.92 | 1.92 |
+| .reloc | 203 | 5.48 | 5.48 |
+| .idata | 4,264 | 4.85 | 4.93 |
+| .text (Arxan) | 118,205,591 | 7.97 | 7.32 |
+
+TU67's Arxan section (15A192000, 0x7D7C800) is not page-aligned in size; DropBlocks.java accepts the block whether
+Ghidra keeps that size or rounds it to the page.

@@ -23,13 +23,36 @@ source_roots = []
 #
 # More game files are still being uploaded to R2 (mw2019/); each build gets an entry once hashed (docs/builds.md).
 
-# Battle.net build 1.63.3.12428344 (product "odin"), as uploaded by the user from a copy labelled "1.63 by purrplee".
-# Activision Authenticode digest matches the file: an unmodified original. One exe for MP, SP, CP and Warzone
-# ("game_dx12_ship"). Arxan-protected: both .text sections are encrypted on disk (entropy 8.0). No symbols.
+# Battle.net title update 67 (the last one: it took the original Warzone offline), linked 2024-05-13. Uploaded by
+# the user from the Battle.net install. Activision Authenticode digest matches: an unmodified original. Warzone's
+# code and strings are all still in it, and its zone-header checks (magics, version 11, format-version table) are
+# identical to 1.63's, so it reads the 1.63 data (docs/builds.md). Arxan-protected like 1.63. No symbols.
 [[build]]
-id = "ModernWarfare_BNet"
+id = "ModernWarfare_TU67"
 kind = "retail"
 analyze = true
+protection = "arxan"
+version = "1.67 (title update 67, strings tu67 / general_8_67)"
+timestamp = "2024-05-13T20:53:26Z"
+original_name = "ModernWarfare.exe"
+pdb_path = 'e:\iw8\game\pc_dx12\game_dx12_ship.pdb'
+pdb_guid = "0EC2F360-9741-4C0F-858D-55E76AEB36D8"
+pdb_age = 2
+exe = { key = "mw2019/exes/Battle.net Binaries (Modern Warfare 1.67)/ModernWarfare.exe", sha256 = "de1e9a5e540f5fe5696fd08998a410f850d9b84bee8df3ebfc581cc6ad7edf0f" }
+# tools/unpack/arxan.py output (~8 min locally; identical on repeated runs)
+unpacked_sha256 = "42225cb22bd4af3d59aa667b685e80ab7a66a42554184664a26bc64c3a08e81c"
+# Arxan's own code (the second .text section): removed before Ghidra's analysis (tools/ghidra/DropBlocks.java) and
+# kept out of the published tables.
+exclude = [{ name = "arxan", start = "15A192000", end = "161F0E800" }]
+ghidra_drop_excluded = true
+
+# Battle.net build 1.63.3.12428344 (title update 63, product "odin"), from a copy labelled "1.63 by purrplee"; the
+# rest of that install (CASC data) is the game data this repo reads. Activision Authenticode digest matches: an
+# unmodified original. Related: the exe that matches the uploaded data exactly; code nearly identical to TU67.
+[[build]]
+id = "ModernWarfare_TU63"
+kind = "related"
+analyze = false  # not analysed yet; the pipeline was proven on it (unpack hash matched in CI, Arxan block dropped)
 protection = "arxan"
 version = "1.63.3.12428344"
 timestamp = "2022-09-13T20:51:44Z"

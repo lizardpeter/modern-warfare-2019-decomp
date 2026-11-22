@@ -5,7 +5,7 @@
 // MW2019's Arxan section (the second .text, 113 MB) is as large as the game's own code; BO3 analysed its Arxan
 // section and then excluded the 333k fragments from the published tables. Here it is removed up front to halve the
 // analysis time. Arxan's calls and jumps from game code then point at missing memory, which is what they are:
-// not game code. Each range must cover whole blocks exactly; anything else aborts.
+// not game code. Each range must be exactly one block (to the page); anything else aborts.
 //@category IW8
 import ghidra.app.util.headless.HeadlessScript;
 import ghidra.program.model.address.Address;
@@ -26,7 +26,10 @@ public class DropBlocks extends HeadlessScript {
 			Address start = toAddr(Long.parseUnsignedLong(args[i], 16));
 			long end = Long.parseUnsignedLong(args[i + 1], 16);
 			MemoryBlock b = mem.getBlock(start);
-			if (b == null || !b.getStart().equals(start) || b.getEnd().getOffset() + 1 != end) {
+			// the section's virtual size need not be page-aligned (TU67: 0x7D7C800); accept the block whether the
+			// loader kept that size or rounded it up to the page
+			long blockEnd = b == null ? 0 : b.getEnd().getOffset() + 1;
+			if (b == null || !b.getStart().equals(start) || ((blockEnd + 0xFFF) & ~0xFFFL) != ((end + 0xFFF) & ~0xFFFL)) {
 				printerr(String.format("DropBlocks: %s-%x is not exactly one block (%s)", args[i], end,
 						b == null ? "none" : b.getName() + " " + b.getStart() + "-" + b.getEnd()));
 				setHeadlessContinuationOption(HeadlessContinuationOption.ABORT_AND_DELETE);
