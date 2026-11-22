@@ -16,19 +16,15 @@ Rules (as in ghosts-decomp):
 
 ## Where the data is
 
-The install is Battle.net CASC (`.build.info`, `Data/`), not loose fastfiles. Inside it, IW8 keeps zones (fastfiles)
-and streamed `.xpak` packages; the exe has `.xpak` strings. The data files are still being
-uploaded to R2; the first step once they land is a CASC reader (`tools/assets/casc.py`) that lists and extracts
-files by name, verified against `.build.info`'s build key.
+The install is Battle.net CASC (`.build.info`, `Data/`). Zones are CASC files (`IWffa100`, Oodle-compressed);
+streamed data is in `.xpak` packages. Containers are documented in docs/assets/zones.md:
 
-Order of work:
-
-1. **Containers**: CASC → zone files → the zone loader (decompression with Oodle, block layout, the asset pointer
-   fix-ups) → `.xpak` streamed data (index, compressed blocks, hashed keys). Find `DB_LoadXFile`'s IW8 equivalent from
-   the asset-type table below and its callers.
-2. **Asset headers**: the per-type struct each loader reads (sizes from the pool table, fields from the load
-   functions), written into `docs/assets/<kind>.md`.
-3. **Payloads**, in the order Forge needs them (below).
+- **CASC archives**: read (`tools/assets/casc_archive.py`). Next: names from the TVFS root and encoding table, both
+  in data.000.
+- **Zones**: header, signed block and compressed stream read and checked against TU67's code; every zone at its
+  current format version decompresses to its declared size (`tools/assets/zone.py`, with the game's own Oodle
+  run in the emulator).
+- Next: the zone data itself (asset list, memory blocks, pointer fix-ups), then `.xpak`.
 
 ## Asset types
 

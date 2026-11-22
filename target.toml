@@ -23,6 +23,11 @@ source_roots = []
 #
 # More game files are still being uploaded to R2 (mw2019/); each build gets an entry once hashed (docs/builds.md).
 
+# Other original files the tools need. tools/assets/oodle.py runs the game's own Oodle in the emulator.
+[support.oodle]
+key = "mw2019/Call of Duty Modern Warfare 1.63 by purrplee/Call of Duty Modern Warfare/oo2core_7_win64.dll"
+sha256 = "e9a320b81b0892246f951b77939cdb20473c2d3fc348a6b02bdde84306bc087d"
+
 # Battle.net title update 67 (the last one: it took the original Warzone offline), linked 2024-05-13. Uploaded by
 # the user from the Battle.net install. Activision Authenticode digest matches: an unmodified original. Warzone's
 # code and strings are all still in it, and its zone-header checks (magics, version 11, format-version table) are
