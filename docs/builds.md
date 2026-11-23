@@ -86,6 +86,19 @@ flow into the next function's bytes ("Unable to resolve constructor" at addresse
 them, and logs any function over 30 s; publish.py marks them `fragment` in functions.tsv. The workflow's
 `analysis_run` input decompiles and publishes from an earlier run's saved analysis, so this does not redo 6 h of it.
 
+**Decompile, second attempt** (run 45196075296, from the saved analysis): all six shards again hit the limit, each
+after ~1,000 functions at ~20 s apiece. The fragment rule skipped 1, so the first diagnosis was wrong. 4,879 of the
+4,900 functions tried failed with "Low-level Error: Flow exceeded maximum allowable instructions", and 4,878 of those
+lie inside the eight exception-directory entries of 1 MB or more (140040AC0 3.5 MB, 140B5B140 1.9 MB, 140D3D3B0
+6.9 MB, 1414FA2C0 4.1 MB, 141A470E0 3.3 MB, 141D87310 3.3 MB, 1420D2C50 4.0 MB, 14431CC90 2.6 MB: 29.5 MB of
+control-flow-flattened code; the next largest entry is 0.6 MB). Ghidra made 11,019 functions inside them. The
+shards take functions round-robin in address order, so all six spent the whole run inside the first range and never
+reached the ~100,000 ordinary functions; of the 22 that were reached outside these ranges, 20 decompiled. Treating the
+opaque predicates as one-way does not bound the flow in these ranges (measured by walking the flow outside Ghidra),
+so they are not the cause. target.toml now lists the eight ranges as `obfuscated` for TU67; the decompile stage
+records their functions as skipped ("obfuscated region") and publish.py marks them `obfuscated`. They stay in the
+analysis and function tables; reading them is separate work (they are also what makes Create Function slow).
+
 The fix (treating opaque branches as the one-way flow they are, and creating the functions
 inside these regions before their containing bodies are computed) is to be tried on these regions alone before the
 next full run.

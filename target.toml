@@ -50,6 +50,19 @@ unpacked_sha256 = "42225cb22bd4af3d59aa667b685e80ab7a66a42554184664a26bc64c3a08e
 # kept out of the published tables.
 exclude = [{ name = "arxan", start = "15A192000", end = "161F0E800" }]
 ghidra_drop_excluded = true
+# Control-flow-flattened code: the eight exception-directory entries of 1 MB or more (29.5 MB; the next largest is
+# 0.6 MB). Their functions are recorded as skipped by the decompile stage instead of decompiled (every one tried ran
+# into the decompiler's flow limit); they stay in the analysis and the function tables. docs/builds.md.
+obfuscated = [
+  { name = "flattened", start = "140040AC0", end = "1403CD3A3" },  # 3.5 MB
+  { name = "flattened", start = "140B5B140", end = "140D3D3AE" },  # 1.9 MB
+  { name = "flattened", start = "140D3D3B0", end = "141417B64" },  # 6.9 MB
+  { name = "flattened", start = "1414FA2C0", end = "141912564" },  # 4.1 MB
+  { name = "flattened", start = "141A470E0", end = "141D872F4" },  # 3.3 MB
+  { name = "flattened", start = "141D87310", end = "1420D1AF2" },  # 3.3 MB
+  { name = "flattened", start = "1420D2C50", end = "1424CFED8" },  # 4.0 MB
+  { name = "flattened", start = "14431CC90", end = "1445B9DEC" },  # 2.6 MB
+]
 
 # Battle.net build 1.63.3.12428344 (title update 63, product "odin"), from a copy labelled "1.63 by purrplee"; the
 # rest of that install (CASC data) is the game data this repo reads. Activision Authenticode digest matches: an

@@ -126,7 +126,7 @@ def main():
         joined.append([
             va, g["size"], g["name"], (p or {}).get("name", ""), (mapobj.get(va) or {}).get("name", ""),
             grp, (p or {}).get("line", ""), g["thunk"], g["instructions"], g["bytes_sha256"],
-            "ok" if d and "c" in d else ("fragment" if d and "skipped" in d else ("failed" if d else ("thunk" if g["thunk"] else "none"))),
+            "ok" if d and "c" in d else (("obfuscated" if d["skipped"].startswith("obfuscated") else "fragment") if d and "skipped" in d else ("failed" if d else ("thunk" if g["thunk"] else "none"))),
         ])
 
     # Only replace what this run actually produced: a missing stage must never wipe earlier results.

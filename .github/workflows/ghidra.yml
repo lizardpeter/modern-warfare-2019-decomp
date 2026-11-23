@@ -221,10 +221,12 @@ jobs:
           if [ ! -s /tmp/raw/project.tar.gz ]; then echo "::error::no analysed project for ${{ matrix.build }}"; exit 1; fi
           mkdir -p /tmp/proj /tmp/out
           tar -C /tmp/proj -xzf /tmp/raw/project.tar.gz
+          # the build's obfuscated ranges (target.toml) are recorded as skipped, not decompiled
+          obf=$(python3 -c "import tomllib; b=[b for b in tomllib.load(open('target.toml','rb'))['build'] if b['id']=='${{ matrix.build }}'][0]; print(' '.join(f\"{r['start']} {r['end']}\" for r in b.get('obfuscated', [])))")
           /opt/ghidra/support/analyzeHeadless /tmp/proj iw8 \
             -process ${{ matrix.build }}.exe -noanalysis -readOnly \
             -scriptPath tools/ghidra \
-            -postScript Decompile.java /tmp/out/decomp-${{ matrix.shard }}.jsonl ${{ matrix.shard }} $SHARDS 90 \
+            -postScript Decompile.java /tmp/out/decomp-${{ matrix.shard }}.jsonl ${{ matrix.shard }} $SHARDS 90 $obf \
             -log /tmp/out/decompile-${{ matrix.shard }}.log -scriptlog /tmp/out/decompile-${{ matrix.shard }}-scripts.log
       - uses: actions/upload-artifact@v4
         if: always()

@@ -1,5 +1,12 @@
 // Decompile one shard of the program's functions to JSONL.
-// Args: <out.jsonl> <shard-index> <shard-count> [timeout-seconds]
+// Args: <out.jsonl> <shard-index> <shard-count> [timeout-seconds] [start end ...]
+//
+// The optional start/end pairs (hex VAs, end exclusive) are the build's `obfuscated` ranges from target.toml:
+// functions inside them are written as {"va","name","skipped"} without decompiling. On TU67 these are the eight
+// exception-directory entries of 1 MB or more (29.5 MB of control-flow-flattened code); Ghidra made 11,019 functions
+// inside them, and every one tried failed after ~20 s with "Flow exceeded maximum allowable instructions". With
+// shards taking functions round-robin in address order, all six spent their 5.8 h inside the first range
+// (140040AC0) and never reached the ~100,000 ordinary functions (docs/builds.md).
 //
 // Fragments are written as {"va","name","skipped"} and not decompiled. A fragment is a Ghidra function whose entry
 // lies strictly inside an x64 exception-directory entry (a real function's .pdata range) and that is reached only by
@@ -35,6 +42,11 @@ public class Decompile extends GhidraScript {
 		int shard = Integer.parseInt(args[1]);
 		int shards = Integer.parseInt(args[2]);
 		int timeout = args.length > 3 ? Integer.parseInt(args[3]) : 90;
+		long[][] obfuscated = new long[Math.max(0, (args.length - 4) / 2)][];
+		for (int k = 0; k < obfuscated.length; k++) {
+			obfuscated[k] = new long[] { Long.parseUnsignedLong(args[4 + 2 * k], 16),
+					Long.parseUnsignedLong(args[5 + 2 * k], 16) };
+		}
 
 		DecompInterface ifc = new DecompInterface();
 		ifc.setOptions(new DecompileOptions());
@@ -61,6 +73,13 @@ public class Decompile extends GhidraScript {
 				JsonObject o = new JsonObject();
 				o.addProperty("va", String.format("%09X", f.getEntryPoint().getOffset()));
 				o.addProperty("name", f.getName(true));
+				String region = regionOf(f, obfuscated);
+				if (region != null) {
+					o.addProperty("skipped", "obfuscated region " + region);
+					w.write(o.toString() + "\n");
+					skipped++;
+					continue;
+				}
 				String inside = fragmentOf(f, pdata);
 				if (inside != null) {
 					o.addProperty("skipped", "fragment: inside " + inside + ", jump references only");
@@ -85,13 +104,14 @@ public class Decompile extends GhidraScript {
 				}
 				w.write(o.toString() + "\n");
 				if ((ok + failed) % 1000 == 0) {
-					println(String.format("shard %d: %d ok, %d failed, %d fragments skipped, %ds", shard, ok, failed, skipped,
+					w.flush();   // keep partial output useful if the job is stopped
+					println(String.format("shard %d: %d ok, %d failed, %d skipped, %ds", shard, ok, failed, skipped,
 							(System.currentTimeMillis() - t0) / 1000));
 				}
 			}
 		}
 		ifc.dispose();
-		println(String.format("shard %d done: %d ok, %d failed, %d fragments skipped", shard, ok, failed, skipped));
+		println(String.format("shard %d done: %d ok, %d failed, %d skipped", shard, ok, failed, skipped));
 	}
 
 	/** Exception-directory entries {begin, end} as VAs, sorted, read through the PE header Ghidra maps at the image
@@ -121,6 +141,17 @@ public class Decompile extends GhidraScript {
 		out = Arrays.copyOf(out, n);
 		Arrays.sort(out, (x, y) -> Long.compare(x[0], y[0]));
 		return out;
+	}
+
+	/** The obfuscated range (as "start-end") containing f's entry, or null. */
+	private static String regionOf(Function f, long[][] ranges) {
+		long va = f.getEntryPoint().getOffset();
+		for (long[] r : ranges) {
+			if (Long.compareUnsigned(va, r[0]) >= 0 && Long.compareUnsigned(va, r[1]) < 0) {
+				return String.format("%09X-%09X", r[0], r[1]);
+			}
+		}
+		return null;
 	}
 
 	/** The exception entry (as "begin-end") a fragment lies strictly inside, or null if f is not a fragment. */
