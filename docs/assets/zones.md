@@ -63,8 +63,30 @@ Measured: 186 of the 188 zones in data.000 decompress to exactly header +0x20 by
 version, and the 0x10A3 copy too); the two that fail are the 0x10B7 copies. The first zone of
 data.000 leaves 0x2BD0 bytes after its last block (*unidentified*).
 
-## 5. Zone data
+## 5. Zone data: the asset list
 
-The decompressed data starts like the other IW games' XAssetList: a count (0x2E9 in the first zone), then pointer
-fields of -2 (the IW "data follows" marker), then the inline data. The asset list layout, the memory blocks and
-pointer fix-ups are next (from the load path after 142DEF240).
+Measured on the 185 zones of data.000 at their current format version (`zone.asset_list`); the loader that reads it
+is still to be traced in the code.
+
+| Offset | Size | Field |
+|---|---|---|
+| 0x0 | 4 (+4 pad) | script-string count |
+| 0x8 | 8 | script-string array pointer (-2: follows) |
+| 0x10 | 4 (+4 pad) | asset count |
+| 0x18 | 8 | asset array pointer (-2: follows) |
+| 0x20 | 8 × count | string pointers; each -2 has its string follow, NUL-terminated, after the array |
+| … | 16 × count | assets: u32 XAssetType, pad, header pointer (-2: the header follows) |
+
+Pointers of -2 mean "the data follows inline in the stream", as in the earlier IW games. Every asset type in all 185
+lists is in range (0–121), which confirms the enum order of the name table (docs/assets.md). The first zone of
+data.000 has 745 strings (prop model names such as `ac_unit_large`) and 2 assets, an edgelist (116) and a
+collisiontile (107); the kind-0 zone has 4,383 assets.
+
+Asset types in data.000's zones: material 2,926, techset 856, xmodeldetailcollision 422, xmodelsurfs 392,
+pixelshader 339, physicsasset 315, vertexshader 196, gfx_map_trzone 140, fx_map_trzone 140, streaminginfo 120,
+image 32, edgelist 31, collisiontile 31, domainshader 28, xmodel 19, decalvolumematerial 19, hullshader 17,
+dynentitylist 6, rawfile 1, keyvaluepairs 1.
+
+Next: the asset headers themselves. Each type's header follows its asset entry's stream position in load order;
+reading them needs each type's layout and the zone's memory blocks and pointer fix-ups, from the loader after
+142DEF240.

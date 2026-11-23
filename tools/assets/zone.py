@@ -77,6 +77,38 @@ def decompress(z: bytes, oodle: Oodle) -> bytes:
     return bytes(out)
 
 
+FOLLOWS = -2   # pointer value meaning "the pointed-to data follows inline in the stream" (measured)
+
+
+def asset_list(data: bytes):
+    """Parse the XAssetList at the start of decompressed zone data.
+
+    Returns (script strings, [(asset type, header pointer value, offset of the asset entry)], offset after the list).
+    Layout measured on 185 zones (docs/assets/zones.md 5): u32 string count, pad, string-array pointer, u32 asset
+    count, pad, asset-array pointer; the string pointers inline, then each string inline (NUL-terminated) for
+    pointers of -2; then the asset array, 16 bytes per asset (u32 type, pad, header pointer).
+    """
+    sc, sp, ac, ap = struct.unpack_from("<I4xqI4xq", data, 0)
+    p = 0x20
+    ptrs = [struct.unpack_from("<q", data, p + 8 * i)[0] for i in range(sc)] if sp == FOLLOWS else []
+    p += 8 * len(ptrs)
+    strings = []
+    for v in ptrs:
+        if v == FOLLOWS:
+            e = data.index(b"\0", p)
+            strings.append(data[p:e].decode("latin-1"))
+            p = e + 1
+        else:
+            strings.append(None)
+    assets = []
+    if ap == FOLLOWS:
+        for i in range(ac):
+            t, h = struct.unpack_from("<I4xq", data, p)
+            assets.append((t, h, p))
+            p += 16
+    return strings, assets, p
+
+
 def main():
     z = Path(sys.argv[1]).read_bytes()
     h = header(z)
@@ -86,6 +118,8 @@ def main():
     if len(data) != h.size:
         raise SystemExit(f"decompressed {len(data):#x} bytes, header says {h.size:#x}")
     print(f"decompressed {len(data):#x} bytes")
+    strings, assets, end = asset_list(data)
+    print(f"{len(strings)} script strings, {len(assets)} assets; asset data from {end:#x}")
     if "--out" in sys.argv:
         Path(sys.argv[sys.argv.index("--out") + 1]).write_bytes(data)
 
