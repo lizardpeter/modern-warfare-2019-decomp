@@ -22,7 +22,7 @@ new build gets an entry here and in target.toml once hashed.
 | Protection | Arxan, same stub as TU63 (docs/arxan.md) |
 
 Sections: `.text` 140001000+0x75D8800 (game code, 6% larger than TU63's), `.rdata` 1475DA000, `.data` 147AFB000,
-`.pdata` 159E48000 (127,829 entries, TU63 126,634), `.text` 15A192000+0x7D7C800 (Arxan).
+`.pdata` 159E48000 (exception directory: 127,794 entries, TU63 126,615), `.text` 15A192000+0x7D7C800 (Arxan).
 
 ### TU67 against TU63
 
@@ -39,7 +39,7 @@ Measured on the two decrypted images:
   readers run TU67's own loaders on the TU63 data (docs/assets.md).
 - **What did change** (strings only in TU67): first-party store and transaction-receipt errors
   (`FirstPartyBadRequestError`, `TransactionReceiptAlreadyOpenedError`, `ExchangeConfigNotFound`, `pc_first_party`),
-  the TU and date strings. Roughly 1,200 more functions in `.pdata`, not yet located.
+  the TU and date strings. Roughly 1,200 more `.pdata` entries, not yet located.
 
 **Ghidra.** The first run (Actions run 45060502221) did not finish. Unpack 8 min, matching the pinned hash; the Arxan
 block was dropped; auto-analysis then ran 4.5 h before the decompiler-driven switch analysis started (its warnings
@@ -52,7 +52,7 @@ own and exports again.
 
 Second run (45093324856), stage A: unpack 12 min (hash matched); auto-analysis **completed** in 15,799 s
 (4 h 23 min) against the 16,800 s limit; CreateTableFunctions and ExportAll then took 5 min: **129,908 functions**
-(`.pdata` has 127,829 entries). Ghidra's analyzer times (seconds):
+(the exception directory has 127,794 entries). Ghidra's analyzer times (seconds):
 
 | analyzer | time |
 |---|---:|
@@ -65,12 +65,22 @@ Second run (45093324856), stage A: unpack 12 min (hash matched); auto-analysis *
 | Function ID | 46 |
 | everything else | < 35 each |
 
-Create Function is 89% of the analysis and normally one of the cheap analyzers. Its cost here is not understood yet
-and is the thing to fix before the next full run (the margin was 17 min): the suspects are the Arxan sequences inlined
-into game functions (`pushfq; push rcx; … call` into the dropped Arxan section) that make Ghidra recompute function
-bodies repeatedly, and the 1,000-odd functions Ghidra cannot create ("body contains referring thunk"). Also logged:
-Ghidra's own WindowsResourceReference script throws a NumberFormatException on one resource entry (harmless to the
-analysis).
+Stage B (job `switches`): Decompiler Switch Analysis on 3 threads, 98 min (one-time pass 3,015 s, follow-up 531 s);
+346 more functions; the final export has **130,252 functions**.
+
+**Why Create Function takes 3.9 h** (measured on the stage-B export against the exception directory, not yet
+confirmed by profiling Ghidra): 71,247 of Ghidra's functions start at an exception-directory entry, 46,422 lie
+outside every entry (call targets of leaf code), and 11,497 were created *inside* the 71 entries of 100 KB or more
+(the largest 7.2 MB at 140D3D3B0; TU63 has 68 such, up to 5.1 MB). Some of those entries yield huge Ghidra bodies
+(140D3D3B0: 850 KB, 141D87310: 700 KB, 140E50A4C: 3.3 MB), others a few bytes (1420D2C50: 4 MB entry, 7-byte body).
+The code in them is control-flow flattened (a state variable set to hash constants such as 0xBAB422E6 and a
+compare chain) and carries Arxan opaque predicates: 3,188 `xor r,r; test r,r; jnz` that are never taken, 99
+`… jz` always taken and 39 `xor r,r; jnz`, whose fake edges Ghidra follows. Every function created inside an
+existing body makes Ghidra recompute that body, so thousands of creations inside multi-megabyte bodies cost time
+roughly quadratically. The fix (treating opaque branches as the one-way flow they are, and creating the functions
+inside these regions before their containing bodies are computed) is to be tried on these regions alone before the
+next full run.
+
 
 Use: the final target. The data files come from the TU63 install, which matches TU67 in format; where a later patch
 changed a zone's content (not its format), the TU63 file is what we have.
@@ -98,7 +108,7 @@ Sections (from the PE header):
 | .text | 140001000 | 0x6ED8000 (111 MB) | game code, encrypted on disk |
 | .rdata | 146ED9000 | 0x512E00 | |
 | .data | 1473EC000 | 0x122DD2E4 (291 MB, 62 MB on disk) | |
-| .pdata | 1596CA000 | 0x173000 | 126,634 runtime-function entries |
+| .pdata | 1596CA000 | 0x173000 | exception directory: 126,615 runtime-function entries |
 | _RDATA | 15983D000 | 0x16800 | |
 | .rsrc | 159854000 | 0x167A00 | |
 | .reloc | 1599BC000 | 0x45C00 | |
