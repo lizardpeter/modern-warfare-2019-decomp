@@ -100,8 +100,8 @@ records their functions as skipped ("obfuscated region") and publish.py marks th
 analysis and function tables; reading them is separate work (they are also what makes Create Function slow).
 
 **Decompile, third run** (45261715299, obfuscated ranges skipped): all six shards finished in 45–68 min; published
-in commit 7dffa21. Of 130,252 functions: **110,641 decompiled**, 361 failed (276 of them "Flow exceeded maximum
-allowable instructions"), 10,866 skipped as inside the obfuscated ranges, 528 skipped as fragments, 7,856 thunks.
+in commit 7dffa21. Of 130,252 functions: **110,641 decompiled**, 361 failed (337 "Flow exceeded maximum allowable
+instructions", 9 "memory range beyond end of address space", the rest timeouts), 10,866 skipped as inside the obfuscated ranges, 528 skipped as fragments, 7,856 thunks.
 47 functions took over 30 s (the longest 146026400, 90 s). analysis/ModernWarfare_TU67 is 1.8 GB (pseudocode
 356 MB, disassembly 859 MB, the Ghidra project in six parts).
 
