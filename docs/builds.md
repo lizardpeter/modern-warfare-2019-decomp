@@ -41,6 +41,15 @@ Measured on the two decrypted images:
   (`FirstPartyBadRequestError`, `TransactionReceiptAlreadyOpenedError`, `ExchangeConfigNotFound`, `pc_first_party`),
   the TU and date strings. Roughly 1,200 more functions in `.pdata`, not yet located.
 
+**Ghidra.** The first run (Actions run 45060502221) did not finish. Unpack 8 min, matching the pinned hash; the Arxan
+block was dropped; auto-analysis then ran 4.5 h before the decompiler-driven switch analysis started (its warnings
+begin at 00:07 UTC), and that was still running when the 330-min step limit killed the job: no export, no timing
+report, no project. Ghidra's own analysis timeout (19,000 s) had been set past the step limit, so it could never stop
+analysis cleanly. The pipeline now runs in two stages (docs in .github/workflows/ghidra.yml): stage A runs every
+analyzer but switch analysis with its timeout 55 min inside the step limit, so it always exports, reports analyzer
+times and saves the project; stage B (job `switches`) runs switch analysis alone on that project in a job of its
+own and exports again.
+
 Use: the final target. The data files come from the TU63 install, which matches TU67 in format; where a later patch
 changed a zone's content (not its format), the TU63 file is what we have.
 

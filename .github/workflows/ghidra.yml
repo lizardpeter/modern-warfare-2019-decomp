@@ -54,7 +54,7 @@ jobs:
     needs: setup
     if: ${{ needs.setup.outputs.builds != '[]' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 360
     strategy:
       fail-fast: false
       matrix:
@@ -71,6 +71,11 @@ jobs:
           # Ghidra 12 names the default MAXMEM_DEFAULT; PrepAnalysis.java aborts if the heap is still small
           sed -i -E 's/^#?MAXMEM(_DEFAULT)?=.*/MAXMEM\1=13G/' /opt/ghidra/support/analyzeHeadless
           grep -n 'MAXMEM' /opt/ghidra/support/analyzeHeadless; free -g
+      - name: Compile the Ghidra scripts
+        # every script, including the later stages', so a compile error fails here and not hours in
+        run: |
+          cp=$(find /opt/ghidra/Ghidra -name '*.jar' | tr '\n' ':')
+          javac -nowarn -proc:none -cp "$cp" -d /tmp/ghidra-scripts tools/ghidra/*.java
       - name: Fetch originals
         run: python3 tools/fetch_originals.py ${{ matrix.build }} /tmp/in
       - name: Unpack (Arxan-protected builds only)
@@ -83,8 +88,11 @@ jobs:
             mv /tmp/in/${{ matrix.build }}.exe /tmp/in/${{ matrix.build }}.packed.exe
             python3 tools/unpack/arxan.py ${{ matrix.build }} /tmp/in/${{ matrix.build }}.packed.exe /tmp/in/${{ matrix.build }}.exe /tmp/raw/unpack
           fi
+      # Stage A: every analyzer except the decompiler-driven switch analysis, which stage B (job `switches`) runs.
+      # Ghidra's own analysis timeout ends analysis 55 min before the step limit, so a long run still exports, writes
+      # its per-analyzer timing report and saves the project instead of being killed (what happened to TU67's first run).
       - name: Analyze (with the original PDB when the build has one) and export
-        timeout-minutes: 330  # a Ghidra that hit an error can hang instead of exiting; the PS4 server PDB needs ~2 h of type rebuilding
+        timeout-minutes: 335  # backstop for a Ghidra that hangs instead of exiting
         run: |
           mkdir -p /tmp/proj /tmp/raw
           pdbargs=()
@@ -102,13 +110,21 @@ jobs:
           /opt/ghidra/support/analyzeHeadless /tmp/proj iw8 \
             -import /tmp/in/${{ matrix.build }}.exe \
             -scriptPath tools/ghidra \
-            -preScript PrepAnalysis.java \
+            -preScript PrepAnalysis.java two-stage \
             "${droparg[@]}" \
             "${pdbargs[@]}" \
             -postScript CreateTableFunctions.java \
             -postScript ExportAll.java /tmp/raw \
-            -analysisTimeoutPerFile 19000 \
+            -analysisTimeoutPerFile 16800 \
             -log /tmp/raw/analyze.log -scriptlog /tmp/raw/analyze-scripts.log
+          # record whether analysis completed; an incomplete analysis is published but flagged
+          if grep -qi "analysis timed out" /tmp/raw/analyze.log; then
+            echo "stage A: analysis timed out at 16800 s (incomplete)" > /tmp/raw/analysis-status.log
+            echo "::warning::${{ matrix.build }}: analysis timed out at 16800 s; exported what was done"
+          else
+            echo "stage A: analysis completed" > /tmp/raw/analysis-status.log
+          fi
+          grep -A60 -i "ANALYSIS TIME" /tmp/raw/analyze.log | head -80 || true
           test -s /tmp/raw/functions.tsv || { echo "::error::Ghidra produced no export; see analyze.log"; tar -C /tmp/proj -czf /tmp/raw/project.tar.gz .; exit 1; }
           # the saved Ghidra project itself: reused by the decompile shards and committed to git
           tar -C /tmp/proj -czf /tmp/raw/project.tar.gz .
@@ -120,8 +136,55 @@ jobs:
           path: /tmp/raw
           retention-days: 5
 
-  decompile:
+  # Stage B: the decompiler-driven switch analysis, on the saved stage-A project, in a job of its own; then export
+  # again and replace raw-<build> so the decompile shards and publish use the finished project.
+  switches:
     needs: [setup, analyze]
+    if: ${{ !cancelled() && needs.setup.outputs.builds != '[]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        build: ${{ fromJSON(needs.setup.outputs.builds) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+      - name: Install Ghidra
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release download "$GHIDRA_TAG" --repo NationalSecurityAgency/ghidra --pattern 'ghidra_*_PUBLIC_*.zip' --dir /tmp
+          unzip -q /tmp/ghidra_*.zip -d /opt && mv /opt/ghidra_* /opt/ghidra
+          sed -i -E 's/^#?MAXMEM(_DEFAULT)?=.*/MAXMEM\1=13G/' /opt/ghidra/support/analyzeHeadless
+      - uses: actions/download-artifact@v4
+        with: { name: "raw-${{ matrix.build }}", path: /tmp/raw }
+      - name: Switch analysis and export
+        timeout-minutes: 345
+        run: |
+          if [ ! -s /tmp/raw/project.tar.gz ]; then echo "::error::no stage-A project for ${{ matrix.build }}"; exit 1; fi
+          mkdir -p /tmp/proj && tar -C /tmp/proj -xzf /tmp/raw/project.tar.gz
+          rm -f /tmp/raw/functions.tsv
+          /opt/ghidra/support/analyzeHeadless /tmp/proj iw8 \
+            -process ${{ matrix.build }}.exe -noanalysis \
+            -scriptPath tools/ghidra \
+            -preScript RunSwitchAnalysis.java 3 \
+            -postScript CreateTableFunctions.java \
+            -postScript ExportAll.java /tmp/raw \
+            -log /tmp/raw/switches.log -scriptlog /tmp/raw/switches-scripts.log
+          test -s /tmp/raw/functions.tsv || { echo "::error::stage B produced no export; see switches.log"; exit 1; }
+          echo "stage B: switch analysis completed" >> /tmp/raw/analysis-status.log
+          tar -C /tmp/proj -czf /tmp/raw/project.tar.gz .
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: raw-${{ matrix.build }}
+          path: /tmp/raw
+          retention-days: 5
+          overwrite: true
+
+  decompile:
+    needs: [setup, analyze, switches]
     # run each build's shards even if another build's analysis failed
     if: ${{ !cancelled() && needs.setup.outputs.builds != '[]' }}
     runs-on: ubuntu-latest
@@ -162,7 +225,7 @@ jobs:
           retention-days: 5
 
   publish:
-    needs: [setup, analyze, decompile]
+    needs: [setup, analyze, switches, decompile]
     # not after a cancel: a cancelled run's partial output must not overwrite good results
     if: ${{ !cancelled() && needs.setup.outputs.builds != '[]' }}
     runs-on: ubuntu-latest

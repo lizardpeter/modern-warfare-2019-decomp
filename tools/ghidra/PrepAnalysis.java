@@ -20,6 +20,15 @@ public class PrepAnalysis extends HeadlessScript {
 			return;
 		}
 
+		// "two-stage": stage A of .github/workflows/ghidra.yml leaves the decompiler-driven switch analysis to stage B
+		// (RunSwitchAnalysis.java), so the whole auto-analysis never has to fit in one job.
+		for (String a : getScriptArgs()) {
+			if (a.equals("two-stage")) {
+				setAnalysisOption(currentProgram, "Decompiler Switch Analysis", "false");
+				println("two-stage: Decompiler Switch Analysis deferred to RunSwitchAnalysis.java");
+			}
+		}
+
 		Map<String, String> options = getCurrentAnalysisOptionsAndValues(currentProgram);
 		for (Map.Entry<String, String> e : options.entrySet()) {
 			String name = e.getKey();
