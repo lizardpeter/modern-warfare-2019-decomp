@@ -99,9 +99,14 @@ so they are not the cause. target.toml now lists the eight ranges as `obfuscated
 records their functions as skipped ("obfuscated region") and publish.py marks them `obfuscated`. They stay in the
 analysis and function tables; reading them is separate work (they are also what makes Create Function slow).
 
-The fix (treating opaque branches as the one-way flow they are, and creating the functions
-inside these regions before their containing bodies are computed) is to be tried on these regions alone before the
-next full run.
+**Decompile, third run** (45261715299, obfuscated ranges skipped): all six shards finished in 45–68 min; published
+in commit 7dffa21. Of 130,252 functions: **110,641 decompiled**, 361 failed (276 of them "Flow exceeded maximum
+allowable instructions"), 10,866 skipped as inside the obfuscated ranges, 528 skipped as fragments, 7,856 thunks.
+47 functions took over 30 s (the longest 146026400, 90 s). analysis/ModernWarfare_TU67 is 1.8 GB (pseudocode
+356 MB, disassembly 859 MB, the Ghidra project in six parts).
+
+Before the next full analysis, the obfuscated ranges should also be kept out of Create Function's way (for example
+by not creating functions inside them), which is where its 3.9 h go.
 
 
 Use: the final target. The data files come from the TU63 install, which matches TU67 in format; where a later patch
