@@ -87,6 +87,34 @@ pixelshader 339, physicsasset 315, vertexshader 196, gfx_map_trzone 140, fx_map_
 image 32, edgelist 31, collisiontile 31, domainshader 28, xmodel 19, decalvolumematerial 19, hullshader 17,
 dynentitylist 6, rawfile 1, keyvaluepairs 1.
 
-Next: the asset headers themselves. Each type's header follows its asset entry's stream position in load order;
-reading them needs each type's layout and the zone's memory blocks and pointer fix-ups, from the loader after
-142DEF240.
+## 6. Asset headers
+
+For each entry of the asset list, `Load_XAssetHeader` (142E2ECF0) dispatches on the type: a chain of
+`if (type == N) { Load_<T>Ptr(); … }`, one case for each of 114 types (iesprofile, ui_map, aitype, mptype,
+character, xmodelalias, string and assetlist have none). Every case was extracted by `tools/assets/asset_types.py`
+into analysis/ModernWarfare_TU67/assets/asset_types.tsv (loader addresses, stream block, header size).
+
+`Load_<T>Ptr` (e.g. 142E7BF90 for physicslibrary):
+
+1. reads the 8-byte header pointer (143760AE0, `DB_LoadXFileData(atStreamStart, ptr, size)`);
+2. by its value: 0 = no asset; -1 = allocate and read the header inline (142DF2230 first); -2 = the header follows
+   inline; -3 = the header follows inline and the pointer's own location is saved (1437604F0); any other value is a
+   reference to data already loaded, resolved by 142DFEF30;
+3. for inline headers, pushes a stream block (142DF1380: block 7 for 108 types; 15 for image, gfx_map, vfx and
+   vectorfield; 31 for particlesimanimation), calls the struct loader `Load_<T>(0)`, and registers the asset:
+   143757490 (`DB_AddXAsset(type, &header)`) for most types, a type-specific function for others (xanim 14311AE60,
+   gfx_map 14311AB40).
+
+The struct loader reads the fixed-size header (its size is the R8D argument of 143760AE0), then each pointer field's
+data in turn, the same markers applying.
+
+**Checked on data**: the first zone's first asset is an edgelist (header 0xA0). Its 0xA0 bytes after the asset list
+hold the -2 name marker at +0, float bounds, and counts paired with -2 pointers; the edgelist's name
+(`mapedgelist_0042…`) begins exactly at +0xA0.
+
+Selected header sizes (the full table is the generated TSV): weapon 0x290, attachment 0x458, camo 0x128, xanim
+0xA8, xmodel 0x2B0, xmodelsurfs 0x60, material 0x78, techset 0x40, image 0xE8, soundbank 0x200, vfx 0x40,
+vehicle 0x1030, gfx_map 0x4610, playeranim 0xA8, suit 0x720, reticle 0x48.
+
+Next: each header's fields and their pointed-to data, type by type, starting with what Forge needs (weapon,
+attachment, xmodel, xanim, material, image, soundbank).

@@ -24,7 +24,9 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
 - **Zones**: header, signed block and compressed stream read and checked against TU67's code; every zone at its
   current format version decompresses to its declared size (`tools/assets/zone.py`, with the game's own Oodle
   run in the emulator).
-- Next: the zone data itself (asset list, memory blocks, pointer fix-ups), then `.xpak`.
+- **Asset list and headers**: the asset list is parsed, and every type's loader and header size is extracted from the
+  code into analysis/ModernWarfare_TU67/assets/asset_types.tsv (114 of 122 types).
+- Next: each header's fields, type by type, then `.xpak`.
 
 ## Asset types
 

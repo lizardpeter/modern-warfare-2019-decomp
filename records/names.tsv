@@ -1,1 +1,234 @@
 build	va	kind	symbol	name	source	method	confidence	evidence
+ModernWarfare_TU67	142E2ECF0	function		Load_XAssetHeader		structure	high	chain of `if (type == N) Load_<T>Ptr()` for 114 of the 122 XAssetTypes (docs/assets/zones.md 6)
+ModernWarfare_TU67	143760AE0	function		DB_LoadXFileData		structure	medium	called by 1,375 loaders as (atStreamStart, ptr, size); reads size bytes of the zone stream into ptr
+ModernWarfare_TU67	142DF1380	function		DB_PushStreamPos		structure	medium	called with the block (7, 15, 31) before every inline asset header
+ModernWarfare_TU67	143757490	function		DB_AddXAsset		structure	medium	called as (type, &header) after the header is loaded, type matching the dispatcher case
+ModernWarfare_TU67	142DEF240	function		DB_ReadXFileBlock		structure	medium	reads one {compressed, decompressed, check} block of the zone stream and decompresses it (docs/assets/zones.md 4)
+ModernWarfare_TU67	142E7BF90	function		Load_PhysicslibraryPtr		structure	high	Load_XAssetHeader case 0 (physicslibrary)
+ModernWarfare_TU67	142E7BEC0	function		Load_Physicslibrary		structure	high	struct loader called by Load_PhysicslibraryPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E50A90	function		Load_PhysicssfxeventassetPtr		structure	high	Load_XAssetHeader case 1 (physicssfxeventasset)
+ModernWarfare_TU67	142E502F0	function		Load_Physicssfxeventasset		structure	high	struct loader called by Load_PhysicssfxeventassetPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E51930	function		Load_PhysicsvfxeventassetPtr		structure	high	Load_XAssetHeader case 2 (physicsvfxeventasset)
+ModernWarfare_TU67	142E51130	function		Load_Physicsvfxeventasset		structure	high	struct loader called by Load_PhysicsvfxeventassetPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E684E0	function		Load_PhysicsassetPtr		structure	high	Load_XAssetHeader case 3 (physicsasset)
+ModernWarfare_TU67	142E68300	function		Load_Physicsasset		structure	high	struct loader called by Load_PhysicsassetPtr after the block push; reads 0x58 bytes
+ModernWarfare_TU67	142E73CB0	function		Load_PhysicsfxpipelinePtr		structure	high	Load_XAssetHeader case 4 (physicsfxpipeline)
+ModernWarfare_TU67	142E73C40	function		Load_Physicsfxpipeline		structure	high	struct loader called by Load_PhysicsfxpipelinePtr after the block push; reads 0x30 bytes
+ModernWarfare_TU67	142E73EC0	function		Load_PhysicsfxshapePtr		structure	high	Load_XAssetHeader case 5 (physicsfxshape)
+ModernWarfare_TU67	142E73DD0	function		Load_Physicsfxshape		structure	high	struct loader called by Load_PhysicsfxshapePtr after the block push; reads 0x38 bytes
+ModernWarfare_TU67	142E68850	function		Load_PhysicsdebugdataPtr		structure	high	Load_XAssetHeader case 6 (physicsdebugdata)
+ModernWarfare_TU67	142E68600	function		Load_Physicsdebugdata		structure	high	struct loader called by Load_PhysicsdebugdataPtr after the block push; reads 0x138 bytes
+ModernWarfare_TU67	142E544F0	function		Load_XanimPtr		structure	high	Load_XAssetHeader case 7 (xanim)
+ModernWarfare_TU67	142E53F80	function		Load_Xanim		structure	high	struct loader called by Load_XanimPtr after the block push; reads 0xa8 bytes
+ModernWarfare_TU67	142EA5A50	function		Load_XmodelsurfsPtr		structure	high	Load_XAssetHeader case 8 (xmodelsurfs)
+ModernWarfare_TU67	142EA58B0	function		Load_Xmodelsurfs		structure	high	struct loader called by Load_XmodelsurfsPtr after the block push; reads 0x60 bytes
+ModernWarfare_TU67	142EA5610	function		Load_XmodelPtr		structure	high	Load_XAssetHeader case 9 (xmodel)
+ModernWarfare_TU67	142EA4830	function		Load_Xmodel		structure	high	struct loader called by Load_XmodelPtr after the block push; reads 0x2b0 bytes
+ModernWarfare_TU67	142EB9FC0	function		Load_MayhemPtr		structure	high	Load_XAssetHeader case 10 (mayhem)
+ModernWarfare_TU67	142EB9D10	function		Load_Mayhem		structure	high	struct loader called by Load_MayhemPtr after the block push; reads 0x50 bytes
+ModernWarfare_TU67	142E84A90	function		Load_MaterialPtr		structure	high	Load_XAssetHeader case 11 (material)
+ModernWarfare_TU67	142E84320	function		Load_Material		structure	high	struct loader called by Load_MaterialPtr after the block push; reads 0x78 bytes
+ModernWarfare_TU67	142E82480	function		Load_ComputeshaderPtr		structure	high	Load_XAssetHeader case 12 (computeshader)
+ModernWarfare_TU67	142E82370	function		Load_Computeshader		structure	high	struct loader called by Load_ComputeshaderPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E83180	function		Load_LibshaderPtr		structure	high	Load_XAssetHeader case 13 (libshader)
+ModernWarfare_TU67	142E83090	function		Load_Libshader		structure	high	struct loader called by Load_LibshaderPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E85920	function		Load_VertexshaderPtr		structure	high	Load_XAssetHeader case 14 (vertexshader)
+ModernWarfare_TU67	142E85830	function		Load_Vertexshader		structure	high	struct loader called by Load_VertexshaderPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E84E20	function		Load_HullshaderPtr		structure	high	Load_XAssetHeader case 15 (hullshader)
+ModernWarfare_TU67	142E84D30	function		Load_Hullshader		structure	high	struct loader called by Load_HullshaderPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E84970	function		Load_DomainshaderPtr		structure	high	Load_XAssetHeader case 16 (domainshader)
+ModernWarfare_TU67	142E84880	function		Load_Domainshader		structure	high	struct loader called by Load_DomainshaderPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E85030	function		Load_PixelshaderPtr		structure	high	Load_XAssetHeader case 17 (pixelshader)
+ModernWarfare_TU67	142E84F40	function		Load_Pixelshader		structure	high	struct loader called by Load_PixelshaderPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E85670	function		Load_TechsetPtr		structure	high	Load_XAssetHeader case 18 (techset)
+ModernWarfare_TU67	142E85510	function		Load_Techset		structure	high	struct loader called by Load_TechsetPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142EAB360	function		Load_ImagePtr		structure	high	Load_XAssetHeader case 19 (image)
+ModernWarfare_TU67	142EAAFC0	function		Load_Image		structure	high	struct loader called by Load_ImagePtr after the block push; reads 0xe8 bytes
+ModernWarfare_TU67	142E52E00	function		Load_SoundglobalsPtr		structure	high	Load_XAssetHeader case 20 (soundglobals)
+ModernWarfare_TU67	142E52A50	function		Load_Soundglobals		structure	high	struct loader called by Load_SoundglobalsPtr after the block push; reads 0x80 bytes
+ModernWarfare_TU67	142EB63D0	function		Load_SoundbankPtr		structure	high	Load_XAssetHeader case 21 (soundbank)
+ModernWarfare_TU67	142EB6360	function		Load_Soundbank		structure	high	struct loader called by Load_SoundbankPtr after the block push; reads 0x200 bytes
+ModernWarfare_TU67	142EB6560	function		Load_SoundbanktransientPtr		structure	high	Load_XAssetHeader case 22 (soundbanktransient)
+ModernWarfare_TU67	142EB64F0	function		Load_Soundbanktransient		structure	high	struct loader called by Load_SoundbanktransientPtr after the block push; reads 0x200 bytes
+ModernWarfare_TU67	142E88630	function		Load_ColMapPtr		structure	high	Load_XAssetHeader case 23 (col_map)
+ModernWarfare_TU67	142E88750	function		Load_ColMap		structure	high	struct loader called by Load_ColMapPtr after the block push; reads 0xf8 bytes
+ModernWarfare_TU67	142E66C70	function		Load_ComMapPtr		structure	high	Load_XAssetHeader case 24 (com_map)
+ModernWarfare_TU67	142E66A50	function		Load_ComMap		structure	high	struct loader called by Load_ComMapPtr after the block push; reads 0xa8 bytes
+ModernWarfare_TU67	142E67CB0	function		Load_GlassMapPtr		structure	high	Load_XAssetHeader case 25 (glass_map)
+ModernWarfare_TU67	142E67C00	function		Load_GlassMap		structure	high	struct loader called by Load_GlassMapPtr after the block push; reads 0x10 bytes
+ModernWarfare_TU67	142E681E0	function		Load_AipathsPtr		structure	high	Load_XAssetHeader case 26 (aipaths)
+ModernWarfare_TU67	142E67E30	function		Load_Aipaths		structure	high	struct loader called by Load_AipathsPtr after the block push; reads 0x98 bytes
+ModernWarfare_TU67	142E501D0	function		Load_NavmeshPtr		structure	high	Load_XAssetHeader case 27 (navmesh)
+ModernWarfare_TU67	142E4FC40	function		Load_Navmesh		structure	high	struct loader called by Load_NavmeshPtr after the block push; reads 0xa8 bytes
+ModernWarfare_TU67	142E69700	function		Load_TacgraphPtr		structure	high	Load_XAssetHeader case 28 (tacgraph)
+ModernWarfare_TU67	142E69630	function		Load_Tacgraph		structure	high	struct loader called by Load_TacgraphPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E83EC0	function		Load_MapEntsPtr		structure	high	Load_XAssetHeader case 29 (map_ents)
+ModernWarfare_TU67	142E83600	function		Load_MapEnts		structure	high	struct loader called by Load_MapEntsPtr after the block push; reads 0x470 bytes
+ModernWarfare_TU67	142EB9A30	function		Load_FxMapPtr		structure	high	Load_XAssetHeader case 30 (fx_map)
+ModernWarfare_TU67	142EB9900	function		Load_FxMap		structure	high	struct loader called by Load_FxMapPtr after the block push; reads 0x3cd0 bytes
+ModernWarfare_TU67	142E05770	function		Load_GfxMapPtr		structure	high	Load_XAssetHeader case 31 (gfx_map)
+ModernWarfare_TU67	142E018F0	function		Load_GfxMap		structure	high	struct loader called by Load_GfxMapPtr after the block push; reads 0x4610 bytes
+ModernWarfare_TU67	142E05AB0	function		Load_GfxMapTrzonePtr		structure	high	Load_XAssetHeader case 32 (gfx_map_trzone)
+ModernWarfare_TU67	142E05890	function		Load_GfxMapTrzone		structure	high	struct loader called by Load_GfxMapTrzonePtr after the block push; reads 0x148 bytes
+ModernWarfare_TU67	142E7B610	function		Load_LightdefPtr		structure	high	Load_XAssetHeader case 34 (lightdef)
+ModernWarfare_TU67	142E7B580	function		Load_Lightdef		structure	high	struct loader called by Load_LightdefPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E40340	function		Load_GradingclutPtr		structure	high	Load_XAssetHeader case 35 (gradingclut)
+ModernWarfare_TU67	142E402A0	function		Load_Gradingclut		structure	high	struct loader called by Load_GradingclutPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142EBE240	function		Load_FogsplinePtr		structure	high	Load_XAssetHeader case 37 (fogspline)
+ModernWarfare_TU67	142EBE1A0	function		Load_Fogspline		structure	high	struct loader called by Load_FogsplinePtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142EAE4C0	function		Load_AnimclassPtr		structure	high	Load_XAssetHeader case 38 (animclass)
+ModernWarfare_TU67	142EAE130	function		Load_Animclass		structure	high	struct loader called by Load_AnimclassPtr after the block push; reads 0x50 bytes
+ModernWarfare_TU67	142E52890	function		Load_PlayeranimPtr		structure	high	Load_XAssetHeader case 39 (playeranim)
+ModernWarfare_TU67	142E51F70	function		Load_Playeranim		structure	high	struct loader called by Load_PlayeranimPtr after the block push; reads 0xa8 bytes
+ModernWarfare_TU67	142EB5D10	function		Load_GesturePtr		structure	high	Load_XAssetHeader case 40 (gesture)
+ModernWarfare_TU67	142EB5BB0	function		Load_Gesture		structure	high	struct loader called by Load_GesturePtr after the block push; reads 0x290 bytes
+ModernWarfare_TU67	142E7BBC0	function		Load_LocalizePtr		structure	high	Load_XAssetHeader case 41 (localize)
+ModernWarfare_TU67	142E7BB30	function		Load_Localize		structure	high	struct loader called by Load_LocalizePtr after the block push; reads 0x10 bytes
+ModernWarfare_TU67	142E88390	function		Load_AttachmentPtr		structure	high	Load_XAssetHeader case 42 (attachment)
+ModernWarfare_TU67	142E869C0	function		Load_Attachment		structure	high	struct loader called by Load_AttachmentPtr after the block push; reads 0x458 bytes
+ModernWarfare_TU67	142E090B0	function		Load_WeaponPtr		structure	high	Load_XAssetHeader case 43 (weapon)
+ModernWarfare_TU67	142E089E0	function		Load_Weapon		structure	high	struct loader called by Load_WeaponPtr after the block push; reads 0x290 bytes
+ModernWarfare_TU67	142E08450	function		Load_VfxPtr		structure	high	Load_XAssetHeader case 44 (vfx)
+ModernWarfare_TU67	142E08300	function		Load_Vfx		structure	high	struct loader called by Load_VfxPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142EB5730	function		Load_ImpactfxPtr		structure	high	Load_XAssetHeader case 45 (impactfx)
+ModernWarfare_TU67	142EB55B0	function		Load_Impactfx		structure	high	struct loader called by Load_ImpactfxPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142EB6A00	function		Load_SurfacefxPtr		structure	high	Load_XAssetHeader case 46 (surfacefx)
+ModernWarfare_TU67	142EB6850	function		Load_Surfacefx		structure	high	struct loader called by Load_SurfacefxPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E7C1A0	function		Load_RawfilePtr		structure	high	Load_XAssetHeader case 51 (rawfile)
+ModernWarfare_TU67	142E7C0B0	function		Load_Rawfile		structure	high	struct loader called by Load_RawfilePtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E746C0	function		Load_ScriptfilePtr		structure	high	Load_XAssetHeader case 52 (scriptfile)
+ModernWarfare_TU67	142E745B0	function		Load_Scriptfile		structure	high	struct loader called by Load_ScriptfilePtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E7C790	function		Load_ScriptdebugdataPtr		structure	high	Load_XAssetHeader case 53 (scriptdebugdata)
+ModernWarfare_TU67	142E7C610	function		Load_Scriptdebugdata		structure	high	struct loader called by Load_ScriptdebugdataPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E7CC20	function		Load_StringtablePtr		structure	high	Load_XAssetHeader case 54 (stringtable)
+ModernWarfare_TU67	142E7CA60	function		Load_Stringtable		structure	high	struct loader called by Load_StringtablePtr after the block push; reads 0x30 bytes
+ModernWarfare_TU67	142E73650	function		Load_LeaderboarddefPtr		structure	high	Load_XAssetHeader case 55 (leaderboarddef)
+ModernWarfare_TU67	142E734F0	function		Load_Leaderboarddef		structure	high	struct loader called by Load_LeaderboarddefPtr after the block push; reads 0x38 bytes
+ModernWarfare_TU67	142E751E0	function		Load_VirtualleaderboarddefPtr		structure	high	Load_XAssetHeader case 56 (virtualleaderboarddef)
+ModernWarfare_TU67	142E75080	function		Load_Virtualleaderboarddef		structure	high	struct loader called by Load_VirtualleaderboarddefPtr after the block push; reads 0x30 bytes
+ModernWarfare_TU67	142E67340	function		Load_DdlPtr		structure	high	Load_XAssetHeader case 57 (ddl)
+ModernWarfare_TU67	142E67280	function		Load_Ddl		structure	high	struct loader called by Load_DdlPtr after the block push; reads 0x10 bytes
+ModernWarfare_TU67	142E450C0	function		Load_TracerPtr		structure	high	Load_XAssetHeader case 58 (tracer)
+ModernWarfare_TU67	142E44FE0	function		Load_Tracer		structure	high	struct loader called by Load_TracerPtr after the block push; reads 0x90 bytes
+ModernWarfare_TU67	142E9ABB0	function		Load_VehiclePtr		structure	high	Load_XAssetHeader case 59 (vehicle)
+ModernWarfare_TU67	142E99EF0	function		Load_Vehicle		structure	high	struct loader called by Load_VehiclePtr after the block push; reads 0x1030 bytes
+ModernWarfare_TU67	142E80780	function		Load_AddonMapEntsPtr		structure	high	Load_XAssetHeader case 60 (addon_map_ents)
+ModernWarfare_TU67	142E805B0	function		Load_AddonMapEnts		structure	high	struct loader called by Load_AddonMapEntsPtr after the block push; reads 0x90 bytes
+ModernWarfare_TU67	142E73B00	function		Load_NetconststringsPtr		structure	high	Load_XAssetHeader case 61 (netconststrings)
+ModernWarfare_TU67	142E73A10	function		Load_Netconststrings		structure	high	struct loader called by Load_NetconststringsPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E7BDA0	function		Load_LuafilePtr		structure	high	Load_XAssetHeader case 62 (luafile)
+ModernWarfare_TU67	142E7BCE0	function		Load_Luafile		structure	high	struct loader called by Load_LuafilePtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E29840	function		Load_ScriptablePtr		structure	high	Load_XAssetHeader case 63 (scriptable)
+ModernWarfare_TU67	142E29570	function		Load_Scriptable		structure	high	struct loader called by Load_ScriptablePtr after the block push; reads 0x70 bytes
+ModernWarfare_TU67	142E4EEA0	function		Load_EquipsndtablePtr		structure	high	Load_XAssetHeader case 64 (equipsndtable)
+ModernWarfare_TU67	142E4E810	function		Load_Equipsndtable		structure	high	struct loader called by Load_EquipsndtablePtr after the block push; reads 0xc88 bytes
+ModernWarfare_TU67	142E74EB0	function		Load_VectorfieldPtr		structure	high	Load_XAssetHeader case 65 (vectorfield)
+ModernWarfare_TU67	142E74D70	function		Load_Vectorfield		structure	high	struct loader called by Load_VectorfieldPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142EB5A90	function		Load_ParticlesimanimationPtr		structure	high	Load_XAssetHeader case 66 (particlesimanimation)
+ModernWarfare_TU67	142EB5850	function		Load_Particlesimanimation		structure	high	struct loader called by Load_ParticlesimanimationPtr after the block push; reads 0x78 bytes
+ModernWarfare_TU67	142EABF10	function		Load_StreaminginfoPtr		structure	high	Load_XAssetHeader case 67 (streaminginfo)
+ModernWarfare_TU67	142EABE10	function		Load_Streaminginfo		structure	high	struct loader called by Load_StreaminginfoPtr after the block push; reads 0x48 bytes
+ModernWarfare_TU67	142EBE640	function		Load_LaserPtr		structure	high	Load_XAssetHeader case 68 (laser)
+ModernWarfare_TU67	142EBE540	function		Load_Laser		structure	high	struct loader called by Load_LaserPtr after the block push; reads 0xa8 bytes
+ModernWarfare_TU67	142E7CE00	function		Load_TtfPtr		structure	high	Load_XAssetHeader case 69 (ttf)
+ModernWarfare_TU67	142E7CD40	function		Load_Ttf		structure	high	struct loader called by Load_TtfPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E99D30	function		Load_SuitPtr		structure	high	Load_XAssetHeader case 70 (suit)
+ModernWarfare_TU67	142E99380	function		Load_Suit		structure	high	struct loader called by Load_SuitPtr after the block push; reads 0x720 bytes
+ModernWarfare_TU67	142EBA330	function		Load_SuitanimpackagePtr		structure	high	Load_XAssetHeader case 71 (suitanimpackage)
+ModernWarfare_TU67	142EBA230	function		Load_Suitanimpackage		structure	high	struct loader called by Load_SuitanimpackagePtr after the block push; reads 0x10 bytes
+ModernWarfare_TU67	142EAEA90	function		Load_CameraPtr		structure	high	Load_XAssetHeader case 72 (camera)
+ModernWarfare_TU67	142EAEA20	function		Load_Camera		structure	high	struct loader called by Load_CameraPtr after the block push; reads 0x188 bytes
+ModernWarfare_TU67	142E733D0	function		Load_HudoutlinePtr		structure	high	Load_XAssetHeader case 73 (hudoutline)
+ModernWarfare_TU67	142E73360	function		Load_Hudoutline		structure	high	struct loader called by Load_HudoutlinePtr after the block push; reads 0x60 bytes
+ModernWarfare_TU67	142E74A90	function		Load_SpaceshiptargetPtr		structure	high	Load_XAssetHeader case 74 (spaceshiptarget)
+ModernWarfare_TU67	142E749F0	function		Load_Spaceshiptarget		structure	high	struct loader called by Load_SpaceshiptargetPtr after the block push; reads 0x88 bytes
+ModernWarfare_TU67	142E74260	function		Load_RumblePtr		structure	high	Load_XAssetHeader case 75 (rumble)
+ModernWarfare_TU67	142E74170	function		Load_Rumble		structure	high	struct loader called by Load_RumblePtr after the block push; reads 0x38 bytes
+ModernWarfare_TU67	142E74050	function		Load_RumblegraphPtr		structure	high	Load_XAssetHeader case 76 (rumblegraph)
+ModernWarfare_TU67	142E73FE0	function		Load_Rumblegraph		structure	high	struct loader called by Load_RumblegraphPtr after the block push; reads 0x90 bytes
+ModernWarfare_TU67	142E088C0	function		Load_AnimpkgPtr		structure	high	Load_XAssetHeader case 77 (animpkg)
+ModernWarfare_TU67	142E08750	function		Load_Animpkg		structure	high	struct loader called by Load_AnimpkgPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142E0B450	function		Load_SfxpkgPtr		structure	high	Load_XAssetHeader case 78 (sfxpkg)
+ModernWarfare_TU67	142E0B260	function		Load_Sfxpkg		structure	high	struct loader called by Load_SfxpkgPtr after the block push; reads 0xb0 bytes
+ModernWarfare_TU67	142E0C570	function		Load_VfxpkgPtr		structure	high	Load_XAssetHeader case 79 (vfxpkg)
+ModernWarfare_TU67	142E0C160	function		Load_Vfxpkg		structure	high	struct loader called by Load_VfxpkgPtr after the block push; reads 0x10 bytes
+ModernWarfare_TU67	142E43C60	function		Load_FootstepvfxPtr		structure	high	Load_XAssetHeader case 80 (footstepvfx)
+ModernWarfare_TU67	142E43BA0	function		Load_Footstepvfx		structure	high	struct loader called by Load_FootstepvfxPtr after the block push; reads 0x408 bytes
+ModernWarfare_TU67	142E4D550	function		Load_BehaviortreePtr		structure	high	Load_XAssetHeader case 81 (behaviortree)
+ModernWarfare_TU67	142E4D360	function		Load_Behaviortree		structure	high	struct loader called by Load_BehaviortreePtr after the block push; reads 0x38 bytes
+ModernWarfare_TU67	142E43530	function		Load_AianimsetPtr		structure	high	Load_XAssetHeader case 82 (aianimset)
+ModernWarfare_TU67	142E42BE0	function		Load_Aianimset		structure	high	struct loader called by Load_AianimsetPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142E4D240	function		Load_AiasmPtr		structure	high	Load_XAssetHeader case 83 (aiasm)
+ModernWarfare_TU67	142E4C640	function		Load_Aiasm		structure	high	struct loader called by Load_AiasmPtr after the block push; reads 0x50 bytes
+ModernWarfare_TU67	142E45AB0	function		Load_ProceduralbonesPtr		structure	high	Load_XAssetHeader case 84 (proceduralbones)
+ModernWarfare_TU67	142E45960	function		Load_Proceduralbones		structure	high	struct loader called by Load_ProceduralbonesPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E45840	function		Load_DynamicbonesPtr		structure	high	Load_XAssetHeader case 85 (dynamicbones)
+ModernWarfare_TU67	142E45570	function		Load_Dynamicbones		structure	high	struct loader called by Load_DynamicbonesPtr after the block push; reads 0x58 bytes
+ModernWarfare_TU67	142E7C370	function		Load_ReticlePtr		structure	high	Load_XAssetHeader case 86 (reticle)
+ModernWarfare_TU67	142E7C2C0	function		Load_Reticle		structure	high	struct loader called by Load_ReticlePtr after the block push; reads 0x48 bytes
+ModernWarfare_TU67	142E753D0	function		Load_XanimcurvePtr		structure	high	Load_XAssetHeader case 87 (xanimcurve)
+ModernWarfare_TU67	142E75300	function		Load_Xanimcurve		structure	high	struct loader called by Load_XanimcurvePtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E72E60	function		Load_CoverselectorPtr		structure	high	Load_XAssetHeader case 88 (coverselector)
+ModernWarfare_TU67	142E72DC0	function		Load_Coverselector		structure	high	struct loader called by Load_CoverselectorPtr after the block push; reads 0x78 bytes
+ModernWarfare_TU67	142E73020	function		Load_EnemyselectorPtr		structure	high	Load_XAssetHeader case 89 (enemyselector)
+ModernWarfare_TU67	142E72F80	function		Load_Enemyselector		structure	high	struct loader called by Load_EnemyselectorPtr after the block push; reads 0x70 bytes
+ModernWarfare_TU67	142E40180	function		Load_ClientcharacterPtr		structure	high	Load_XAssetHeader case 90 (clientcharacter)
+ModernWarfare_TU67	142E400A0	function		Load_Clientcharacter		structure	high	struct loader called by Load_ClientcharacterPtr after the block push; reads 0x20 bytes
+ModernWarfare_TU67	142E667B0	function		Load_ClothassetPtr		structure	high	Load_XAssetHeader case 91 (clothasset)
+ModernWarfare_TU67	142E66280	function		Load_Clothasset		structure	high	struct loader called by Load_ClothassetPtr after the block push; reads 0x80 bytes
+ModernWarfare_TU67	142E66090	function		Load_CinematicmotionPtr		structure	high	Load_XAssetHeader case 92 (cinematicmotion)
+ModernWarfare_TU67	142E65FD0	function		Load_Cinematicmotion		structure	high	struct loader called by Load_CinematicmotionPtr after the block push; reads 0x250 bytes
+ModernWarfare_TU67	142EBE080	function		Load_AccessoryPtr		structure	high	Load_XAssetHeader case 93 (accessory)
+ModernWarfare_TU67	142EBDF90	function		Load_Accessory		structure	high	struct loader called by Load_AccessoryPtr after the block push; reads 0x30 bytes
+ModernWarfare_TU67	142E7BA10	function		Load_LocdmgtablePtr		structure	high	Load_XAssetHeader case 94 (locdmgtable)
+ModernWarfare_TU67	142E7B9A0	function		Load_Locdmgtable		structure	high	struct loader called by Load_LocdmgtablePtr after the block push; reads 0x60 bytes
+ModernWarfare_TU67	142E7B400	function		Load_BulletpenetrationPtr		structure	high	Load_XAssetHeader case 95 (bulletpenetration)
+ModernWarfare_TU67	142E7B390	function		Load_Bulletpenetration		structure	high	struct loader called by Load_BulletpenetrationPtr after the block push; reads 0x708 bytes
+ModernWarfare_TU67	142E74490	function		Load_ScriptbundlePtr		structure	high	Load_XAssetHeader case 96 (scriptbundle)
+ModernWarfare_TU67	142E74380	function		Load_Scriptbundle		structure	high	struct loader called by Load_ScriptbundlePtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E72B20	function		Load_Blendspace2dPtr		structure	high	Load_XAssetHeader case 97 (blendspace2d)
+ModernWarfare_TU67	142E72930	function		Load_Blendspace2d		structure	high	struct loader called by Load_Blendspace2dPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142E69C10	function		Load_XcamPtr		structure	high	Load_XAssetHeader case 98 (xcam)
+ModernWarfare_TU67	142E69820	function		Load_Xcam		structure	high	struct loader called by Load_XcamPtr after the block push; reads 0xb0 bytes
+ModernWarfare_TU67	142EB95C0	function		Load_CamoPtr		structure	high	Load_XAssetHeader case 99 (camo)
+ModernWarfare_TU67	142EB9450	function		Load_Camo		structure	high	struct loader called by Load_CamoPtr after the block push; reads 0x128 bytes
+ModernWarfare_TU67	142EBA850	function		Load_XcompositemodelPtr		structure	high	Load_XAssetHeader case 100 (xcompositemodel)
+ModernWarfare_TU67	142EBA6E0	function		Load_Xcompositemodel		structure	high	struct loader called by Load_XcompositemodelPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142EA54F0	function		Load_XmodeldetailcollisionPtr		structure	high	Load_XAssetHeader case 101 (xmodeldetailcollision)
+ModernWarfare_TU67	142EA53E0	function		Load_Xmodeldetailcollision		structure	high	struct loader called by Load_XmodeldetailcollisionPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142EAFA80	function		Load_StreamkeyPtr		structure	high	Load_XAssetHeader case 102 (streamkey)
+ModernWarfare_TU67	142EAF8E0	function		Load_Streamkey		structure	high	struct loader called by Load_StreamkeyPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142EB0310	function		Load_StreamtreeoverridePtr		structure	high	Load_XAssetHeader case 103 (streamtreeoverride)
+ModernWarfare_TU67	142EB01A0	function		Load_Streamtreeoverride		structure	high	struct loader called by Load_StreamtreeoverridePtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E7B880	function		Load_KeyvaluepairsPtr		structure	high	Load_XAssetHeader case 104 (keyvaluepairs)
+ModernWarfare_TU67	142E7B730	function		Load_Keyvaluepairs		structure	high	struct loader called by Load_KeyvaluepairsPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E99170	function		Load_StterrainPtr		structure	high	Load_XAssetHeader case 105 (stterrain)
+ModernWarfare_TU67	142E98B70	function		Load_Stterrain		structure	high	struct loader called by Load_StterrainPtr after the block push; reads 0x98 bytes
+ModernWarfare_TU67	142E738F0	function		Load_NativescriptpatchPtr		structure	high	Load_XAssetHeader case 106 (nativescriptpatch)
+ModernWarfare_TU67	142E73770	function		Load_Nativescriptpatch		structure	high	struct loader called by Load_NativescriptpatchPtr after the block push; reads 0x28 bytes
+ModernWarfare_TU67	142E82250	function		Load_CollisiontilePtr		structure	high	Load_XAssetHeader case 107 (collisiontile)
+ModernWarfare_TU67	142E82110	function		Load_Collisiontile		structure	high	struct loader called by Load_CollisiontilePtr after the block push; reads 0x48 bytes
+ModernWarfare_TU67	142EB97E0	function		Load_ExecutionPtr		structure	high	Load_XAssetHeader case 108 (execution)
+ModernWarfare_TU67	142EB96E0	function		Load_Execution		structure	high	struct loader called by Load_ExecutionPtr after the block push; reads 0x68 bytes
+ModernWarfare_TU67	142E3FF80	function		Load_CarryobjectPtr		structure	high	Load_XAssetHeader case 109 (carryobject)
+ModernWarfare_TU67	142E3FE70	function		Load_Carryobject		structure	high	struct loader called by Load_CarryobjectPtr after the block push; reads 0x30 bytes
+ModernWarfare_TU67	142E748D0	function		Load_SoundbanklistPtr		structure	high	Load_XAssetHeader case 110 (soundbanklist)
+ModernWarfare_TU67	142E747E0	function		Load_Soundbanklist		structure	high	struct loader called by Load_SoundbanklistPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E82C10	function		Load_DecalvolumematerialPtr		structure	high	Load_XAssetHeader case 111 (decalvolumematerial)
+ModernWarfare_TU67	142E82B70	function		Load_Decalvolumematerial		structure	high	struct loader called by Load_DecalvolumematerialPtr after the block push; reads 0x68 bytes
+ModernWarfare_TU67	142E82A50	function		Load_DecalvolumemaskPtr		structure	high	Load_XAssetHeader case 112 (decalvolumemask)
+ModernWarfare_TU67	142E829B0	function		Load_Decalvolumemask		structure	high	struct loader called by Load_DecalvolumemaskPtr after the block push; reads 0x10 bytes
+ModernWarfare_TU67	142E827E0	function		Load_DynentitylistPtr		structure	high	Load_XAssetHeader case 113 (dynentitylist)
+ModernWarfare_TU67	142E826C0	function		Load_Dynentitylist		structure	high	struct loader called by Load_DynentitylistPtr after the block push; reads 0x40 bytes
+ModernWarfare_TU67	142EB9BF0	function		Load_FxMapTrzonePtr		structure	high	Load_XAssetHeader case 114 (fx_map_trzone)
+ModernWarfare_TU67	142EB9B50	function		Load_FxMapTrzone		structure	high	struct loader called by Load_FxMapTrzonePtr after the block push; reads 0xa0 bytes
+ModernWarfare_TU67	142E4E2F0	function		Load_DlogschemaPtr		structure	high	Load_XAssetHeader case 115 (dlogschema)
+ModernWarfare_TU67	142E4E0F0	function		Load_Dlogschema		structure	high	struct loader called by Load_DlogschemaPtr after the block push; reads 0x58 bytes
+ModernWarfare_TU67	142E834E0	function		Load_EdgelistPtr		structure	high	Load_XAssetHeader case 116 (edgelist)
+ModernWarfare_TU67	142E832A0	function		Load_Edgelist		structure	high	struct loader called by Load_EdgelistPtr after the block push; reads 0xa0 bytes
+ModernWarfare_TU67	142E74C50	function		Load_TriggereffectPtr		structure	high	Load_XAssetHeader case 117 (triggereffect)
+ModernWarfare_TU67	142E74BB0	function		Load_Triggereffect		structure	high	struct loader called by Load_TriggereffectPtr after the block push; reads 0x18 bytes
+ModernWarfare_TU67	142E40520	function		Load_WeapontriggerPtr		structure	high	Load_XAssetHeader case 118 (weapontrigger)
+ModernWarfare_TU67	142E40460	function		Load_Weapontrigger		structure	high	struct loader called by Load_WeapontriggerPtr after the block push; reads 0x38 bytes
+ModernWarfare_TU67	142E67930	function		Load_DwidataPtr		structure	high	Load_XAssetHeader case 119 (dwidata)
+ModernWarfare_TU67	142E67870	function		Load_Dwidata		structure	high	struct loader called by Load_DwidataPtr after the block push; reads 0x58 bytes
