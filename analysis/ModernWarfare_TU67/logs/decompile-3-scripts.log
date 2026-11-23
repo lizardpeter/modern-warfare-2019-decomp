@@ -1,0 +1,29 @@
+2026-11-23 20:40:50 INFO  Decompile.java> shard 3: 127793 exception-directory entries  
+2026-11-23 20:41:36 INFO  Decompile.java> shard 3: 1000 ok, 0 failed, 1633 skipped, 46s  
+2026-11-23 20:42:19 INFO  Decompile.java> shard 3: 2000 ok, 0 failed, 1634 skipped, 88s  
+2026-11-23 20:42:50 INFO  Decompile.java> shard 3: 3000 ok, 0 failed, 1634 skipped, 119s  
+2026-11-23 20:43:29 INFO  Decompile.java> shard 3: 3999 ok, 1 failed, 1634 skipped, 158s  
+2026-11-23 20:43:51 INFO  Decompile.java> shard 3: 4999 ok, 1 failed, 1634 skipped, 180s  
+2026-11-23 20:44:39 INFO  Decompile.java> shard 3: 5998 ok, 2 failed, 1634 skipped, 229s  
+2026-11-23 20:46:10 INFO  Decompile.java> shard 3: slow 140AFA690 83.1s (110 bytes)  
+2026-11-23 20:47:41 INFO  Decompile.java> shard 3: slow 142838520 31.7s (68825 bytes)  
+2026-11-23 20:49:14 INFO  Decompile.java> shard 3: 6998 ok, 2 failed, 1842 skipped, 504s  
+2026-11-23 20:50:18 INFO  Decompile.java> shard 3: 7998 ok, 2 failed, 1842 skipped, 567s  
+2026-11-23 20:51:08 INFO  Decompile.java> shard 3: 8998 ok, 2 failed, 1842 skipped, 618s  
+2026-11-23 20:52:27 INFO  Decompile.java> shard 3: 9998 ok, 2 failed, 1849 skipped, 697s  
+2026-11-23 20:53:31 INFO  Decompile.java> shard 3: 10998 ok, 2 failed, 1849 skipped, 761s  
+2026-11-23 20:56:37 INFO  Decompile.java> shard 3: slow 1446A1E70 90.1s (3888 bytes)  
+2026-11-23 20:57:27 INFO  Decompile.java> shard 3: 11996 ok, 4 failed, 1885 skipped, 997s  
+2026-11-23 21:00:15 INFO  Decompile.java> shard 3: slow 14535A660 73.5s (21951 bytes)  
+2026-11-23 21:02:20 INFO  Decompile.java> shard 3: slow 1459591F0 53.1s (14127 bytes)  
+2026-11-23 21:04:08 INFO  Decompile.java> shard 3: slow 145A6A150 57.5s (10532 bytes)  
+2026-11-23 21:05:44 INFO  Decompile.java> shard 3: slow 145C5A060 80.6s (11101 bytes)  
+2026-11-23 21:07:16 INFO  Decompile.java> shard 3: 12996 ok, 4 failed, 1885 skipped, 1585s  
+2026-11-23 21:09:05 INFO  Decompile.java> shard 3: 13995 ok, 5 failed, 1890 skipped, 1694s  
+2026-11-23 21:11:02 INFO  Decompile.java> shard 3: slow 146CBA290 77.8s (15319 bytes)  
+2026-11-23 21:11:41 INFO  Decompile.java> shard 3: 14995 ok, 5 failed, 1890 skipped, 1850s  
+2026-11-23 21:12:24 INFO  Decompile.java> shard 3: 15995 ok, 5 failed, 1890 skipped, 1893s  
+2026-11-23 21:13:19 INFO  Decompile.java> shard 3: 16995 ok, 5 failed, 1891 skipped, 1948s  
+2026-11-23 21:14:05 INFO  Decompile.java> shard 3: 17995 ok, 5 failed, 1900 skipped, 1995s  
+2026-11-23 21:17:44 INFO  Decompile.java> shard 3: slow 14A3B7258 90.1s (34 bytes)  
+2026-11-23 21:36:22 INFO  Decompile.java> shard 3 done: 18442 ok, 57 failed, 1900 skipped  

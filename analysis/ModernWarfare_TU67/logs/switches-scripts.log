@@ -1,0 +1,30 @@
+2026-11-23 07:33:22 INFO  RunSwitchAnalysis.java> RunSwitchAnalysis: Decompiler Switch Analysis with 3 threads took 98.2 min; functions 135139 -> 135485  
+2026-11-23 07:33:23 INFO  CreateTableFunctions.java> data pointers into code with no function: 3 targets (26 more point inside a function)  
+2026-11-23 07:33:23 INFO  CreateTableFunctions.java> created 0 functions; 3 targets not code, 0 could not be made functions  
+2026-11-23 07:35:06 INFO  ExportAll.java> exported 5000 functions  
+2026-11-23 07:36:54 INFO  ExportAll.java> exported 10000 functions  
+2026-11-23 07:37:38 INFO  ExportAll.java> exported 15000 functions  
+2026-11-23 07:38:51 INFO  ExportAll.java> exported 20000 functions  
+2026-11-23 07:39:44 INFO  ExportAll.java> exported 25000 functions  
+2026-11-23 07:40:52 INFO  ExportAll.java> exported 30000 functions  
+2026-11-23 07:41:49 INFO  ExportAll.java> exported 35000 functions  
+2026-11-23 07:42:01 INFO  ExportAll.java> exported 40000 functions  
+2026-11-23 07:42:13 INFO  ExportAll.java> exported 45000 functions  
+2026-11-23 07:50:41 INFO  ExportAll.java> exported 50000 functions  
+2026-11-23 07:55:12 INFO  ExportAll.java> exported 55000 functions  
+2026-11-23 07:56:34 INFO  ExportAll.java> exported 60000 functions  
+2026-11-23 07:58:09 INFO  ExportAll.java> exported 65000 functions  
+2026-11-23 08:00:40 INFO  ExportAll.java> exported 70000 functions  
+2026-11-23 08:02:19 INFO  ExportAll.java> exported 75000 functions  
+2026-11-23 08:05:24 INFO  ExportAll.java> exported 80000 functions  
+2026-11-23 08:08:05 INFO  ExportAll.java> exported 85000 functions  
+2026-11-23 08:18:45 INFO  ExportAll.java> exported 90000 functions  
+2026-11-23 08:21:27 INFO  ExportAll.java> exported 95000 functions  
+2026-11-23 08:24:18 INFO  ExportAll.java> exported 100000 functions  
+2026-11-23 08:25:29 INFO  ExportAll.java> exported 105000 functions  
+2026-11-23 08:26:47 INFO  ExportAll.java> exported 110000 functions  
+2026-11-23 08:28:04 INFO  ExportAll.java> exported 115000 functions  
+2026-11-23 08:28:44 INFO  ExportAll.java> exported 120000 functions  
+2026-11-23 08:29:17 INFO  ExportAll.java> exported 125000 functions  
+2026-11-23 08:30:04 INFO  ExportAll.java> exported 130000 functions  
+2026-11-23 08:30:05 INFO  ExportAll.java> functions: 130252  

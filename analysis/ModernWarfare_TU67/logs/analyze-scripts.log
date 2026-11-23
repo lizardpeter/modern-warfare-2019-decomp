@@ -1,19 +1,48 @@
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> JVM max heap: 13312 MB, processors: 4  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: Stack.Max Threads = 2  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Min absolute reference = 4  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Function parameter/return Pointer analysis = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Create Data from pointer = false  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: Stack.Create Local Variables = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis.Analysis Decompiler Timeout (sec) = 60  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Trust values read from writable memory = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Require pointer param data type = false  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Stored Value Pointer analysis = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: Stack = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference max = 256  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Max Threads = 2  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> set x86 Constant Reference Analyzer.Max Threads = 1  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis = true  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference min = 1024  
-2026-11-22 19:32:33 INFO  PrepAnalysis.java> option: Stack.Create Param Variables = false  
-2026-11-22 19:32:33 INFO  DropBlocks.java> DropBlocks: removing .text 15a192000-161f0e7ff (131581952 bytes)  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> JVM max heap: 13312 MB, processors: 4  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> two-stage: Decompiler Switch Analysis deferred to RunSwitchAnalysis.java  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer = true  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: Stack.Max Threads = 2  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Min absolute reference = 4  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Function parameter/return Pointer analysis = true  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Create Data from pointer = false  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: Stack.Create Local Variables = true  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis.Analysis Decompiler Timeout (sec) = 60  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Trust values read from writable memory = true  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Require pointer param data type = false  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Stored Value Pointer analysis = true  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: Stack = true  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference max = 256  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Max Threads = 2  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> set x86 Constant Reference Analyzer.Max Threads = 1  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis = false  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference min = 1024  
+2026-11-23 01:26:03 INFO  PrepAnalysis.java> option: Stack.Create Param Variables = false  
+2026-11-23 01:26:03 INFO  DropBlocks.java> DropBlocks: removing .text 15a192000-161f0e7ff (131581952 bytes)  
+2026-11-23 05:49:27 INFO  CreateTableFunctions.java> data pointers into code with no function: 13292 targets (25 more point inside a function)  
+2026-11-23 05:50:15 INFO  CreateTableFunctions.java> created 13285 functions; 3 targets not code, 0 could not be made functions  
+2026-11-23 05:50:31 INFO  ExportAll.java> exported 5000 functions  
+2026-11-23 05:50:35 INFO  ExportAll.java> exported 10000 functions  
+2026-11-23 05:50:37 INFO  ExportAll.java> exported 15000 functions  
+2026-11-23 05:50:40 INFO  ExportAll.java> exported 20000 functions  
+2026-11-23 05:50:42 INFO  ExportAll.java> exported 25000 functions  
+2026-11-23 05:50:45 INFO  ExportAll.java> exported 30000 functions  
+2026-11-23 05:50:47 INFO  ExportAll.java> exported 35000 functions  
+2026-11-23 05:50:47 INFO  ExportAll.java> exported 40000 functions  
+2026-11-23 05:50:47 INFO  ExportAll.java> exported 45000 functions  
+2026-11-23 05:51:06 INFO  ExportAll.java> exported 50000 functions  
+2026-11-23 05:51:11 INFO  ExportAll.java> exported 55000 functions  
+2026-11-23 05:51:15 INFO  ExportAll.java> exported 60000 functions  
+2026-11-23 05:51:18 INFO  ExportAll.java> exported 65000 functions  
+2026-11-23 05:51:23 INFO  ExportAll.java> exported 70000 functions  
+2026-11-23 05:51:27 INFO  ExportAll.java> exported 75000 functions  
+2026-11-23 05:51:31 INFO  ExportAll.java> exported 80000 functions  
+2026-11-23 05:51:35 INFO  ExportAll.java> exported 85000 functions  
+2026-11-23 05:51:44 INFO  ExportAll.java> exported 90000 functions  
+2026-11-23 05:51:49 INFO  ExportAll.java> exported 95000 functions  
+2026-11-23 05:51:54 INFO  ExportAll.java> exported 100000 functions  
+2026-11-23 05:51:56 INFO  ExportAll.java> exported 105000 functions  
+2026-11-23 05:51:59 INFO  ExportAll.java> exported 110000 functions  
+2026-11-23 05:52:02 INFO  ExportAll.java> exported 115000 functions  
+2026-11-23 05:52:04 INFO  ExportAll.java> exported 120000 functions  
+2026-11-23 05:52:05 INFO  ExportAll.java> exported 125000 functions  
+2026-11-23 05:52:07 INFO  ExportAll.java> functions: 129908  

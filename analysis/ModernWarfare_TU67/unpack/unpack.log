@@ -11,6 +11,6 @@ stub api VirtualProtect(15A144000+46200 -> 0x40)
 stub api VirtualProtect(15A18B000+6400 -> 0x40)
 stub api VirtualProtect(15A192000+7D7C800 -> 0x40)
 runtime api KERNEL32.dll!GetSystemTimeAsFileTime called from 14741E682 (.text)
-stopped after 435s: first runtime API call: KERNEL32.dll!GetSystemTimeAsFileTime; rdtsc calls 0
+stopped after 652s: first runtime API call: KERNEL32.dll!GetSystemTimeAsFileTime; rdtsc calls 0
 entry point 14741A28C is the CRT entry (sub rsp,28h / call), its tail patched by Arxan; left as is
 output ModernWarfare_TU67.exe sha256 42225cb22bd4af3d59aa667b685e80ab7a66a42554184664a26bc64c3a08e81c

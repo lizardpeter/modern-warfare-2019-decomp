@@ -1,0 +1,27 @@
+2026-11-23 20:40:59 INFO  Decompile.java> shard 5: 127793 exception-directory entries  
+2026-11-23 20:42:30 INFO  Decompile.java> shard 5: slow 1403D6640 90.1s (303640 bytes)  
+2026-11-23 20:42:52 INFO  Decompile.java> shard 5: 999 ok, 1 failed, 1634 skipped, 112s  
+2026-11-23 20:43:32 INFO  Decompile.java> shard 5: 1999 ok, 1 failed, 1634 skipped, 152s  
+2026-11-23 20:44:01 INFO  Decompile.java> shard 5: 2999 ok, 1 failed, 1634 skipped, 181s  
+2026-11-23 20:44:38 INFO  Decompile.java> shard 5: 3999 ok, 1 failed, 1634 skipped, 218s  
+2026-11-23 20:46:10 INFO  Decompile.java> shard 5: 4995 ok, 5 failed, 1634 skipped, 310s  
+2026-11-23 20:46:33 INFO  Decompile.java> shard 5: 5993 ok, 7 failed, 1634 skipped, 333s  
+2026-11-23 20:48:28 INFO  Decompile.java> shard 5: slow 1429BE280 40.7s (4750 bytes)  
+2026-11-23 20:49:11 INFO  Decompile.java> shard 5: 6993 ok, 7 failed, 1843 skipped, 491s  
+2026-11-23 20:50:02 INFO  Decompile.java> shard 5: 7993 ok, 7 failed, 1843 skipped, 542s  
+2026-11-23 20:50:56 INFO  Decompile.java> shard 5: 8993 ok, 7 failed, 1844 skipped, 596s  
+2026-11-23 20:53:06 INFO  Decompile.java> shard 5: slow 1435EE250 90.0s (11860 bytes)  
+2026-11-23 20:53:41 INFO  Decompile.java> shard 5: 9992 ok, 8 failed, 1848 skipped, 761s  
+2026-11-23 20:54:54 INFO  Decompile.java> shard 5: 10992 ok, 8 failed, 1848 skipped, 834s  
+2026-11-23 20:57:28 INFO  Decompile.java> shard 5: 11992 ok, 8 failed, 1885 skipped, 988s  
+2026-11-23 21:03:37 INFO  Decompile.java> shard 5: slow 145EA5C00 39.4s (59854 bytes)  
+2026-11-23 21:04:26 INFO  Decompile.java> shard 5: slow 146000430 37.2s (5781 bytes)  
+2026-11-23 21:05:49 INFO  Decompile.java> shard 5: slow 146118CE0 45.2s (57943 bytes)  
+2026-11-23 21:07:41 INFO  Decompile.java> shard 5: slow 14634EEC0 90.0s (16898 bytes)  
+2026-11-23 21:07:54 INFO  Decompile.java> shard 5: 12991 ok, 9 failed, 1885 skipped, 1614s  
+2026-11-23 21:09:45 INFO  Decompile.java> shard 5: 13990 ok, 10 failed, 1893 skipped, 1725s  
+2026-11-23 21:12:15 INFO  Decompile.java> shard 5: 14989 ok, 11 failed, 1893 skipped, 1875s  
+2026-11-23 21:13:03 INFO  Decompile.java> shard 5: 15989 ok, 11 failed, 1893 skipped, 1923s  
+2026-11-23 21:13:51 INFO  Decompile.java> shard 5: 16989 ok, 11 failed, 1893 skipped, 1971s  
+2026-11-23 21:14:36 INFO  Decompile.java> shard 5: 17989 ok, 11 failed, 1901 skipped, 2017s  
+2026-11-23 21:34:47 INFO  Decompile.java> shard 5 done: 18433 ok, 65 failed, 1901 skipped  
