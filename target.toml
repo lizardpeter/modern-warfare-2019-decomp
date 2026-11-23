@@ -35,7 +35,7 @@ sha256 = "e9a320b81b0892246f951b77939cdb20473c2d3fc348a6b02bdde84306bc087d"
 [[build]]
 id = "ModernWarfare_TU67"
 kind = "retail"
-analyze = true
+analyze = false  # analysed in Actions run 45093324856 (stage A 4.4 h, stage B 1.6 h); decompile with analysis_run
 protection = "arxan"
 version = "1.67 (title update 67, strings tu67 / general_8_67)"
 timestamp = "2024-05-13T20:53:26Z"

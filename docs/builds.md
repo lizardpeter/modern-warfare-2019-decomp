@@ -77,7 +77,16 @@ The code in them is control-flow flattened (a state variable set to hash constan
 compare chain) and carries Arxan opaque predicates: 3,188 `xor r,r; test r,r; jnz` that are never taken, 99
 `… jz` always taken and 39 `xor r,r; jnz`, whose fake edges Ghidra follows. Every function created inside an
 existing body makes Ghidra recompute that body, so thousands of creations inside multi-megabyte bodies cost time
-roughly quadratically. The fix (treating opaque branches as the one-way flow they are, and creating the functions
+roughly quadratically. **Decompile, first attempt.** All six shards hit the 350-min limit having reached only ~824 functions each (shard 0
+stopped at 140227284). All 1,696 functions in their logs with pcode errors are *fragments*: Ghidra functions inside
+an exception-directory entry, 1,593 at unaligned addresses, reached only by `jmp` from other functions
+(`mov [rsp+40h], <hash>; jmp <block>`, the flattened code's shared dispatcher blocks). Decompiling one follows the
+flow into the next function's bytes ("Unable to resolve constructor" at addresses outside the image) until the
+90-s timeout. Decompile.java now writes fragments as skipped (with the entry they lie in) instead of decompiling
+them, and logs any function over 30 s; publish.py marks them `fragment` in functions.tsv. The workflow's
+`analysis_run` input decompiles and publishes from an earlier run's saved analysis, so this does not redo 6 h of it.
+
+The fix (treating opaque branches as the one-way flow they are, and creating the functions
 inside these regions before their containing bodies are computed) is to be tried on these regions alone before the
 next full run.
 

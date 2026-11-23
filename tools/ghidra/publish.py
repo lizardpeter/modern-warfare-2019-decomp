@@ -126,7 +126,7 @@ def main():
         joined.append([
             va, g["size"], g["name"], (p or {}).get("name", ""), (mapobj.get(va) or {}).get("name", ""),
             grp, (p or {}).get("line", ""), g["thunk"], g["instructions"], g["bytes_sha256"],
-            "ok" if d and "c" in d else ("failed" if d else ("thunk" if g["thunk"] else "none")),
+            "ok" if d and "c" in d else ("fragment" if d and "skipped" in d else ("failed" if d else ("thunk" if g["thunk"] else "none"))),
         ])
 
     # Only replace what this run actually produced: a missing stage must never wipe earlier results.
@@ -143,7 +143,7 @@ def main():
             head = f"// {va}  {g['name']}  ({where})\n"
             d = decomp.get(va)
             if d is not None:
-                c_parts.append(head + (d.get("c") or f"// decompile failed: {d.get('error', '')}\n"))
+                c_parts.append(head + (d.get("c") or (f"// not decompiled: {d['skipped']}\n" if "skipped" in d else f"// decompile failed: {d.get('error', '')}\n")))
             if va in disasm:
                 a_parts.append(f"; {va}  {g['name']}  ({where})\n" + disasm[va])
         for sub, parts, ext in (("pseudocode", c_parts, ".c"), ("disasm", a_parts, ".asm")):
