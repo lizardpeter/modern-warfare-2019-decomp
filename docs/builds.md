@@ -50,6 +50,28 @@ analyzer but switch analysis with its timeout 55 min inside the step limit, so i
 times and saves the project; stage B (job `switches`) runs switch analysis alone on that project in a job of its
 own and exports again.
 
+Second run (45093324856), stage A: unpack 12 min (hash matched); auto-analysis **completed** in 15,799 s
+(4 h 23 min) against the 16,800 s limit; CreateTableFunctions and ExportAll then took 5 min: **129,908 functions**
+(`.pdata` has 127,829 entries). Ghidra's analyzer times (seconds):
+
+| analyzer | time |
+|---|---:|
+| Create Function | 14,104 |
+| x86 Constant Reference Analyzer (1 thread) | 717 |
+| Stack | 466 |
+| Disassemble Entry Points | 157 |
+| Scalar Operand References | 88 |
+| Create Address Tables - One Time | 56 |
+| Function ID | 46 |
+| everything else | < 35 each |
+
+Create Function is 89% of the analysis and normally one of the cheap analyzers. Its cost here is not understood yet
+and is the thing to fix before the next full run (the margin was 17 min): the suspects are the Arxan sequences inlined
+into game functions (`pushfq; push rcx; … call` into the dropped Arxan section) that make Ghidra recompute function
+bodies repeatedly, and the 1,000-odd functions Ghidra cannot create ("body contains referring thunk"). Also logged:
+Ghidra's own WindowsResourceReference script throws a NumberFormatException on one resource entry (harmless to the
+analysis).
+
 Use: the final target. The data files come from the TU63 install, which matches TU67 in format; where a later patch
 changed a zone's content (not its format), the TU63 file is what we have.
 
