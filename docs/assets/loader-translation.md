@@ -31,28 +31,47 @@ same translation: Forge reads only the original game files.
    resolved once: integer widths and signedness, pointer arithmetic scaled by the pointee size, Ghidra's `goto`s.
 2. Globals of undefined type take the type Ghidra used in that function (from an uncast assignment to or from a
    typed local), else the data type Ghidra recorded for that address (`analysis/<build>/ghidra/symbols.tsv`). Both
-   matter: `&DAT_153607178 + block * 2` is only right with 153607178's recorded 4-byte type.
+   matter: `&DAT_153607178 + block * 2` is only right with 153607178's recorded 4-byte type. A name Ghidra writes
+   as `_DAT_x` or `uRam…` is an access of another size than the symbol recorded there (Ghidra's own warning:
+   "Globals starting with '_' overlap smaller symbols at the same address"), so its size is the stored value's:
+   143760420 writes the 8-byte block bases as `_DAT_153607110 = param_1[4]` over a 1-byte symbol.
 3. The stream primitives (Load_Stream, push/pop, align, offsets, alias slots) run from their decompiled C too; only
    the same stand-ins as the emulator are Python (file read, DB_AddXAsset and wrappers, SL_GetString, cancel
    checks, renderer calls). Memory uses the emulator's addresses, so every block and the asset pool compare byte
    for byte.
 
-The prototype loads correctly up to the first script string of a zone, then diverges. The cause is in the
-decompiled C, not the translation: **calls that lose arguments**. 459 of the 8,393 calls in the reachable loaders
-pass fewer arguments than the callee takes. Most are harmless (Load_Stream called with its "already read" flag and
-no size), but some are not: after a −2 string marker, 142E44F10 calls `FUN_143760b30()` with no argument where
-the code passes the string's field in RCX. Ghidra decompiled every function separately without committed
-signatures, so each call's arguments were guessed from the caller alone.
+**Results.** After the signature fix below, the translated loaders load these zones from the original files with
+**every block and the asset pool byte for byte equal to the game's own code in the emulator**:
 
-**Fix:** the decompile stage now first commits the decompiler's own parameter and return types for the loader
-range, the load primitives and the asset wrappers (tools/ghidra/CommitSignatures.java, ranges in target.toml
-`commit_signatures`), then decompiles, so the published pseudocode has complete calls.
+| Zone | Assets | Time (Python) |
+|---|---|---|
+| `mp_vh_c_s4_vm_mp_aus_lucas_02_lod0_tr` (viewmodel arms) | 77 | 1.1 s |
+| `mp_bd_body_mp_western_t9esports_1_10_1_lod1_l15_tr` (body) | 73 | 1.0 s |
+| `mp_hd_head_mp_eastern_golem_1_1_blendshape_l15_tr` (head) | 23 | 1.1 s |
+
+The patched `mp_t_gun_course` diverges at read 55,507 (stream 0x2A0AB1, inside an xmodelsurfs): see the second
+signature problem below.
+
+**Signature problem 1: calls that lose arguments.** In the first published pseudocode, 459 of the 8,393 calls in
+the reachable loaders passed fewer arguments than the callee takes. Most were harmless (Load_Stream called with
+its "already read" flag and no size), but not all: after a −2 string marker, 142E44F10 called `FUN_143760b30()` with
+no argument where the code passes the string's field in RCX. Ghidra had decompiled every function separately
+without committed signatures, so each call's arguments were guessed from the caller alone. Fix: the decompile stage
+first commits the decompiler's own parameter and return types for the loader range, the load primitives and the
+asset wrappers (tools/ghidra/CommitSignatures.java, ranges in target.toml `commit_signatures`). After it: 1 such
+call left, to a renderer function the translation drops.
+
+**Signature problem 2: pass-through parameters.** 142EA60F0 passes its RCX (the "already read" flag) untouched to
+142EB0430, which hands it to Load_Stream; its caller sets `ecx = 1` (142EA5D7D). Committed in address order, it was
+decompiled before 142EB0430's parameter was known, so it was committed as taking nothing (`in_RCX` in its body) and
+its caller dropped the 1: the translation then read 8 bytes the game does not. Five reachable loaders show such an
+`in_RCX` (142E06230, 142E2E0A0, 142E2E6D0, 142EA60F0, 142EAB290). Fix: commit callees before their callers
+(post-order over the calls inside the ranges).
 
 ## Next
 
-1. Re-run the decompile stage from the saved analysis and confirm the dropped arguments are gone.
-2. Run the translated loaders on whole zones until every block and the pool equal the emulator's
-   (`mp_vh_c_s4_vm_mp_aus_lucas_02_lod0_tr`, then the body and head zones, then `mp_t_gun_course`).
+1. Re-decompile with callee-first signatures; confirm no reachable loader has an `in_` argument register.
+2. Continue on `mp_t_gun_course` until every block and the pool equal the emulator's.
 3. Generate the reader from the translation instead of interpreting it (Python first, then Rust for Forge), with
    the stand-ins replaced by the plain reader's own implementations of the primitives, each documented in
    zones.md 8.

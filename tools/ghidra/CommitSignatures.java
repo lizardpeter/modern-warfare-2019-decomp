@@ -20,6 +20,10 @@ import ghidra.program.model.pcode.HighFunction;
 import ghidra.program.model.pcode.HighFunctionDBUtil;
 import ghidra.program.model.pcode.HighFunctionDBUtil.ReturnCommitOption;
 import ghidra.program.model.symbol.SourceType;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CommitSignatures extends GhidraScript {
 	@Override
@@ -38,11 +42,18 @@ public class CommitSignatures extends GhidraScript {
 		if (!ifc.openProgram(currentProgram)) {
 			throw new IllegalStateException("decompiler failed to open program: " + ifc.getLastMessage());
 		}
+		List<Function> order = new ArrayList<>();
+		Set<Function> seen = new HashSet<>();
+		FunctionIterator all = currentProgram.getFunctionManager().getFunctions(set, true);
+		while (all.hasNext()) {
+			postOrder(all.next(), set, seen, order);
+		}
 		for (int pass = 1; pass <= passes; pass++) {
 			int done = 0, failed = 0;
-			FunctionIterator it = currentProgram.getFunctionManager().getFunctions(set, true);
-			while (it.hasNext() && !monitor.isCancelled()) {
-				Function f = it.next();
+			for (Function f : order) {
+				if (monitor.isCancelled()) {
+					break;
+				}
 				DecompileResults r = ifc.decompileFunction(f, 60, monitor);
 				HighFunction h = r == null ? null : r.getHighFunction();
 				if (h == null) {
@@ -62,5 +73,28 @@ public class CommitSignatures extends GhidraScript {
 			println(String.format("CommitSignatures pass %d: %d committed, %d failed", pass, done, failed));
 		}
 		ifc.dispose();
+	}
+
+	/** Callees (inside the ranges) before the function itself; iterative, as call chains can be deep. */
+	private void postOrder(Function root, AddressSet set, Set<Function> seen, List<Function> order) {
+		if (!seen.add(root)) {
+			return;
+		}
+		List<Object[]> stack = new ArrayList<>();
+		stack.add(new Object[] { root, new ArrayList<>(root.getCalledFunctions(monitor)).iterator() });
+		while (!stack.isEmpty()) {
+			Object[] top = stack.get(stack.size() - 1);
+			@SuppressWarnings("unchecked")
+			java.util.Iterator<Function> it = (java.util.Iterator<Function>) top[1];
+			if (it.hasNext()) {
+				Function c = it.next();
+				if (set.contains(c.getEntryPoint()) && seen.add(c)) {
+					stack.add(new Object[] { c, new ArrayList<>(c.getCalledFunctions(monitor)).iterator() });
+				}
+			} else {
+				order.add((Function) top[0]);
+				stack.remove(stack.size() - 1);
+			}
+		}
 	}
 }
