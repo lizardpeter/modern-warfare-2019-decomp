@@ -83063,7 +83063,7 @@ undefined8 FUN_143c9ee60(void)
   ulonglong uVar6;
   ulonglong local_res8;
   
-  FUN_142df7800();
+  FUN_142df7800(3,8,*(undefined8 *)(DAT_15544d620 + 0x10),1);
   if (extraout_EAX == -0x1000001) {
                     /* WARNING: Call to offcut address within same function */
     func_0x000143c9ee90();
@@ -83079,7 +83079,7 @@ undefined8 FUN_143c9ee60(void)
     *puVar4 = uVar3 >> 3;
     puVar4[1] = (ulonglong)(puVar4 + 2);
     local_res8 = 0;
-    uVar6 = FUN_142df6e20(extraout_EAX,puVar4[1],uVar6,(longlong *)&local_res8);
+    uVar6 = FUN_142df6e20(extraout_EAX,puVar4[1],uVar6,&local_res8);
     FUN_142df6c10(extraout_EAX);
     if ((uVar6 == uVar3) && (local_res8 == uVar3)) {
       puVar5 = (ulonglong *)puVar4[1];

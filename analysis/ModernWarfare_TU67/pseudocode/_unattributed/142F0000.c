@@ -112730,12 +112730,13 @@ void FUN_142fd1d50(void)
   else {
     plVar5 = (longlong *)FUN_142df7090(3);
     iVar4 = (**(code **)(*plVar5 + 8))(plVar5);
-    if ((iVar4 == 3) && (FUN_142df7800(), extraout_EAX != -0x1000001)) {
+    if ((iVar4 == 3) && (FUN_142df7800(3,0,"techsets_manifest.csv",1), extraout_EAX != -0x1000001))
+    {
       FUN_14322bd20(local_180,0x7000);
       uVar12 = FUN_142df6e00(extraout_EAX);
       if (uVar12 < 0x7001) {
         local_198 = CONCAT44(local_198._4_4_,8);
-        uVar10 = FUN_142df6e20(extraout_EAX,local_180[0],uVar12,(longlong *)0x0);
+        uVar10 = FUN_142df6e20(extraout_EAX,local_180[0],uVar12,(ulonglong *)0x0);
         FUN_142df6c10(extraout_EAX);
         if (uVar10 == uVar12) {
           FUN_143f6cdd0(&DAT_1477e8bc8);

@@ -63161,7 +63161,7 @@ undefined8 FUN_146d75720(undefined8 param_1,char *param_2,longlong param_3,void 
   ulonglong uVar3;
   
   if (*param_2 != '\0') {
-    FUN_142df7800();
+    FUN_142df7800(3,0,param_2,0x11);
     *(int *)(param_2 + 0x10c) = extraout_EAX;
     if (extraout_EAX != -0x1000001) {
       lVar2 = FUN_142df6e00(extraout_EAX);
