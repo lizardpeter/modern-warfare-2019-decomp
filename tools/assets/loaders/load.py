@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 """Load a zone with the translated loaders: TU67's decompiled C, compiled to Python (docs/assets/loader-translation.md).
 
-    python3 tools/assets/loaders/load.py <unpacked TU67 exe> <zone.ff> <oo2core_7_win64.dll> [--fp <zone.fp>]
+    python3 tools/assets/loaders/load.py <zone.ff> <oo2core_7_win64.dll> [--fp <zone.fp>]
 
 Everything that reads the zone is the game's own code as Ghidra decompiled it (analysis/ModernWarfare_TU67/
 pseudocode), run with the decompiler's types; only the stand-ins in stand_ins.py are Python, the same ones the
 emulator check uses. Memory uses the emulator's addresses so the two compare byte for byte (tests/assets/
 loaders_check.py).
 
-The exe is still needed for one thing: the initial contents of the globals the loaders read before writing them.
-Recording those values so the reader needs only the game's data files is the next step.
+Needs only the game's data files: memory starts zeroed. The loaders read no value from the exe image before writing
+it, except bytes that are zero there (tests/assets/loaders_check.py verifies this on every zone it checks).
 """
 import struct
 import sys
 from pathlib import Path
-
-import pefile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -27,25 +25,13 @@ from source import pseudocode, recorded_types  # noqa: E402
 _SOURCE = None
 
 
-def image_backing(exe_path):
-    pe = pefile.PE(exe_path, fast_load=True)
-    secs = [(S.IMAGE + s.VirtualAddress, s.get_data()) for s in pe.sections]
-
-    def backing(a, n):
-        for base, d in secs:
-            if base <= a < base + len(d):
-                return (d[a - base:a - base + n] + bytes(n))[:n]
-        return None
-    return backing
-
-
 class ZoneLoad:
-    def __init__(self, exe_path, data, header):
+    def __init__(self, data, header, mem=None):
         global _SOURCE
         if _SOURCE is None:
             _SOURCE = (pseudocode(), recorded_types())
         src, rec = _SOURCE
-        self.mem = Mem(image_backing(exe_path))
+        self.mem = mem if mem is not None else Mem()
         self.data, self.pos = data, 0
         self.types = S.asset_types()
         self.strings, self.assets = [], []
@@ -128,7 +114,6 @@ def main():
     import zone
     from oodle import Oodle
     ap = argparse.ArgumentParser()
-    ap.add_argument('exe')
     ap.add_argument('zone')
     ap.add_argument('oodle')
     ap.add_argument('--fp')
@@ -143,7 +128,7 @@ def main():
     else:
         header, data = ff[:zone.HEADER_SIZE], zone.decompress(ff, o)
     t = time.time()
-    z = ZoneLoad(a.exe, data, header)
+    z = ZoneLoad(data, header)
     z.load()
     print(f'{len(z.strings)} script strings, {len(z.assets)} assets, stream at {z.pos:#x} of {len(data):#x}, '
           f'{time.time() - t:.1f} s')

@@ -29,6 +29,9 @@ SKIPPED = {
     0x14661AB10: "renderer: create an index buffer (u16 indices, e.g. 'bsp index buffer')",
     0x14661ABA0: "renderer: create an index buffer from a byte size",
     0x1466A4350: "renderer: create a texture (reads width/height/depth at +0xC/+0x10/+0xE, mips at +0x14)",
+    0x146590BC0: "renderer: decrypt a GPU buffer's debug name (XOR string at 14A483F58) and create the buffer",
+    0x146590C50: "renderer: fill +0x130 with renderer pool indices (143118EC0 / 143118EA0: position in the renderer's "
+                 "own resource pools) and create that GPU buffer, named by an XOR string at 14A483F28",
 }
 # the 19 wrappers around DB_AddXAsset, by the type each passes: each takes a pointer to the header pointer, adds
 # the asset and replaces the pointer, then starts the type's renderer, sound or streaming setup (not reproduced)

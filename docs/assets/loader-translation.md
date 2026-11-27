@@ -51,6 +51,15 @@ same translation: Forge reads only the original game files.
 | `mp_hd_head_mp_eastern_golem_1_1_blendshape_l15_tr` (head) | 23 | 2.8 s |
 | patched `mp_t_gun_course` (a whole map: 296 MB, 12,235 assets) | 12,235 | 164 s |
 
+**No exe at run time.** The translated loaders start from zeroed memory and take nothing from the exe. Measured with
+loaders_check.py, which records every byte of the exe image the loaders read before writing it: on all four zones
+each such byte (1,265 to 5,774 of them) is zero in the exe. The only non-zero ones were 76 bytes of two XOR-encrypted
+debug strings (8-byte keys at 14A483F28 and 14A483F58, then a u32 whose top byte flags "still encrypted"), decrypted
+by 146590BC0 and 146590C50 to name GPU buffers. Those two functions are renderer setup: they name and create GPU
+buffers, and 146590C50 also fills +0x130 with positions in the renderer's own resource pools (143118EC0 / 143118EA0:
+`(p - pool base) / 0x68`, `>> 4`), values computed at load and not read from the file. They are now in the
+stand-ins' skipped list, for the emulator check too.
+
 The only bytes skipped are 16 the game itself never initialises (records/bugs.tsv B0001): 142DFEDA0 copies a
 stack block whose bytes `[rsp+0x4C..0x4F]` it never writes into each deferred command's record (+0xC..+0xF), and
 142DEDDA0 writes only the low half of the list entry's 8-byte field at +8. Their value is whatever was on the stack.
@@ -93,10 +102,7 @@ recorded too; the types alone were enough so far.
 
 ## Next
 
-1. **No exe at run time.** The translated loaders still take the initial values of the globals they read before
-   writing from the exe image; record those (and only those) as generated data, so the reader needs only the game's
-   data files.
-2. **Generate code instead of compiling at run time**, then port the generator's output to Rust for Forge. The
+1. **Generate code instead of compiling at run time**, then port the generator's output to Rust for Forge. The
    stand-ins become the reader's own documented primitives (zones.md 8).
-3. More zones as the remaining archives arrive (weapons: `common_mp`), each run through loaders_check.py.
-4. Speed: 164 s for a 296 MB map in Python; the generated code should be much faster.
+2. More zones as the remaining archives arrive (weapons: `common_mp`), each run through loaders_check.py.
+3. Speed: 164 s for a 296 MB map in Python; the generated code should be much faster.

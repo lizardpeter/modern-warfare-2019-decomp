@@ -4,7 +4,8 @@
     python3 tests/assets/loaders_check.py <unpacked TU67 exe> <zone.ff> <oo2core_7_win64.dll> [--fp <zone.fp>]
         [--decompressed <data>]
 
-Passes when both read the zone to its end, add the same assets with the same script strings, and every stream block
+Passes when the translated loaders, which start from zeroed memory, read no byte of the exe image before writing it
+unless that byte is zero in the exe (so they need nothing from it), when both read the zone to its end, add the same assets with the same script strings, and every stream block
 and the asset pool are byte for byte equal, except the bytes the game leaves uninitialised (stand_ins.py,
 records/bugs.tsv B0001).
 """
@@ -21,7 +22,42 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import stand_ins as S  # noqa: E402
 import zone  # noqa: E402
 import zone_emu  # noqa: E402
+from c_model import Mem  # noqa: E402
 from load import ZoneLoad  # noqa: E402
+
+
+class ImageWatch(Mem):
+    """Zeroed memory that records every byte of the exe image read before anything wrote it."""
+
+    def __init__(self, image_start, image_end):
+        super().__init__()
+        self.lo, self.hi = image_start, image_end
+        self.written = {}         # image page -> bytearray of written flags
+        self.unwritten_reads = set()
+
+    def _flags(self, a):
+        p = a & ~(self.PAGE - 1)
+        f = self.written.get(p)
+        if f is None:
+            f = self.written[p] = bytearray(self.PAGE)
+        return p, f
+
+    def read(self, a, n):
+        if a < self.hi and a + n > self.lo:
+            for i in range(n):
+                if self.lo <= a + i < self.hi:
+                    p, f = self._flags(a + i)
+                    if not f[a + i - p]:
+                        self.unwritten_reads.add(a + i)
+        return super().read(a, n)
+
+    def write(self, a, b):
+        if a < self.hi and a + len(b) > self.lo:
+            for i in range(len(b)):
+                if self.lo <= a + i < self.hi:
+                    p, f = self._flags(a + i)
+                    f[a + i - p] = 1
+        super().write(a, b)
 from oodle import Oodle  # noqa: E402
 
 
@@ -35,6 +71,15 @@ def undefined_bytes(z):
         record = struct.unpack('<Q', z.mem.read(entry, 8))[0]
         out.update(record + k for k in S.UNDEFINED_COMMAND_DATA)
     return out
+
+
+def exe_byte(pe, a):
+    rva = a - S.IMAGE
+    for s in pe.sections:
+        if s.VirtualAddress <= rva < s.VirtualAddress + max(s.Misc_VirtualSize, s.SizeOfRawData):
+            d = s.get_data()
+            return d[rva - s.VirtualAddress] if rva - s.VirtualAddress < len(d) else 0
+    return 0
 
 
 def main():
@@ -54,8 +99,11 @@ def main():
     else:
         header = ff[:zone.HEADER_SIZE]
         data = Path(a.decompressed).read_bytes() if a.decompressed else zone.decompress(ff, Oodle(a.oodle))
+    import pefile
+    pe = pefile.PE(a.exe, fast_load=True)
     t = time.time()
-    z = ZoneLoad(a.exe, data, header)
+    watch = ImageWatch(S.IMAGE, S.IMAGE + pe.OPTIONAL_HEADER.SizeOfImage)
+    z = ZoneLoad(data, header, watch)
     z.load()
     print(f'translated loaders: {len(z.assets)} assets, stream {z.pos:#x} of {len(data):#x}, {time.time() - t:.1f} s')
     e = zone_emu.ZoneEmu(a.exe, data, header)
@@ -63,6 +111,10 @@ def main():
     print(f'game code (emulator): {len(e.assets)} assets, stream {e.pos:#x}')
     ok = z.pos == e.pos == len(data) and z.strings == e.strings and \
         [(t, p) for t, _, p in z.assets] == [(t, p) for t, _, p in e.assets]
+    needed = [x for x in sorted(watch.unwritten_reads) if exe_byte(pe, x)]
+    print(f'exe image: {len(watch.unwritten_reads)} bytes read before written, '
+          f'{len(needed)} of them non-zero in the exe' + (f' (first {needed[0]:X})' if needed else ''))
+    ok = ok and not needed
     skip = undefined_bytes(z)
     regions = [(f'block {k}', base, size) for k, (base, size) in enumerate(z.blocks) if size]
     regions.append(('pool', S.POOL, z.pool - S.POOL))
