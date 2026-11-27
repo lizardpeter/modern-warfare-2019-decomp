@@ -144,7 +144,9 @@ def main():
             d = decomp.get(va)
             if d is not None:
                 # the decompiler's type for each global the function uses (Decompile.java "globals")
-                gl = "".join(f"// global {n} {a} {t} ({sz})\n" for n, a, t, sz in d.get("globals", []))
+                gl = "".join(f"// global {g_[0]} {g_[1] or '-'} {g_[2] or '-'} {g_[3] or '-'} ({g_[4]})\n"
+                             for g_ in d.get("globals", []))
+                gl += "".join(f"// ptradd {k} {a} {i} {es}\n" for k, a, i, es in d.get("ptradd", []))
                 c_parts.append(head + gl + (d.get("c") or (f"// not decompiled: {d['skipped']}\n" if "skipped" in d else f"// decompile failed: {d.get('error', '')}\n")))
             if va in disasm:
                 a_parts.append(f"; {va}  {g['name']}  ({where})\n" + disasm[va])

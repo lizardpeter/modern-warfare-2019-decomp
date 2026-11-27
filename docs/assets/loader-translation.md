@@ -71,10 +71,12 @@ its caller dropped the 1: the translation then read 8 bytes the game does not. F
 **Global types.** The C text never declares globals, and a global's type decides what pointer arithmetic on it
 means. In 142E45450 `DAT_14bce6f30 + 0x1a` is byte 0x68 (the code: `add rax, 0x68`) because the decompiler typed
 that global `int *` there, while its recorded type is undefined8 and no typed local reveals it. Inferring such types
-from the text would guess; Decompile.java now records the decompiler's own type for every global each function uses,
-and publish.py writes them as `// global <name> <address> <type> (<size>)` lines above the function. They come from
-the variable tokens of the C output (each carries its HighGlobal and type): the HighFunction's global symbol map was
-tried first and is empty for these functions, as it holds only globals the decompiler named itself, not `DAT_` labels.
+from the text would guess, so the decompiler is asked. Two attempts recorded nothing: the HighFunction's global
+symbol map, then the HighGlobal behind each variable token of the C output (both empty for these functions: the
+decompiler names `DAT_` labels without making them typed globals). Decompile.java now records, per function, every
+variable token whose storage is memory (name, address, HighVariable kind, type) and every pointer addition in the
+high p-code whose base is a global (`PTRADD`/`PTRSUB`, with the element size, which is exactly what `G + n` means);
+publish.py writes them as `// global …` and `// ptradd …` lines above the function.
 
 **Ghidra's pseudo-operators and widths.** `CONCATxy`, `SUBxy`, `ZEXTxy`, `SEXTxy` and partial accesses `v._N_M_` are
 given their documented meaning; Ghidra's odd-sized integers (`uint3`, `undefined7`, …) keep their real width.

@@ -38,6 +38,10 @@ import ghidra.app.decompiler.ClangVariableToken;
 import ghidra.program.model.pcode.HighGlobal;
 import ghidra.program.model.pcode.HighVariable;
 import ghidra.program.model.pcode.Varnode;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.PcodeOp;
+import ghidra.program.model.pcode.PcodeOpAST;
+import java.util.Iterator;
 import ghidra.program.model.mem.Memory;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
@@ -107,8 +111,10 @@ public class Decompile extends GhidraScript {
 				}
 				if (r != null && r.decompileCompleted() && r.getDecompiledFunction() != null) {
 					o.addProperty("c", r.getDecompiledFunction().getC());
-					// every global as the decompiler typed it, from the C output's own tokens (the global symbol map
-					// holds only globals the decompiler named itself, not DAT_ labels)
+					// every global as the decompiler typed it. The C text never declares globals, so for each
+					// variable token whose storage is memory (not a register or the stack) record its name, address,
+					// the HighVariable kind and its data type; and for every pointer addition in the high p-code
+					// (PTRADD / PTRSUB) whose base is such a global, the element size, which is what `G + n` means.
 					JsonArray g = new JsonArray();
 					java.util.Set<String> seen = new java.util.HashSet<>();
 					java.util.ArrayList<ClangNode> toks = new java.util.ArrayList<>();
@@ -117,23 +123,53 @@ public class Decompile extends GhidraScript {
 						if (!(n instanceof ClangVariableToken)) {
 							continue;
 						}
-						HighVariable hv = ((ClangVariableToken) n).getHighVariable();
-						if (!(hv instanceof HighGlobal)) {
+						ClangVariableToken t = (ClangVariableToken) n;
+						Varnode vn = t.getVarnode();
+						HighVariable hv = t.getHighVariable();
+						if (hv != null && hv.getRepresentative() != null) {
+							vn = vn == null ? hv.getRepresentative() : vn;
+						}
+						boolean mem = vn != null && vn.getAddress().isMemoryAddress();
+						boolean glob = hv instanceof HighGlobal;
+						if (!mem && !glob) {
 							continue;
 						}
-						String name = ((ClangVariableToken) n).getText();
-						if (!seen.add(name)) {
+						String key = t.getText() + "|" + (hv == null ? "" : hv.getDataType().getDisplayName());
+						if (!seen.add(key)) {
 							continue;
 						}
-						Varnode rep = hv.getRepresentative();
 						JsonArray e = new JsonArray();
-						e.add(name);
-						e.add(rep == null ? "" : rep.getAddress().toString());
-						e.add(hv.getDataType().getDisplayName());
-						e.add(hv.getDataType().getLength());
+						e.add(t.getText());
+						e.add(vn == null ? "" : vn.getAddress().toString());
+						e.add(hv == null ? "" : hv.getClass().getSimpleName());
+						e.add(hv == null ? "" : hv.getDataType().getDisplayName());
+						e.add(hv == null ? 0 : hv.getDataType().getLength());
 						g.add(e);
 					}
 					o.add("globals", g);
+					JsonArray pa = new JsonArray();
+					HighFunction hf = r.getHighFunction();
+					if (hf != null) {
+						Iterator<PcodeOpAST> ops = hf.getPcodeOps();
+						while (ops.hasNext()) {
+							PcodeOpAST op = ops.next();
+							int oc = op.getOpcode();
+							if (oc != PcodeOp.PTRADD && oc != PcodeOp.PTRSUB) {
+								continue;
+							}
+							Varnode base = op.getInput(0);
+							if (base == null || !base.getAddress().isMemoryAddress()) {
+								continue;
+							}
+							JsonArray e = new JsonArray();
+							e.add(oc == PcodeOp.PTRADD ? "PTRADD" : "PTRSUB");
+							e.add(base.getAddress().toString());
+							e.add(op.getInput(1).isConstant() ? op.getInput(1).getOffset() : -1);
+							e.add(oc == PcodeOp.PTRADD ? op.getInput(2).getOffset() : 1);
+							pa.add(e);
+						}
+					}
+					o.add("ptradd", pa);
 					ok++;
 				}
 				else {
