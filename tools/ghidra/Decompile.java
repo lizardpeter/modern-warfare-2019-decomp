@@ -14,12 +14,18 @@
 // functions (`mov [rsp+40h], <hash>; jmp <block>`); Ghidra makes those blocks functions, and decompiling one runs
 // into the next function's bytes until the timeout. On TU67 they stalled every shard (docs/builds.md). Real leaf and
 // tail-called functions are unaffected: they start an exception entry, are called, or are referenced as data.
+//
+// Each decompiled function also gets "globals": the decompiler's own data type for every global it reads or writes
+// ([name, hex address, type, size]). The C text does not declare globals, and their types decide what the C means:
+// in 142E45450 `DAT_14bce6f30 + 0x1a` is 0x68 bytes because the decompiler typed that global `int *`, though its
+// recorded type is undefined8. The loader translation needs them (docs/assets/loader-translation.md).
 //@category IW8
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import ghidra.app.decompiler.DecompInterface;
@@ -27,6 +33,9 @@ import ghidra.app.decompiler.DecompileOptions;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.HighSymbol;
+import java.util.Iterator;
 import ghidra.program.model.mem.Memory;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
@@ -96,6 +105,21 @@ public class Decompile extends GhidraScript {
 				}
 				if (r != null && r.decompileCompleted() && r.getDecompiledFunction() != null) {
 					o.addProperty("c", r.getDecompiledFunction().getC());
+					HighFunction h = r.getHighFunction();
+					if (h != null) {
+						JsonArray g = new JsonArray();
+						Iterator<HighSymbol> it = h.getGlobalSymbolMap().getSymbols();
+						while (it.hasNext()) {
+							HighSymbol s = it.next();
+							JsonArray e = new JsonArray();
+							e.add(s.getName());
+							e.add(s.getStorage().getMinAddress() == null ? "" : s.getStorage().getMinAddress().toString());
+							e.add(s.getDataType().getDisplayName());
+							e.add(s.getDataType().getLength());
+							g.add(e);
+						}
+						o.add("globals", g);
+					}
 					ok++;
 				}
 				else {

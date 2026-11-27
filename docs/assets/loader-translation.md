@@ -68,6 +68,20 @@ its caller dropped the 1: the translation then read 8 bytes the game does not. F
 `in_RCX` (142E06230, 142E2E0A0, 142E2E6D0, 142EA60F0, 142EAB290). Fix: commit callees before their callers
 (post-order over the calls inside the ranges).
 
+**Global types.** The C text never declares globals, and a global's type decides what pointer arithmetic on it
+means. In 142E45450 `DAT_14bce6f30 + 0x1a` is byte 0x68 (the code: `add rax, 0x68`) because the decompiler typed
+that global `int *` there, while its recorded type is undefined8 and no typed local reveals it. Inferring such types
+from the text would guess; Decompile.java now records the decompiler's own type for every global each function uses,
+and publish.py writes them as `// global <name> <address> <type> (<size>)` lines above the function.
+
+**Ghidra's pseudo-operators and widths.** `CONCATxy`, `SUBxy`, `ZEXTxy`, `SEXTxy` and partial accesses `v._N_M_` are
+given their documented meaning; Ghidra's odd-sized integers (`uint3`, `undefined7`, …) keep their real width.
+Library code Ghidra cannot render (the CRT's hand-written `memcpy` at 1474213E0) gets its standard meaning.
+
+Progress on the patched `mp_t_gun_course` after the callee-first signatures: identical reads up to read 372,705
+(stream 0xD726F81 of 0x11AC2F37, asset 7,676, a 0x55 asset whose bone entries hold xanimcurve references), where
+the global-type problem above makes the translation skip them.
+
 ## Next
 
 1. Re-decompile with callee-first signatures; confirm no reachable loader has an `in_` argument register.

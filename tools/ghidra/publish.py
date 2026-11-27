@@ -143,7 +143,9 @@ def main():
             head = f"// {va}  {g['name']}  ({where})\n"
             d = decomp.get(va)
             if d is not None:
-                c_parts.append(head + (d.get("c") or (f"// not decompiled: {d['skipped']}\n" if "skipped" in d else f"// decompile failed: {d.get('error', '')}\n")))
+                # the decompiler's type for each global the function uses (Decompile.java "globals")
+                gl = "".join(f"// global {n} {a} {t} ({sz})\n" for n, a, t, sz in d.get("globals", []))
+                c_parts.append(head + gl + (d.get("c") or (f"// not decompiled: {d['skipped']}\n" if "skipped" in d else f"// decompile failed: {d.get('error', '')}\n")))
             if va in disasm:
                 a_parts.append(f"; {va}  {g['name']}  ({where})\n" + disasm[va])
         for sub, parts, ext in (("pseudocode", c_parts, ".c"), ("disasm", a_parts, ".asm")):
