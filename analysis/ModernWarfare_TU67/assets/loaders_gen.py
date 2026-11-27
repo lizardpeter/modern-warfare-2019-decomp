@@ -8188,7 +8188,7 @@ def F_14311AE00(a0=0, *_):
             _t3 = ((_s((_ld(v_param_1, 8, True)) + (0x30), 64)) & 0xffffffffffffffff)
             _t4 = ((v_param_1) & 0xffffffffffffffff)
             _st(_t3, 8, _t4)
-            R.untranslated(0x143c9f190)
+            H[0x143c9f190](R, [_ld(v_param_1, 8, True)])
             return 0
         return 0
         return 0

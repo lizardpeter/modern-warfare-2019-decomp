@@ -38,6 +38,8 @@ SKIPPED = {
     0x1467247D0: "renderer: create a pixel shader from its bytecode (+0x18 data, +0x20 size)",
     0x146724800: "renderer: create a vertex shader from its bytecode (+0x18 data, +0x20 size)",
     0x146724830: "renderer: an empty function (returns at once)",
+    0x143C9F190: "runtime: run the registration callbacks of a loaded terrain piece (14311AE00 after it stores the "
+                 "owner at +0x30; table 14A3E3CC0 by the kind at +0x3C, when +0x3D bit 2 is set)",
     0x146724840: "renderer: create the GPU constant buffers of a technique's passes (14661AF70); writes their handles "
                  "into the loaded data (+0x30 / +0x68 of each entry of +0x68), runtime values left zero here",
     0x1467249E0: "renderer: register a loaded image (142E85450's) with the image streamer (142FCE290); also sets "
