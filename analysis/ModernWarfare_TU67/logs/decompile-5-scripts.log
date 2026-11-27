@@ -1,30 +1,29 @@
-2026-11-27 07:01:26 INFO  CommitSignatures.java> CommitSignatures pass 1: 3356 committed, 0 failed  
-2026-11-27 07:03:08 INFO  CommitSignatures.java> CommitSignatures pass 2: 3356 committed, 0 failed  
-2026-11-27 07:03:08 INFO  Decompile.java> shard 5: 127793 exception-directory entries  
-2026-11-27 07:04:39 INFO  Decompile.java> shard 5: slow 1403D6640 90.1s (303640 bytes)  
-2026-11-27 07:04:58 INFO  Decompile.java> shard 5: 999 ok, 1 failed, 1634 skipped, 109s  
-2026-11-27 07:05:36 INFO  Decompile.java> shard 5: 1999 ok, 1 failed, 1634 skipped, 147s  
-2026-11-27 07:06:03 INFO  Decompile.java> shard 5: 2999 ok, 1 failed, 1634 skipped, 174s  
-2026-11-27 07:06:36 INFO  Decompile.java> shard 5: 3999 ok, 1 failed, 1634 skipped, 207s  
-2026-11-27 07:07:58 INFO  Decompile.java> shard 5: 4995 ok, 5 failed, 1634 skipped, 289s  
-2026-11-27 07:08:17 INFO  Decompile.java> shard 5: 5993 ok, 7 failed, 1634 skipped, 308s  
-2026-11-27 07:10:07 INFO  Decompile.java> shard 5: slow 1429BE280 41.6s (4750 bytes)  
-2026-11-27 07:10:52 INFO  Decompile.java> shard 5: 6993 ok, 7 failed, 1843 skipped, 463s  
-2026-11-27 07:11:36 INFO  Decompile.java> shard 5: 7993 ok, 7 failed, 1843 skipped, 507s  
-2026-11-27 07:12:23 INFO  Decompile.java> shard 5: 8993 ok, 7 failed, 1844 skipped, 554s  
-2026-11-27 07:14:29 INFO  Decompile.java> shard 5: slow 1435EE250 90.0s (11860 bytes)  
-2026-11-27 07:14:59 INFO  Decompile.java> shard 5: 9992 ok, 8 failed, 1848 skipped, 710s  
-2026-11-27 07:16:08 INFO  Decompile.java> shard 5: 10992 ok, 8 failed, 1848 skipped, 779s  
-2026-11-27 07:18:39 INFO  Decompile.java> shard 5: 11992 ok, 8 failed, 1885 skipped, 930s  
-2026-11-27 07:22:59 INFO  Decompile.java> shard 5: slow 1459D15B0 30.0s (51173 bytes)  
-2026-11-27 07:24:53 INFO  Decompile.java> shard 5: slow 145EA5C00 39.6s (59854 bytes)  
-2026-11-27 07:25:45 INFO  Decompile.java> shard 5: slow 146000430 40.3s (5781 bytes)  
-2026-11-27 07:27:18 INFO  Decompile.java> shard 5: slow 146118CE0 49.1s (57943 bytes)  
-2026-11-27 07:29:09 INFO  Decompile.java> shard 5: slow 14634EEC0 90.1s (16898 bytes)  
-2026-11-27 07:29:20 INFO  Decompile.java> shard 5: 12991 ok, 9 failed, 1885 skipped, 1571s  
-2026-11-27 07:30:57 INFO  Decompile.java> shard 5: 13990 ok, 10 failed, 1893 skipped, 1668s  
-2026-11-27 07:33:26 INFO  Decompile.java> shard 5: 14989 ok, 11 failed, 1893 skipped, 1817s  
-2026-11-27 07:34:11 INFO  Decompile.java> shard 5: 15989 ok, 11 failed, 1893 skipped, 1862s  
-2026-11-27 07:34:54 INFO  Decompile.java> shard 5: 16989 ok, 11 failed, 1893 skipped, 1905s  
-2026-11-27 07:35:34 INFO  Decompile.java> shard 5: 17989 ok, 11 failed, 1901 skipped, 1946s  
-2026-11-27 07:53:20 INFO  Decompile.java> shard 5 done: 18433 ok, 65 failed, 1901 skipped  
+2026-11-27 08:24:33 INFO  CommitSignatures.java> CommitSignatures pass 1: 3356 committed, 0 failed  
+2026-11-27 08:26:11 INFO  CommitSignatures.java> CommitSignatures pass 2: 3356 committed, 0 failed  
+2026-11-27 08:26:11 INFO  Decompile.java> shard 5: 127793 exception-directory entries  
+2026-11-27 08:27:42 INFO  Decompile.java> shard 5: slow 1403D6640 90.1s (303640 bytes)  
+2026-11-27 08:27:59 INFO  Decompile.java> shard 5: 999 ok, 1 failed, 1634 skipped, 107s  
+2026-11-27 08:28:31 INFO  Decompile.java> shard 5: 1999 ok, 1 failed, 1634 skipped, 139s  
+2026-11-27 08:28:55 INFO  Decompile.java> shard 5: 2999 ok, 1 failed, 1634 skipped, 163s  
+2026-11-27 08:29:25 INFO  Decompile.java> shard 5: 3999 ok, 1 failed, 1634 skipped, 194s  
+2026-11-27 08:30:44 INFO  Decompile.java> shard 5: 4995 ok, 5 failed, 1634 skipped, 272s  
+2026-11-27 08:31:01 INFO  Decompile.java> shard 5: 5993 ok, 7 failed, 1634 skipped, 290s  
+2026-11-27 08:32:37 INFO  Decompile.java> shard 5: slow 1429BE280 35.8s (4750 bytes)  
+2026-11-27 08:33:12 INFO  Decompile.java> shard 5: 6993 ok, 7 failed, 1843 skipped, 421s  
+2026-11-27 08:33:52 INFO  Decompile.java> shard 5: 7993 ok, 7 failed, 1843 skipped, 460s  
+2026-11-27 08:34:34 INFO  Decompile.java> shard 5: 8993 ok, 7 failed, 1844 skipped, 503s  
+2026-11-27 08:36:35 INFO  Decompile.java> shard 5: slow 1435EE250 90.0s (11860 bytes)  
+2026-11-27 08:37:02 INFO  Decompile.java> shard 5: 9992 ok, 8 failed, 1848 skipped, 650s  
+2026-11-27 08:38:01 INFO  Decompile.java> shard 5: 10992 ok, 8 failed, 1848 skipped, 709s  
+2026-11-27 08:40:05 INFO  Decompile.java> shard 5: 11992 ok, 8 failed, 1885 skipped, 834s  
+2026-11-27 08:45:30 INFO  Decompile.java> shard 5: slow 145EA5C00 36.9s (59854 bytes)  
+2026-11-27 08:46:14 INFO  Decompile.java> shard 5: slow 146000430 35.2s (5781 bytes)  
+2026-11-27 08:47:31 INFO  Decompile.java> shard 5: slow 146118CE0 42.8s (57943 bytes)  
+2026-11-27 08:49:20 INFO  Decompile.java> shard 5: slow 14634EEC0 90.1s (16898 bytes)  
+2026-11-27 08:49:29 INFO  Decompile.java> shard 5: 12991 ok, 9 failed, 1885 skipped, 1398s  
+2026-11-27 08:50:56 INFO  Decompile.java> shard 5: 13990 ok, 10 failed, 1893 skipped, 1484s  
+2026-11-27 08:53:06 INFO  Decompile.java> shard 5: 14989 ok, 11 failed, 1893 skipped, 1615s  
+2026-11-27 08:53:44 INFO  Decompile.java> shard 5: 15989 ok, 11 failed, 1893 skipped, 1653s  
+2026-11-27 08:54:23 INFO  Decompile.java> shard 5: 16989 ok, 11 failed, 1893 skipped, 1691s  
+2026-11-27 08:54:59 INFO  Decompile.java> shard 5: 17989 ok, 11 failed, 1901 skipped, 1728s  
+2026-11-27 09:12:09 INFO  Decompile.java> shard 5 done: 18433 ok, 65 failed, 1901 skipped  
