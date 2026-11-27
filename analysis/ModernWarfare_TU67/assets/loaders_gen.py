@@ -25686,7 +25686,7 @@ def F_142E84320(a0=0, *_):
                 pc = 41
                 continue
             elif pc == 43:
-                R.untranslated(0x146724840)
+                H[0x146724840](R, [_s((_s(v_pvVar6, 64)) + (0x68), 64), _ld(0x14bce9700, 8, False)])
                 _t242 = ((((v_uVar3) & 0xffffffffffffffff)) & 0xffffffffffffffff)
                 _st(0x14bce96b0, 8, _t242)
                 if not (((1 if (_s(v_lVar2, 64)) == (_s(_s(-(1), 32), 64)) else 0)) != 0):
@@ -62643,7 +62643,7 @@ def F_142E85450(a0=0, *_):
             _t14 = ((_ld(0x153607170, 8, False)) & 0xffffffffffffffff)
             _st(0x14bce9690, 8, _t14)
             F_142E85150(0)
-            R.untranslated(0x1467249e0)
+            H[0x1467249e0](R, [v_puVar3, ((_t15 := _ld(0x14bce96c8, 8, False)), _ld(_t15, 8, False))[1]])
             _t16 = ((v_uVar2) & 0xffffffffffffffff)
             _st(0x14bce9690, 8, _t16)
             if (((1 if (((v_uVar1) & 0xffffffffffffffff)) == (((0xffffffffffffffff) & 0xffffffffffffffff)) else 0)) != 0):
@@ -62977,7 +62977,7 @@ def F_142E82D30(a0=0, *_):
             _t14 = ((_ld(0x14bce7698, 8, False)) & 0xffffffffffffffff)
             _st(v_puVar3, 8, _t14)
             F_142E460F0(0, ((((((_t15 := ((_ld(0x14bce9598, 8, False) + (1) * 8) & 0xffffffffffffffff)), _ld(_t15, 8, False))[1]) & 0xffffffff)) & 0xffffffffffffffff))
-            R.untranslated(0x146724770)
+            H[0x146724770](R, [v_puVar3, _ld(0x14bce9608, 8, False)])
             _t16 = ((v_uVar2) & 0xffffffffffffffff)
             _st(0x14bce7698, 8, _t16)
             if (((1 if (((v_uVar1) & 0xffffffffffffffff)) == (((0xffffffffffffffff) & 0xffffffffffffffff)) else 0)) != 0):
@@ -63403,7 +63403,7 @@ def F_142E82F30(a0=0, *_):
             _t14 = ((_ld(0x14bce7698, 8, False)) & 0xffffffffffffffff)
             _st(v_puVar3, 8, _t14)
             F_142E460F0(0, ((((((_t15 := ((_ld(0x14bce95a0, 8, False) + (1) * 8) & 0xffffffffffffffff)), _ld(_t15, 8, False))[1]) & 0xffffffff)) & 0xffffffffffffffff))
-            R.untranslated(0x1467247d0)
+            H[0x1467247d0](R, [v_puVar3, _ld(0x14bce9618, 8, False)])
             _t16 = ((v_uVar2) & 0xffffffffffffffff)
             _st(0x14bce7698, 8, _t16)
             if (((1 if (((v_uVar1) & 0xffffffffffffffff)) == (((0xffffffffffffffff) & 0xffffffffffffffff)) else 0)) != 0):
@@ -63650,7 +63650,7 @@ def F_142E82370(a0=0, *_):
         _t20 = _s(v_lVar3, 64)
         _st(0x14bce95a8, 8, _t20)
         F_142E82900(1)
-        R.untranslated(0x146724830)
+        H[0x146724830](R, [v_lVar3, _ld(0x14bce95d8, 8, False)])
         _t21 = _s(v_uVar1, 64)
         _st(0x14bce95a8, 8, _t21)
         _t22 = ((((v_uVar2) & 0xffffffffffffffff)) & 0xffffffffffffffff)
@@ -63690,7 +63690,7 @@ def F_142E82900(a0=0, *_):
             _t14 = ((_ld(0x14bce7698, 8, False)) & 0xffffffffffffffff)
             _st(v_puVar3, 8, _t14)
             F_142E460F0(0, ((((((_t15 := ((_ld(0x14bce95a8, 8, False) + (1) * 8) & 0xffffffffffffffff)), _ld(_t15, 8, False))[1]) & 0xffffffff)) & 0xffffffffffffffff))
-            R.untranslated(0x146724740)
+            H[0x146724740](R, [v_puVar3, _ld(0x14bce9628, 8, False)])
             _t16 = ((v_uVar2) & 0xffffffffffffffff)
             _st(0x14bce7698, 8, _t16)
             if (((1 if (((v_uVar1) & 0xffffffffffffffff)) == (((0xffffffffffffffff) & 0xffffffffffffffff)) else 0)) != 0):

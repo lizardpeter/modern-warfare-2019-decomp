@@ -38,18 +38,27 @@ shared by many types.
 ## Coverage
 
 Only what the traced zones contain is listed: a field never non-zero in them is not shown, and asset types they do
-not contain have no page yet. Traced so far: the patched `mp_t_gun_course` and every zone of the five archives on
-hand (data.000, .006, .016, .017, .047) that loads as it is: 3,108 of 3,128, mostly transient zones (character
-bodies and heads, weapon and attachment models, vehicles, co-op). Result: 451 structs across 55 asset types. Re-run
-with more zones as the remaining archives arrive; types no zone contains will be taken from their loader code.
+not contain have no page yet. Traced so far: every zone stored entirely in the archives uploaded so far (data.000–.029
+and .045–.049) with its patch where it has one: 10,532 of 11,690 load (the rest below), mostly transient zones
+(character bodies and heads, weapon and attachment models, vehicles, co-op and map pieces, techsets). Result: 480
+structs across 61 asset types. Weapons, most map assets and the shared assets are in `common_mp` and the base map
+zones, whose patches are in archives not uploaded yet (data.030–.044, .050 on, e.g. `common_mp.fp` in data.066); types
+no zone contains will be taken from their loader code.
 
 Not loaded (the game's own loaders fail on them too, so it is not the translation):
 
-- 16 transient zones whose loading runs past the end of their data: nine Cold War (`t9`) weapon attachments and
-  seven character bodies (e.g. `mp_aw_att_wm_ar_t9fasthandling_receiver_lod1_s2_l23_tr`,
-  `mp_bd_body_mp_western_kyle_4_1_lod0_l15_tr`). Same header version and kind as zones that load; no patch file.
-  Inside the first xmodelsurfs the loader converts index-buffer data as an offset. *Unknown*; the leading guess is
-  zones built for 1.63 whose surface struct changed by 1.67 (the target exe), to be tested with the TU63 exe.
+- 1,148 transient zones with models (598 `mp_ay`, 161 `mp_aw`, 143 `mp_az`, 127 `mp_bd`, 62 `mp_av`, 34 `mp_wv`, …;
+  e.g. `mp_bd_body_mp_western_kyle_4_1_lod0_l15_tr`) whose **surfaces are 0xC0 bytes, not the 0xD0 both exes read**
+  (142EA58B0 reads `count × 0xD0`; TU63's copy at 142925E90 is the same code, and so are the surface and subdivision
+  loaders, 1429262D0 / 1429267B0 / 142926860). Measured on the kyle body: its 25 surfaces start every 0xC0 bytes
+  (each starts `flags 0x43, vertex count, triangle count`; the next one begins at +0xC0 of the previous), and fields
+  sit 4 bytes earlier than in the 0xD0 form — the influence-group counts at +0x10 (44 + 173 + 333 + 1,264 = 1,814 =
+  the vertex count), the influence byte size at +0x20 (Σ k × count_k × 4 = 25,780) — so read as 0xD0 the stream
+  goes wrong at the second surface. The zone header is the same version (0xFCD) and kind as zones that load. So
+  these are zones in a surface format neither exe loads: an older build's, left in the install (the game would not
+  load them either). Reading them needs the 0xC0 layout worked out in full (*not done*).
+- 3 dedicated-server zones (`srv_cp_*`) compressed with codec 5, which tools/assets/zone.py does not decode yet.
+- 4 `dummy_*` zones with no signed unit after the header.
 - 3 dedicated-server zones (`srv_cp_*`) compressed with codec 5, which tools/assets/zone.py does not decode yet.
 
 Checked by hand against the code: `xanim` (docs/assets/animations.md) matches field for field, including which

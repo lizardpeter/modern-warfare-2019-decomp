@@ -25,34 +25,54 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142DFF350#1(array(element 0x30)) |  | 2 |
 
-## struct_142DFF420 (loader 142DFF420, 0x68 bytes, 11 seen)
+## struct_142DFF420 (loader 142DFF420, 0x68 bytes, 35 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | ptr | 142E46360(u32[]) |  | 11 |
-| 0x10 | ptr | 142E46360(u32[]) | 0x2 (u16, element 0x4) | 11 |
-| 0x20 | ptr | 142E46100(u8[]) | 0x18 (u32, element 0x1) | 11 |
+| 0x8 | ptr | 142E46360(u32[]) |  | 35 |
+| 0x10 | ptr | 142E46360(u32[]) | 0x2 (u16, element 0x4) | 35 |
+| 0x20 | ptr | 142E46100(u8[]) | 0x18 (u32, element 0x1) | 35 |
 
-## struct_142DFF570 (loader 142DFF570, 0x8 bytes, 218 seen)
+## struct_142DFF570 (loader 142DFF570, 0x8 bytes, 1278 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142DFF420 | a single element (0x68) | 11 |
+| 0x0 | ptr | 142DFF420 | a single element (0x68) | 35 |
 
 ## struct_142DFF7A0 (loader 142DFF7A0, 0x3a0 bytes, 2 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
+## struct_142DFF980#0 (loader 142DFF980#0, 0x1f0 bytes, 1 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | ptr | 142DFF980#1(u64[]) |  | 1 |
+| 0x58 | shared | 142DFFF30#1(array(element 0x18)) |  | 1 |
+| 0x68 | shared | 142E463A0(u16[]) |  | 1 |
+| 0x78 | shared | 142DFFF30#2(array(element 0x20)) |  | 1 |
+| 0xc8 | shared | 142DFFF30#3(array(element 0x20)) |  | 1 |
+| 0x118 | shared | 142E463A0(u16[]) |  | 1 |
+| 0x160 | shared | 142E46360(u32[]) |  | 1 |
+| 0x1a8 | shared | 142E46360(u32[]) |  | 1 |
+
 ## struct_142DFFA90 (loader 142DFFA90, 0x1b8 bytes, 2 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142DFFF30 (loader 142DFFF30, 0x1a0 bytes, 2 seen)
+## struct_142DFFF30#0 (loader 142DFFF30#0, 0x1a0 bytes, 3 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
+| 0x8 | ptr | 142DFFF30#1(array(element 0x18)) |  | 1 |
+| 0x18 | ptr | 142E463A0(u16[]) |  | 1 |
+| 0x28 | ptr | 142DFFF30#2(array(element 0x20)) |  | 1 |
+| 0x78 | ptr | 142DFFF30#3(array(element 0x20)) |  | 1 |
+| 0xc8 | ptr | 142E463A0(u16[]) |  | 1 |
+| 0x110 | ptr | 142E46360(u32[]) |  | 1 |
+| 0x158 | ptr | 142E46360(u32[]) |  | 1 |
 
 ## struct_142E00370 (loader 142E00370, 0xc0 bytes, 2 seen)
 
@@ -65,35 +85,36 @@
 | 0x30 | ptr | 142E46090(u16[]) |  | 2 |
 | 0x38 | ptr | 142E460A0(u8[]) |  | 2 |
 
-## struct_142E005B0#0 (loader 142E005B0#0, 0x280 bytes, 15 seen)
+## struct_142E005B0#0 (loader 142E005B0#0, 0x280 bytes, 42 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | ptr | 142E005B0#1(array(element 0x20)) | 0x0 (u32, element 0x20) | 15 |
-| 0x70 | ptr | 142E460B0(array(element 0xc)) | 0x0 (u32, element 0xc) | 15 |
-| 0xd0 | ptr | 142E005B0#2(array(element 0x5c)) | a single element (0x5c) | 15 |
-| 0xd8 | ptr | 142E00C40#0(array(element 0xe0)) | a single element (0xe0) | 13 |
-| 0xe8 | ptr | 142E005B0#3(array(element 0x10)) | 0xe0 (u32, element 0x10) | 15 |
-| 0x130 | ptr | 142E005B0#4(array(element 0x10)) | 0xe0 (u32, element 0x10) | 15 |
-| 0x178 | ptr | 142E005B0#5(array(element 0x40)) | 0xe4 (u32, element 0x40) | 15 |
-| 0x1c8 | ptr | 142E005B0#6(u32[]) | 0x1c0 (u32, element 0x4) | 15 |
+| 0x8 | ptr | 142E005B0#1(array(element 0x20)) | 0x0 (u32, element 0x20) | 42 |
+| 0x70 | ptr | 142E460B0(array(element 0xc)) | 0x0 (u32, element 0xc) | 42 |
+| 0xd0 | ptr | 142E005B0#2(array(element 0x5c)) | a single element (0x5c) | 42 |
+| 0xd8 | ptr | 142E00C40#0(array(element 0xe0)) | a single element (0xe0) | 40 |
+| 0xe8 | ptr | 142E005B0#3(array(element 0x10)) | 0xe0 (u32, element 0x10) | 42 |
+| 0x130 | ptr | 142E005B0#4(array(element 0x10)) | 0xe0 (u32, element 0x10) | 42 |
+| 0x178 | ptr | 142E005B0#5(array(element 0x40)) | 0xe4 (u32, element 0x40) | 42 |
+| 0x1c8 | ptr | 142E005B0#6(u32[]) | 0x1c0 (u32, element 0x4) | 42 |
 
-## struct_142E00B10#0 (loader 142E00B10#0, 0x28 bytes, 218 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142E005B0#0 | a single element (0x280) | 15 |
-| 0x10 | ptr | 142E00B10#1(array(element 0x40)) | 0x8 (u32, element 0x40) | 207 |
-
-## struct_142E00C40#1 (loader 142E00C40#1, 0xe0 bytes, 13 seen)
+## struct_142E00B10#0 (loader 142E00B10#0, 0x28 bytes, 1278 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | ptr | 142E00C40#2 | a single element (0x40) | 13 |
-| 0x10 | shared | 142E00C40#3(array(element 0xc)) |  | 13 |
-| 0x18 | shared | 142E00C40#4(array(element 0x10)) |  | 13 |
+| 0x0 | ptr | 142E005B0#0 | a single element (0x280) | 42 |
+| 0x10 | ptr | 142E00B10#1(array(element 0x40)) | 0x8 (u32, element 0x40) | 698 |
+| 0x18 | ptr | 142DFF980#0 | a single element (0x1f0) | 1 |
 
-## struct_142E00C40#2 (loader 142E00C40#2, 0x40 bytes, 13 seen)
+## struct_142E00C40#1 (loader 142E00C40#1, 0xe0 bytes, 40 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | ptr | 142E00C40#2 | a single element (0x40) | 40 |
+| 0x10 | shared | 142E00C40#3(array(element 0xc)) |  | 40 |
+| 0x18 | shared | 142E00C40#4(array(element 0x10)) |  | 40 |
+
+## struct_142E00C40#2 (loader 142E00C40#2, 0x40 bytes, 40 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -105,20 +126,20 @@
 | 0x8 | ptr | 142E00EF0#1(array(element 0x1c)) |  | 2 |
 | 0x10 | ptr | 142E463A0(u16[]) |  | 2 |
 
-## struct_142E00FB0#0 (loader 142E00FB0#0, 0xf0 bytes, 207 seen)
+## struct_142E00FB0#0 (loader 142E00FB0#0, 0xf0 bytes, 698 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x30 | shared | 142EAB600#2(u8[]) |  | 207 |
-| 0x58 | shared | 142EAB600#2(u8[]) |  | 207 |
-| 0x60 | ptr | 142E00FB0#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 207 |
-| 0xa8 | ptr | 142E00FB0#2(array(element 0x40)) | 0x8 (u32, element 0x40) | 207 |
+| 0x30 | shared | 142EAB600#2(u8[]) |  | 698 |
+| 0x58 | shared | 142EAB600#2(u8[]) |  | 698 |
+| 0x60 | ptr | 142E00FB0#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 698 |
+| 0xa8 | ptr | 142E00FB0#2(array(element 0x40)) | 0x8 (u32, element 0x40) | 698 |
 
-## struct_142E011A0 (loader 142E011A0, 0x8 bytes, 218 seen)
+## struct_142E011A0 (loader 142E011A0, 0x8 bytes, 1278 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E00FB0#0 | a single element (0xf0) | 207 |
+| 0x0 | ptr | 142E00FB0#0 | a single element (0xf0) | 698 |
 
 ## struct_142E01230 (loader 142E01230, 0x20 bytes, 66 seen)
 
@@ -128,35 +149,35 @@
 | 0x10 | ptr | 142E46100(u8[]) | 0x1 (u8, element 0x1) | 60 |
 | 0x18 | ptr | 142E463F0(array(element 0xc)) | 0x2 (u16, element 0xc) | 60 |
 
-## struct_142E01310#0 (loader 142E01310#0, 0xf10 bytes, 52 seen)
+## struct_142E01310#0 (loader 142E01310#0, 0xf10 bytes, 195 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x30 | shared | 142EAB600#2(u8[]) |  | 52 |
-| 0x58 | shared | 142EAB600#2(u8[]) |  | 52 |
-| 0x80 | shared | 142EAB600#2(u8[]) |  | 52 |
+| 0x30 | shared | 142EAB600#2(u8[]) |  | 195 |
+| 0x58 | shared | 142EAB600#2(u8[]) |  | 195 |
+| 0x80 | shared | 142EAB600#2(u8[]) |  | 195 |
 
-## struct_142E01310#1 (loader 142E01310#1, 0xf00 bytes, 52 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x20 | shared | 142EAB600#2(u8[]) |  | 52 |
-| 0x48 | shared | 142EAB600#2(u8[]) |  | 52 |
-| 0x70 | shared | 142EAB600#2(u8[]) |  | 52 |
-
-## struct_142E01310#2 (loader 142E01310#2, 0x78 bytes, 1664 seen)
+## struct_142E01310#1 (loader 142E01310#1, 0xf00 bytes, 195 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x20 | shared | 142EAB600#2(u8[]) |  | 52 |
-| 0x48 | shared | 142EAB600#2(u8[]) |  | 52 |
-| 0x70 | shared | 142EAB600#2(u8[]) |  | 52 |
+| 0x20 | shared | 142EAB600#2(u8[]) |  | 195 |
+| 0x48 | shared | 142EAB600#2(u8[]) |  | 195 |
+| 0x70 | shared | 142EAB600#2(u8[]) |  | 195 |
 
-## struct_142E013E0 (loader 142E013E0, 0x8 bytes, 218 seen)
+## struct_142E01310#2 (loader 142E01310#2, 0x78 bytes, 6240 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E01310#0 | a single element (0xf10) | 52 |
+| 0x20 | shared | 142EAB600#2(u8[]) |  | 195 |
+| 0x48 | shared | 142EAB600#2(u8[]) |  | 195 |
+| 0x70 | shared | 142EAB600#2(u8[]) |  | 195 |
+
+## struct_142E013E0 (loader 142E013E0, 0x8 bytes, 1278 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E01310#0 | a single element (0xf10) | 195 |
 
 ## struct_142E01470 (loader 142E01470, 0x70 bytes, 2 seen)
 
@@ -337,7 +358,7 @@
 |---|---|---|---|---|
 | 0x0 | asset | gfx_map_trzone |  | 2 |
 
-## struct_142E05580#0 (loader 142E05580#0, 0x18 bytes, 218 seen)
+## struct_142E05580#0 (loader 142E05580#0, 0x18 bytes, 1278 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -357,11 +378,11 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E018F0#0(gfx_map) | a single element (0x4610) | 2 |
 
-## struct_142E05AB0 (loader 142E05AB0, 0x8 bytes, 3290 seen)
+## struct_142E05AB0 (loader 142E05AB0, 0x8 bytes, 4350 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E05890(gfx_map_trzone) | a single element (0x148) | 218 |
+| 0x0 | ptr | 142E05890(gfx_map_trzone) | a single element (0x148) | 1278 |
 
 ## struct_142E05BD0#0 (loader 142E05BD0#0, 0x28 bytes, 2 seen)
 
@@ -376,36 +397,36 @@
 |---|---|---|---|---|
 | 0x0 | shared | 142E460E0(u8[]) |  | 2 |
 
-## struct_142E06000 (loader 142E06000, 0x10 bytes, 2902 seen)
+## struct_142E06000 (loader 142E06000, 0x10 bytes, 2933 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E06080#1 (loader 142E06080#1, 0x10 bytes, 45652 seen)
+## struct_142E06080#1 (loader 142E06080#1, 0x10 bytes, 46397 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E06080#2(array(element 0x10)) | 0x8 (u32, element 0x10) | 45652 |
+| 0x0 | ptr | 142E06080#2(array(element 0x10)) | 0x8 (u32, element 0x10) | 46397 |
 
-## struct_142E06150#0 (loader 142E06150#0, 0xa0 bytes, 2902 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142E06150#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 2902 |
-
-## struct_142E06400#0 (loader 142E06400#0, 0x10 bytes, 3502 seen)
+## struct_142E06150#0 (loader 142E06150#0, 0xa0 bytes, 2933 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E06400#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 3462 |
+| 0x0 | ptr | 142E06150#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 2933 |
 
-## struct_142E064C0 (loader 142E064C0, 0x18 bytes, 84 seen)
+## struct_142E06400#0 (loader 142E06400#0, 0x10 bytes, 3534 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | asset | material |  | 84 |
-| 0x8 | asset | material |  | 84 |
-| 0x10 | asset | material |  | 84 |
+| 0x0 | ptr | 142E06400#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 3494 |
+
+## struct_142E064C0 (loader 142E064C0, 0x18 bytes, 86 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | asset | material |  | 86 |
+| 0x8 | asset | material |  | 86 |
+| 0x10 | asset | material |  | 86 |
 
 ## struct_142E06510 (loader 142E06510, 0xc0 bytes, 2 seen)
 
@@ -420,18 +441,18 @@
 | 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 2 |
 | 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 2 |
 
-## struct_142E06560 (loader 142E06560, 0x90 bytes, 1146 seen)
+## struct_142E06560 (loader 142E06560, 0x90 bytes, 1151 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
-| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 1146 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
+| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 1151 |
 
 ## struct_142E065B0 (loader 142E065B0, 0x30 bytes, 6 seen)
 
@@ -440,20 +461,20 @@
 | 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 6 |
 | 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 6 |
 
-## struct_142E06600 (loader 142E06600, 0xb0 bytes, 532 seen)
+## struct_142E06600 (loader 142E06600, 0xb0 bytes, 557 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
-| 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 532 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
+| 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 557 |
 
 ## struct_142E06650 (loader 142E06650, 0x30 bytes, 306 seen)
 
@@ -462,42 +483,42 @@
 | 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 306 |
 | 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 306 |
 
-## struct_142E066F0#0 (loader 142E066F0#0, 0x10 bytes, 8754 seen)
+## struct_142E066F0#0 (loader 142E066F0#0, 0x10 bytes, 8847 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E066F0#1(array(element 0xf0)) | 0x8 (u32, element 0xf0) | 5678 |
+| 0x0 | ptr | 142E066F0#1(array(element 0xf0)) | 0x8 (u32, element 0xf0) | 5739 |
 
-## struct_142E066F0#2 (loader 142E066F0#2, 0xf0 bytes, 25040 seen)
+## struct_142E066F0#2 (loader 142E066F0#2, 0xf0 bytes, 25340 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x18 | shared | 142E06400#1(array(element 0x20)) 142E7B610 |  | 102 |
+| 0x18 | shared | 142E06400#1(array(element 0x20)) 142E7B610 |  | 104 |
 | 0x18 | shared | 142E06400#1(array(element 0x20)) 142E74EB0 |  | 20 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 7738 |
-| 0x20 | shared | 142E06400#1(array(element 0x20)) 142E84A90 |  | 1544 |
-| 0x20 | shared | 142E06400#1(array(element 0x20)) 142EA5610 |  | 542 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 7849 |
+| 0x20 | shared | 142E06400#1(array(element 0x20)) 142E84A90 |  | 1565 |
+| 0x20 | shared | 142E06400#1(array(element 0x20)) 142EA5610 |  | 548 |
 | 0x20 | shared | 142E06400#1(array(element 0x20)) 142E45CC0 |  | 512 |
 | 0x20 | shared | 142E06400#1(array(element 0x20)) 142E081E0 142E73CB0 |  | 484 |
-| 0x20 | shared | 142E06400#1(array(element 0x20)) 142E064C0 142E84BB0#0(u64[]) 142E84BB0#1 |  | 66 |
-| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 6074 |
-| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 5046 |
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 4308 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 4874 |
+| 0x20 | shared | 142E06400#1(array(element 0x20)) 142E064C0 142E84BB0#0(u64[]) 142E84BB0#1 |  | 68 |
+| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 6175 |
+| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 5129 |
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 4377 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 4956 |
 | 0x60 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 160 |
-| 0x68 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 32 |
-| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 5900 |
-| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 3788 |
-| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 3272 |
-| 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 2054 |
-| 0xb0 | shared | 142E06080#2(array(element 0x10)) |  | 1572 |
-| 0xc0 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
+| 0x68 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 33 |
+| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 5992 |
+| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 3849 |
+| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 3325 |
+| 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 2102 |
+| 0xb0 | shared | 142E06080#2(array(element 0x10)) |  | 1607 |
+| 0xc0 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
 
-## struct_142E06840 (loader 142E06840, 0x40 bytes, 66 seen)
+## struct_142E06840 (loader 142E06840, 0x40 bytes, 68 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06400#1(array(element 0x20)) 142E064C0 142E84BB0#0(u64[]) 142E84BB0#1 |  | 66 |
+| 0x10 | shared | 142E06400#1(array(element 0x20)) 142E064C0 142E84BB0#0(u64[]) 142E84BB0#1 |  | 68 |
 
 ## struct_142E06890 (loader 142E06890, 0x90 bytes, 72 seen)
 
@@ -508,11 +529,11 @@
 | 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 72 |
 | 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 72 |
 
-## struct_142E068E0 (loader 142E068E0, 0x50 bytes, 86 seen)
+## struct_142E068E0 (loader 142E068E0, 0x50 bytes, 88 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | shared | 142E06400#1(array(element 0x20)) 142E7B610 |  | 86 |
+| 0x8 | shared | 142E06400#1(array(element 0x20)) 142E7B610 |  | 88 |
 
 ## struct_142E06930 (loader 142E06930, 0x60 bytes, 16 seen)
 
@@ -520,17 +541,17 @@
 |---|---|---|---|---|
 | 0x8 | shared | 142E06400#1(array(element 0x20)) 142E7B610 |  | 16 |
 
-## struct_142E06980 (loader 142E06980, 0xe0 bytes, 1548 seen)
+## struct_142E06980 (loader 142E06980, 0xe0 bytes, 1569 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06400#1(array(element 0x20)) 142E84A90 |  | 1544 |
+| 0x10 | shared | 142E06400#1(array(element 0x20)) 142E84A90 |  | 1565 |
 
-## struct_142E069D0 (loader 142E069D0, 0x20 bytes, 542 seen)
+## struct_142E069D0 (loader 142E069D0, 0x20 bytes, 548 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06400#1(array(element 0x20)) 142EA5610 |  | 542 |
+| 0x10 | shared | 142E06400#1(array(element 0x20)) 142EA5610 |  | 548 |
 
 ## struct_142E06A70 (loader 142E06A70, 0x70 bytes, 160 seen)
 
@@ -544,32 +565,32 @@
 |---|---|---|---|---|
 | 0x10 | shared | 142E06400#1(array(element 0x20)) 142E45CC0 |  | 512 |
 
-## struct_142E06B10 (loader 142E06B10, 0x20 bytes, 2918 seen)
+## struct_142E06B10 (loader 142E06B10, 0x20 bytes, 2950 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 2918 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 2950 |
 
-## struct_142E06B60 (loader 142E06B60, 0xc0 bytes, 1026 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
-| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
-| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
-| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
-| 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
-| 0xb0 | shared | 142E06080#2(array(element 0x10)) |  | 1026 |
-
-## struct_142E06BB0 (loader 142E06BB0, 0xa0 bytes, 482 seen)
+## struct_142E06B60 (loader 142E06B60, 0xc0 bytes, 1036 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 482 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 482 |
-| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 482 |
-| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 482 |
-| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 482 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
+| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
+| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
+| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
+| 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
+| 0xb0 | shared | 142E06080#2(array(element 0x10)) |  | 1036 |
+
+## struct_142E06BB0 (loader 142E06BB0, 0xa0 bytes, 495 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 495 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 495 |
+| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 495 |
+| 0x80 | shared | 142E06080#2(array(element 0x10)) |  | 495 |
+| 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 495 |
 
 ## struct_142E06C00 (loader 142E06C00, 0xb0 bytes, 12 seen)
 
@@ -582,14 +603,14 @@
 | 0x90 | shared | 142E06080#2(array(element 0x10)) |  | 12 |
 | 0xa0 | shared | 142E06080#2(array(element 0x10)) |  | 12 |
 
-## struct_142E06D30 (loader 142E06D30, 0x80 bytes, 516 seen)
+## struct_142E06D30 (loader 142E06D30, 0x80 bytes, 524 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 516 |
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 516 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 516 |
-| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 516 |
+| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 524 |
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 524 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 524 |
+| 0x70 | shared | 142E06080#2(array(element 0x10)) |  | 524 |
 
 ## struct_142E06D80 (loader 142E06D80, 0x30 bytes, 20 seen)
 
@@ -604,12 +625,12 @@
 | 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 162 |
 | 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 162 |
 
-## struct_142E06E20 (loader 142E06E20, 0x30 bytes, 88 seen)
+## struct_142E06E20 (loader 142E06E20, 0x30 bytes, 100 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 88 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 88 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 100 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 100 |
 
 ## struct_142E06E70 (loader 142E06E70, 0x20 bytes, 502 seen)
 
@@ -628,30 +649,30 @@
 | 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 32 |
 | 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 32 |
 
-## struct_142E06F60 (loader 142E06F60, 0x30 bytes, 106 seen)
+## struct_142E06F60 (loader 142E06F60, 0x30 bytes, 110 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 106 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 106 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 110 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 110 |
 
-## struct_142E06FB0 (loader 142E06FB0, 0x40 bytes, 336 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 336 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 336 |
-
-## struct_142E07050 (loader 142E07050, 0x90 bytes, 1394 seen)
+## struct_142E06FB0 (loader 142E06FB0, 0x40 bytes, 338 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 1394 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 1394 |
-| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 1394 |
-| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 1394 |
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 1394 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 1394 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 338 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 338 |
+
+## struct_142E07050 (loader 142E07050, 0x90 bytes, 1411 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 1411 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 1411 |
+| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 1411 |
+| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 1411 |
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 1411 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 1411 |
 
 ## struct_142E070F0#0 (loader 142E070F0#0, 0x80 bytes, 16 seen)
 
@@ -675,17 +696,17 @@
 |---|---|---|---|---|
 | 0x8 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 2 |
 
-## struct_142E072F0#0 (loader 142E072F0#0, 0x80 bytes, 30 seen)
+## struct_142E072F0#0 (loader 142E072F0#0, 0x80 bytes, 31 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x58 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 30 |
+| 0x58 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 31 |
 
-## struct_142E072F0#1 (loader 142E072F0#1, 0x20 bytes, 30 seen)
+## struct_142E072F0#1 (loader 142E072F0#1, 0x20 bytes, 31 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 30 |
+| 0x8 | shared | 142E06400#1(array(element 0x20)) 142E08450 |  | 31 |
 
 ## struct_142E073F0#0 (loader 142E073F0#0, 0x80 bytes, 2 seen)
 
@@ -697,12 +718,12 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E07470 (loader 142E07470, 0x40 bytes, 1254 seen)
+## struct_142E07470 (loader 142E07470, 0x40 bytes, 1276 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 1254 |
-| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 1254 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 1276 |
+| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 1276 |
 
 ## struct_142E08140 (loader 142E08140, 0x30 bytes, 26 seen)
 
@@ -711,16 +732,16 @@
 | 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 26 |
 | 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 26 |
 
-## struct_142E08190 (loader 142E08190, 0x90 bytes, 686 seen)
+## struct_142E08190 (loader 142E08190, 0x90 bytes, 700 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 686 |
-| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 686 |
-| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 686 |
-| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 686 |
-| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 686 |
-| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 686 |
+| 0x10 | shared | 142E06080#2(array(element 0x10)) |  | 700 |
+| 0x20 | shared | 142E06080#2(array(element 0x10)) |  | 700 |
+| 0x30 | shared | 142E06080#2(array(element 0x10)) |  | 700 |
+| 0x40 | shared | 142E06080#2(array(element 0x10)) |  | 700 |
+| 0x50 | shared | 142E06080#2(array(element 0x10)) |  | 700 |
+| 0x60 | shared | 142E06080#2(array(element 0x10)) |  | 700 |
 
 ## struct_142E081E0 (loader 142E081E0, 0x10 bytes, 484 seen)
 
@@ -729,25 +750,25 @@
 | 0x0 | asset | physicsfxpipeline |  | 484 |
 | 0x8 | asset | physicsfxshape |  | 484 |
 
-## struct_142E08250#0 (loader 142E08250#0, 0x20 bytes, 2918 seen)
+## struct_142E08250#0 (loader 142E08250#0, 0x20 bytes, 2949 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E08250#1 | a single element (0x30) | 2918 |
+| 0x0 | ptr | 142E08250#1 | a single element (0x30) | 2949 |
 
-## struct_142E08250#1 (loader 142E08250#1, 0x30 bytes, 2918 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | shared | 142E066F0#1(array(element 0xf0)) 142E066F0#2 |  | 2918 |
-| 0x10 | shared | 142E066F0#1(array(element 0xf0)) 142E066F0#2 |  | 2712 |
-| 0x20 | shared | 142E066F0#1(array(element 0xf0)) 142E066F0#2 |  | 48 |
-
-## struct_142E08450 (loader 142E08450, 0x8 bytes, 112162 seen)
+## struct_142E08250#1 (loader 142E08250#1, 0x30 bytes, 2949 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E08300#0(vfx) | a single element (0x40) | 3032 |
+| 0x0 | shared | 142E066F0#1(array(element 0xf0)) 142E066F0#2 |  | 2949 |
+| 0x10 | shared | 142E066F0#1(array(element 0xf0)) 142E066F0#2 |  | 2741 |
+| 0x20 | shared | 142E066F0#1(array(element 0xf0)) 142E066F0#2 |  | 49 |
+
+## struct_142E08450 (loader 142E08450, 0x8 bytes, 112172 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E08300#0(vfx) | a single element (0x40) | 3041 |
 
 ## struct_142E088C0 (loader 142E088C0, 0x8 bytes, 52 seen)
 
@@ -815,11 +836,11 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E29840 (loader 142E29840, 0x8 bytes, 6644 seen)
+## struct_142E29840 (loader 142E29840, 0x8 bytes, 15718 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E29570#0(scriptable) | a single element (0x70) | 51 |
+| 0x0 | ptr | 142E29570#0(scriptable) | a single element (0x70) | 68 |
 
 ## struct_142E29B90#0 (loader 142E29B90#0, 0x50 bytes, 86 seen)
 
@@ -1163,39 +1184,48 @@
 | 0x8 | string |  |  | 34 |
 | 0x50 | string |  |  | 34 |
 
-## struct_142E2ECA0 (loader 142E2ECA0, 0x10 bytes, 52020 seen)
+## struct_142E2ECA0 (loader 142E2ECA0, 0x10 bytes, 209248 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | asset | xanim |  | 13175 |
-| 0x8 | asset | xmodelsurfs |  | 12248 |
-| 0x8 | asset | image |  | 10380 |
-| 0x8 | asset | xmodel |  | 6202 |
-| 0x8 | asset | xmodeldetailcollision |  | 3828 |
-| 0x8 | asset | physicsasset |  | 2905 |
-| 0x8 | asset | collisiontile |  | 1052 |
-| 0x8 | asset | vfx |  | 914 |
-| 0x8 | asset | streaminginfo |  | 273 |
-| 0x8 | asset | gfx_map_trzone |  | 218 |
-| 0x8 | asset | fx_map_trzone |  | 218 |
+| 0x8 | asset | material |  | 69681 |
+| 0x8 | asset | xmodelsurfs |  | 30093 |
+| 0x8 | asset | techset |  | 17756 |
+| 0x8 | asset | xmodeldetailcollision |  | 17435 |
+| 0x8 | asset | xmodel |  | 14853 |
+| 0x8 | asset | physicsasset |  | 13714 |
+| 0x8 | asset | xanim |  | 13527 |
+| 0x8 | asset | image |  | 10778 |
+| 0x8 | asset | pixelshader |  | 7371 |
+| 0x8 | asset | collisiontile |  | 3871 |
+| 0x8 | asset | vertexshader |  | 3134 |
+| 0x8 | asset | gfx_map_trzone |  | 1278 |
+| 0x8 | asset | fx_map_trzone |  | 1277 |
+| 0x8 | asset | vfx |  | 923 |
+| 0x8 | asset | streaminginfo |  | 892 |
+| 0x8 | asset | decalvolumematerial |  | 833 |
+| 0x8 | asset | domainshader |  | 449 |
+| 0x8 | asset | localize |  | 325 |
+| 0x8 | asset | hullshader |  | 220 |
+| 0x8 | asset | edgelist |  | 189 |
+| 0x8 | asset | dynentitylist |  | 138 |
 | 0x8 | asset | scriptfile |  | 120 |
-| 0x8 | asset | netconststrings |  | 84 |
+| 0x8 | asset | netconststrings |  | 86 |
 | 0x8 | asset | decalvolumemask |  | 70 |
-| 0x8 | asset | decalvolumematerial |  | 50 |
 | 0x8 | asset | physicsfxshape |  | 50 |
-| 0x8 | asset | edgelist |  | 43 |
-| 0x8 | asset | dynentitylist |  | 38 |
 | 0x8 | asset | scriptable |  | 36 |
-| 0x8 | asset | lightdef |  | 14 |
+| 0x8 | asset | rawfile |  | 27 |
+| 0x8 | asset | keyvaluepairs |  | 17 |
+| 0x8 | asset | lightdef |  | 15 |
 | 0x8 | asset | footstepvfx |  | 14 |
-| 0x8 | asset | rawfile |  | 12 |
 | 0x8 | asset | clothasset |  | 10 |
+| 0x8 | asset | streamkey |  | 7 |
 | 0x8 | asset | hudoutline |  | 6 |
-| 0x8 | asset | streamkey |  | 6 |
 | 0x8 | asset | gradingclut |  | 4 |
 | 0x8 | asset | camera |  | 4 |
 | 0x8 | asset | weapon |  | 4 |
 | 0x8 | asset | vehicle |  | 4 |
+| 0x8 | asset | soundbank |  | 3 |
 | 0x8 | asset | com_map |  | 2 |
 | 0x8 | asset | glass_map |  | 2 |
 | 0x8 | asset | aipaths |  | 2 |
@@ -1205,9 +1235,7 @@
 | 0x8 | asset | stringtable |  | 2 |
 | 0x8 | asset | proceduralbones |  | 2 |
 | 0x8 | asset | dynamicbones |  | 2 |
-| 0x8 | asset | soundbank |  | 2 |
 | 0x8 | asset | stterrain |  | 2 |
-| 0x8 | asset | keyvaluepairs |  | 2 |
 | 0x8 | asset | xcompositemodel |  | 2 |
 | 0x8 | asset | surfacefx |  | 2 |
 | 0x8 | asset | impactfx |  | 2 |
@@ -1239,7 +1267,7 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E43BA0(footstepvfx) | a single element (0x408) | 14 |
 
-## struct_142E43DA0 (loader 142E43DA0, 0x20 bytes, 218 seen)
+## struct_142E43DA0 (loader 142E43DA0, 0x20 bytes, 1278 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -1249,21 +1277,21 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E43E00 (loader 142E43E00, 0x40 bytes, 1094 seen)
+## struct_142E43E00 (loader 142E43E00, 0x40 bytes, 4572 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E43E20 (loader 142E43E20, 0x60 bytes, 29 seen)
+## struct_142E43E20 (loader 142E43E20, 0x60 bytes, 56 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E444C0#0 (loader 142E444C0#0, 0x10 bytes, 3109 seen)
+## struct_142E444C0#0 (loader 142E444C0#0, 0x10 bytes, 10533 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | ptr | 142E444C0#1(u64[]) | 0x0 (u32, element 0x8) | 1641 |
+| 0x8 | ptr | 142E444C0#1(u64[]) | 0x0 (u32, element 0x8) | 4628 |
 
 ## struct_142E445C0#1 (loader 142E445C0#1, 0xa8 bytes, 10 seen)
 
@@ -1295,7 +1323,7 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E447E0#0 (loader 142E447E0#0, 0xe8 bytes, 8 seen)
+## struct_142E447E0#0 (loader 142E447E0#0, 0xe8 bytes, 9 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -1330,7 +1358,7 @@
 | 0x8 | string |  |  | 46 |
 | 0x10 | string |  |  | 46 |
 
-## struct_142E44F10 (loader 142E44F10, 0x8 bytes, 79542 seen)
+## struct_142E44F10 (loader 142E44F10, 0x8 bytes, 168912 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -1408,34 +1436,34 @@
 | 0x78 | asset | xanimcurve |  | 10 |
 | 0x90 | asset | xanimcurve |  | 4 |
 
-## struct_142E45840 (loader 142E45840, 0x8 bytes, 6475 seen)
+## struct_142E45840 (loader 142E45840, 0x8 bytes, 15532 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E45570#0(dynamicbones) | a single element (0x58) | 156 |
+| 0x0 | ptr | 142E45570#0(dynamicbones) | a single element (0x58) | 707 |
 
-## struct_142E45AB0 (loader 142E45AB0, 0x8 bytes, 6475 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142E45960#0(proceduralbones) | a single element (0x20) | 86 |
-
-## struct_142E45C40 (loader 142E45C40, 0x4 bytes, 1 seen)
+## struct_142E45AB0 (loader 142E45AB0, 0x8 bytes, 15532 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
+| 0x0 | ptr | 142E45960#0(proceduralbones) | a single element (0x20) | 221 |
 
-## struct_142E45CC0 (loader 142E45CC0, 0x8 bytes, 144263 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | string |  |  | 135183 |
-
-## struct_142E45D90#1 (loader 142E45D90#1, 0x8 bytes, 350 seen)
+## struct_142E45C40 (loader 142E45C40, 0x4 bytes, 3 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | string |  |  | 350 |
+
+## struct_142E45CC0 (loader 142E45CC0, 0x8 bytes, 551924 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | string |  |  | 531779 |
+
+## struct_142E45D90#1 (loader 142E45D90#1, 0x8 bytes, 87314 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | string |  |  | 87314 |
 
 ## struct_142E45EA0 (loader 142E45EA0, 0xc8 bytes, 114 seen)
 
@@ -1451,24 +1479,24 @@
 | 0x88 | string |  |  | 68 |
 | 0x98 | string |  |  | 114 |
 
-## struct_142E46250 (loader 142E46250, 0x4 bytes, 142569 seen)
+## struct_142E46250 (loader 142E46250, 0x4 bytes, 168965 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | scriptstring |  |  | 142569 |
+| 0x0 | scriptstring |  |  | 168965 |
 
-## struct_142E46280#1 (loader 142E46280#1, 0x4 bytes, 903547 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | scriptstring |  |  | 903547 |
-
-## struct_142E46380 (loader 142E46380, 0x8 bytes, 13298 seen)
+## struct_142E46280#1 (loader 142E46280#1, 0x4 bytes, 1028765 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
+| 0x0 | scriptstring |  |  | 1028765 |
 
-## struct_142E463D0 (loader 142E463D0, 0xc bytes, 3 seen)
+## struct_142E46380 (loader 142E46380, 0x8 bytes, 13302 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+
+## struct_142E463D0 (loader 142E463D0, 0xc bytes, 6 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -1479,12 +1507,12 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E4FC40(navmesh) | a single element (0xa8) | 2 |
 
-## struct_142E50BB0#1 (loader 142E50BB0#1, 0x8 bytes, 2937 seen)
+## struct_142E50BB0#1 (loader 142E50BB0#1, 0x8 bytes, 13887 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E51A50#1 (loader 142E51A50#1, 0x8 bytes, 2937 seen)
+## struct_142E51A50#1 (loader 142E51A50#1, 0x8 bytes, 13887 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -1514,25 +1542,25 @@
 | 0x0 | ptr | 142E53390#1(u64[]) | 0x10 (u32, element 0x8) | 6 |
 | 0x8 | ptr | 142E43B70(array(element 0x18)) | 0x10 (u32, element 0x18) | 6 |
 
-## struct_142E534B0#0 (loader 142E534B0#0, 0x38 bytes, 76 seen)
+## struct_142E534B0#0 (loader 142E534B0#0, 0x38 bytes, 276 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E534B0#1(u32[]) | 0x30 (u32, element 0x4) | 40 |
-| 0x8 | ptr | 142E534B0#2(u32[]) | 0x30 (u32, element 0x4) | 40 |
-| 0x10 | ptr | 142E46360(u32[]) | 0x30 (u32, element 0x4) | 40 |
+| 0x0 | ptr | 142E534B0#1(u32[]) | 0x30 (u32, element 0x4) | 140 |
+| 0x8 | ptr | 142E534B0#2(u32[]) | 0x30 (u32, element 0x4) | 140 |
+| 0x10 | ptr | 142E46360(u32[]) | 0x30 (u32, element 0x4) | 140 |
 
-## struct_142E53650#1 (loader 142E53650#1, 0x8 bytes, 76 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142E534B0#0 | a single element (0x38) | 76 |
-
-## struct_142E53980 (loader 142E53980, 0x8 bytes, 8 seen)
+## struct_142E53650#1 (loader 142E53650#1, 0x8 bytes, 276 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E45C60(u32[]) |  | 8 |
+| 0x0 | ptr | 142E534B0#0 | a single element (0x38) | 276 |
+
+## struct_142E53980 (loader 142E53980, 0x8 bytes, 20 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E45C60(u32[]) |  | 20 |
 
 ## struct_142E53BC0 (loader 142E53BC0, 0x0 bytes, 0 seen)
 
@@ -1544,23 +1572,23 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E53DD0#1 (loader 142E53DD0#1, 0x8 bytes, 131088 seen)
+## struct_142E53DD0#1 (loader 142E53DD0#1, 0x8 bytes, 135986 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E53F10 (loader 142E53F10, 0x20 bytes, 39 seen)
+## struct_142E53F10 (loader 142E53F10, 0x20 bytes, 171 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x18 | ptr | 142E53AC0#0(u8[]) |  | 38 |
+| 0x18 | ptr | 142E53AC0#0(u8[]) |  | 170 |
 | 0x18 | ptr | 142E53AC0#1(array(element 0x3)) |  | 1 |
 
-## struct_142E544F0 (loader 142E544F0, 0x8 bytes, 13327 seen)
+## struct_142E544F0 (loader 142E544F0, 0x8 bytes, 13679 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E53F80(xanim) | a single element (0xa8) | 13175 |
+| 0x0 | ptr | 142E53F80(xanim) | a single element (0xa8) | 13527 |
 
 ## struct_142E54610#1 (loader 142E54610#1, 0x8 bytes, 280 seen)
 
@@ -1632,11 +1660,11 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E67E30#0(aipaths) | a single element (0x98) | 2 |
 
-## struct_142E684E0 (loader 142E684E0, 0x8 bytes, 19590 seen)
+## struct_142E684E0 (loader 142E684E0, 0x8 bytes, 60937 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E68300#0(physicsasset) | a single element (0x58) | 9409 |
+| 0x0 | ptr | 142E68300#0(physicsasset) | a single element (0x58) | 29003 |
 
 ## struct_142E68C50#0 (loader 142E68C50#0, 0x20 bytes, 34156 seen)
 
@@ -1693,11 +1721,11 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E73360(hudoutline) | a single element (0x60) | 6 |
 
-## struct_142E73B00 (loader 142E73B00, 0x8 bytes, 84 seen)
+## struct_142E73B00 (loader 142E73B00, 0x8 bytes, 86 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E73A10(netconststrings) | a single element (0x20) | 84 |
+| 0x0 | ptr | 142E73A10(netconststrings) | a single element (0x20) | 86 |
 
 ## struct_142E73CB0 (loader 142E73CB0, 0x8 bytes, 484 seen)
 
@@ -1705,7 +1733,7 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E73C40(physicsfxpipeline) | a single element (0x30) | 10 |
 
-## struct_142E73EC0 (loader 142E73EC0, 0x8 bytes, 7007 seen)
+## struct_142E73EC0 (loader 142E73EC0, 0x8 bytes, 16064 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
@@ -1745,29 +1773,35 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142E75300(xanimcurve) | a single element (0x20) | 4 |
 
-## struct_142E7B610 (loader 142E7B610, 0x8 bytes, 116 seen)
+## struct_142E7B610 (loader 142E7B610, 0x8 bytes, 119 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E7B580(lightdef) | a single element (0x20) | 14 |
+| 0x0 | ptr | 142E7B580(lightdef) | a single element (0x20) | 15 |
 
-## struct_142E7B730#2 (loader 142E7B730#2, 0x10 bytes, 56 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x8 | string |  |  | 56 |
-
-## struct_142E7B880 (loader 142E7B880, 0x8 bytes, 2 seen)
+## struct_142E7B730#2 (loader 142E7B730#2, 0x10 bytes, 174 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E7B730#0(keyvaluepairs) | a single element (0x18) | 2 |
+| 0x8 | string |  |  | 174 |
 
-## struct_142E7C1A0 (loader 142E7C1A0, 0x8 bytes, 12 seen)
+## struct_142E7B880 (loader 142E7B880, 0x8 bytes, 17 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E7C0B0(rawfile) | a single element (0x18) | 12 |
+| 0x0 | ptr | 142E7B730#0(keyvaluepairs) | a single element (0x18) | 17 |
+
+## struct_142E7BBC0 (loader 142E7BBC0, 0x8 bytes, 325 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E7BB30(localize) | a single element (0x10) | 325 |
+
+## struct_142E7C1A0 (loader 142E7C1A0, 0x8 bytes, 27 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E7C0B0(rawfile) | a single element (0x18) | 27 |
 
 ## struct_142E7C8B0 (loader 142E7C8B0, 0x18 bytes, 4 seen)
 
@@ -1837,11 +1871,11 @@
 | 0xa8 | ptr | 142E81C60#3(u64[]) |  | 2 |
 | 0xb0 | ptr | 142E7C8B0 | a single element (0x18) | 2 |
 
-## struct_142E82250 (loader 142E82250, 0x8 bytes, 1052 seen)
+## struct_142E82250 (loader 142E82250, 0x8 bytes, 3871 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E82110#0(collisiontile) | a single element (0x48) | 1052 |
+| 0x0 | ptr | 142E82110#0(collisiontile) | a single element (0x48) | 3871 |
 
 ## struct_142E825A0#0 (loader 142E825A0#0, 0x10 bytes, 2 seen)
 
@@ -1854,29 +1888,53 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E827E0 (loader 142E827E0, 0x8 bytes, 38 seen)
+## struct_142E827E0 (loader 142E827E0, 0x8 bytes, 138 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E826C0(dynentitylist) | a single element (0x40) | 38 |
+| 0x0 | ptr | 142E826C0(dynentitylist) | a single element (0x40) | 138 |
 
-## struct_142E82A50 (loader 142E82A50, 0x8 bytes, 2527 seen)
+## struct_142E82A50 (loader 142E82A50, 0x8 bytes, 6199 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 | 0x0 | ptr | 142E829B0(decalvolumemask) | a single element (0x10) | 70 |
 
-## struct_142E82C10 (loader 142E82C10, 0x8 bytes, 14542 seen)
+## struct_142E82C10 (loader 142E82C10, 0x8 bytes, 103578 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E82B70(decalvolumematerial) | a single element (0x68) | 50 |
+| 0x0 | ptr | 142E82B70(decalvolumematerial) | a single element (0x68) | 833 |
 
-## struct_142E834E0 (loader 142E834E0, 0x8 bytes, 45 seen)
+## struct_142E82D30 (loader 142E82D30, 0x10 bytes, 531 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E832A0(edgelist) | a single element (0xa0) | 43 |
+| 0x0 | ptr | 142E460F0(u8[]) | 0x8 (u32, element 0x1) | 449 |
+
+## struct_142E82DE0 (loader 142E82DE0, 0x10 bytes, 253 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E460F0(u8[]) | 0x8 (u32, element 0x1) | 220 |
+
+## struct_142E82F30 (loader 142E82F30, 0x10 bytes, 8406 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E460F0(u8[]) | 0x8 (u32, element 0x1) | 7371 |
+
+## struct_142E82FE0 (loader 142E82FE0, 0x10 bytes, 4100 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E460F0(u8[]) | 0x8 (u32, element 0x1) | 3134 |
+
+## struct_142E834E0 (loader 142E834E0, 0x8 bytes, 191 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E832A0(edgelist) | a single element (0xa0) | 189 |
 
 ## struct_142E83600#1 (loader 142E83600#1, 0x10 bytes, 2 seen)
 
@@ -1904,22 +1962,120 @@
 |---|---|---|---|---|
 | 0x10 | asset | physicsasset |  | 54 |
 
-## struct_142E84A90 (loader 142E84A90, 0x8 bytes, 6733 seen)
+## struct_142E84320#2 (loader 142E84320#2, 0x10 bytes, 536092 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E84320(material) | a single element (0x78) | 2773 |
+| 0x8 | asset | image |  | 536092 |
 
-## struct_142E84BB0#1 (loader 142E84BB0#1, 0x8 bytes, 76682 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142E84320(material) | a single element (0x78) | 11719 |
-
-## struct_142E85670 (loader 142E85670, 0x8 bytes, 14492 seen)
+## struct_142E84770 (loader 142E84770, 0x110 bytes, 73463 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
+| 0x10 | ptr | 142E460E0(u8[]) | 0x0 (u32, element 0x1) | 6404 |
+| 0x20 | ptr | 142E460E0(u8[]) | 0x8 (u32, element 0x1) | 6 |
+| 0x28 | ptr | 142E460E0(u8[]) | 0xc (u32, element 0x1) | 72272 |
+
+## struct_142E84880#1 (loader 142E84880#1, 0x18 bytes, 531 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | shared | 142E460F0(u8[]) |  | 449 |
+
+## struct_142E84970 (loader 142E84970, 0x8 bytes, 91444 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E84880#0(domainshader) | a single element (0x28) | 531 |
+
+## struct_142E84A90 (loader 142E84A90, 0x8 bytes, 80111 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E84320#0(material) | a single element (0x78) | 73860 |
+
+## struct_142E84BB0#1 (loader 142E84BB0#1, 0x8 bytes, 202015 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E84320#0(material) | a single element (0x78) | 28885 |
+
+## struct_142E84D30#1 (loader 142E84D30#1, 0x18 bytes, 253 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | shared | 142E460F0(u8[]) |  | 220 |
+
+## struct_142E84E20 (loader 142E84E20, 0x8 bytes, 91215 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E84D30#0(hullshader) | a single element (0x28) | 253 |
+
+## struct_142E84F40#1 (loader 142E84F40#1, 0x18 bytes, 8406 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | shared | 142E460F0(u8[]) |  | 7371 |
+
+## struct_142E85030 (loader 142E85030, 0x8 bytes, 98366 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E84F40#0(pixelshader) | a single element (0x28) | 8406 |
+
+## struct_142E85150#0 (loader 142E85150#0, 0xb0 bytes, 90995 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | string |  |  | 90995 |
+| 0x20 | ptr | 142E85150#1(array(element 0x10)) |  | 90995 |
+| 0x48 | shared | 142E85150#3 |  | 90995 |
+| 0x50 | asset | vertexshader |  | 90995 |
+| 0x58 | asset | hullshader |  | 1944 |
+| 0x60 | asset | domainshader |  | 1944 |
+| 0x68 | asset | pixelshader |  | 90995 |
+| 0x80 | shared | 142E85150#4(array(element 0x5)) |  | 90995 |
+| 0xa8 | shared | 142E85150#6(array(element 0x6)) |  | 90995 |
+
+## struct_142E85150#2 (loader 142E85150#2, 0x10 bytes, 123469 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+
+## struct_142E85150#3 (loader 142E85150#3, 0x10 bytes, 102 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+
+## struct_142E85150#5 (loader 142E85150#5, 0x10 bytes, 90995 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+
+## struct_142E85450 (loader 142E85450, 0x8 bytes, 90995 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E85150#0 | a single element (0xb0) | 90995 |
+
+## struct_142E85670 (loader 142E85670, 0x8 bytes, 120501 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E85510#0(techset) | a single element (0x40) | 18595 |
+
+## struct_142E85830#1 (loader 142E85830#1, 0x18 bytes, 4100 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | shared | 142E460F0(u8[]) |  | 3134 |
+
+## struct_142E85920 (loader 142E85920, 0x8 bytes, 94129 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142E85830#0(vertexshader) | a single element (0x28) | 4100 |
 
 ## struct_142E85A40 (loader 142E85A40, 0x10 bytes, 2 seen)
 
@@ -1946,13 +2102,13 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142E86640#0 (loader 142E86640#0, 0x38 bytes, 9028 seen)
+## struct_142E86640#0 (loader 142E86640#0, 0x38 bytes, 30509 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | asset | physicsasset |  | 8484 |
-| 0x10 | asset | xmodeldetailcollision |  | 8949 |
-| 0x30 | ptr | 142E86640#1(array(element 0xe)) |  | 9028 |
+| 0x8 | asset | physicsasset |  | 27633 |
+| 0x10 | asset | xmodeldetailcollision |  | 30173 |
+| 0x30 | ptr | 142E86640#1(array(element 0xe)) |  | 30509 |
 
 ## struct_142E86800#0 (loader 142E86800#0, 0x28 bytes, 674 seen)
 
@@ -2197,12 +2353,18 @@
 |---|---|---|---|---|
 | 0x8 | string |  |  | 12 |
 
-## struct_142EA35F0 (loader 142EA35F0, 0x20 bytes, 12 seen)
+## struct_142EA35F0 (loader 142EA35F0, 0x20 bytes, 53 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142E46330(u64[]) |  | 11 |
-| 0x8 | ptr | 142E463A0(u16[]) | 0x14 (u16, element 0x2) | 11 |
+| 0x0 | ptr | 142E46330(u64[]) |  | 36 |
+| 0x8 | ptr | 142E463A0(u16[]) | 0x14 (u16, element 0x2) | 36 |
+
+## struct_142EA3700 (loader 142EA3700, 0x10 bytes, 5 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | ptr | 142E463A0(u16[]) |  | 4 |
 
 ## struct_142EA37B0#0 (loader 142EA37B0#0, 0x4f8 bytes, 2 seen)
 
@@ -2236,60 +2398,65 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EA4830#1 (loader 142EA4830#1, 0x180 bytes, 6473 seen)
+## struct_142EA4830#1 (loader 142EA4830#1, 0x180 bytes, 15530 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | asset | xmodelsurfs |  | 6196 |
-| 0x8 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 6186 |
-| 0x40 | asset | xmodelsurfs |  | 5411 |
-| 0x48 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 5405 |
-| 0x80 | asset | xmodelsurfs |  | 5161 |
-| 0x88 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 5155 |
-| 0xc0 | asset | xmodelsurfs |  | 4642 |
-| 0xc8 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 4638 |
-| 0x100 | asset | xmodelsurfs |  | 759 |
-| 0x108 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 755 |
-| 0x140 | asset | xmodelsurfs |  | 503 |
-| 0x148 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 501 |
+| 0x0 | asset | xmodelsurfs |  | 14794 |
+| 0x8 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 14781 |
+| 0x40 | asset | xmodelsurfs |  | 10524 |
+| 0x48 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 10518 |
+| 0x80 | asset | xmodelsurfs |  | 10269 |
+| 0x88 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 10263 |
+| 0xc0 | asset | xmodelsurfs |  | 9671 |
+| 0xc8 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 9667 |
+| 0x100 | asset | xmodelsurfs |  | 3296 |
+| 0x108 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 3292 |
+| 0x140 | asset | xmodelsurfs |  | 2830 |
+| 0x148 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 2828 |
 
-## struct_142EA4830#2 (loader 142EA4830#2, 0x40 bytes, 38838 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | asset | xmodelsurfs |  | 22672 |
-| 0x8 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 22640 |
-
-## struct_142EA5180#0 (loader 142EA5180#0, 0x18 bytes, 22 seen)
+## struct_142EA4830#2 (loader 142EA4830#2, 0x40 bytes, 93180 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | ptr | 142E46280#0(u32[]) | 0x0 (u16, element 0x4) | 22 |
-| 0x10 | ptr | 142EA5180#1(u64[]) | 0x4 (u32, element 0x8) | 22 |
+| 0x0 | asset | xmodelsurfs |  | 51384 |
+| 0x8 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 51349 |
 
-## struct_142EA52B0#0 (loader 142EA52B0#0, 0x10 bytes, 1258 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142EA52B0#1(array(element 0x70)) | 0x8 (u32, element 0x70) | 1258 |
-
-## struct_142EA52B0#2 (loader 142EA52B0#2, 0x70 bytes, 2387 seen)
+## struct_142EA4830#4 (loader 142EA4830#4, 0x28 bytes, 1125 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x40 | asset | material |  | 2387 |
 
-## struct_142EA54F0 (loader 142EA54F0, 0x8 bytes, 20003 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142EA53E0#0(xmodeldetailcollision) | a single element (0x28) | 10987 |
-
-## struct_142EA5610 (loader 142EA5610, 0x8 bytes, 9220 seen)
+## struct_142EA5180#0 (loader 142EA5180#0, 0x18 bytes, 69 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EA4830#0(xmodel) | a single element (0x2b0) | 6473 |
+| 0x8 | ptr | 142E46280#0(u32[]) | 0x0 (u16, element 0x4) | 69 |
+| 0x10 | ptr | 142EA5180#1(u64[]) | 0x4 (u32, element 0x8) | 69 |
+
+## struct_142EA52B0#0 (loader 142EA52B0#0, 0x10 bytes, 2727 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142EA52B0#1(array(element 0x70)) | 0x8 (u32, element 0x70) | 2715 |
+
+## struct_142EA52B0#2 (loader 142EA52B0#2, 0x70 bytes, 6059 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x40 | asset | material |  | 6059 |
+
+## struct_142EA54F0 (loader 142EA54F0, 0x8 bytes, 64148 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142EA53E0#0(xmodeldetailcollision) | a single element (0x28) | 34047 |
+
+## struct_142EA5610 (loader 142EA5610, 0x8 bytes, 19466 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142EA4830#0(xmodel) | a single element (0x2b0) | 15530 |
 
 ## struct_142EA5730#1 (loader 142EA5730#1, 0x8 bytes, 50 seen)
 
@@ -2297,85 +2464,90 @@
 |---|---|---|---|---|
 | 0x0 | asset | xmodel |  | 50 |
 
-## struct_142EA5A50 (loader 142EA5A50, 0x8 bytes, 51086 seen)
+## struct_142EA5A50 (loader 142EA5A50, 0x8 bytes, 123273 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EA58B0#0(xmodelsurfs) | a single element (0x60) | 12280 |
+| 0x0 | ptr | 142EA58B0#0(xmodelsurfs) | a single element (0x60) | 30128 |
 
-## struct_142EA5B70#1 (loader 142EA5B70#1, 0x8 bytes, 12055 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142EA58B0#0(xmodelsurfs) | a single element (0x60) | 8877 |
-
-## struct_142EA5CF0#0 (loader 142EA5CF0#0, 0xd0 bytes, 35102 seen)
+## struct_142EA5B70#1 (loader 142EA5B70#1, 0x8 bytes, 39881 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | shared | 142EA5A50 |  | 7 |
-| 0x0 | string |  |  | 4 |
-| 0x0 | shared | 142E2ECA0 |  | 1 |
-| 0x58 | ptr | 142EA5CF0#1 | a single element (0x10) | 12244 |
-| 0x60 | ptr | 142E67E10(u32[]) | 0x2 (u16, element 0x4) | 126 |
-| 0x60 | shared | 142E67E10(u32[]) |  | 92 |
-| 0x68 | ptr | 142EA5CF0#2(u64[]) | 0x8 (u32, element 0x8) | 17781 |
-| 0x68 | shared | 142EA5CF0#2(u64[]) |  | 1586 |
-| 0x70 | ptr | 142EA5CF0#3(u8[]) | 0x24 (u32, element 0x1) | 5033 |
-| 0x70 | shared | 142EA5CF0#3(u8[]) |  | 70 |
-| 0x78 | ptr | 142EA61D0#0 | a single element (0x80) | 52 |
+| 0x0 | ptr | 142EA58B0#0(xmodelsurfs) | a single element (0x60) | 36703 |
+
+## struct_142EA5CF0#0 (loader 142EA5CF0#0, 0xd0 bytes, 92530 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | shared | 142EA5A50 |  | 19 |
+| 0x0 | string |  |  | 14 |
+| 0x0 | shared | 142E2ECA0 |  | 2 |
+| 0x58 | ptr | 142EA5CF0#1 | a single element (0x10) | 30039 |
+| 0x60 | shared | 142E67E10(u32[]) |  | 587 |
+| 0x60 | ptr | 142E67E10(u32[]) | 0x2 (u16, element 0x4) | 188 |
+| 0x68 | ptr | 142EA5CF0#2(u64[]) | 0x8 (u8, element 0x8) | 44422 |
+| 0x68 | shared | 142EA5CF0#2(u64[]) |  | 5124 |
+| 0x68 | string |  |  | 1 |
+| 0x70 | ptr | 142EA5CF0#3(u8[]) | 0x24 (u32, element 0x1) | 17477 |
+| 0x70 | shared | 142EA5CF0#3(u8[]) |  | 232 |
+| 0x78 | ptr | 142EA61D0#0 | a single element (0x80) | 564 |
 | 0x78 | shared | 142EA61D0#0 |  | 4 |
-| 0xb8 | ptr | 142E43B30(array(element 0x18)) | 0x8 (u32, element 0x18) | 17781 |
-| 0xb8 | shared | 142E43B30(array(element 0x18)) |  | 1586 |
-| 0xc0 | shared | 142EA35F0 |  | 8 |
-| 0xc0 | ptr | 142EA35F0 | a single element (0x20) | 4 |
+| 0xb8 | ptr | 142E43B30(array(element 0x18)) | 0x8 (u8, element 0x18) | 44423 |
+| 0xb8 | shared | 142E43B30(array(element 0x18)) |  | 5124 |
+| 0xc0 | shared | 142EA35F0 |  | 31 |
+| 0xc0 | ptr | 142EA35F0 | a single element (0x20) | 20 |
+| 0xc8 | ptr | 142EA3700 | a single element (0x10) | 4 |
+| 0xc8 | string |  |  | 2 |
+| 0xc8 | shared | 142EA3700 |  | 1 |
 
-## struct_142EA5CF0#1 (loader 142EA5CF0#1, 0x10 bytes, 12244 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142EA60F0(u8[]) | 0x8 (u32, element 0x1) | 9058 |
-
-## struct_142EA61D0#0 (loader 142EA61D0#0, 0x80 bytes, 56 seen)
+## struct_142EA5CF0#1 (loader 142EA5CF0#1, 0x10 bytes, 30039 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EA6280#0(array(element 0x238)) | a single element (0x238) | 12 |
-| 0x0 | shared | 142EA61D0#0 |  | 5 |
+| 0x0 | ptr | 142EA60F0(u8[]) | 0x8 (u32, element 0x1) | 26599 |
 
-## struct_142EA61D0#1 (loader 142EA61D0#1, 0x68 bytes, 56 seen)
+## struct_142EA61D0#0 (loader 142EA61D0#0, 0x80 bytes, 571 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142EA6280#0(array(element 0x238)) |  | 27 |
+| 0x0 | shared | 142EA61D0#0 |  | 25 |
+| 0x0 | shared | 142EA58B0#1(array(element 0xd0)) 142EA5CF0#0 |  | 2 |
+
+## struct_142EA61D0#1 (loader 142EA61D0#1, 0x68 bytes, 571 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EA6280#1 (loader 142EA6280#1, 0x238 bytes, 12 seen)
+## struct_142EA6280#1 (loader 142EA6280#1, 0x238 bytes, 29 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EA6280#2(array(element 0x10)) | a single element (0x10) | 4 |
-| 0x50 | ptr | 142E46090(u16[]) |  | 8 |
-| 0x58 | ptr | 142E46090(u16[]) |  | 12 |
-| 0x60 | ptr | 142E46070(u32[]) | 0xc (u32, element 0x4) | 12 |
-| 0x68 | ptr | 142E46070(u32[]) |  | 8 |
-| 0x70 | ptr | 142E46070(u32[]) | 0x38 (u32, element 0x4) | 8 |
-| 0x78 | ptr | 142E46070(u32[]) |  | 8 |
-| 0x80 | ptr | 142E46070(u32[]) |  | 8 |
-| 0x88 | ptr | 142E46070(u32[]) | 0x40 (u32, element 0x4) | 8 |
+| 0x0 | ptr | 142EA6280#2(array(element 0x10)) | a single element (0x10) | 8 |
+| 0x50 | ptr | 142E46090(u16[]) |  | 23 |
+| 0x58 | ptr | 142E46090(u16[]) |  | 26 |
+| 0x60 | ptr | 142E46070(u32[]) | 0xc (u32, element 0x4) | 26 |
+| 0x68 | ptr | 142E46070(u32[]) |  | 23 |
+| 0x70 | ptr | 142E46070(u32[]) |  | 23 |
+| 0x78 | ptr | 142E46070(u32[]) |  | 23 |
+| 0x80 | ptr | 142E46070(u32[]) |  | 23 |
+| 0x88 | ptr | 142E46070(u32[]) | 0x40 (u32, element 0x4) | 23 |
 
-## struct_142EAAC50 (loader 142EAAC50, 0x38 bytes, 273 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | shared | 142EAADD0#1(u64[]) 142EAB360 |  | 204 |
-| 0x8 | shared | 142E46360(u32[]) |  | 204 |
-| 0x30 | ptr | 142EA5B70#0(u64[]) | 0x28 (u32, element 0x8) | 186 |
-
-## struct_142EAADD0#0 (loader 142EAADD0#0, 0x18 bytes, 273 seen)
+## struct_142EAAC50 (loader 142EAAC50, 0x38 bytes, 892 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EAADD0#1(u64[]) | 0x10 (u32, element 0x8) | 204 |
-| 0x8 | ptr | 142E46360(u32[]) |  | 204 |
+| 0x0 | shared | 142EAADD0#1(u64[]) 142EAB360 |  | 818 |
+| 0x8 | shared | 142E46360(u32[]) |  | 818 |
+| 0x30 | ptr | 142EA5B70#0(u64[]) | 0x28 (u32, element 0x8) | 348 |
+
+## struct_142EAADD0#0 (loader 142EAADD0#0, 0x18 bytes, 892 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142EAADD0#1(u64[]) | 0x10 (u32, element 0x8) | 818 |
+| 0x8 | ptr | 142E46360(u32[]) |  | 818 |
 
 ## struct_142EAAED0 (loader 142EAAED0, 0x8 bytes, 662 seen)
 
@@ -2395,42 +2567,42 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142EAB0C0#1(u64[]) |  | 2688 |
 
-## struct_142EAB170 (loader 142EAB170, 0x8 bytes, 12553 seen)
+## struct_142EAB170 (loader 142EAB170, 0x8 bytes, 89949 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 | 0x0 | ptr | 142EAB0C0#0 | a single element (0x10) | 2706 |
 
-## struct_142EAB1E0 (loader 142EAB1E0, 0x8 bytes, 12553 seen)
+## struct_142EAB1E0 (loader 142EAB1E0, 0x8 bytes, 89949 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EAB360 (loader 142EAB360, 0x8 bytes, 12905 seen)
+## struct_142EAB360 (loader 142EAB360, 0x8 bytes, 557691 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EAAFC0(image) | a single element (0xe8) | 12545 |
+| 0x0 | ptr | 142EAAFC0(image) | a single element (0xe8) | 88256 |
 
-## struct_142EAB480#1 (loader 142EAB480#1, 0x8 bytes, 812 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | ptr | 142EAAFC0(image) | a single element (0xe8) | 6 |
-
-## struct_142EAB600#1 (loader 142EAB600#1, 0x28 bytes, 5406 seen)
+## struct_142EAB480#1 (loader 142EAB480#1, 0x8 bytes, 5510 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x20 | ptr | 142EAB600#2(u8[]) | 0x8 (u32, element 0x1) | 570 |
+| 0x0 | ptr | 142EAAFC0(image) | a single element (0xe8) | 1691 |
 
-## struct_142EAB6F0 (loader 142EAB6F0, 0xc8 bytes, 218 seen)
+## struct_142EAB600#1 (loader 142EAB600#1, 0x28 bytes, 20116 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x8 | ptr | 142E460A0(u8[]) | 0x0 (u32, element 0x1) | 50 |
-| 0x10 | ptr | 142E460A0(u8[]) | 0x4 (u32, element 0x1) | 50 |
-| 0xa0 | ptr | 142E46090(u16[]) | 0x98 (u32, element 0x2) | 50 |
+| 0x20 | ptr | 142EAB600#2(u8[]) | 0x8 (u32, element 0x1) | 1981 |
+
+## struct_142EAB6F0 (loader 142EAB6F0, 0xc8 bytes, 1278 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x8 | ptr | 142E460A0(u8[]) | 0x0 (u32, element 0x1) | 192 |
+| 0x10 | ptr | 142E460A0(u8[]) | 0x4 (u32, element 0x1) | 192 |
+| 0xa0 | ptr | 142E46090(u16[]) | 0x98 (u32, element 0x2) | 192 |
 
 ## struct_142EAB8E0#0 (loader 142EAB8E0#0, 0xc8 bytes, 2 seen)
 
@@ -2456,19 +2628,19 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EABE10#1 (loader 142EABE10#1, 0x38 bytes, 273 seen)
+## struct_142EABE10#1 (loader 142EABE10#1, 0x38 bytes, 892 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | shared | 142EAADD0#1(u64[]) 142EAB360 |  | 204 |
-| 0x8 | shared | 142E46360(u32[]) |  | 204 |
-| 0x30 | shared | 142EA5B70#0(u64[]) 142EA5B70#1 |  | 186 |
+| 0x0 | shared | 142EAADD0#1(u64[]) 142EAB360 |  | 818 |
+| 0x8 | shared | 142E46360(u32[]) |  | 818 |
+| 0x30 | shared | 142EA5B70#0(u64[]) 142EA5B70#1 |  | 348 |
 
-## struct_142EABF10 (loader 142EABF10, 0x8 bytes, 273 seen)
+## struct_142EABF10 (loader 142EABF10, 0x8 bytes, 892 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EABE10#0(streaminginfo) | a single element (0x48) | 273 |
+| 0x0 | ptr | 142EABE10#0(streaminginfo) | a single element (0x48) | 892 |
 
 ## struct_142EAC030#0 (loader 142EAC030#0, 0x30 bytes, 2 seen)
 
@@ -2513,21 +2685,21 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EAEE80#0 (loader 142EAEE80#0, 0x90 bytes, 220 seen)
+## struct_142EAEE80#0 (loader 142EAEE80#0, 0x90 bytes, 1279 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x28 | ptr | 142EAEE80#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 34 |
-| 0x30 | ptr | 142EAEE80#2(array(element 0x20)) | 0x8 (u32, element 0x20) | 34 |
-| 0x38 | ptr | 142EAEE80#3(array(element 0x28)) | 0x8 (u32, element 0x28) | 34 |
-| 0x40 | ptr | 142EAEE80#4(u32[]) | 0x1c (u32, element 0x4) | 34 |
-| 0x48 | ptr | 142E46200(u32[]) | 0xc (u32, element 0x4) | 34 |
-| 0x50 | ptr | 142E46200(u32[]) |  | 34 |
-| 0x58 | ptr | 142E46180(u8[]) |  | 34 |
-| 0x60 | ptr | 142E46230(array(element 0xc)) | 0x8 (u32, element 0xc) | 34 |
-| 0x68 | ptr | 142E461A0(u32[]) |  | 34 |
-| 0x70 | ptr | 142EAEE80#5(u32[]) | 0x24 (u32, element 0x4) | 34 |
-| 0x88 | ptr | 142EAEE80#6(array(element 0x34)) | 0x8 (u32, element 0x34) | 34 |
+| 0x28 | ptr | 142EAEE80#1(array(element 0x20)) | 0x8 (u32, element 0x20) | 136 |
+| 0x30 | ptr | 142EAEE80#2(array(element 0x20)) | 0x8 (u32, element 0x20) | 136 |
+| 0x38 | ptr | 142EAEE80#3(array(element 0x28)) | 0x8 (u32, element 0x28) | 136 |
+| 0x40 | ptr | 142EAEE80#4(u32[]) | 0x1c (u32, element 0x4) | 136 |
+| 0x48 | ptr | 142E46200(u32[]) | 0xc (u32, element 0x4) | 136 |
+| 0x50 | ptr | 142E46200(u32[]) |  | 136 |
+| 0x58 | ptr | 142E46180(u8[]) |  | 136 |
+| 0x60 | ptr | 142E46230(array(element 0xc)) | 0x8 (u32, element 0xc) | 136 |
+| 0x68 | ptr | 142E461A0(u32[]) |  | 136 |
+| 0x70 | ptr | 142EAEE80#5(u32[]) | 0x24 (u32, element 0x4) | 136 |
+| 0x88 | ptr | 142EAEE80#6(array(element 0x34)) | 0x8 (u32, element 0x34) | 136 |
 
 ## struct_142EAF290 (loader 142EAF290, 0x30 bytes, 76 seen)
 
@@ -2536,11 +2708,11 @@
 | 0x0 | string |  |  | 76 |
 | 0x20 | ptr | 142E463A0(u16[]) | a single element (0x2) | 76 |
 
-## struct_142EAF320#2 (loader 142EAF320#2, 0x18 bytes, 94 seen)
+## struct_142EAF320#2 (loader 142EAF320#2, 0x18 bytes, 361 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x10 | ptr | 142EAB350(u8[]) | 0x0 (u32, element 0x1) | 94 |
+| 0x10 | ptr | 142EAB350(u8[]) | 0x0 (u32, element 0x1) | 361 |
 
 ## struct_142EAF490#0 (loader 142EAF490#0, 0xd0 bytes, 2 seen)
 
@@ -2562,11 +2734,11 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EAFA80 (loader 142EAFA80, 0x8 bytes, 18 seen)
+## struct_142EAFA80 (loader 142EAFA80, 0x8 bytes, 20 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EAF8E0(streamkey) | a single element (0x40) | 6 |
+| 0x0 | ptr | 142EAF8E0(streamkey) | a single element (0x40) | 7 |
 
 ## struct_142EAFD20#0 (loader 142EAFD20#0, 0x18 bytes, 2 seen)
 
@@ -2597,16 +2769,16 @@
 | 0x0 | asset | streamkey |  | 2 |
 | 0x8 | ptr | 142EB00F0#1(u64[]) |  | 2 |
 
-## struct_142EB0430 (loader 142EB0430, 0x8 bytes, 13296 seen)
+## struct_142EB0430 (loader 142EB0430, 0x8 bytes, 13300 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EB52F0#1 (loader 142EB52F0#1, 0x50 bytes, 904 seen)
+## struct_142EB52F0#1 (loader 142EB52F0#1, 0x50 bytes, 2493 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | asset | xmodel |  | 694 |
+| 0x0 | asset | xmodel |  | 2283 |
 
 ## struct_142EB5420 (loader 142EB5420, 0x10 bytes, 330 seen)
 
@@ -2718,14 +2890,14 @@
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
 
-## struct_142EB5E30#0 (loader 142EB5E30#0, 0x200 bytes, 8 seen)
+## struct_142EB5E30#0 (loader 142EB5E30#0, 0x200 bytes, 9 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | string |  |  | 8 |
-| 0x8 | string |  |  | 2 |
-| 0x10 | string |  |  | 2 |
-| 0x18 | string |  |  | 2 |
+| 0x0 | string |  |  | 9 |
+| 0x8 | string |  |  | 3 |
+| 0x10 | string |  |  | 3 |
+| 0x18 | string |  |  | 3 |
 | 0x28 | ptr | 142E68EC0#0(array(element 0x20)) |  | 2 |
 | 0x30 | ptr | 142EB5E30#1(u32[]) |  | 2 |
 | 0x40 | ptr | 142E447C0(array(element 0xec)) |  | 2 |
@@ -2742,28 +2914,28 @@
 | 0x120 | ptr | 142E447E0#13(array(element 0x20)) |  | 2 |
 | 0x138 | ptr | 142E445C0#0(array(element 0xa8)) |  | 2 |
 | 0x158 | ptr | 142E451F0#0(array(element 0x90)) |  | 2 |
-| 0x168 | ptr | 142E43B60(array(element 0x58)) |  | 2 |
-| 0x178 | ptr | 142E43E40(array(element 0x64)) |  | 2 |
-| 0x188 | shared | 142E445A0(array(element 0xc8)) |  | 2 |
-| 0x198 | ptr | 142E445A0(array(element 0xc8)) |  | 2 |
-| 0x1a8 | ptr | 142E445A0(array(element 0xc8)) |  | 2 |
-| 0x1b8 | ptr | 142E445A0(array(element 0xc8)) |  | 2 |
-| 0x1c8 | ptr | 142E445A0(array(element 0xc8)) |  | 2 |
-| 0x1d8 | ptr | 142E44EF0(array(element 0x1c4)) |  | 2 |
+| 0x168 | ptr | 142E43B60(array(element 0x58)) | 0x160 (u32, element 0x58) | 3 |
+| 0x178 | ptr | 142E43E40(array(element 0x64)) | 0x160 (u32, element 0x64) | 3 |
+| 0x188 | shared | 142E445A0(array(element 0xc8)) |  | 3 |
+| 0x198 | ptr | 142E445A0(array(element 0xc8)) | 0x190 (u32, element 0xc8) | 3 |
+| 0x1a8 | ptr | 142E445A0(array(element 0xc8)) | 0x1a0 (u32, element 0xc8) | 3 |
+| 0x1b8 | ptr | 142E445A0(array(element 0xc8)) | 0x1b0 (u32, element 0xc8) | 3 |
+| 0x1c8 | ptr | 142E445A0(array(element 0xc8)) | 0x160 (u32, element 0xc8) | 3 |
+| 0x1d8 | ptr | 142E44EF0(array(element 0x1c4)) | 0x1d0 (u32, element 0x1c4) | 3 |
 | 0x1e8 | string |  |  | 2 |
-| 0x1f0 | asset | streamkey |  | 2 |
+| 0x1f0 | asset | streamkey |  | 3 |
 
-## struct_142EB5E30#2 (loader 142EB5E30#2, 0x10 bytes, 8 seen)
-
-| Offset | Kind | Target | Count field | Seen |
-|---|---|---|---|---|
-| 0x0 | asset | streamkey |  | 2 |
-
-## struct_142EB63D0 (loader 142EB63D0, 0x8 bytes, 2 seen)
+## struct_142EB5E30#2 (loader 142EB5E30#2, 0x10 bytes, 9 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EB6360(soundbank) | a single element (0x200) | 2 |
+| 0x0 | asset | streamkey |  | 3 |
+
+## struct_142EB63D0 (loader 142EB63D0, 0x8 bytes, 3 seen)
+
+| Offset | Kind | Target | Count field | Seen |
+|---|---|---|---|---|
+| 0x0 | ptr | 142EB6360(soundbank) | a single element (0x200) | 3 |
 
 ## struct_142EB6560 (loader 142EB6560, 0x8 bytes, 8 seen)
 
@@ -2864,11 +3036,11 @@
 |---|---|---|---|---|
 | 0x0 | ptr | 142EB9900#0(fx_map) | a single element (0x3cd0) | 2 |
 
-## struct_142EB9BF0 (loader 142EB9BF0, 0x8 bytes, 3290 seen)
+## struct_142EB9BF0 (loader 142EB9BF0, 0x8 bytes, 4349 seen)
 
 | Offset | Kind | Target | Count field | Seen |
 |---|---|---|---|---|
-| 0x0 | ptr | 142EB9B50(fx_map_trzone) | a single element (0xa0) | 218 |
+| 0x0 | ptr | 142EB9B50(fx_map_trzone) | a single element (0xa0) | 1277 |
 
 ## struct_142EBA6E0#2 (loader 142EBA6E0#2, 0x1e0 bytes, 2 seen)
 

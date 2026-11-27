@@ -31,8 +31,17 @@ SKIPPED = {
     0x1466A4350: "renderer: create a texture (reads width/height/depth at +0xC/+0x10/+0xE, mips at +0x14)",
     0x1467373D0: "renderer: create a reflection probe texture ('<raw reflection probe>', 256x256, 6 faces) and write its "
                  "handle to +8 of the probe",
+    # shader stages from their bytecode (+0x18 data, +0x20 size), by the stage name each passes to 1465E8F00
+    0x146724740: "renderer: create a compute shader from its bytecode (+0x18 data, +0x20 size)",
+    0x146724770: "renderer: create a domain shader from its bytecode (+0x18 data, +0x20 size)",
+    0x1467247A0: "renderer: create a shader of another stage (name at 1476B5620) from its bytecode",
+    0x1467247D0: "renderer: create a pixel shader from its bytecode (+0x18 data, +0x20 size)",
     0x146724800: "renderer: create a vertex shader from its bytecode (+0x18 data, +0x20 size)",
-    0x1467247A0: "renderer: create a shader of another stage from its bytecode (+0x18 data, +0x20 size)",
+    0x146724830: "renderer: an empty function (returns at once)",
+    0x146724840: "renderer: create the GPU constant buffers of a technique's passes (14661AF70); writes their handles "
+                 "into the loaded data (+0x30 / +0x68 of each entry of +0x68), runtime values left zero here",
+    0x1467249E0: "renderer: register a loaded image (142E85450's) with the image streamer (142FCE290); also sets "
+                 "bit 0x8000 of the image's +0xC, a runtime flag left clear here",
     0x146590BC0: "renderer: decrypt a GPU buffer's debug name (XOR string at 14A483F58) and create the buffer",
     0x146590C50: "renderer: fill +0x130 with renderer pool indices (143118EC0 / 143118EA0: position in the renderer's "
                  "own resource pools) and create that GPU buffer, named by an XOR string at 14A483F28",
