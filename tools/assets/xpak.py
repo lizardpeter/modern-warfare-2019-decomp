@@ -62,7 +62,7 @@ class Pack:
     def item(self, key, size):
         """Decode an item: 0x80-aligned chunk headers {u32 count <= 30, u32 output offset, count x u32 (compressed
         size | type << 24)}, the chunks following each header at +0x80, 4-aligned. Types: 0 stored, 6/7 Oodle,
-        4/5 LZ4 (not handled here), 0xCF skipped. Each chunk decodes to min(remaining, 0x3FFE0) bytes."""
+        4/5 LZ4, 0xCF skipped. Each chunk decodes to min(remaining, 0x3FFE0) bytes."""
         found = self.find(key)
         if found is None:
             raise KeyError(f"{key:#x} not in this pack")
@@ -86,6 +86,10 @@ class Pack:
                     dest += csize
                 elif kind in (6, 7):
                     out[dest:dest + n] = self.oodle.decompress(b[p:p + csize], n)
+                    dest += n
+                elif kind in (4, 5):
+                    import lz4.block     # 147248D50, as zone codec 4/5
+                    out[dest:dest + n] = lz4.block.decompress(b[p:p + csize], uncompressed_size=n)
                     dest += n
                 elif kind == 0xCF:
                     pass

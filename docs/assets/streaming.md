@@ -55,7 +55,7 @@ each followed by its chunks:
 | +0x08 + 4 × i | chunk i: compressed size (low 24 bits), type (high byte) |
 
 The chunks follow the header at +0x80, each 4-byte aligned. Each decodes to `min(remaining output, 0x3FFE0)` bytes:
-type 0 is stored, 4 and 5 are LZ4 (147248D50), 6 and 7 Oodle (`OodleLZ_Decompress`, the data starting `8C 06`, i.e.
+type 0 is stored, 4 and 5 are LZ4 (147248D50, `LZ4_decompress_fast`), 6 and 7 Oodle (`OodleLZ_Decompress`, the data starting `8C 06`, i.e.
 Kraken), 0xCF is skipped. The output size is not in the pack: the caller knows it (for a streamed model surface set,
 the size field of its shared-data struct). Measured on `pak_escape4`: item 0xF72EB0126C649 is one Oodle chunk of
 3,249 bytes that decodes to 5,360, starting with u16 triangle indices 0, 1, 2, … — a model surface blob like the
