@@ -68,3 +68,16 @@ of the result shows the training course with its terrain.
 | +0x1E0 | per run ("collections"), 0x10 bytes: u32 **first instance**, u32 count, u32 **model index**, u32 flags | 142EA37B0 names the buffer; measured: counts sum to 9,778, every model index below 512 |
 | +0x1F8 | per run, 0x18 bytes: world box centre and half size | measured: 99.6% of instance origins lie within their run's box |
 | +0x2E0 | per instance, 0x18 bytes: **origin** 3 × s32 / 4096; **rotation** 4 × u16, `(v − 0x8000) / 32767`, x, y, z, w; **scale** f32 | measured: the rotations have unit length (1.0000–1.0001); scales 0.15–7.0 (73% 1.0); transforming a model's own vertices by them reproduces the run's box exactly (243 instances whose model surfaces are in the zone, centre error 0) |
+
+## Entities (map_ents +0x08; loader 142E83600)
+
++0x08 points to text of `u32 +0x10` bytes (209,599 in `mp_t_gun_course`, ending in a NUL): blocks
+`{ … }` of lines `<key> "<value>"`, as in the earlier games' entity strings, except that **keys are numbers**,
+not names. 1,227 entities in `mp_t_gun_course`: 723 `script_model`, 222 `script_brushmodel`, 142 `script_origin`,
+91 `script_struct`, 25 `trigger_multiple`, 1 `info_player_start`, 1 `worldspawn`, …
+
+The numbers are ids of the game's canonical strings, not of the zone's script strings (id 212 is not the zone's
+212th string). From the values: 212 = `classname` (values `worldspawn`, `info_player_start`), 709 = `origin`
+(3 numbers), 80 = `angles`. The id → name table is not in the exe as a static array (no pointer to the decrypted
+`classname`, `origin` literals exists); it is presumably built from data in the common zones, whose patches are not
+uploaded yet (*not resolved*).
