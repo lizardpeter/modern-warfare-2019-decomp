@@ -5,8 +5,9 @@ which load as they are (docs/assets/layouts.md). Structure (sizes, pointers, cou
 `analysis/ModernWarfare_TU67/assets/layouts/xmodel.md` and `xmodelsurfs.md`; this page decodes what the fields
 mean. Every rule names the function it comes from or says "measured on <zone>"; the rest is *unverified*.
 
-Status: surfaces' vertex counts, the position stream and its scale are decoded (measured); the other vertex streams,
-the index format, skin weights and the model's LOD and bone fields are next.
+Status (measured): vertex and triangle counts, positions and their scale, triangle indices, UVs and vertex colours.
+Next: the two packed 4-byte streams (normal / tangent frame), skin weights (+0x3C, by bone-influence group), the
+second half of the index region, and the model's LOD and bone fields.
 
 ## How rendering uses them
 
@@ -39,10 +40,16 @@ Measured on `body_mp_western_t9esports_1_12_1_lod1_pc` (`mp_bd_body_mp_western_t
 | +0x04 | u32 | **triangle count** (34,454) | *unverified* until the index stream is decoded |
 | +0x10 | u32 | hash-like value | *unknown* |
 | +0x14 | 4 × u16 | vertex counts by bone-influence count (6,935 + 7,144 + 4,073 + 3,801 = 21,953) | sum measured on every surface; which count is which is *unverified* |
-| +0x24..+0x50 | u32 each | offsets into the shared data, 0xFFFFFFFF = absent | measured |
+| +0x28..+0x50 | u32 each | offsets into the shared data, 0xFFFFFFFF = absent | measured |
 | +0x28 | u32 | **positions**: 8 bytes per vertex (below) | measured |
-| +0x2C, +0x30, +0x34, +0x40 | u32 | streams of 4 bytes per vertex (gaps between offsets are exactly 4 × vertex count) | *which is which: unknown* (normal/tangent frame, UV, colour, second UV are the usual set) |
-| +0x24 | u32 | a stream of 218,864 bytes for 21,953 vertices: not a whole number of bytes per vertex, so variable-size (skin weights or indices) | *unknown* |
+| +0x2C | u32 | 4 bytes per vertex, packed (byte means 123, 128, 157, 64 on surface 0): normal or tangent frame | *packing unknown* |
+| +0x30 | u32 | **UVs**: 2 × half-float per vertex, all within 0–1 on surface 0 | measured |
+| +0x34 | u32 | 4 bytes per vertex, packed (each byte averaging 128): normal or tangent frame | *packing unknown* |
+| +0x38 | u32 | **triangle indices**: u16, 3 per triangle, from this offset; the region is 12 bytes per triangle and its second half is also in range (a second index list?) | measured on 3 surfaces: the largest index is exactly vertex count − 1; the first triangles of surface 2 are (0,1,2), (1,3,4), (1,4,2), (2,4,5) |
+| +0x3C | u32 | a stream that is not 4 bytes per vertex: 12,944 bytes on surface 0 | *unknown*; skin weights by influence group are the candidate |
+| +0x40 | u32 | **vertex colour**: RGBA8 per vertex (255, 255, 255 and alpha varying on surface 0) | measured |
+| +0x44..+0x50 | u32 | further stream offsets, absent (0xFFFFFFFF) on every surface measured | |
+| +0x24 | u32 | not an offset: 194,584 / 1,900 / 1,248 on surfaces 0–2 (5.6, 9.1, 8.7 per triangle) | *unknown* |
 | +0x58 | ptr | 0x10-byte struct with a byte array | layouts |
 | +0x60, +0x68, +0x70 | ptr | arrays: u32 (count at +0x02 as u16), u64 (count at +0x08), bytes (count at +0x24) | layouts |
 | +0x78 | ptr | subdivision info (0x80 bytes, 142EA61D0) → levels of 0x238 bytes (142EA6280) | below |
