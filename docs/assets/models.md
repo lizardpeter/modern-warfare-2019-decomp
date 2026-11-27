@@ -61,6 +61,11 @@ Measured on `body_mp_western_t9esports_1_12_1_lod1_pc` (`mp_bd_body_mp_western_t
 
 ### Positions
 
+**Checked visually**: unpacking every surface of `body_mp_western_t9esports_1_12_1_lod1_pc` with these rules
+(positions at +0x28 with the scale at +0xAC and offset at +0xA0, triangles from +0x38) and rendering the result gives
+the character's body (hooded top, gloves, knee pads, holster, boots; the head is a separate model): 22,854 vertices,
+35,840 triangles, extent −7.0…16.5 × −20.6…20.5 × 0…63.6.
+
 Each vertex is a u64 with 21 bits per axis: x = bits 0–20, y = bits 21–41, z = bits 42–62 (bit 63 clear on every
 vertex measured), each biased by 2^20: `position = (packed − 2^20) / 2^20 × scale + offset`.
 
