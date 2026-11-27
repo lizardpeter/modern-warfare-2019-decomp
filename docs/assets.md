@@ -32,6 +32,9 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
 - **Whole zones load in the emulator with the game's own loaders** (tests/assets/zone_emu.py, docs/assets/zones.md
   8–9): the patched `mp_t_gun_course` loads to its last byte, 12,235 assets with their names. This is the ground truth
   for every per-type reader, and already lets any asset be inspected exactly as the game holds it in memory.
+- **Zones load from the original files alone** with the translated loaders (tools/assets/loaders/, docs/assets/
+  loader-translation.md): TU67's decompiled loaders run as Python and match the game's own code byte for byte on
+  three character zones and the whole `mp_t_gun_course` map (tests/assets/loaders_check.py).
 - **Animations**: the XAnimParts header and everything it points to are located (docs/assets/animations.md); the
   track encoding is next.
 

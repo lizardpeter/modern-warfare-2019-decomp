@@ -40,17 +40,20 @@ same translation: Forge reads only the original game files.
    checks, renderer calls). Memory uses the emulator's addresses, so every block and the asset pool compare byte
    for byte.
 
-**Results.** After the signature fix below, the translated loaders load these zones from the original files with
-**every block and the asset pool byte for byte equal to the game's own code in the emulator**:
+**Results.** The translated loaders (tools/assets/loaders/) load these zones from the original files alone with
+**every stream block and the asset pool byte for byte equal to the game's own code in the emulator**
+(tests/assets/loaders_check.py: same reads, same assets in the same order, same script strings):
 
 | Zone | Assets | Time (Python) |
 |---|---|---|
-| `mp_vh_c_s4_vm_mp_aus_lucas_02_lod0_tr` (viewmodel arms) | 77 | 1.1 s |
-| `mp_bd_body_mp_western_t9esports_1_10_1_lod1_l15_tr` (body) | 73 | 1.0 s |
-| `mp_hd_head_mp_eastern_golem_1_1_blendshape_l15_tr` (head) | 23 | 1.1 s |
+| `mp_vh_c_s4_vm_mp_aus_lucas_02_lod0_tr` (viewmodel arms) | 77 | 2.9 s |
+| `mp_bd_body_mp_western_t9esports_1_10_1_lod1_l15_tr` (body) | 73 | 2.7 s |
+| `mp_hd_head_mp_eastern_golem_1_1_blendshape_l15_tr` (head) | 23 | 2.8 s |
+| patched `mp_t_gun_course` (a whole map: 296 MB, 12,235 assets) | 12,235 | 164 s |
 
-The patched `mp_t_gun_course` diverges at read 55,507 (stream 0x2A0AB1, inside an xmodelsurfs): see the second
-signature problem below.
+The only bytes skipped are 16 the game itself never initialises (records/bugs.tsv B0001): 142DFEDA0 copies a
+stack block whose bytes `[rsp+0x4C..0x4F]` it never writes into each deferred command's record (+0xC..+0xF), and
+142DEDDA0 writes only the low half of the list entry's 8-byte field at +8. Their value is whatever was on the stack.
 
 **Signature problem 1: calls that lose arguments.** In the first published pseudocode, 459 of the 8,393 calls in
 the reachable loaders passed fewer arguments than the callee takes. Most were harmless (Load_Stream called with
@@ -82,14 +85,18 @@ publish.py writes them as `// global …` and `// ptradd …` lines above the fu
 given their documented meaning; Ghidra's odd-sized integers (`uint3`, `undefined7`, …) keep their real width.
 Library code Ghidra cannot render (the CRT's hand-written `memcpy` at 1474213E0) gets its standard meaning.
 
-Progress on the patched `mp_t_gun_course` after the callee-first signatures: identical reads up to read 372,705
-(stream 0xD726F81 of 0x11AC2F37, asset 7,676, a 0x55 asset whose bone entries hold xanimcurve references), where
-the global-type problem above makes the translation skip them.
+With them, the translation reads the decompiler's type for every global it uses (`// global` lines); `_DAT_` /
+`uRam` names without one take the stored value's size, and other untyped globals Ghidra's recorded type. That fixed
+the last divergence on `mp_t_gun_course` (asset 7,676, whose bone entries hold xanimcurve references: in 142E45450
+`DAT_14bce6f30 + 0x1a` is byte 0x68). The `// ptradd` lines (element size of each pointer addition on a global) are
+recorded too; the types alone were enough so far.
 
 ## Next
 
-1. Re-decompile with callee-first signatures; confirm no reachable loader has an `in_` argument register.
-2. Continue on `mp_t_gun_course` until every block and the pool equal the emulator's.
-3. Generate the reader from the translation instead of interpreting it (Python first, then Rust for Forge), with
-   the stand-ins replaced by the plain reader's own implementations of the primitives, each documented in
-   zones.md 8.
+1. **No exe at run time.** The translated loaders still take the initial values of the globals they read before
+   writing from the exe image; record those (and only those) as generated data, so the reader needs only the game's
+   data files.
+2. **Generate code instead of compiling at run time**, then port the generator's output to Rust for Forge. The
+   stand-ins become the reader's own documented primitives (zones.md 8).
+3. More zones as the remaining archives arrive (weapons: `common_mp`), each run through loaders_check.py.
+4. Speed: 164 s for a 296 MB map in Python; the generated code should be much faster.
