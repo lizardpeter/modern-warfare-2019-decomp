@@ -38,8 +38,8 @@ shared by many types.
 ## Coverage
 
 Only what the traced zones contain is listed: a field never non-zero in them is not shown, and asset types they do
-not contain have no page yet. Traced so far: every zone stored entirely in the archives uploaded so far (data.000–.029
-and .045–.049) with its patch where it has one: 10,532 of 11,690 load (the rest below), mostly transient zones
+not contain have no page yet. Traced so far: every zone stored entirely in the archives uploaded so far (data.000–.033,
+.035–.037 and .045–.049) with its patch where it has one: 13,653 of 14,811 load (the rest below), mostly transient zones
 (character bodies and heads, weapon and attachment models, vehicles, co-op and map pieces, techsets). Result: 480
 structs across 61 asset types. Weapons, most map assets and the shared assets are in `common_mp` and the base map
 zones, whose patches are in archives not uploaded yet (data.030–.044, .050 on, e.g. `common_mp.fp` in data.066); types
@@ -57,9 +57,7 @@ Not loaded (the game's own loaders fail on them too, so it is not the translatio
   goes wrong at the second surface. The zone header is the same version (0xFCD) and kind as zones that load. So
   these are zones in a surface format neither exe loads: an older build's, left in the install (the game would not
   load them either). Reading them needs the 0xC0 layout worked out in full (*not done*).
-- 3 dedicated-server zones (`srv_cp_*`) compressed with codec 5, which tools/assets/zone.py does not decode yet.
 - 4 `dummy_*` zones with no signed unit after the header.
-- 3 dedicated-server zones (`srv_cp_*`) compressed with codec 5, which tools/assets/zone.py does not decode yet.
 
 Checked by hand against the code: `xanim` (docs/assets/animations.md) matches field for field, including which
 counts are u8, u16 and u32.

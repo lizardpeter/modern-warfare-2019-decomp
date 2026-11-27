@@ -27,7 +27,8 @@ VERSION = 11                           # 143754E5A
 # 143754F20 / 142DEFEC0: the patched header's +0xC must equal this table (147602890) indexed by the zone kind
 # (header byte 0x12); a zone with a .fp patch is checked with the patch's header (docs/assets/zones.md 7)
 FORMAT_VERSION = [0x10C1, 0x10C1, 0xFF3, 0xFF3, 0xFF3, 0xFF3, 0x10C1] + [0xFCD] * 10
-CODEC_STORED, CODEC_OODLE = (1,), (6, 7)      # 142DEF29F; 4 and 5 use 147248D50 (unidentified), others DEV ERROR 0x298
+CODEC_STORED, CODEC_OODLE = (1,), (6, 7)      # 142DEF29F; others DEV ERROR 0x298
+CODEC_LZ4 = (4, 5)        # 147248D50: LZ4 block decoding with a known output size (LZ4_decompress_fast)
 
 
 @dataclass
@@ -120,6 +121,9 @@ def decompress(z: bytes, oodle: Oodle) -> bytes:
             out += oodle.decompress(z[off:off + cs], us)
         elif codec in CODEC_STORED:
             out += z[off:off + cs]
+        elif codec in CODEC_LZ4:
+            import lz4.block     # pip install lz4
+            out += lz4.block.decompress(z[off:off + cs], uncompressed_size=us)
         else:
             raise ValueError(f"codec {codec} not supported yet")
     if len(out) != total:

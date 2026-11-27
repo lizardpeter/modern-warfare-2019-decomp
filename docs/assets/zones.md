@@ -69,7 +69,9 @@ every zone read), then:
 
 - 8-byte stream header: u32 total decompressed size; bytes 4–6 (`00 00 01` measured); byte 7 the codec
   (142DEF29F): 1 stored (memcpy, 142DEF0C0), 4 and 5 through 147248D50 (*unidentified*), 6 and 7 Oodle
-  (142DEF0E0), anything else DEV ERROR 0x298. Every zone measured is codec 6.
+  (142DEF0E0), 4 and 5 LZ4 blocks (147248D50 is LZ4_decompress_fast: token nibbles, u16 offsets, output size
+  known), anything else DEV ERROR 0x298. Every zone measured is codec 6 except the dedicated-server zones
+  (`srv_*`), which are codec 5.
 - Then blocks until the total is reached, each: u32 compressed size, u32 decompressed size, u32 check value
   (0 in every block measured; when the stream has a verify context at +0x8E920 the block is checked by
   142F19A10/142F19530, *unverified* what they compute), then the data, padded to a multiple of 4 (142DEF335).

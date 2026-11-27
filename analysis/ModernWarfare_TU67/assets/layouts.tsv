@@ -3,13 +3,13 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142DFF0D0	struct_142DFF0D0	0x10	60	0x8	shared	142E09350#0(weapon+0x8) 142E45CC0				30
 142DFF170#0	struct_142DFF170#0	0x30	7682	0x28	ptr	142DFF170#1(u16[])				5132
 142DFF350#0	struct_142DFF350#0	0x8	2	0x0	ptr	142DFF350#1(array(element 0x30))				2
-142DFF420	struct_142DFF420	0x68	35	0x8	ptr	142E46360(u32[])				35
-142DFF420	struct_142DFF420	0x68	35	0x10	ptr	142E46360(u32[])	0x2	2	0x4	35
-142DFF420	struct_142DFF420	0x68	35	0x20	ptr	142E46100(u8[])	0x18	4	0x1	35
-142DFF570	struct_142DFF570	0x8	1278	0x0	ptr	142DFF420	one		0x68	35
-142DFF600#0	gfx_map_trzone+0x138	0x60	199	0x8	ptr	142DFF600#1(array(element 0x2c))	0x0	4	0x2c	199
-142DFF600#0	gfx_map_trzone+0x138	0x60	199	0x50	ptr	142E43B30(array(element 0x18))	0x6	2	0x18	199
-142DFF600#0	gfx_map_trzone+0x138	0x60	199	0x58	ptr	142DFF600#2(u32[])	0x0	4	0x4	199
+142DFF420	struct_142DFF420	0x68	50	0x8	ptr	142E46360(u32[])				50
+142DFF420	struct_142DFF420	0x68	50	0x10	ptr	142E46360(u32[])	0x2	2	0x4	50
+142DFF420	struct_142DFF420	0x68	50	0x20	ptr	142E46100(u8[])	0x18	4	0x1	50
+142DFF570	struct_142DFF570	0x8	1685	0x0	ptr	142DFF420	one		0x68	50
+142DFF600#0	gfx_map_trzone+0x138	0x60	291	0x8	ptr	142DFF600#1(array(element 0x2c))	0x0	4	0x2c	291
+142DFF600#0	gfx_map_trzone+0x138	0x60	291	0x50	ptr	142E43B30(array(element 0x18))	0x6	2	0x18	291
+142DFF600#0	gfx_map_trzone+0x138	0x60	291	0x58	ptr	142DFF600#2(u32[])	0x0	4	0x4	291
 142DFF980#0	struct_142DFF980#0	0x1f0	1	0x8	ptr	142DFF980#1(u64[])				1
 142DFF980#0	struct_142DFF980#0	0x1f0	1	0x58	shared	142DFFF30#1(array(element 0x18))				1
 142DFF980#0	struct_142DFF980#0	0x1f0	1	0x68	shared	142E463A0(u16[])				1
@@ -31,40 +31,40 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E00370	struct_142E00370	0xc0	2	0x28	ptr	142E463A0(u16[])				2
 142E00370	struct_142E00370	0xc0	2	0x30	ptr	142E46090(u16[])				2
 142E00370	struct_142E00370	0xc0	2	0x38	ptr	142E460A0(u8[])				2
-142E005B0#0	struct_142E005B0#0	0x280	42	0x8	ptr	142E005B0#1(array(element 0x20))	0x0	4	0x20	42
-142E005B0#0	struct_142E005B0#0	0x280	42	0x70	ptr	142E460B0(array(element 0xc))	0x0	4	0xc	42
-142E005B0#0	struct_142E005B0#0	0x280	42	0xd0	ptr	142E005B0#2(array(element 0x5c))	one		0x5c	42
-142E005B0#0	struct_142E005B0#0	0x280	42	0xd8	ptr	142E00C40#0(array(element 0xe0))	one		0xe0	40
-142E005B0#0	struct_142E005B0#0	0x280	42	0xe8	ptr	142E005B0#3(array(element 0x10))	0xe0	4	0x10	42
-142E005B0#0	struct_142E005B0#0	0x280	42	0x130	ptr	142E005B0#4(array(element 0x10))	0xe0	4	0x10	42
-142E005B0#0	struct_142E005B0#0	0x280	42	0x178	ptr	142E005B0#5(array(element 0x40))	0xe4	4	0x40	42
-142E005B0#0	struct_142E005B0#0	0x280	42	0x1c8	ptr	142E005B0#6(u32[])	0x1c0	4	0x4	42
-142E00B10#0	struct_142E00B10#0	0x28	1278	0x0	ptr	142E005B0#0	one		0x280	42
-142E00B10#0	struct_142E00B10#0	0x28	1278	0x10	ptr	142E00B10#1(array(element 0x40))	0x8	4	0x40	698
-142E00B10#0	struct_142E00B10#0	0x28	1278	0x18	ptr	142DFF980#0	one		0x1f0	1
-142E00C40#1	struct_142E00C40#1	0xe0	40	0x8	ptr	142E00C40#2	one		0x40	40
-142E00C40#1	struct_142E00C40#1	0xe0	40	0x10	shared	142E00C40#3(array(element 0xc))				40
-142E00C40#1	struct_142E00C40#1	0xe0	40	0x18	shared	142E00C40#4(array(element 0x10))				40
+142E005B0#0	struct_142E005B0#0	0x280	56	0x8	ptr	142E005B0#1(array(element 0x20))	0x0	4	0x20	56
+142E005B0#0	struct_142E005B0#0	0x280	56	0x70	ptr	142E460B0(array(element 0xc))	0x0	4	0xc	56
+142E005B0#0	struct_142E005B0#0	0x280	56	0xd0	ptr	142E005B0#2(array(element 0x5c))	one		0x5c	56
+142E005B0#0	struct_142E005B0#0	0x280	56	0xd8	ptr	142E00C40#0(array(element 0xe0))	one		0xe0	54
+142E005B0#0	struct_142E005B0#0	0x280	56	0xe8	ptr	142E005B0#3(array(element 0x10))	0xe0	4	0x10	56
+142E005B0#0	struct_142E005B0#0	0x280	56	0x130	ptr	142E005B0#4(array(element 0x10))	0xe0	4	0x10	56
+142E005B0#0	struct_142E005B0#0	0x280	56	0x178	ptr	142E005B0#5(array(element 0x40))	0xe4	4	0x40	56
+142E005B0#0	struct_142E005B0#0	0x280	56	0x1c8	ptr	142E005B0#6(u32[])	0x1c0	4	0x4	56
+142E00B10#0	struct_142E00B10#0	0x28	1685	0x0	ptr	142E005B0#0	one		0x280	56
+142E00B10#0	struct_142E00B10#0	0x28	1685	0x10	ptr	142E00B10#1(array(element 0x40))	0x8	4	0x40	924
+142E00B10#0	struct_142E00B10#0	0x28	1685	0x18	ptr	142DFF980#0	one		0x1f0	1
+142E00C40#1	struct_142E00C40#1	0xe0	54	0x8	ptr	142E00C40#2	one		0x40	54
+142E00C40#1	struct_142E00C40#1	0xe0	54	0x10	shared	142E00C40#3(array(element 0xc))				54
+142E00C40#1	struct_142E00C40#1	0xe0	54	0x18	shared	142E00C40#4(array(element 0x10))				54
 142E00EF0#0	struct_142E00EF0#0	0x18	2	0x8	ptr	142E00EF0#1(array(element 0x1c))				2
 142E00EF0#0	struct_142E00EF0#0	0x18	2	0x10	ptr	142E463A0(u16[])				2
-142E00FB0#0	struct_142E00FB0#0	0xf0	698	0x30	shared	142EAB600#2(u8[])				698
-142E00FB0#0	struct_142E00FB0#0	0xf0	698	0x58	shared	142EAB600#2(u8[])				698
-142E00FB0#0	struct_142E00FB0#0	0xf0	698	0x60	ptr	142E00FB0#1(array(element 0x20))	0x8	4	0x20	698
-142E00FB0#0	struct_142E00FB0#0	0xf0	698	0xa8	ptr	142E00FB0#2(array(element 0x40))	0x8	4	0x40	698
-142E011A0	struct_142E011A0	0x8	1278	0x0	ptr	142E00FB0#0	one		0xf0	698
+142E00FB0#0	struct_142E00FB0#0	0xf0	924	0x30	shared	142EAB600#2(u8[])				924
+142E00FB0#0	struct_142E00FB0#0	0xf0	924	0x58	shared	142EAB600#2(u8[])				924
+142E00FB0#0	struct_142E00FB0#0	0xf0	924	0x60	ptr	142E00FB0#1(array(element 0x20))	0x8	4	0x20	924
+142E00FB0#0	struct_142E00FB0#0	0xf0	924	0xa8	ptr	142E00FB0#2(array(element 0x40))	0x8	4	0x40	924
+142E011A0	struct_142E011A0	0x8	1685	0x0	ptr	142E00FB0#0	one		0xf0	924
 142E01230	struct_142E01230	0x20	66	0x8	ptr	142E46410(array(element 0x10))				60
 142E01230	struct_142E01230	0x20	66	0x10	ptr	142E46100(u8[])	0x1	1	0x1	60
 142E01230	struct_142E01230	0x20	66	0x18	ptr	142E463F0(array(element 0xc))	0x2	2	0xc	60
-142E01310#0	struct_142E01310#0	0xf10	195	0x30	shared	142EAB600#2(u8[])				195
-142E01310#0	struct_142E01310#0	0xf10	195	0x58	shared	142EAB600#2(u8[])				195
-142E01310#0	struct_142E01310#0	0xf10	195	0x80	shared	142EAB600#2(u8[])				195
-142E01310#1	struct_142E01310#1	0xf00	195	0x20	shared	142EAB600#2(u8[])				195
-142E01310#1	struct_142E01310#1	0xf00	195	0x48	shared	142EAB600#2(u8[])				195
-142E01310#1	struct_142E01310#1	0xf00	195	0x70	shared	142EAB600#2(u8[])				195
-142E01310#2	struct_142E01310#2	0x78	6240	0x20	shared	142EAB600#2(u8[])				195
-142E01310#2	struct_142E01310#2	0x78	6240	0x48	shared	142EAB600#2(u8[])				195
-142E01310#2	struct_142E01310#2	0x78	6240	0x70	shared	142EAB600#2(u8[])				195
-142E013E0	struct_142E013E0	0x8	1278	0x0	ptr	142E01310#0	one		0xf10	195
+142E01310#0	struct_142E01310#0	0xf10	299	0x30	shared	142EAB600#2(u8[])				299
+142E01310#0	struct_142E01310#0	0xf10	299	0x58	shared	142EAB600#2(u8[])				299
+142E01310#0	struct_142E01310#0	0xf10	299	0x80	shared	142EAB600#2(u8[])				299
+142E01310#1	struct_142E01310#1	0xf00	299	0x20	shared	142EAB600#2(u8[])				299
+142E01310#1	struct_142E01310#1	0xf00	299	0x48	shared	142EAB600#2(u8[])				299
+142E01310#1	struct_142E01310#1	0xf00	299	0x70	shared	142EAB600#2(u8[])				299
+142E01310#2	struct_142E01310#2	0x78	9568	0x20	shared	142EAB600#2(u8[])				299
+142E01310#2	struct_142E01310#2	0x78	9568	0x48	shared	142EAB600#2(u8[])				299
+142E01310#2	struct_142E01310#2	0x78	9568	0x70	shared	142EAB600#2(u8[])				299
+142E013E0	struct_142E013E0	0x8	1685	0x0	ptr	142E01310#0	one		0xf10	299
 142E01540	struct_142E01540	0x80	2	0x0	asset	image				2
 142E01540	struct_142E01540	0x80	2	0x8	asset	image				2
 142E01540	struct_142E01540	0x80	2	0x10	asset	image				2
@@ -345,24 +345,24 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E050E0#2	struct_142E050E0#2	0x8	42	0x0	asset	material				42
 142E050E0#4	struct_142E050E0#4	0x8	70	0x0	asset	decalvolumemask				70
 142E050E0#6	struct_142E050E0#6	0x3000	2	0x0	asset	gfx_map_trzone				2
-142E05580#0	struct_142E05580#0	0x18	1278	0x8	ptr	142E05580#1(u32[])	one		0x4	2
-142E05580#0	struct_142E05580#0	0x18	1278	0x10	ptr	142E05580#2(u64[])	one		0x8	2
+142E05580#0	struct_142E05580#0	0x18	1685	0x8	ptr	142E05580#1(u32[])	one		0x4	2
+142E05580#0	struct_142E05580#0	0x18	1685	0x10	ptr	142E05580#2(u64[])	one		0x8	2
 142E05690#0	struct_142E05690#0	0x20	2	0x8	ptr	142E05690#1(array(element 0x14))				2
 142E05690#0	struct_142E05690#0	0x20	2	0x18	ptr	142E05690#2(u64[])	one		0x8	2
 142E05770	struct_142E05770	0x8	2	0x0	ptr	142E018F0#0(gfx_map)	one		0x4610	2
-142E05890	gfx_map_trzone	0x148	1278	0x0	string					1278
-142E05890	gfx_map_trzone	0x148	1278	0x18	shared	142E460A0(u8[])				192
-142E05890	gfx_map_trzone	0x148	1278	0x20	shared	142E460A0(u8[])				192
-142E05890	gfx_map_trzone	0x148	1278	0xb0	shared	142E46090(u16[])				192
-142E05890	gfx_map_trzone	0x148	1278	0xe0	shared	142E05580#1(u32[])				2
-142E05890	gfx_map_trzone	0x148	1278	0xe8	shared	142DFF350#0 142E05580#2(u64[])				2
-142E05890	gfx_map_trzone	0x148	1278	0xf8	shared	142E005B0#0				42
-142E05890	gfx_map_trzone	0x148	1278	0x108	shared	142E00B10#1(array(element 0x40))				698
-142E05890	gfx_map_trzone	0x148	1278	0x110	shared	142DFF980#0				1
-142E05890	gfx_map_trzone	0x148	1278	0x120	ptr	142EAF320#0(gfx_map_trzone+0x120)	one		0x18	320
-142E05890	gfx_map_trzone	0x148	1278	0x130	ptr	142E463A0(u16[])	0x128	4	0x2	692
-142E05890	gfx_map_trzone	0x148	1278	0x138	ptr	142DFF600#0(gfx_map_trzone+0x138)	one		0x60	199
-142E05AB0	struct_142E05AB0	0x8	4350	0x0	ptr	142E05890(gfx_map_trzone)	one		0x148	1278
+142E05890	gfx_map_trzone	0x148	1685	0x0	string					1685
+142E05890	gfx_map_trzone	0x148	1685	0x18	shared	142E460A0(u8[])				296
+142E05890	gfx_map_trzone	0x148	1685	0x20	shared	142E460A0(u8[])				296
+142E05890	gfx_map_trzone	0x148	1685	0xb0	shared	142E46090(u16[])				296
+142E05890	gfx_map_trzone	0x148	1685	0xe0	shared	142E05580#1(u32[])				2
+142E05890	gfx_map_trzone	0x148	1685	0xe8	shared	142DFF350#0 142E05580#2(u64[])				2
+142E05890	gfx_map_trzone	0x148	1685	0xf8	shared	142E005B0#0				56
+142E05890	gfx_map_trzone	0x148	1685	0x108	shared	142E00B10#1(array(element 0x40))				924
+142E05890	gfx_map_trzone	0x148	1685	0x110	shared	142DFF980#0				1
+142E05890	gfx_map_trzone	0x148	1685	0x120	ptr	142EAF320#0(gfx_map_trzone+0x120)	one		0x18	463
+142E05890	gfx_map_trzone	0x148	1685	0x130	ptr	142E463A0(u16[])	0x128	4	0x2	916
+142E05890	gfx_map_trzone	0x148	1685	0x138	ptr	142DFF600#0(gfx_map_trzone+0x138)	one		0x60	291
+142E05AB0	struct_142E05AB0	0x8	4757	0x0	ptr	142E05890(gfx_map_trzone)	one		0x148	1685
 142E05BD0#0	struct_142E05BD0#0	0x28	2	0x18	ptr	142E460E0(u8[])				2
 142E05BD0#0	struct_142E05BD0#0	0x28	2	0x20	shared	142E460E0(u8[])				2
 142E05BD0#1	struct_142E05BD0#1	0x8	2	0x0	shared	142E460E0(u8[])				2
@@ -564,11 +564,11 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E09350#0	weapon+0x8	0x1740	4	0x15b8	string					4
 142E09350#0	weapon+0x8	0x1740	4	0x1680	string					4
 142E09350#0	weapon+0x8	0x1740	4	0x1690	string					4
-142E29570#0	scriptable	0x70	68	0x0	string					68
-142E29570#0	scriptable	0x70	68	0x18	ptr	142E29570#1(array(element 0x68))				36
-142E29570#0	scriptable	0x70	68	0x48	ptr	142E29570#2(scriptable+0x48)	one		0x10	36
-142E29570#0	scriptable	0x70	68	0x60	shared	142EA5730#0(u64[]) 142EA5730#1				30
-142E29840	struct_142E29840	0x8	15718	0x0	ptr	142E29570#0(scriptable)	one		0x70	68
+142E29570#0	scriptable	0x70	74	0x0	string					74
+142E29570#0	scriptable	0x70	74	0x18	ptr	142E29570#1(array(element 0x68))				36
+142E29570#0	scriptable	0x70	74	0x48	ptr	142E29570#2(scriptable+0x48)	one		0x10	36
+142E29570#0	scriptable	0x70	74	0x60	shared	142EA5730#0(u64[]) 142EA5730#1				30
+142E29840	struct_142E29840	0x8	20641	0x0	ptr	142E29570#0(scriptable)	one		0x70	74
 142E29B90#0	struct_142E29B90#0	0x50	86	0x0	ptr	142E29B90#1	one		0x10	16
 142E29B90#0	struct_142E29B90#0	0x50	86	0x8	asset	xanim				86
 142E29B90#0	struct_142E29B90#0	0x50	86	0x30	ptr	142E2A9E0#0(array(element 0xb0))				16
@@ -681,61 +681,61 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E2EB00	struct_142E2EB00	0x80	34	0x0	ptr	142E2E5F0	one		0x18	32
 142E2EB00	struct_142E2EB00	0x80	34	0x8	string					34
 142E2EB00	struct_142E2EB00	0x80	34	0x50	string					34
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	material				69681
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	xmodelsurfs				30093
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	techset				17756
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	xmodeldetailcollision				17435
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	xmodel				14853
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	physicsasset				13714
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	xanim				13527
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	image				10778
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	pixelshader				7371
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	collisiontile				3871
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	vertexshader				3134
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	gfx_map_trzone				1278
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	fx_map_trzone				1277
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	vfx				923
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	streaminginfo				892
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	decalvolumematerial				833
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	domainshader				449
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	localize				325
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	hullshader				220
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	edgelist				189
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	dynentitylist				138
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	scriptfile				120
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	netconststrings				86
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	decalvolumemask				70
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	physicsfxshape				50
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	scriptable				36
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	rawfile				27
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	keyvaluepairs				17
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	lightdef				15
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	footstepvfx				14
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	clothasset				10
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	streamkey				7
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	hudoutline				6
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	gradingclut				4
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	camera				4
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	weapon				4
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	vehicle				4
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	soundbank				3
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	com_map				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	glass_map				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	aipaths				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	navmesh				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	tacgraph				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	fogspline				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	stringtable				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	proceduralbones				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	dynamicbones				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	stterrain				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	xcompositemodel				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	surfacefx				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	impactfx				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	gfx_map				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	fx_map				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	map_ents				2
-142E2ECA0	struct_142E2ECA0	0x10	209248	0x8	asset	col_map				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	material				69681
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	xmodelsurfs				35386
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	xmodel				19521
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	techset				17756
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	xmodeldetailcollision				17678
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	xanim				13752
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	physicsasset				13714
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	image				11147
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	pixelshader				7371
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	collisiontile				5501
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	vertexshader				3134
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	gfx_map_trzone				1685
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	fx_map_trzone				1684
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	streaminginfo				1207
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	vfx				923
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	decalvolumematerial				833
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	domainshader				449
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	edgelist				365
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	localize				325
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	hullshader				220
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	dynentitylist				211
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	scriptfile				120
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	netconststrings				86
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	decalvolumemask				70
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	physicsfxshape				50
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	scriptable				36
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	rawfile				27
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	keyvaluepairs				17
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	lightdef				15
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	footstepvfx				14
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	clothasset				10
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	streamkey				7
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	hudoutline				6
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	gradingclut				4
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	camera				4
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	weapon				4
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	vehicle				4
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	soundbank				3
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	com_map				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	glass_map				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	aipaths				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	navmesh				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	tacgraph				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	fogspline				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	stringtable				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	proceduralbones				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	dynamicbones				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	stterrain				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	xcompositemodel				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	surfacefx				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	impactfx				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	gfx_map				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	fx_map				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	map_ents				2
+142E2ECA0	struct_142E2ECA0	0x10	223054	0x8	asset	col_map				2
 142E3FD50#1	struct_142E3FD50#1	0x38	54	0x18	asset	xmodel				54
 142E402A0	gradingclut	0x18	4	0x0	string					4
 142E402A0	gradingclut	0x18	4	0x10	asset	image				4
@@ -785,7 +785,7 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E43BA0	footstepvfx	0x408	14	0x1b0	asset	vfx				8
 142E43BA0	footstepvfx	0x408	14	0x1f8	asset	vfx				8
 142E43C60	struct_142E43C60	0x8	62	0x0	ptr	142E43BA0(footstepvfx)	one		0x408	14
-142E444C0#0	struct_142E444C0#0	0x10	10533	0x8	ptr	142E444C0#1(u64[])	0x0	4	0x8	4628
+142E444C0#0	struct_142E444C0#0	0x10	13447	0x8	ptr	142E444C0#1(u64[])	0x0	4	0x8	6351
 142E445C0#1	struct_142E445C0#1	0xa8	10	0x68	ptr	142E445C0#2	one		0x400	10
 142E445C0#1	struct_142E445C0#1	0xa8	10	0x70	shared	142E445C0#3				10
 142E445C0#1	struct_142E445C0#1	0xa8	10	0x78	shared	142E445C0#4				10
@@ -824,14 +824,14 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E45450#2	struct_142E45450#2	0xa8	10	0x60	asset	xanimcurve				2
 142E45450#2	struct_142E45450#2	0xa8	10	0x78	asset	xanimcurve				10
 142E45450#2	struct_142E45450#2	0xa8	10	0x90	asset	xanimcurve				4
-142E45570#0	dynamicbones	0x58	707	0x0	string					707
-142E45570#0	dynamicbones	0x58	707	0x10	ptr	142E45570#1(array(element 0x168))				2
-142E45840	struct_142E45840	0x8	15532	0x0	ptr	142E45570#0(dynamicbones)	one		0x58	707
-142E45960#0	proceduralbones	0x20	221	0x0	string					221
-142E45960#0	proceduralbones	0x20	221	0x8	ptr	142E45960#1(array(element 0x58))				2
-142E45960#0	proceduralbones	0x20	221	0x18	ptr	142E46280#0(u32[])				2
-142E45AB0	struct_142E45AB0	0x8	15532	0x0	ptr	142E45960#0(proceduralbones)	one		0x20	221
-142E45CC0	struct_142E45CC0	0x8	551924	0x0	string					531779
+142E45570#0	dynamicbones	0x58	1020	0x0	string					1020
+142E45570#0	dynamicbones	0x58	1020	0x10	ptr	142E45570#1(array(element 0x168))				2
+142E45840	struct_142E45840	0x8	20449	0x0	ptr	142E45570#0(dynamicbones)	one		0x58	1020
+142E45960#0	proceduralbones	0x20	282	0x0	string					282
+142E45960#0	proceduralbones	0x20	282	0x8	ptr	142E45960#1(array(element 0x58))				2
+142E45960#0	proceduralbones	0x20	282	0x18	ptr	142E46280#0(u32[])				2
+142E45AB0	struct_142E45AB0	0x8	20449	0x0	ptr	142E45960#0(proceduralbones)	one		0x20	282
+142E45CC0	struct_142E45CC0	0x8	604066	0x0	string					583540
 142E45D90#1	struct_142E45D90#1	0x8	87314	0x0	string					87314
 142E45EA0	struct_142E45EA0	0xc8	114	0x18	string					36
 142E45EA0	struct_142E45EA0	0xc8	114	0x40	string					114
@@ -842,8 +842,8 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E45EA0	struct_142E45EA0	0xc8	114	0x70	string					114
 142E45EA0	struct_142E45EA0	0xc8	114	0x88	string					68
 142E45EA0	struct_142E45EA0	0xc8	114	0x98	string					114
-142E46250	struct_142E46250	0x4	168965	0x0	scriptstring					168965
-142E46280#1	struct_142E46280#1	0x4	1028765	0x0	scriptstring					1028765
+142E46250	struct_142E46250	0x4	178077	0x0	scriptstring					178077
+142E46280#1	struct_142E46280#1	0x4	1083604	0x0	scriptstring					1083604
 142E4FC40	navmesh	0xa8	2	0x0	string					2
 142E501D0	struct_142E501D0	0x8	2	0x0	ptr	142E4FC40(navmesh)	one		0xa8	2
 142E53000#0	struct_142E53000#0	0x38	4	0x0	ptr	142E53390#0	one		0x18	4
@@ -851,27 +851,27 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E53130#1	struct_142E53130#1	0x8	4	0x0	ptr	142E53000#0	one		0x38	4
 142E53390#0	struct_142E53390#0	0x18	6	0x0	ptr	142E53390#1(u64[])	0x10	4	0x8	6
 142E53390#0	struct_142E53390#0	0x18	6	0x8	ptr	142E43B70(array(element 0x18))	0x10	4	0x18	6
-142E534B0#0	struct_142E534B0#0	0x38	276	0x0	ptr	142E534B0#1(u32[])	0x30	4	0x4	140
-142E534B0#0	struct_142E534B0#0	0x38	276	0x8	ptr	142E534B0#2(u32[])	0x30	4	0x4	140
-142E534B0#0	struct_142E534B0#0	0x38	276	0x10	ptr	142E46360(u32[])	0x30	4	0x4	140
-142E53650#1	struct_142E53650#1	0x8	276	0x0	ptr	142E534B0#0	one		0x38	276
-142E53740	xanim+0x58	0x18	248	0x0	ptr	142E53E70(xanim+0x58+0x0)	one		0x8	177
-142E53740	xanim+0x58	0x18	248	0x8	ptr	142E53840(xanim+0x58+0x8)	one		0x8	23
-142E53980	struct_142E53980	0x8	20	0x0	ptr	142E45C60(u32[])				20
-142E53F10	struct_142E53F10	0x20	171	0x18	ptr	142E53AC0#0(u8[])				170
-142E53F10	struct_142E53F10	0x20	171	0x18	ptr	142E53AC0#1(array(element 0x3))				1
-142E53F80	xanim	0xa8	13527	0x0	string					13527
-142E53F80	xanim	0xa8	13527	0x8	ptr	142E46280#0(u32[])	0x8a	1	0x4	8907
-142E53F80	xanim	0xa8	13527	0x10	ptr	142E46100(u8[])	0x74	4	0x1	12469
-142E53F80	xanim	0xa8	13527	0x18	ptr	142E462F0(u16[])	0x78	2	0x2	12178
-142E53F80	xanim	0xa8	13527	0x20	ptr	142E46160(u32[])	0x7a	2	0x4	12152
-142E53F80	xanim	0xa8	13527	0x28	ptr	142E462F0(u16[])	0x60	4	0x2	11192
-142E53F80	xanim	0xa8	13527	0x30	ptr	142E46100(u8[])	0x64	4	0x1	11088
-142E53F80	xanim	0xa8	13527	0x40	ptr	142E463A0(u16[])	0x68	4	0x2	213
-142E53F80	xanim	0xa8	13527	0x48	ptr	142E53DD0#0(u64[])	0x8b	1	0x8	13527
-142E53F80	xanim	0xa8	13527	0x50	ptr	142E53DD0#0(u64[])	0x8c	1	0x8	53
-142E53F80	xanim	0xa8	13527	0x58	ptr	142E53740(xanim+0x58)	one		0x18	248
-142E544F0	struct_142E544F0	0x8	13679	0x0	ptr	142E53F80(xanim)	one		0xa8	13527
+142E534B0#0	struct_142E534B0#0	0x38	422	0x0	ptr	142E534B0#1(u32[])	0x30	4	0x4	213
+142E534B0#0	struct_142E534B0#0	0x38	422	0x8	ptr	142E534B0#2(u32[])	0x30	4	0x4	213
+142E534B0#0	struct_142E534B0#0	0x38	422	0x10	ptr	142E46360(u32[])	0x30	4	0x4	213
+142E53650#1	struct_142E53650#1	0x8	422	0x0	ptr	142E534B0#0	one		0x38	422
+142E53740	xanim+0x58	0x18	473	0x0	ptr	142E53E70(xanim+0x58+0x0)	one		0x8	393
+142E53740	xanim+0x58	0x18	473	0x8	ptr	142E53840(xanim+0x58+0x8)	one		0x8	103
+142E53980	struct_142E53980	0x8	98	0x0	ptr	142E45C60(u32[])				98
+142E53F10	struct_142E53F10	0x20	386	0x18	ptr	142E53AC0#0(u8[])				376
+142E53F10	struct_142E53F10	0x20	386	0x18	ptr	142E53AC0#1(array(element 0x3))				10
+142E53F80	xanim	0xa8	13752	0x0	string					13752
+142E53F80	xanim	0xa8	13752	0x8	ptr	142E46280#0(u32[])	0x8a	1	0x4	9057
+142E53F80	xanim	0xa8	13752	0x10	ptr	142E46100(u8[])	0x74	4	0x1	12678
+142E53F80	xanim	0xa8	13752	0x18	ptr	142E462F0(u16[])	0x78	2	0x2	12388
+142E53F80	xanim	0xa8	13752	0x20	ptr	142E46160(u32[])	0x7a	2	0x4	12363
+142E53F80	xanim	0xa8	13752	0x28	ptr	142E462F0(u16[])	0x60	4	0x2	11403
+142E53F80	xanim	0xa8	13752	0x30	ptr	142E46100(u8[])	0x64	4	0x1	11296
+142E53F80	xanim	0xa8	13752	0x40	ptr	142E463A0(u16[])	0x68	4	0x2	214
+142E53F80	xanim	0xa8	13752	0x48	ptr	142E53DD0#0(u64[])	0x8b	1	0x8	13752
+142E53F80	xanim	0xa8	13752	0x50	ptr	142E53DD0#0(u64[])	0x8c	1	0x8	56
+142E53F80	xanim	0xa8	13752	0x58	ptr	142E53740(xanim+0x58)	one		0x18	473
+142E544F0	struct_142E544F0	0x8	13904	0x0	ptr	142E53F80(xanim)	one		0xa8	13752
 142E66280#0	clothasset	0x80	10	0x0	string					10
 142E66280#0	clothasset	0x80	10	0x10	ptr	142E66280#1(u8[])				10
 142E66280#0	clothasset	0x80	10	0x18	ptr	142E66280#2(array(element 0x10))	one		0x10	10
@@ -895,13 +895,13 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E67E30#0	aipaths	0x98	2	0x0	string					2
 142E67E30#0	aipaths	0x98	2	0x10	ptr	142E67E30#1(array(element 0xc0))				2
 142E681E0	struct_142E681E0	0x8	2	0x0	ptr	142E67E30#0(aipaths)	one		0x98	2
-142E68300#0	physicsasset	0x58	29003	0x0	string					29003
-142E68300#0	physicsasset	0x58	29003	0x8	ptr	142E68300#1(u8[])	0x10	4	0x1	13714
-142E68300#0	physicsasset	0x58	29003	0x20	ptr	142E68300#2(u32[])	0x18	4	0x4	13714
-142E68300#0	physicsasset	0x58	29003	0x28	ptr	142E46360(u32[])	0x18	4	0x4	13714
-142E68300#0	physicsasset	0x58	29003	0x38	ptr	142E50BB0#0(u64[])	0x18	4	0x8	13714
-142E68300#0	physicsasset	0x58	29003	0x40	ptr	142E51A50#0(u64[])	0x18	4	0x8	13714
-142E684E0	struct_142E684E0	0x8	60937	0x0	ptr	142E68300#0(physicsasset)	one		0x58	29003
+142E68300#0	physicsasset	0x58	32457	0x0	string					32457
+142E68300#0	physicsasset	0x58	32457	0x8	ptr	142E68300#1(u8[])	0x10	4	0x1	13714
+142E68300#0	physicsasset	0x58	32457	0x20	ptr	142E68300#2(u32[])	0x18	4	0x4	13714
+142E68300#0	physicsasset	0x58	32457	0x28	ptr	142E46360(u32[])	0x18	4	0x4	13714
+142E68300#0	physicsasset	0x58	32457	0x38	ptr	142E50BB0#0(u64[])	0x18	4	0x8	13714
+142E68300#0	physicsasset	0x58	32457	0x40	ptr	142E51A50#0(u64[])	0x18	4	0x8	13714
+142E684E0	struct_142E684E0	0x8	71777	0x0	ptr	142E68300#0(physicsasset)	one		0x58	32457
 142E68C50#0	struct_142E68C50#0	0x20	34156	0x0	string					33790
 142E68C50#0	struct_142E68C50#0	0x20	34156	0x10	ptr	142E69120	one		0x28	1844
 142E68C50#0	struct_142E68C50#0	0x20	34156	0x18	ptr	142E68C50#1	one		0xb0	2768
@@ -922,7 +922,7 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E73DD0#0	physicsfxshape	0x38	64	0x0	string					64
 142E73DD0#0	physicsfxshape	0x38	64	0x10	ptr	142E73DD0#1(u8[])	0x8	4	0x1	50
 142E73DD0#0	physicsfxshape	0x38	64	0x18	string					4
-142E73EC0	struct_142E73EC0	0x8	16064	0x0	ptr	142E73DD0#0(physicsfxshape)	one		0x38	64
+142E73EC0	struct_142E73EC0	0x8	20981	0x0	ptr	142E73DD0#0(physicsfxshape)	one		0x38	64
 142E74170	rumble	0x38	2	0x0	string					2
 142E74260	struct_142E74260	0x8	46	0x0	ptr	142E74170(rumble)	one		0x38	2
 142E745B0	scriptfile	0x28	120	0x0	string					120
@@ -975,39 +975,39 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E81C60#0	struct_142E81C60#0	0xb8	2	0xa0	ptr	142E463A0(u16[])				2
 142E81C60#0	struct_142E81C60#0	0xb8	2	0xa8	ptr	142E81C60#3(u64[])				2
 142E81C60#0	struct_142E81C60#0	0xb8	2	0xb0	ptr	142E7C8B0	one		0x18	2
-142E82110#0	collisiontile	0x48	3871	0x0	string					3871
-142E82110#0	collisiontile	0x48	3871	0x20	ptr	142E86740#0(collisiontile+0x20)	one		0x20	95
-142E82110#0	collisiontile	0x48	3871	0x30	ptr	142E82110#1(u8[])	0x28	4	0x1	98
-142E82250	struct_142E82250	0x8	3871	0x0	ptr	142E82110#0(collisiontile)	one		0x48	3871
+142E82110#0	collisiontile	0x48	5501	0x0	string					5501
+142E82110#0	collisiontile	0x48	5501	0x20	ptr	142E86740#0(collisiontile+0x20)	one		0x20	142
+142E82110#0	collisiontile	0x48	5501	0x30	ptr	142E82110#1(u8[])	0x28	4	0x1	144
+142E82250	struct_142E82250	0x8	5501	0x0	ptr	142E82110#0(collisiontile)	one		0x48	5501
 142E825A0#0	struct_142E825A0#0	0x10	2	0x8	ptr	142E825A0#1(array(element 0xc))				2
-142E826C0	dynentitylist	0x40	138	0x0	string					138
-142E826C0	dynentitylist	0x40	138	0x18	ptr	142EB52F0#0(array(element 0x50))	0xc	4	0x50	138
-142E826C0	dynentitylist	0x40	138	0x28	shared	142E534B0#0				138
-142E826C0	dynentitylist	0x40	138	0x30	shared	142E534B0#0				138
-142E827E0	struct_142E827E0	0x8	138	0x0	ptr	142E826C0(dynentitylist)	one		0x40	138
+142E826C0	dynentitylist	0x40	211	0x0	string					211
+142E826C0	dynentitylist	0x40	211	0x18	ptr	142EB52F0#0(array(element 0x50))	0xc	4	0x50	211
+142E826C0	dynentitylist	0x40	211	0x28	shared	142E534B0#0				211
+142E826C0	dynentitylist	0x40	211	0x30	shared	142E534B0#0				211
+142E827E0	struct_142E827E0	0x8	211	0x0	ptr	142E826C0(dynentitylist)	one		0x40	211
 142E829B0	decalvolumemask	0x10	70	0x0	string					70
 142E829B0	decalvolumemask	0x10	70	0x8	asset	image				70
-142E82A50	struct_142E82A50	0x8	6199	0x0	ptr	142E829B0(decalvolumemask)	one		0x10	70
+142E82A50	struct_142E82A50	0x8	8684	0x0	ptr	142E829B0(decalvolumemask)	one		0x10	70
 142E82B70	decalvolumematerial	0x68	833	0x0	string					833
 142E82B70	decalvolumematerial	0x68	833	0x8	asset	image				803
 142E82B70	decalvolumematerial	0x68	833	0x10	asset	image				753
 142E82B70	decalvolumematerial	0x68	833	0x18	asset	image				553
 142E82B70	decalvolumematerial	0x68	833	0x20	asset	image				1
 142E82B70	decalvolumematerial	0x68	833	0x30	asset	image				5
-142E82C10	struct_142E82C10	0x8	103578	0x0	ptr	142E82B70(decalvolumematerial)	one		0x68	833
+142E82C10	struct_142E82C10	0x8	115021	0x0	ptr	142E82B70(decalvolumematerial)	one		0x68	833
 142E82D30	struct_142E82D30	0x10	531	0x0	ptr	142E460F0(u8[])	0x8	4	0x1	449
 142E82DE0	struct_142E82DE0	0x10	253	0x0	ptr	142E460F0(u8[])	0x8	4	0x1	220
 142E82F30	struct_142E82F30	0x10	8406	0x0	ptr	142E460F0(u8[])	0x8	4	0x1	7371
 142E82FE0	struct_142E82FE0	0x10	4100	0x0	ptr	142E460F0(u8[])	0x8	4	0x1	3134
-142E832A0	edgelist	0xa0	189	0x0	string					189
-142E832A0	edgelist	0xa0	189	0x40	ptr	142E69DE0(array(element 0x20))	0x30	4	0x20	189
-142E832A0	edgelist	0xa0	189	0x48	ptr	142E67BE0(u64[])	0x30	4	0x8	189
-142E832A0	edgelist	0xa0	189	0x58	ptr	142E67DD0(array(element 0x170))	0x50	4	0x170	189
-142E832A0	edgelist	0xa0	189	0x68	ptr	142E67DF0(array(element 0x80))	0x60	4	0x80	185
-142E832A0	edgelist	0xa0	189	0x78	ptr	142E67BC0(u32[])	0x70	4	0x4	189
-142E832A0	edgelist	0xa0	189	0x88	ptr	142E67BA0(u32[])	0x30	4	0x4	189
-142E832A0	edgelist	0xa0	189	0x98	ptr	142E67B80(array(element 0xc))	0x90	4	0xc	147
-142E834E0	struct_142E834E0	0x8	191	0x0	ptr	142E832A0(edgelist)	one		0xa0	189
+142E832A0	edgelist	0xa0	365	0x0	string					365
+142E832A0	edgelist	0xa0	365	0x40	ptr	142E69DE0(array(element 0x20))	0x30	4	0x20	365
+142E832A0	edgelist	0xa0	365	0x48	ptr	142E67BE0(u64[])	0x30	4	0x8	365
+142E832A0	edgelist	0xa0	365	0x58	ptr	142E67DD0(array(element 0x170))	0x50	4	0x170	365
+142E832A0	edgelist	0xa0	365	0x68	ptr	142E67DF0(array(element 0x80))	0x60	4	0x80	354
+142E832A0	edgelist	0xa0	365	0x78	ptr	142E67BC0(u32[])	0x70	4	0x4	365
+142E832A0	edgelist	0xa0	365	0x88	ptr	142E67BA0(u32[])	0x30	4	0x4	365
+142E832A0	edgelist	0xa0	365	0x98	ptr	142E67B80(array(element 0xc))	0x90	4	0xc	276
+142E834E0	struct_142E834E0	0x8	367	0x0	ptr	142E832A0(edgelist)	one		0xa0	365
 142E83600#0	map_ents	0x470	2	0x0	string					2
 142E83600#0	map_ents	0x470	2	0x8	ptr	142E46130(u8[])				2
 142E83600#0	map_ents	0x470	2	0x20	shared	142E83FE0#1(array(element 0x20)) 142E83FE0#2				2
@@ -1054,17 +1054,17 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E83FE0#0	struct_142E83FE0#0	0x50	4	0x18	shared	142E83FE0#3(array(element 0x20))				4
 142E83FE0#0	struct_142E83FE0#0	0x50	4	0x28	shared	142E83FE0#4(array(element 0x14))				4
 142E83FE0#2	struct_142E83FE0#2	0x20	56	0x10	asset	physicsasset				54
-142E84320#0	material	0x78	102745	0x0	string					102745
-142E84320#0	material	0x78	102745	0x40	asset	techset				69681
-142E84320#0	material	0x78	102745	0x48	ptr	142E84320#1(array(element 0x10))	0x1c	1	0x10	68860
-142E84320#0	material	0x78	102745	0x50	shared	142E84320#3(array(element 0x14))				30565
-142E84320#0	material	0x78	102745	0x50	ptr	142E84320#3(array(element 0x14))	one		0x14	13
-142E84320#0	material	0x78	102745	0x58	asset	decalvolumematerial				783
-142E84320#0	material	0x78	102745	0x60	shared	142E46100(u8[])				12474
-142E84320#0	material	0x78	102745	0x60	ptr	142E46100(u8[])				34
-142E84320#0	material	0x78	102745	0x68	shared	142E84320#4(array(element 0x110)) 142E84770				30565
-142E84320#0	material	0x78	102745	0x68	ptr	142E84320#4(array(element 0x110))	one		0x110	13
-142E84320#0	material	0x78	102745	0x70	shared	142E45D90#0(u64[]) 142E45D90#1				29884
+142E84320#0	material	0x78	114188	0x0	string					114188
+142E84320#0	material	0x78	114188	0x40	asset	techset				69681
+142E84320#0	material	0x78	114188	0x48	ptr	142E84320#1(array(element 0x10))	0x1c	1	0x10	68860
+142E84320#0	material	0x78	114188	0x50	shared	142E84320#3(array(element 0x14))				30565
+142E84320#0	material	0x78	114188	0x50	ptr	142E84320#3(array(element 0x14))	one		0x14	13
+142E84320#0	material	0x78	114188	0x58	asset	decalvolumematerial				783
+142E84320#0	material	0x78	114188	0x60	shared	142E46100(u8[])				12474
+142E84320#0	material	0x78	114188	0x60	ptr	142E46100(u8[])				34
+142E84320#0	material	0x78	114188	0x68	shared	142E84320#4(array(element 0x110)) 142E84770				30565
+142E84320#0	material	0x78	114188	0x68	ptr	142E84320#4(array(element 0x110))	one		0x110	13
+142E84320#0	material	0x78	114188	0x70	shared	142E45D90#0(u64[]) 142E45D90#1				29884
 142E84320#2	struct_142E84320#2	0x10	536092	0x8	asset	image				536092
 142E84770	struct_142E84770	0x110	73463	0x10	ptr	142E460E0(u8[])	0x0	4	0x1	6404
 142E84770	struct_142E84770	0x110	73463	0x20	ptr	142E460E0(u8[])	0x8	4	0x1	6
@@ -1074,8 +1074,8 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E84880#0	domainshader	0x28	531	0x18	shared	142E460F0(u8[])				449
 142E84880#1	struct_142E84880#1	0x18	531	0x8	shared	142E460F0(u8[])				449
 142E84970	struct_142E84970	0x8	91444	0x0	ptr	142E84880#0(domainshader)	one		0x28	531
-142E84A90	struct_142E84A90	0x8	80111	0x0	ptr	142E84320#0(material)	one		0x78	73860
-142E84BB0#1	struct_142E84BB0#1	0x8	202015	0x0	ptr	142E84320#0(material)	one		0x78	28885
+142E84A90	struct_142E84A90	0x8	82596	0x0	ptr	142E84320#0(material)	one		0x78	74634
+142E84BB0#1	struct_142E84BB0#1	0x8	244902	0x0	ptr	142E84320#0(material)	one		0x78	39554
 142E84D30#0	hullshader	0x28	253	0x0	string					253
 142E84D30#0	hullshader	0x28	253	0x8	string					220
 142E84D30#0	hullshader	0x28	253	0x18	shared	142E460F0(u8[])				220
@@ -1098,16 +1098,16 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E85450	struct_142E85450	0x8	90995	0x0	ptr	142E85150#0	one		0xb0	90995
 142E85510#0	techset	0x40	18595	0x0	string					12875
 142E85510#0	techset	0x40	18595	0x38	ptr	142E85510#1(u64[])				17756
-142E85670	struct_142E85670	0x8	120501	0x0	ptr	142E85510#0(techset)	one		0x40	18595
+142E85670	struct_142E85670	0x8	131944	0x0	ptr	142E85510#0(techset)	one		0x40	18595
 142E85830#0	vertexshader	0x28	4100	0x0	string					4100
 142E85830#0	vertexshader	0x28	4100	0x8	string					3134
 142E85830#0	vertexshader	0x28	4100	0x18	shared	142E460F0(u8[])				3134
 142E85830#1	struct_142E85830#1	0x18	4100	0x8	shared	142E460F0(u8[])				3134
 142E85920	struct_142E85920	0x8	94129	0x0	ptr	142E85830#0(vertexshader)	one		0x28	4100
-142E86640#0	struct_142E86640#0	0x38	30509	0x8	asset	physicsasset				27633
-142E86640#0	struct_142E86640#0	0x38	30509	0x10	asset	xmodeldetailcollision				30173
-142E86640#0	struct_142E86640#0	0x38	30509	0x30	ptr	142E86640#1(array(element 0xe))				30509
-142E86740#0	collisiontile+0x20	0x20	95	0x8	ptr	142E86740#1(array(element 0x38))	0x0	4	0x38	95
+142E86640#0	struct_142E86640#0	0x38	36432	0x8	asset	physicsasset				33381
+142E86640#0	struct_142E86640#0	0x38	36432	0x10	asset	xmodeldetailcollision				36050
+142E86640#0	struct_142E86640#0	0x38	36432	0x30	ptr	142E86640#1(array(element 0xe))				36432
+142E86740#0	collisiontile+0x20	0x20	142	0x8	ptr	142E86740#1(array(element 0x38))	0x0	4	0x38	142
 142E86800#0	struct_142E86800#0	0x28	674	0x8	asset	physicsasset				666
 142E86800#0	struct_142E86800#0	0x28	674	0x10	asset	xmodeldetailcollision				666
 142E86800#0	struct_142E86800#0	0x28	674	0x20	ptr	142E86800#1(array(element 0x1c))	0x18	4	0x1c	674
@@ -1213,8 +1213,8 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142E9ACD0#20	struct_142E9ACD0#20	0x18	4	0x0	asset	footstepvfx				2
 142E9ACD0#21	struct_142E9ACD0#21	0x18	4	0x0	asset	footstepvfx				2
 142E9B4C0#0	struct_142E9B4C0#0	0x10	12	0x8	string					12
-142EA35F0	struct_142EA35F0	0x20	53	0x0	ptr	142E46330(u64[])				36
-142EA35F0	struct_142EA35F0	0x20	53	0x8	ptr	142E463A0(u16[])	0x14	2	0x2	36
+142EA35F0	struct_142EA35F0	0x20	71	0x0	ptr	142E46330(u64[])				45
+142EA35F0	struct_142EA35F0	0x20	71	0x8	ptr	142E463A0(u16[])	0x14	2	0x2	45
 142EA3700	struct_142EA3700	0x10	5	0x8	ptr	142E463A0(u16[])				4
 142EA37B0#0	struct_142EA37B0#0	0x4f8	2	0x38	ptr	142EA37B0#1(u32[])				2
 142EA37B0#0	struct_142EA37B0#0	0x4f8	2	0x40	ptr	142EA37B0#2(array(element 0x10))				2
@@ -1235,123 +1235,123 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142EA37B0#3	struct_142EA37B0#3	0x10	1024	0x0	asset	xmodel				1024
 142EA46A0#0	xmodel+0xd0	0x60	20	0x10	ptr	142EA46A0#1(array(element 0x20))	0x50	1	0x20	20
 142EA46A0#0	xmodel+0xd0	0x60	20	0x18	ptr	142EA46A0#2(array(element 0x20))	0x50	1	0x20	20
-142EA4830#0	xmodel	0x2b0	15530	0x0	string					15482
-142EA4830#0	xmodel	0x2b0	15530	0x78	asset	scriptable				104
-142EA4830#0	xmodel	0x2b0	15530	0x80	asset	proceduralbones				1086
-142EA4830#0	xmodel	0x2b0	15530	0x88	asset	dynamicbones				1716
-142EA4830#0	xmodel	0x2b0	15530	0x90	shared	142E84BB0#0(u64[]) 142E84BB0#1				12
-142EA4830#0	xmodel	0x2b0	15530	0x90	ptr	142E46280#0(u32[])				1
-142EA4830#0	xmodel	0x2b0	15530	0x98	ptr	142E46280#0(u32[])				5748
-142EA4830#0	xmodel	0x2b0	15530	0xa0	ptr	142E46100(u8[])				3686
-142EA4830#0	xmodel	0x2b0	15530	0xa8	ptr	142E462F0(u16[])				3686
-142EA4830#0	xmodel	0x2b0	15530	0xb0	ptr	142E46140(u32[])				3686
-142EA4830#0	xmodel	0x2b0	15530	0xb8	ptr	142E46100(u8[])	0x14	1	0x1	5748
-142EA4830#0	xmodel	0x2b0	15530	0xc0	ptr	142E7B540(array(element 0x20))				5748
-142EA4830#0	xmodel	0x2b0	15530	0xc8	ptr	142E463F0(array(element 0xc))				259
-142EA4830#0	xmodel	0x2b0	15530	0xd0	ptr	142EA46A0#0(xmodel+0xd0)	one		0x60	20
-142EA4830#0	xmodel	0x2b0	15530	0xd8	ptr	142E84BB0#0(u64[])	0x8	2	0x8	14807
-142EA4830#0	xmodel	0x2b0	15530	0xe0	asset	xmodelsurfs				14794
-142EA4830#0	xmodel	0x2b0	15530	0xe8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				14781
-142EA4830#0	xmodel	0x2b0	15530	0x120	asset	xmodelsurfs				10524
-142EA4830#0	xmodel	0x2b0	15530	0x128	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				10518
-142EA4830#0	xmodel	0x2b0	15530	0x160	asset	xmodelsurfs				10269
-142EA4830#0	xmodel	0x2b0	15530	0x168	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				10263
-142EA4830#0	xmodel	0x2b0	15530	0x1a0	asset	xmodelsurfs				9671
-142EA4830#0	xmodel	0x2b0	15530	0x1a8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				9667
-142EA4830#0	xmodel	0x2b0	15530	0x1e0	asset	xmodelsurfs				3296
-142EA4830#0	xmodel	0x2b0	15530	0x1e8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				3292
-142EA4830#0	xmodel	0x2b0	15530	0x220	asset	xmodelsurfs				2830
-142EA4830#0	xmodel	0x2b0	15530	0x228	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				2828
-142EA4830#0	xmodel	0x2b0	15530	0x260	shared	142E7CF40(array(element 0x1c))				14817
-142EA4830#0	xmodel	0x2b0	15530	0x268	shared	142E46140(u32[])				14806
-142EA4830#0	xmodel	0x2b0	15530	0x270	asset	physicsasset				3595
-142EA4830#0	xmodel	0x2b0	15530	0x280	asset	xmodeldetailcollision				9144
-142EA4830#0	xmodel	0x2b0	15530	0x288	shared	142E668D0#0(u64[]) 142E668D0#1				10
-142EA4830#0	xmodel	0x2b0	15530	0x290	shared	142EA5180#0				69
-142EA4830#0	xmodel	0x2b0	15530	0x2a0	shared	142EA4830#3(array(element 0x28)) 142EA4830#4				12
-142EA4830#0	xmodel	0x2b0	15530	0x2a8	shared	142EA52B0#0				2727
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x0	asset	xmodelsurfs				14794
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				14781
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x40	asset	xmodelsurfs				10524
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x48	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				10518
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x80	asset	xmodelsurfs				10269
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x88	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				10263
-142EA4830#1	struct_142EA4830#1	0x180	15530	0xc0	asset	xmodelsurfs				9671
-142EA4830#1	struct_142EA4830#1	0x180	15530	0xc8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				9667
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x100	asset	xmodelsurfs				3296
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x108	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				3292
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x140	asset	xmodelsurfs				2830
-142EA4830#1	struct_142EA4830#1	0x180	15530	0x148	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				2828
-142EA4830#2	struct_142EA4830#2	0x40	93180	0x0	asset	xmodelsurfs				51384
-142EA4830#2	struct_142EA4830#2	0x40	93180	0x8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				51349
-142EA5180#0	struct_142EA5180#0	0x18	69	0x8	ptr	142E46280#0(u32[])	0x0	2	0x4	69
-142EA5180#0	struct_142EA5180#0	0x18	69	0x10	ptr	142EA5180#1(u64[])	0x4	4	0x8	69
-142EA52B0#0	struct_142EA52B0#0	0x10	2727	0x0	ptr	142EA52B0#1(array(element 0x70))	0x8	4	0x70	2715
-142EA52B0#2	struct_142EA52B0#2	0x70	6059	0x40	asset	material				6059
-142EA53E0#0	xmodeldetailcollision	0x28	34047	0x0	string					34039
-142EA53E0#0	xmodeldetailcollision	0x28	34047	0x10	ptr	142EA53E0#1(u8[])	0x8	4	0x1	17427
-142EA53E0#0	xmodeldetailcollision	0x28	34047	0x20	ptr	142E46280#0(u32[])	0x18	4	0x4	17427
-142EA54F0	struct_142EA54F0	0x8	64148	0x0	ptr	142EA53E0#0(xmodeldetailcollision)	one		0x28	34047
-142EA5610	struct_142EA5610	0x8	19466	0x0	ptr	142EA4830#0(xmodel)	one		0x2b0	15530
+142EA4830#0	xmodel	0x2b0	20447	0x0	string					20387
+142EA4830#0	xmodel	0x2b0	20447	0x78	asset	scriptable				173
+142EA4830#0	xmodel	0x2b0	20447	0x80	asset	proceduralbones				1218
+142EA4830#0	xmodel	0x2b0	20447	0x88	asset	dynamicbones				2592
+142EA4830#0	xmodel	0x2b0	20447	0x90	shared	142E84BB0#0(u64[]) 142E84BB0#1				16
+142EA4830#0	xmodel	0x2b0	20447	0x90	ptr	142E46280#0(u32[])				1
+142EA4830#0	xmodel	0x2b0	20447	0x98	ptr	142E46280#0(u32[])				7478
+142EA4830#0	xmodel	0x2b0	20447	0xa0	ptr	142E46100(u8[])				5028
+142EA4830#0	xmodel	0x2b0	20447	0xa8	ptr	142E462F0(u16[])				5028
+142EA4830#0	xmodel	0x2b0	20447	0xb0	ptr	142E46140(u32[])				5028
+142EA4830#0	xmodel	0x2b0	20447	0xb8	ptr	142E46100(u8[])	0x14	1	0x1	7478
+142EA4830#0	xmodel	0x2b0	20447	0xc0	ptr	142E7B540(array(element 0x20))				7478
+142EA4830#0	xmodel	0x2b0	20447	0xc8	ptr	142E463F0(array(element 0xc))				336
+142EA4830#0	xmodel	0x2b0	20447	0xd0	ptr	142EA46A0#0(xmodel+0xd0)	one		0x60	20
+142EA4830#0	xmodel	0x2b0	20447	0xd8	ptr	142E84BB0#0(u64[])	0x8	2	0x8	19467
+142EA4830#0	xmodel	0x2b0	20447	0xe0	asset	xmodelsurfs				19450
+142EA4830#0	xmodel	0x2b0	20447	0xe8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				19437
+142EA4830#0	xmodel	0x2b0	20447	0x120	asset	xmodelsurfs				11489
+142EA4830#0	xmodel	0x2b0	20447	0x128	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				11483
+142EA4830#0	xmodel	0x2b0	20447	0x160	asset	xmodelsurfs				11232
+142EA4830#0	xmodel	0x2b0	20447	0x168	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				11226
+142EA4830#0	xmodel	0x2b0	20447	0x1a0	asset	xmodelsurfs				10628
+142EA4830#0	xmodel	0x2b0	20447	0x1a8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				10624
+142EA4830#0	xmodel	0x2b0	20447	0x1e0	asset	xmodelsurfs				3845
+142EA4830#0	xmodel	0x2b0	20447	0x1e8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				3841
+142EA4830#0	xmodel	0x2b0	20447	0x220	asset	xmodelsurfs				3254
+142EA4830#0	xmodel	0x2b0	20447	0x228	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				3252
+142EA4830#0	xmodel	0x2b0	20447	0x260	shared	142E7CF40(array(element 0x1c))				19477
+142EA4830#0	xmodel	0x2b0	20447	0x268	shared	142E46140(u32[])				19466
+142EA4830#0	xmodel	0x2b0	20447	0x270	asset	physicsasset				3952
+142EA4830#0	xmodel	0x2b0	20447	0x280	asset	xmodeldetailcollision				9962
+142EA4830#0	xmodel	0x2b0	20447	0x288	shared	142E668D0#0(u64[]) 142E668D0#1				10
+142EA4830#0	xmodel	0x2b0	20447	0x290	shared	142EA5180#0				86
+142EA4830#0	xmodel	0x2b0	20447	0x2a0	shared	142EA4830#3(array(element 0x28)) 142EA4830#4				16
+142EA4830#0	xmodel	0x2b0	20447	0x2a8	shared	142EA52B0#0				3978
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x0	asset	xmodelsurfs				19450
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				19437
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x40	asset	xmodelsurfs				11489
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x48	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				11483
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x80	asset	xmodelsurfs				11232
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x88	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				11226
+142EA4830#1	struct_142EA4830#1	0x180	20447	0xc0	asset	xmodelsurfs				10628
+142EA4830#1	struct_142EA4830#1	0x180	20447	0xc8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				10624
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x100	asset	xmodelsurfs				3845
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x108	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				3841
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x140	asset	xmodelsurfs				3254
+142EA4830#1	struct_142EA4830#1	0x180	20447	0x148	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				3252
+142EA4830#2	struct_142EA4830#2	0x40	122682	0x0	asset	xmodelsurfs				59898
+142EA4830#2	struct_142EA4830#2	0x40	122682	0x8	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				59863
+142EA5180#0	struct_142EA5180#0	0x18	86	0x8	ptr	142E46280#0(u32[])	0x0	2	0x4	86
+142EA5180#0	struct_142EA5180#0	0x18	86	0x10	ptr	142EA5180#1(u64[])	0x4	4	0x8	86
+142EA52B0#0	struct_142EA52B0#0	0x10	3978	0x0	ptr	142EA52B0#1(array(element 0x70))	0x8	4	0x70	3962
+142EA52B0#2	struct_142EA52B0#2	0x70	8544	0x40	asset	material				8544
+142EA53E0#0	xmodeldetailcollision	0x28	37862	0x0	string					37853
+142EA53E0#0	xmodeldetailcollision	0x28	37862	0x10	ptr	142EA53E0#1(u8[])	0x8	4	0x1	17669
+142EA53E0#0	xmodeldetailcollision	0x28	37862	0x20	ptr	142E46280#0(u32[])	0x18	4	0x4	17669
+142EA54F0	struct_142EA54F0	0x8	75231	0x0	ptr	142EA53E0#0(xmodeldetailcollision)	one		0x28	37862
+142EA5610	struct_142EA5610	0x8	25491	0x0	ptr	142EA4830#0(xmodel)	one		0x2b0	20447
 142EA5730#1	struct_142EA5730#1	0x8	50	0x0	asset	xmodel				50
-142EA58B0#0	xmodelsurfs	0x60	66831	0x0	string					65282
-142EA58B0#0	xmodelsurfs	0x60	66831	0x8	ptr	142EA58B0#1(array(element 0xd0))	0x38	2	0xd0	30056
-142EA58B0#0	xmodelsurfs	0x60	66831	0x30	shared	142EA5CF0#1				26854
-142EA58B0#0	xmodelsurfs	0x60	66831	0x30	shared	142E46380 142EA5CF0#1 142EB0430				3158
-142EA5A50	struct_142EA5A50	0x8	123273	0x0	ptr	142EA58B0#0(xmodelsurfs)	one		0x60	30128
-142EA5B70#1	struct_142EA5B70#1	0x8	39881	0x0	ptr	142EA58B0#0(xmodelsurfs)	one		0x60	36703
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x0	shared	142EA5A50				19
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x0	string					14
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x0	shared	142E2ECA0				2
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x58	ptr	142EA5CF0#1	one		0x10	30039
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x60	shared	142E67E10(u32[])				587
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x60	ptr	142E67E10(u32[])	0x2	2	0x4	188
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x68	ptr	142EA5CF0#2(u64[])	0x8	1	0x8	44422
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x68	shared	142EA5CF0#2(u64[])				5124
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x68	string					1
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x70	ptr	142EA5CF0#3(u8[])	0x24	4	0x1	17477
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x70	shared	142EA5CF0#3(u8[])				232
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x78	ptr	142EA61D0#0	one		0x80	564
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0x78	shared	142EA61D0#0				4
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xb8	ptr	142E43B30(array(element 0x18))	0x8	1	0x18	44423
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xb8	shared	142E43B30(array(element 0x18))				5124
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xc0	shared	142EA35F0				31
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xc0	ptr	142EA35F0	one		0x20	20
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xc8	ptr	142EA3700	one		0x10	4
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xc8	string					2
-142EA5CF0#0	struct_142EA5CF0#0	0xd0	92530	0xc8	shared	142EA3700				1
-142EA5CF0#1	struct_142EA5CF0#1	0x10	30039	0x0	ptr	142EA60F0(u8[])	0x8	4	0x1	26599
-142EA61D0#0	struct_142EA61D0#0	0x80	571	0x0	ptr	142EA6280#0(array(element 0x238))				27
-142EA61D0#0	struct_142EA61D0#0	0x80	571	0x0	shared	142EA61D0#0				25
-142EA61D0#0	struct_142EA61D0#0	0x80	571	0x0	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				2
-142EA6280#1	struct_142EA6280#1	0x238	29	0x0	ptr	142EA6280#2(array(element 0x10))	one		0x10	8
-142EA6280#1	struct_142EA6280#1	0x238	29	0x50	ptr	142E46090(u16[])				23
-142EA6280#1	struct_142EA6280#1	0x238	29	0x58	ptr	142E46090(u16[])				26
-142EA6280#1	struct_142EA6280#1	0x238	29	0x60	ptr	142E46070(u32[])	0xc	4	0x4	26
-142EA6280#1	struct_142EA6280#1	0x238	29	0x68	ptr	142E46070(u32[])				23
-142EA6280#1	struct_142EA6280#1	0x238	29	0x70	ptr	142E46070(u32[])				23
-142EA6280#1	struct_142EA6280#1	0x238	29	0x78	ptr	142E46070(u32[])				23
-142EA6280#1	struct_142EA6280#1	0x238	29	0x80	ptr	142E46070(u32[])				23
-142EA6280#1	struct_142EA6280#1	0x238	29	0x88	ptr	142E46070(u32[])	0x40	4	0x4	23
-142EAAC50	struct_142EAAC50	0x38	892	0x0	shared	142EAADD0#1(u64[]) 142EAB360				818
-142EAAC50	struct_142EAAC50	0x38	892	0x8	shared	142E46360(u32[])				818
-142EAAC50	struct_142EAAC50	0x38	892	0x30	ptr	142EA5B70#0(u64[])	0x28	4	0x8	348
-142EAADD0#0	struct_142EAADD0#0	0x18	892	0x0	ptr	142EAADD0#1(u64[])	0x10	4	0x8	818
-142EAADD0#0	struct_142EAADD0#0	0x18	892	0x8	ptr	142E46360(u32[])				818
+142EA58B0#0	xmodelsurfs	0x60	86840	0x0	string					85052
+142EA58B0#0	xmodelsurfs	0x60	86840	0x8	ptr	142EA58B0#1(array(element 0xd0))	0x38	2	0xd0	35335
+142EA58B0#0	xmodelsurfs	0x60	86840	0x30	shared	142EA5CF0#1				32117
+142EA58B0#0	xmodelsurfs	0x60	86840	0x30	shared	142E46380 142EA5CF0#1 142EB0430				3158
+142EA5A50	struct_142EA5A50	0x8	158068	0x0	ptr	142EA58B0#0(xmodelsurfs)	one		0x60	35421
+142EA5B70#1	struct_142EA5B70#1	0x8	54597	0x0	ptr	142EA58B0#0(xmodelsurfs)	one		0x60	51419
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x0	shared	142EA5A50				30
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x0	string					16
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x0	shared	142E2ECA0				2
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x58	ptr	142EA5CF0#1	one		0x10	35312
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x60	shared	142E67E10(u32[])				760
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x60	ptr	142E67E10(u32[])	0x2	2	0x4	217
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x68	ptr	142EA5CF0#2(u64[])	0x8	1	0x8	53214
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x68	shared	142EA5CF0#2(u64[])				6048
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x68	string					1
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x70	ptr	142EA5CF0#3(u8[])	0x24	4	0x1	22670
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x70	shared	142EA5CF0#3(u8[])				428
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x78	ptr	142EA61D0#0	one		0x80	784
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0x78	shared	142EA61D0#0				4
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xb8	ptr	142E43B30(array(element 0x18))	0x8	1	0x18	53215
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xb8	shared	142E43B30(array(element 0x18))				6048
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xc0	shared	142EA35F0				45
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xc0	ptr	142EA35F0	one		0x20	24
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xc8	ptr	142EA3700	one		0x10	4
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xc8	string					2
+142EA5CF0#0	struct_142EA5CF0#0	0xd0	112006	0xc8	shared	142EA3700				1
+142EA5CF0#1	struct_142EA5CF0#1	0x10	35312	0x0	ptr	142EA60F0(u8[])	0x8	4	0x1	31815
+142EA61D0#0	struct_142EA61D0#0	0x80	791	0x0	shared	142EA61D0#0				39
+142EA61D0#0	struct_142EA61D0#0	0x80	791	0x0	ptr	142EA6280#0(array(element 0x238))				34
+142EA61D0#0	struct_142EA61D0#0	0x80	791	0x0	shared	142EA58B0#1(array(element 0xd0)) 142EA5CF0#0				2
+142EA6280#1	struct_142EA6280#1	0x238	36	0x0	ptr	142EA6280#2(array(element 0x10))	one		0x10	8
+142EA6280#1	struct_142EA6280#1	0x238	36	0x50	ptr	142E46090(u16[])				29
+142EA6280#1	struct_142EA6280#1	0x238	36	0x58	ptr	142E46090(u16[])				32
+142EA6280#1	struct_142EA6280#1	0x238	36	0x60	ptr	142E46070(u32[])	0xc	4	0x4	32
+142EA6280#1	struct_142EA6280#1	0x238	36	0x68	ptr	142E46070(u32[])				29
+142EA6280#1	struct_142EA6280#1	0x238	36	0x70	ptr	142E46070(u32[])				29
+142EA6280#1	struct_142EA6280#1	0x238	36	0x78	ptr	142E46070(u32[])				29
+142EA6280#1	struct_142EA6280#1	0x238	36	0x80	ptr	142E46070(u32[])				29
+142EA6280#1	struct_142EA6280#1	0x238	36	0x88	ptr	142E46070(u32[])	0x40	4	0x4	29
+142EAAC50	struct_142EAAC50	0x38	1207	0x0	shared	142EAADD0#1(u64[]) 142EAB360				1125
+142EAAC50	struct_142EAAC50	0x38	1207	0x8	shared	142E46360(u32[])				1125
+142EAAC50	struct_142EAAC50	0x38	1207	0x30	ptr	142EA5B70#0(u64[])	0x28	4	0x8	467
+142EAADD0#0	struct_142EAADD0#0	0x18	1207	0x0	ptr	142EAADD0#1(u64[])	0x10	4	0x8	1125
+142EAADD0#0	struct_142EAADD0#0	0x18	1207	0x8	ptr	142E46360(u32[])				1125
 142EAAED0	struct_142EAAED0	0x8	662	0x0	asset	vfx				578
 142EAAF20#1	struct_142EAAF20#1	0x8	110288	0x0	asset	vfx				52770
-142EAAFC0	image	0xe8	89949	0x0	string					87975
-142EAAFC0	image	0xe8	89949	0x18	ptr	142EAAFC0(image)	one		0xe8	2
-142EAAFC0	image	0xe8	89949	0xd8	shared	142EAB0C0#0				2706
-142EAAFC0	image	0xe8	89949	0xe0	ptr	142EAB290(u8[])	0x1c	4	0x1	640
+142EAAFC0	image	0xe8	94840	0x0	string					92741
+142EAAFC0	image	0xe8	94840	0x18	ptr	142EAAFC0(image)	one		0xe8	2
+142EAAFC0	image	0xe8	94840	0xd8	shared	142EAB0C0#0				2706
+142EAAFC0	image	0xe8	94840	0xe0	ptr	142EAB290(u8[])	0x1c	4	0x1	1009
 142EAB0C0#0	struct_142EAB0C0#0	0x10	2706	0x0	ptr	142EAB0C0#1(u64[])				2688
-142EAB170	struct_142EAB170	0x8	89949	0x0	ptr	142EAB0C0#0	one		0x10	2706
-142EAB360	struct_142EAB360	0x8	557691	0x0	ptr	142EAAFC0(image)	one		0xe8	88256
+142EAB170	struct_142EAB170	0x8	94840	0x0	ptr	142EAB0C0#0	one		0x10	2706
+142EAB360	struct_142EAB360	0x8	562628	0x0	ptr	142EAAFC0(image)	one		0xe8	93147
 142EAB480#1	struct_142EAB480#1	0x8	5510	0x0	ptr	142EAAFC0(image)	one		0xe8	1691
-142EAB600#1	struct_142EAB600#1	0x28	20116	0x20	ptr	142EAB600#2(u8[])	0x8	4	0x1	1981
-142EAB6F0	struct_142EAB6F0	0xc8	1278	0x8	ptr	142E460A0(u8[])	0x0	4	0x1	192
-142EAB6F0	struct_142EAB6F0	0xc8	1278	0x10	ptr	142E460A0(u8[])	0x4	4	0x1	192
-142EAB6F0	struct_142EAB6F0	0xc8	1278	0xa0	ptr	142E46090(u16[])	0x98	4	0x2	192
+142EAB600#1	struct_142EAB600#1	0x28	30552	0x20	ptr	142EAB600#2(u8[])	0x8	4	0x1	2745
+142EAB6F0	struct_142EAB6F0	0xc8	1685	0x8	ptr	142E460A0(u8[])	0x0	4	0x1	296
+142EAB6F0	struct_142EAB6F0	0xc8	1685	0x10	ptr	142E460A0(u8[])	0x4	4	0x1	296
+142EAB6F0	struct_142EAB6F0	0xc8	1685	0xa0	ptr	142E46090(u16[])	0x98	4	0x2	296
 142EAB8E0#0	struct_142EAB8E0#0	0xc8	2	0x38	ptr	142EAB8E0#1(array(element 0x28))				2
 142EAB8E0#0	struct_142EAB8E0#0	0xc8	2	0x40	shared	142E46300(u16[])				2
 142EAB8E0#0	struct_142EAB8E0#0	0xc8	2	0x48	shared	142EAB8E0#3(array(element 0x18))				2
@@ -1361,37 +1361,37 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142EAB8E0#0	struct_142EAB8E0#0	0xc8	2	0x78	shared	142DFF780(array(element 0x10))				2
 142EAB8E0#0	struct_142EAB8E0#0	0xc8	2	0x80	shared	142EAB8E0#4(array(element 0x58))				2
 142EAB8E0#2	struct_142EAB8E0#2	0x28	2624	0x10	asset	material				2624
-142EABE10#0	streaminginfo	0x48	892	0x0	string					892
-142EABE10#0	streaminginfo	0x48	892	0x8	shared	142EAADD0#1(u64[]) 142EAB360				818
-142EABE10#0	streaminginfo	0x48	892	0x10	shared	142E46360(u32[])				818
-142EABE10#0	streaminginfo	0x48	892	0x38	shared	142EA5B70#0(u64[]) 142EA5B70#1				348
-142EABE10#0	streaminginfo	0x48	892	0x40	shared	142EAC160#0 142EAC620				2
-142EABE10#1	struct_142EABE10#1	0x38	892	0x0	shared	142EAADD0#1(u64[]) 142EAB360				818
-142EABE10#1	struct_142EABE10#1	0x38	892	0x8	shared	142E46360(u32[])				818
-142EABE10#1	struct_142EABE10#1	0x38	892	0x30	shared	142EA5B70#0(u64[]) 142EA5B70#1				348
-142EABF10	struct_142EABF10	0x8	892	0x0	ptr	142EABE10#0(streaminginfo)	one		0x48	892
+142EABE10#0	streaminginfo	0x48	1207	0x0	string					1203
+142EABE10#0	streaminginfo	0x48	1207	0x8	shared	142EAADD0#1(u64[]) 142EAB360				1125
+142EABE10#0	streaminginfo	0x48	1207	0x10	shared	142E46360(u32[])				1125
+142EABE10#0	streaminginfo	0x48	1207	0x38	shared	142EA5B70#0(u64[]) 142EA5B70#1				467
+142EABE10#0	streaminginfo	0x48	1207	0x40	shared	142EAC160#0 142EAC620				2
+142EABE10#1	struct_142EABE10#1	0x38	1207	0x0	shared	142EAADD0#1(u64[]) 142EAB360				1125
+142EABE10#1	struct_142EABE10#1	0x38	1207	0x8	shared	142E46360(u32[])				1125
+142EABE10#1	struct_142EABE10#1	0x38	1207	0x30	shared	142EA5B70#0(u64[]) 142EA5B70#1				467
+142EABF10	struct_142EABF10	0x8	1207	0x0	ptr	142EABE10#0(streaminginfo)	one		0x48	1207
 142EAC160#0	struct_142EAC160#0	0xb8	2	0x50	ptr	142EAC160#1(array(element 0x10))	one		0x10	2
 142EAC160#2	struct_142EAC160#2	0x10	2	0x0	string					2
 142EAEA20	camera	0x188	8	0x0	string					8
 142EAEA20	camera	0x188	8	0x48	ptr	142EAEA20(camera)	one		0x188	2
 142EAEA90	struct_142EAEA90	0x8	12	0x0	ptr	142EAEA20(camera)	one		0x188	6
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x28	ptr	142EAEE80#1(array(element 0x20))	0x8	4	0x20	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x30	ptr	142EAEE80#2(array(element 0x20))	0x8	4	0x20	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x38	ptr	142EAEE80#3(array(element 0x28))	0x8	4	0x28	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x40	ptr	142EAEE80#4(u32[])	0x1c	4	0x4	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x48	ptr	142E46200(u32[])	0xc	4	0x4	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x50	ptr	142E46200(u32[])				136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x58	ptr	142E46180(u8[])				136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x60	ptr	142E46230(array(element 0xc))	0x8	4	0xc	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x68	ptr	142E461A0(u32[])				136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x70	ptr	142EAEE80#5(u32[])	0x24	4	0x4	136
-142EAEE80#0	struct_142EAEE80#0	0x90	1279	0x88	ptr	142EAEE80#6(array(element 0x34))	0x8	4	0x34	136
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x28	ptr	142EAEE80#1(array(element 0x20))	0x8	4	0x20	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x30	ptr	142EAEE80#2(array(element 0x20))	0x8	4	0x20	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x38	ptr	142EAEE80#3(array(element 0x28))	0x8	4	0x28	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x40	ptr	142EAEE80#4(u32[])	0x1c	4	0x4	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x48	ptr	142E46200(u32[])	0xc	4	0x4	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x50	ptr	142E46200(u32[])				195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x58	ptr	142E46180(u8[])				195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x60	ptr	142E46230(array(element 0xc))	0x8	4	0xc	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x68	ptr	142E461A0(u32[])				195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x70	ptr	142EAEE80#5(u32[])	0x24	4	0x4	195
+142EAEE80#0	struct_142EAEE80#0	0x90	1686	0x88	ptr	142EAEE80#6(array(element 0x34))	0x8	4	0x34	195
 142EAF290	struct_142EAF290	0x30	76	0x0	string					76
 142EAF290	struct_142EAF290	0x30	76	0x20	ptr	142E463A0(u16[])	one		0x2	76
-142EAF320#0	gfx_map_trzone+0x120	0x18	320	0x0	string					1
-142EAF320#0	gfx_map_trzone+0x120	0x18	320	0x8	ptr	142E463A0(u16[])	0x0	2	0x2	320
-142EAF320#0	gfx_map_trzone+0x120	0x18	320	0x10	ptr	142EAF320#1(array(element 0x18))	0x2	2	0x18	147
-142EAF320#2	struct_142EAF320#2	0x18	361	0x10	ptr	142EAB350(u8[])	0x0	4	0x1	361
+142EAF320#0	gfx_map_trzone+0x120	0x18	463	0x0	string					1
+142EAF320#0	gfx_map_trzone+0x120	0x18	463	0x8	ptr	142E463A0(u16[])	0x0	2	0x2	463
+142EAF320#0	gfx_map_trzone+0x120	0x18	463	0x10	ptr	142EAF320#1(array(element 0x18))	0x2	2	0x18	211
+142EAF320#2	struct_142EAF320#2	0x18	505	0x10	ptr	142EAB350(u8[])	0x0	4	0x1	505
 142EAF490#0	struct_142EAF490#0	0xd0	2	0x18	ptr	142EAF490#1(array(element 0x30))				2
 142EAF490#0	struct_142EAF490#0	0xd0	2	0x28	asset	image				2
 142EAF490#0	struct_142EAF490#0	0xd0	2	0x60	ptr	142EAF490#2(array(element 0x90))				2
@@ -1409,7 +1409,7 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142EAFDD0#0	struct_142EAFDD0#0	0x60	2	0x30	shared	142EAFD20#1(u64[])				2
 142EB00F0#0	struct_142EB00F0#0	0x38	2	0x0	asset	streamkey				2
 142EB00F0#0	struct_142EB00F0#0	0x38	2	0x8	ptr	142EB00F0#1(u64[])				2
-142EB52F0#1	struct_142EB52F0#1	0x50	2493	0x0	asset	xmodel				2283
+142EB52F0#1	struct_142EB52F0#1	0x50	3850	0x0	asset	xmodel				3640
 142EB5420	struct_142EB5420	0x10	330	0x0	ptr	142EB54E0#0(array(element 0x2b8))				330
 142EB5420	struct_142EB5420	0x10	330	0x8	ptr	142EB54E0#0(array(element 0x2b8))				270
 142EB54E0#1	struct_142EB54E0#1	0x2b8	1200	0x0	asset	vfx				26
@@ -1641,19 +1641,19 @@ struct_loader	name	size	instances	offset	kind	target	count_offset	count_width	el
 142EB9900#0	fx_map	0x3cd0	2	0xc8	asset	fx_map_trzone				2
 142EB9900#1	struct_142EB9900#1	0x3000	2	0x0	asset	fx_map_trzone				2
 142EB9A30	struct_142EB9A30	0x8	2	0x0	ptr	142EB9900#0(fx_map)	one		0x3cd0	2
-142EB9B50	fx_map_trzone	0xa0	1277	0x0	string					1277
-142EB9B50	fx_map_trzone	0xa0	1277	0x38	shared	142EAEE80#1(array(element 0x20))				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x40	shared	142EAEE80#2(array(element 0x20))				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x48	shared	142EAEE80#3(array(element 0x28))				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x50	shared	142EAEE80#4(u32[])				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x58	shared	142E46200(u32[])				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x60	shared	142E46200(u32[])				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x68	shared	142E46180(u8[])				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x70	shared	142E46230(array(element 0xc))				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x78	shared	142E461A0(u32[])				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x80	shared	142EAEE80#5(u32[])				136
-142EB9B50	fx_map_trzone	0xa0	1277	0x98	shared	142EAEE80#6(array(element 0x34))				136
-142EB9BF0	struct_142EB9BF0	0x8	4349	0x0	ptr	142EB9B50(fx_map_trzone)	one		0xa0	1277
+142EB9B50	fx_map_trzone	0xa0	1684	0x0	string					1684
+142EB9B50	fx_map_trzone	0xa0	1684	0x38	shared	142EAEE80#1(array(element 0x20))				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x40	shared	142EAEE80#2(array(element 0x20))				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x48	shared	142EAEE80#3(array(element 0x28))				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x50	shared	142EAEE80#4(u32[])				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x58	shared	142E46200(u32[])				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x60	shared	142E46200(u32[])				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x68	shared	142E46180(u8[])				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x70	shared	142E46230(array(element 0xc))				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x78	shared	142E461A0(u32[])				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x80	shared	142EAEE80#5(u32[])				195
+142EB9B50	fx_map_trzone	0xa0	1684	0x98	shared	142EAEE80#6(array(element 0x34))				195
+142EB9BF0	struct_142EB9BF0	0x8	4756	0x0	ptr	142EB9B50(fx_map_trzone)	one		0xa0	1684
 142EBA6E0#0	xcompositemodel	0x18	2	0x0	string					2
 142EBA6E0#0	xcompositemodel	0x18	2	0x8	ptr	142EBA6E0#1(xcompositemodel+0x8)	one		0x1e0	2
 142EBA6E0#0	xcompositemodel	0x18	2	0x10	shared	142E45CC0 142EBA6E0#2 142EBA970				2
