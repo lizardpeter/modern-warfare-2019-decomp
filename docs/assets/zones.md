@@ -259,3 +259,8 @@ Measured: the patched `mp_t_gun_course` (decompressed 0x11AC2F37 bytes) loads to
 strings, 12,235 assets added (the list has 9,402; the rest are assets loaded inline from inside others), in 11 s. It
 holds a whole map (gfx_map, col_map, com_map, map_ents `maps/mp/mp_t_gun_course.d3dbsp`), 721 xmodels, 25 xanims,
 2 weapons (`atv_mp`, `little_bird_mp`) and 2 vehicles. This is the ground truth the Python readers are checked against.
+
+Character transient zones load to their end the same way, with no further stand-ins: the body
+`mp_bd_body_mp_western_t9esports_1_10_1_lod1_l15_tr` (73 assets, mesh data inline in its xmodelsurfs), the head
+`mp_hd_head_mp_eastern_golem_1_1_blendshape_l15_tr` (23) and the viewmodel arms `mp_vh_c_s4_vm_mp_aus_lucas_02_lod0_tr`
+(77, with 59 xmodels).
