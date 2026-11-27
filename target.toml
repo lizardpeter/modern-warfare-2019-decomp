@@ -63,6 +63,14 @@ obfuscated = [
   { name = "flattened", start = "1420D2C50", end = "1424CFED8" },  # 4.0 MB
   { name = "flattened", start = "14431CC90", end = "1445B9DEC" },  # 2.6 MB
 ]
+# Before decompiling, the decompile stage commits the decompiler's own signatures for these functions
+# (tools/ghidra/CommitSignatures.java), so that calls to them keep every argument: the zone stream and its loaders,
+# the asset-load primitives and the DB_AddXAsset wrappers (docs/assets/loader-translation.md).
+commit_signatures = [
+  { name = "zone stream and loaders", start = "142DE0000", end = "142EC0000" },
+  { name = "asset wrappers", start = "14311A000", end = "14311F000" },
+  { name = "load primitives", start = "143750000", end = "143770000" },
+]
 
 # Battle.net build 1.63.3.12428344 (title update 63, product "odin"), from a copy labelled "1.63 by purrplee"; the
 # rest of that install (CASC data) is the game data this repo reads. Activision Authenticode digest matches: an
