@@ -27,7 +27,9 @@ Read by 143755450 (opens the zone, reads 0x88 bytes with 142DED0D0, then checks 
 | 0x12 | 1 | kind | index into the format-version table; measured 0, 2, 3, 7, 8 |
 | 0x14 | 0xC | *unknown* | |
 | 0x20 | 8 | decompressed size | equals the stream's total (measured on every file read) |
-| 0x28–0x87 | | *unknown* | sizes per zone memory block, by the look of them (*unverified*) |
+| 0x28 | 8 | *unknown* | 0xF5E3 in the patched `mp_t_gun_course` |
+| 0x30 | 8 × 8 | block sizes | one per stream block 0–7 (section 8); the emulator allocates the blocks from them and the whole zone loads (`mp_t_gun_course`: block 1 0x2000110, 5 0xAF823A4, 7 0x15A5340) |
+| 0x70–0x87 | | *unknown* | 0 in the patched `mp_t_gun_course` |
 
 The format-version table (identical in TU63 and TU67):
 
@@ -81,15 +83,16 @@ data.000 leaves 0x2BD0 bytes after its last block (*unidentified*).
 
 ## 5. Zone data: the asset list
 
-Measured on the 185 zones of data.000 at their current format version (`zone.asset_list`); the loader that reads it
-is still to be traced in the code.
+Read by 1437608F0 (Load_XAssetList, section 8) into block 5; measured on the 185 zones of data.000 at their current
+format version (`zone.asset_list`).
 
 | Offset | Size | Field |
 |---|---|---|
-| 0x0 | 4 (+4 pad) | script-string count |
-| 0x8 | 8 | script-string array pointer (-2: follows) |
-| 0x10 | 4 (+4 pad) | asset count |
-| 0x18 | 8 | asset array pointer (-2: follows) |
+| 0x0 | 4 (+4 pad) | script-string count (142E444C0 reads this 0x10-byte list) |
+| 0x8 | 8 | script-string array pointer: any non-zero value means the array follows, 8-aligned |
+| 0x10 | 4 | asset count |
+| 0x14 | 4 | assets loaded so far: the loop starts here and increments it, so a load can resume after a cancel (143759410/143759420 checked before each asset) |
+| 0x18 | 8 | asset array pointer: any non-zero value means the array follows, 8-aligned (142E29510) |
 | 0x20 | 8 × count | string pointers; each -2 has its string follow, NUL-terminated, after the array |
 | … | 16 × count | assets: u32 XAssetType, pad, header pointer (-2: the header follows) |
 
@@ -196,3 +199,63 @@ verifies every checksum.
 
 Unknown still: header fields +0x18 and +0x20, and how the game chains a second patch (142DEE970 allows two; the
 install has at most one per zone).
+
+## 8. Loading: the stream and the loaders
+
+Everything below is TU67's code, and all of it runs unchanged in `tests/assets/zone_emu.py`, which loads a whole
+zone with the game's own loaders (section 9). Names are ours (records/names.tsv), from what the code does.
+
+**Driver.** 143755060 opens the zone and patches (143755450), points the stream at the zone's eight blocks
+(1437607A0 → 143760420), then calls **Load_XAssetList 1437608F0**: the 0x20-byte list header (section 5), the
+script strings (142E444C0), the 16-byte asset entries in one read, and for each entry **Load_XAsset 142E2ECA0** →
+**Load_XAssetHeader 142E2ECF0** (section 6).
+
+**Blocks.** Eight, each `{base, size}` (143760420 copies them to 1536070F0; the current block is 1536071B8, the
+current position 153607170, each block's saved position 153607178 + 8 × block). Loading starts in block 1.
+
+| Block | Role (from the code that uses it) |
+|---|---|
+| 1 | temp: every `Load_<T>Ptr` pushes it for the header; **popping out of it rewinds it** (143760620), so headers must be copied out by DB_AddXAsset |
+| 2 | popping out of it aligns its position to 32 |
+| 4 | runtime: reads into it write zeros and read nothing from the file (143760AE0) |
+| 5 | virtual: every struct loader pushes it for what the header points to; alias slots (1437604F0) go here |
+| 0, 3, 6, 7 | no special rule in the primitives; which data goes where is the per-type loaders' choice (e.g. weapon +0x10 in block 4) |
+
+**Primitives.**
+
+| Function | What it does |
+|---|---|
+| 143760AE0 `Load_Stream(visitOnly, ptr, size)` | unless the first argument is 1, reads `size` bytes (143755EA0) to `ptr` and advances; block 4 zero-fills instead. 1 means "already read as part of the parent" |
+| 1437606D0 `PushStreamPos(block)` / 143760620 `PopStreamPos` | stack of (block, position) at 1536071C0 (16 bytes each, depth 1536075C0) |
+| 142DF1380 `AlignStream(mask)` | `pos = (pos + mask) & ~mask` (mask 3, 7, 15, 31 in the loaders), plus bookkeeping through per-block tables at 14BCC4790 when they exist |
+| 1437604F0 `InsertPointer` | reserves an 8-byte, 8-aligned alias slot in block 5 and returns it |
+| 142DFEF30 `ConvertOffsetToAlias` / 142DFEFA0 `ConvertOffsetToPointer` | a packed offset: block = bits 32–35, offset = low 32 bits − 1, **plus, when bit 36 is set, the position the outermost struct loader started at in that block** (142DF1580 reads the frame 142DF1930 saved); then remapped by 142DF0FE0 when that block's table at 14BCC4790 exists. The alias form loads the pointer stored at that place |
+| 142DF1930 / 142DF1700 | enter / leave a struct loader: save every block's position in a 0x44-byte frame (14BCC47D0 + 0x44 × depth) |
+| 142DF2230 / 142DF1F60 | around every −1 (allocate-inline) pointer: record / clear per-block positions in the current frame (*meaning unverified*) |
+| 142E45CC0 `Load_XString` | 0 null; −1 or −2: the string follows (byte by byte, 143760BC0); else an offset (142DFEFA0) |
+| 142E444C0 / 142E44F10 / 143760B30 | script strings: each −1/−2 entry is read and passed to `SL_GetString(str, 4)` (143BC1270); the entry becomes the handle |
+| 143760D10 `Load_ScriptString` | a script-string field holds an index into the zone's table: `*field = table[*field]` |
+| 143757490 `DB_AddXAsset(type, &header)` | registers the asset and returns the pool copy; 18 wrappers (14311AA40–14311AE90) call it for one type each and then start renderer, sound or streaming work |
+
+**Pointer values in `Load_<T>Ptr`** (e.g. 142E7BF90): 0 null; −1 allocate, then the header follows (142DF2230 first,
+142DF1F60 after); −2 the header follows; −3 the header follows and an alias slot is reserved (1437604F0) that
+receives the final pointer; anything else an offset (142DFEF30). Inline headers are 8-aligned in block 1.
+
+**Deferred commands.** Some loaders queue work instead of keeping the data: gfx_map_trzone (142E01405) copies a
+struct into the zone's command buffer with 142DFEDA0 (data in the buffer at 14BCC42F0, u32 capacity 14BCC42F8, used
+14BCC42FC, DEV ERROR 0x1A4F when full; the 16-byte command in the list at 14BCC4308, count 14BCC4300, at most 0x400,
+DEV ERROR 0x1A51) and nulls its own pointer; 142DFEC80 does the same.
+
+## 9. The game's loader in the emulator
+
+`tests/assets/zone_emu.py <unpacked TU67 exe> <zone.ff> <oo2core_7_win64.dll> [--fp <zone.fp>] [--all]` maps the
+unpacked exe in Unicorn, allocates the blocks from the header, runs 143760420 and 142DF10B0, then Load_XAssetList.
+Python stands in only for: the file read 143755EA0, DB_AddXAsset and its wrappers (copy the header into a pool, as for
+a new asset), SL_GetString (1-based indices in order), the two cancel checks, and the renderer calls listed in its
+`SKIPPED` table (GPU buffer, index buffer and texture creation; none reads the stream). The command buffer and list
+get real memory. Any other import stops the run with its call chain.
+
+Measured: the patched `mp_t_gun_course` (decompressed 0x11AC2F37 bytes) loads to **exactly its end**: 1,255 script
+strings, 12,235 assets added (the list has 9,402; the rest are assets loaded inline from inside others), in 11 s. It
+holds a whole map (gfx_map, col_map, com_map, map_ents `maps/mp/mp_t_gun_course.d3dbsp`), 721 xmodels, 25 xanims,
+2 weapons (`atv_mp`, `little_bird_mp`) and 2 vehicles. This is the ground truth the Python readers are checked against.

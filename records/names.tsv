@@ -237,3 +237,21 @@ ModernWarfare_TU67	143F211C0	function		VCDIFF_DecodeAddress		behaviour	high	COPY
 ModernWarfare_TU67	142DEEA30	function		DB_PatchDecode		calls	medium	calls 143F212C0 with source read 142DEED10, delta read 142DEEBF0, output 142DEEEC0
 ModernWarfare_TU67	142DEED10	function		DB_PatchReadSource		calls	medium	source callback passed to 143F212C0 by 142DEEA30
 ModernWarfare_TU67	142DEEBF0	function		DB_PatchReadDelta		calls	medium	delta callback passed to 143F212C0 by 142DEEA30
+ModernWarfare_TU67	1437608F0	function		Load_XAssetList		behaviour	high	reads the 0x20 list header, script strings (142E444C0), the 16-byte asset array, then Load_XAsset per entry from the resume index +0x14; the emulator loads mp_t_gun_course to its end through it
+ModernWarfare_TU67	142E2ECA0	function		Load_XAsset		behaviour	high	reads 0x10 bytes and calls Load_XAssetHeader 142E2ECF0
+ModernWarfare_TU67	143760420	function		DB_InitStreams		behaviour	high	copies 8 {base,size} blocks to 1536070F0, starts in block 1
+ModernWarfare_TU67	143760AE0	function		Load_Stream		behaviour	high	reads size bytes unless arg 1 is 1; block 4 zero-fills
+ModernWarfare_TU67	1437606D0	function		DB_PushStreamPos		behaviour	high	saves (block, pos), switches block
+ModernWarfare_TU67	143760620	function		DB_PopStreamPos		behaviour	high	restores; block 1 rewinds, block 2 aligns 32
+ModernWarfare_TU67	142DF1380	function		DB_AlignStream		behaviour	high	pos = (pos + mask) & ~mask
+ModernWarfare_TU67	1437604F0	function		DB_InsertPointer		behaviour	high	8-byte alias slot in block 5
+ModernWarfare_TU67	142DFEF30	function		DB_ConvertOffsetToAlias		behaviour	high	packed offset (block bits 32-35, bit 36 relative) to the pointer stored there
+ModernWarfare_TU67	142DFEFA0	function		DB_ConvertOffsetToPointer		behaviour	high	packed offset to a pointer
+ModernWarfare_TU67	143755EA0	function		DB_ReadXFileData		behaviour	medium	the stream's byte source (patch reader or zone reader); the only file read the loaders make
+ModernWarfare_TU67	142E45CC0	function		Load_XString		behaviour	high	0 null, -1/-2 inline string, else offset
+ModernWarfare_TU67	142E444C0	function		Load_ScriptStringList		behaviour	high	count + table; entries through 142E44F10
+ModernWarfare_TU67	143760D10	function		Load_ScriptString		behaviour	high	field = table[field]
+ModernWarfare_TU67	143BC1270	function		SL_GetString		calls	medium	called with (str, 4) for each zone script string; returns the handle
+ModernWarfare_TU67	143757490	function		DB_AddXAsset		behaviour	high	(type, &header) under a lock, returns the pool entry
+ModernWarfare_TU67	143755060	function		DB_LoadXFile		behaviour	medium	opens zone and patches, inits streams, Load_XAssetList, finishes
+ModernWarfare_TU67	142DFEDA0	function		DB_QueueDeferredCommand		behaviour	medium	copies data into the command buffer 14BCC42F0 and appends a 16-byte command (142DEDE00)
