@@ -19,8 +19,11 @@ Rules (as in ghosts-decomp):
 The install is Battle.net CASC (`.build.info`, `Data/`). Zones are CASC files (`IWffa100`, Oodle-compressed);
 streamed data is in `.xpak` packages. Containers are documented in docs/assets/zones.md:
 
-- **CASC archives**: read (`tools/assets/casc_archive.py`). Next: names from the TVFS root and encoding table, both
-  in data.000.
+- **CASC archives**: read (`tools/assets/casc_archive.py`); **every file by name** through the build config, local
+  indices and TVFS (`tools/assets/casc.py`): 72,833 files, of which 58,726 zones, 4,910 `.xpak`, 5,629 `.sabs` sound
+  banks and 2,934 `.fp` patches. The 1.63 install spans 163 archives (about 163 GB).
+- **Fastfile patches**: a zone is its `.ff` plus, often, a `.fp` VCDIFF patch (docs/assets/zones.md 7); the patch
+  decoder is next.
 - **Zones**: header, signed block and compressed stream read and checked against TU67's code; every zone at its
   current format version decompresses to its declared size (`tools/assets/zone.py`, with the game's own Oodle
   run in the emulator).

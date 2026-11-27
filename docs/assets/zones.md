@@ -35,10 +35,11 @@ The format-version table (identical in TU63 and TU67):
 |---|---|---|---|
 | version | 0x10C1 | 0xFF3 | 0xFCD |
 
-Measured: kind 2 and 3 zones are 0xFF3 (171), kind 7 and 8 are 0xFCD (13), kind 0 are 0x10C1 (1), 0x10B7 (2),
-0x10A3 (1). The 0x10B7/0x10A3 copies would be rejected by both exes: they are most likely unreferenced data left
-in the archive by older patches (confirm against the TVFS root). Both 0x10B7 files also stop decoding partway (block
-685 of one), as overwritten leftovers would.
+Measured (zones of data.000 and data.006, named through the TVFS): every kind 2, 3, 7, 8 and 12 zone is at its
+table's version. Kind 0 zones are often at an older version (`englisheng_common` 0x10A3, `srv_cp_arms_dealer` 0x10B7,
+`mp_downtown_gw` 0x10B7, `common_mp` 0xFCF, `mp_t_gun_course` 0x100C): these are **base files that a fastfile patch
+(`.fp`, section 7) brings to the current version**. The check runs on the patched header, so they load. (An earlier
+version of this document called them stale leftovers; that was wrong.)
 
 ## 3. Signed block (0x8004 bytes)
 
@@ -59,8 +60,9 @@ Read by 142DEF240 (state struct fields +0x8E8B8 onward).
   verbosity=0, 0, 0, 0, 0, decoderMemory, 0x6C0B8, threadPhase=3)`; anything but a non-zero result fails the
   load. Blocks decompress to 0x10000 bytes (measured), the last to the remainder.
 
-Measured: 186 of the 188 zones in data.000 decompress to exactly header +0x20 bytes (every zone at its table's format
-version, and the 0x10A3 copy too); the two that fail are the 0x10B7 copies. The first zone of
+Measured: 186 of the 188 zones in data.000 decompress to exactly header +0x20 bytes. The two that do not,
+`mp_downtown_gw` and `proxywar`, have data-carrying patches (section 7): their base stream on its own is not the
+zone the game loads. The first zone of
 data.000 leaves 0x2BD0 bytes after its last block (*unidentified*).
 
 ## 5. Zone data: the asset list
@@ -118,3 +120,27 @@ vehicle 0x1030, gfx_map 0x4610, playeranim 0xA8, suit 0x720, reticle 0x48.
 
 Next: each header's fields and their pointed-to data, type by type, starting with what Forge needs (weapon,
 attachment, xmodel, xanim, material, image, soundbank).
+
+## 7. Fastfile patches (`.fp`)
+
+Every one of the install's 2,934 `.fp` files pairs with a `.ff` of the same name: 1,162 change only the header
+(328 bytes), 1,772 carry data (`common_mp.fp` 178 MB). Read by 143755450 together with the base zone.
+
+| Offset | Size | Field |
+|---|---|---|
+| 0 | 8 | `IWffd100` |
+| 8 | 4 | 6 |
+| 0xC | 4 | must be 4, else DEV ERROR 0x1798 (143755450) |
+| 0x10–0x37 | | sizes, *partly identified*: `mp_t_gun_course.fp` has +0x10 0x200000, +0x18 0x7FC45EF, +0x20 0x1FC71C, +0x28 0x6C8000 (the patch body size), +0x30 0x84E185 (the decompressed delta size) |
+| 0x38 | 0x88 | the base zone's header, which must match the `.ff` byte for byte (memcmp, else DEV ERROR 0x1799) |
+| 0xC0 | 0x88 | the patched header: replaces the base header, and is what the format-version check (143754F20) sees |
+| 0x148 | | for data patches: an `IWffs100` signed block (0x8004 bytes) and a compressed block stream, as in a zone (section 4) |
+
+Measured: `srv_cp_arms_dealer.fp` (header only) changes only +0xC (0x10B7 → 0x10C1). `mp_t_gun_course.fp` changes
+version, decompressed size (0x136EA2B2 → 0x11AC2F37) and most block sizes; its stream (133 blocks) decompresses to
+exactly +0x30 bytes, leaving 0x39A8 bytes after the last block.
+
+**The decompressed patch is VCDIFF** (RFC 3284 magic `D6 C3 C4 00`), applied to the decompressed base zone. Its header
+indicator is 0x0C, which standard VCDIFF does not define (0x04 is xdelta3's application header; 0x08 is unknown), so
+it is a variant: the decoder in the exe is to be found and followed before a reader is written. The game ships no
+default code table as data (searched), so it is likely built at run time, as xdelta3 does.
