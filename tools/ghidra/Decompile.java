@@ -33,9 +33,11 @@ import ghidra.app.decompiler.DecompileOptions;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
-import ghidra.program.model.pcode.HighFunction;
-import ghidra.program.model.pcode.HighSymbol;
-import java.util.Iterator;
+import ghidra.app.decompiler.ClangNode;
+import ghidra.app.decompiler.ClangVariableToken;
+import ghidra.program.model.pcode.HighGlobal;
+import ghidra.program.model.pcode.HighVariable;
+import ghidra.program.model.pcode.Varnode;
 import ghidra.program.model.mem.Memory;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
@@ -105,21 +107,33 @@ public class Decompile extends GhidraScript {
 				}
 				if (r != null && r.decompileCompleted() && r.getDecompiledFunction() != null) {
 					o.addProperty("c", r.getDecompiledFunction().getC());
-					HighFunction h = r.getHighFunction();
-					if (h != null) {
-						JsonArray g = new JsonArray();
-						Iterator<HighSymbol> it = h.getGlobalSymbolMap().getSymbols();
-						while (it.hasNext()) {
-							HighSymbol s = it.next();
-							JsonArray e = new JsonArray();
-							e.add(s.getName());
-							e.add(s.getStorage().getMinAddress() == null ? "" : s.getStorage().getMinAddress().toString());
-							e.add(s.getDataType().getDisplayName());
-							e.add(s.getDataType().getLength());
-							g.add(e);
+					// every global as the decompiler typed it, from the C output's own tokens (the global symbol map
+					// holds only globals the decompiler named itself, not DAT_ labels)
+					JsonArray g = new JsonArray();
+					java.util.Set<String> seen = new java.util.HashSet<>();
+					java.util.ArrayList<ClangNode> toks = new java.util.ArrayList<>();
+					r.getCCodeMarkup().flatten(toks);
+					for (ClangNode n : toks) {
+						if (!(n instanceof ClangVariableToken)) {
+							continue;
 						}
-						o.add("globals", g);
+						HighVariable hv = ((ClangVariableToken) n).getHighVariable();
+						if (!(hv instanceof HighGlobal)) {
+							continue;
+						}
+						String name = ((ClangVariableToken) n).getText();
+						if (!seen.add(name)) {
+							continue;
+						}
+						Varnode rep = hv.getRepresentative();
+						JsonArray e = new JsonArray();
+						e.add(name);
+						e.add(rep == null ? "" : rep.getAddress().toString());
+						e.add(hv.getDataType().getDisplayName());
+						e.add(hv.getDataType().getLength());
+						g.add(e);
 					}
+					o.add("globals", g);
 					ok++;
 				}
 				else {
