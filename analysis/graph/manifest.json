@@ -22,7 +22,7 @@
     },
     {
       "file": "iw8/functions-ModernWarfare_TU67.jsonl",
-      "sha256": "3f79c35f301311013b0cc286c92089efb9d89208aefe4415913154501543ab4d",
+      "sha256": "c075961244e8699f1b943575bfe6da34254cfe89f944feb113b38c144851bbf9",
       "rows": 130252,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },
