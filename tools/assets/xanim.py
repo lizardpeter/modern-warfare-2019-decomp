@@ -194,12 +194,53 @@ def _add_rotation(out, b, v, w):
         out[b, j] = x * w + acc[j]
 
 
-def calc_parts(anim: XAnim, t: float, weight: float = 1.0, bones: int | None = None, anim_to_model=None):
+IDENTITY = (F32(0.0), F32(0.0), F32(0.0), F32(1.0))
+
+
+def _apply_rotation(out, b, v, w):
+    """Additive rotation (dispatcher mode 2: 1440F57D0, 1440F8F20, 1440FD4B0): the key is moved into the w >= 0
+    hemisphere, blended from the identity by the weight, normalised, and multiplied onto the accumulator,
+    `acc = acc * n`. Accumulator components that are exactly 0 count as the identity's (blendvps on == 0)."""
+    s = F32(-1.0) if np.signbit(v[3] + F32(0.0) + F32(0.0)) else F32(1.0)
+    one_minus = F32(1.0) - w
+    u = [(s * w) * v[j] + one_minus * IDENTITY[j] for j in range(4)]
+    length = np.sqrt((u[0] * u[0] + u[1] * u[1]) + (u[2] * u[2] + u[3] * u[3]), dtype=F32)
+    n = [u[j] / length for j in range(4)]
+    a = [IDENTITY[j] if out[b, j] == 0 else out[b, j] for j in range(4)]
+    d = (n[0] * a[0] + n[1] * a[1]) + (n[2] * a[2] + F32(0.0))
+    out[b, 0] = (n[2] * a[1] - n[1] * a[2]) + (a[3] * n[0] + n[3] * a[0])
+    out[b, 1] = (n[0] * a[2] - n[2] * a[0]) + (a[3] * n[1] + n[3] * a[1])
+    out[b, 2] = (n[1] * a[0] - n[0] * a[1]) + (a[3] * n[2] + n[3] * a[2])
+    out[b, 3] = a[3] * n[3] - d
+
+
+def _blend_rotation(out, b, v, w):
+    """Blend toward the key (dispatcher mode 1: 1440F4320, 1440F7890, 1440FBA80): the key takes the sign of
+    (x·ax + y·ay) + (z·az + w·aw), then `acc = (key - acc) × weight + acc` per component."""
+    acc = out[b, :4].copy()
+    d = (acc[0] * v[0] + acc[1] * v[1]) + (acc[2] * v[2] + acc[3] * v[3])
+    neg = np.signbit(d)
+    for j in range(4):
+        k = -v[j] if neg else v[j]
+        out[b, j] = (k - acc[j]) * w + acc[j]
+
+
+def _blend_translation(out, b, v, w):
+    acc = out[b, 4:8].copy()
+    for j in range(4):
+        out[b, 4 + j] = (v[j] - acc[j]) * w + acc[j]
+
+
+def calc_parts(anim: XAnim, t: float, weight: float = 1.0, bones: int | None = None, anim_to_model=None,
+               mode: int = 0, out=None):
+    """mode 0: ordinary (weighted sum); mode 1: blend toward this animation; mode 2: additive (rotations
+    multiplied on). The dispatcher 144104C00 picks the mode."""
     total = sum(anim.bone_count[:NO_TRANS + 1]) if anim.bone_count else 0
     total = max(total, len(anim.names))
     if anim_to_model is None:
         anim_to_model = list(range(len(anim.names)))
-    out = np.zeros((bones if bones is not None else max(anim_to_model, default=-1) + 1, 8), dtype=F32)
+    if out is None:
+        out = np.zeros((bones if bones is not None else max(anim_to_model, default=-1) + 1, 8), dtype=F32)
     w = F32(weight)
     last = t == 1.0 or anim.numframes == 0
     tf = F32(t)
@@ -209,9 +250,14 @@ def calc_parts(anim: XAnim, t: float, weight: float = 1.0, bones: int | None = N
     bc = anim.bone_count
     zero = F32(0.0)
     part = 0
+    add = (_add_rotation, _blend_rotation, _apply_rotation)[mode]
     for _ in range(bc[NO_QUAT]):
         b = anim_to_model[part]
-        out[b, 3] = (-w if out[b, 3] < 0 else w) + out[b, 3]
+        if mode == 0:
+            out[b, 3] = (-w if out[b, 3] < 0 else w) + out[b, 3]
+        elif mode == 1:
+            for j in range(4):
+                out[b, j] = (IDENTITY[j] - out[b, j]) * w + out[b, j]
         part += 1
     for group, comps in ((HALF_QUAT, 2), (FULL_QUAT, 4)):
         for _ in range(bc[group]):
@@ -229,7 +275,7 @@ def calc_parts(anim: XAnim, t: float, weight: float = 1.0, bones: int | None = N
             if comps == 2:
                 z0 = zero if last else f * zero + zero
                 v = [z0, z0] + v
-            _add_rotation(out, b, v, w)
+            add(out, b, v, w)
             part += 1
     for group, comps in ((HALF_QUAT_ONE, 2), (FULL_QUAT_ONE, 4)):
         for _ in range(bc[group]):
@@ -237,7 +283,7 @@ def calc_parts(anim: XAnim, t: float, weight: float = 1.0, bones: int | None = N
             v = [F32(struct.unpack("<h", struct.pack("<H", c.short()))[0]) * QUAT_SCALE for _ in range(comps)]
             if comps == 2:
                 v = [zero, zero] + v
-            _add_rotation(out, b, v, w)
+            add(out, b, v, w)
             part += 1
     for group in (SMALL_TRANS, TRANS):
         for _ in range(bc[group]):
@@ -258,17 +304,26 @@ def calc_parts(anim: XAnim, t: float, weight: float = 1.0, bones: int | None = N
             else:
                 k1 = [F32(x) for x in keys[3 * (i + 1):3 * (i + 1) + 3]]
                 v = [((k1[j] - k0[j]) * f + k0[j]) * size[j] + mins[j] for j in range(3)]
+            if mode == 1:
+                _blend_translation(out, b, v + [F32(1.0)], w)
+                continue
             for j in range(3):
                 out[b, 4 + j] = w * v[j] + out[b, 4 + j]
             out[b, 7] = w * F32(1.0) + out[b, 7]
     for _ in range(bc[TRANS_ONE]):
         b = anim_to_model[c.byte()]
         v = c.floats(3)
+        if mode == 1:
+            _blend_translation(out, b, v + [F32(1.0)], w)
+            continue
         for j in range(3):
             out[b, 4 + j] = w * v[j] + out[b, 4 + j]
         out[b, 7] = w + out[b, 7]
     for _ in range(bc[NO_TRANS]):
         b = anim_to_model[c.byte()]
+        if mode == 1:
+            _blend_translation(out, b, [F32(0.0), F32(0.0), F32(0.0), F32(1.0)], w)
+            continue
         out[b, 7] = w + out[b, 7]
     return out
 

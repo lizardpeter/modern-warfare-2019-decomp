@@ -7,7 +7,7 @@ layout (ghosts-decomp docs/assets/animations.md, IW6 PDB) it says so.
 Status: **decoded and checked bit for bit against the game.** `tools/assets/xanim.py` reads an animation and
 evaluates it (bones and root motion) exactly as TU67's own evaluators do; `tests/assets/xanim_check.py` calls the
 game's functions in the emulator on every animation of a zone at 7 times and compares the result byte for byte
-(section 4). Not done: the streamed (`.xpak`) case, additive and blended evaluation (the dispatcher's other modes).
+(section 4), in all three of the dispatcher's modes. Not done: the streamed (`.xpak`) case.
 
 ## 1. How it is loaded
 
@@ -84,8 +84,7 @@ in the index array (+0x40) — the same as the Store build of Ghosts.
 
 The dispatcher 144104C00 picks, for an ordinary animation, 1440FA240 (under 256 frame intervals) or 1440FEC20
 (256 or more), or 1440F6600 at t = 1 or with no frames (the last key of every part). Modes 1 and 2 of the
-dispatcher are other evaluators (1440F4320 / 1440F7890 / 1440FBA80 and 1440F57D0 / 1440F8F20 / 1440FD4B0; additive
-blending, *unverified*). Arguments: (parts, u16 bone map, t, weight, rotTransArray, ignore mask) — the map's high
+dispatcher are other evaluators (section 4.1). Arguments: (parts, u16 bone map, t, weight, rotTransArray, ignore mask) — the map's high
 bit selects mask bit 1 of the eighth word instead of the bone's own bit. Per bone the rotTransArray holds 0x20
 bytes: quaternion (4 × f32), translation (3 × f32), translation weight.
 
@@ -104,15 +103,34 @@ interpolated as integers' difference (`(k1 − k0) × f + k0` in float32), then 
 (`key × size + mins`), `out[5..7] = weight × value + out`. Layout of the delta part: tools/assets/xanim.py
 `read_delta`.
 
+### 4.1 Blend and additive modes (checked)
+
+The dispatcher's fifth argument picks the mode; each has a last-key, a short and a long evaluator:
+
+- **Mode 1, blend** (1440F4320 / 1440F7890 / 1440FBA80): every part moves the accumulator toward this animation's
+  value, `acc = (value − acc) × weight + acc`, per component. Rotations take the sign of
+  `(x·ax + y·ay) + (z·az + w·aw)` first; bones with no rotation blend toward the identity; translations blend
+  `(x, y, z, 1)` (no translation: `(0, 0, 0, 1)`).
+- **Mode 2, additive** (1440F57D0 / 1440F8F20 / 1440FD4B0): the key is put into the w ≥ 0 hemisphere, blended from
+  the identity `s·weight·key + (1 − weight)·identity`, normalised, and **multiplied onto** the accumulator,
+  `acc = acc ⊗ n` (an accumulator component that is exactly 0 counts as the identity's). Bones with no rotation are
+  untouched; translations add as in mode 0.
+
+These evaluators read math constants (the vector 1.0 at 159B81B10, the sign mask at 159B82100) that C++ static
+initializers store at startup; the emulator runs those initializers first (`ZoneEmu.run_constant_initializers`:
+every entry of the CRT table 1475DB5E0 whose code only stores constants), or the constants read as 0.
+
 **Checked** (tests/assets/xanim_check.py, every animation at t = 0, 0.1, 0.25, 0.5, 0.731, 0.999 and 1, bit for
 bit): `mp_wa_iw8_ar_akilo47_animpackage_tr` (205 animations, 1,435 evaluations) and `mp_wa_iw8_ar_mike4_animpackage_tr`
 (167, 1,169) — together every class, 4 animations of 256+ intervals and 2 with split index tables;
 `mp_ea_s4_execution_leprechaun_01_tr` and `mp_wa_iw8_fists_mp_ls_package_tr` (301 evaluations and 91 root-motion
-evaluations: 2D rotations keyed and single, keyed and single translations). 3D root rotations and small
+evaluations: 2D rotations keyed and single, keyed and single translations). Modes 1 and 2 are checked on every
+animation of the same zones at the same times, weight 0.75, on top of the animation's own pose at t = 0.4: 8,715
+evaluations in all three modes, all equal. 3D root rotations and small
 (byte) root translations did not occur in these zones and are unchecked.
 
 ## 5. What Forge needs next
 
 1. Streamed animations: the `.xpak` path (the header's stream fields, if any, are among the bytes not yet named).
-2. Additive and blended evaluation (the dispatcher's modes 1 and 2), and the animation trees that use them.
+2. The animation trees that drive the modes and weights.
 3. Applying an animation to a model: as Ghosts (ghosts-decomp docs/assets/animations.md 5), *unverified* for TU67.

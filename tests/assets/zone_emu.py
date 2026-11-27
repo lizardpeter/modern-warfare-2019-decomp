@@ -110,6 +110,42 @@ class ZoneEmu:
         self.call(RESET_TRACKERS)
 
     # --- calling convention helpers ---
+    def run_constant_initializers(self):
+        """Run the CRT dynamic initializers that only store constants (CRT_INITIALIZERS): every instruction up to
+        the ret is a move into RIP-relative memory or a load of a register from an immediate or from RIP-relative
+        memory. The rest (constructors with calls, branches, other side effects) are left alone. Returns the count
+        run. Without them such globals read as zero (e.g. the additive animation evaluator 1440F57D0 blends with
+        the 1.0 vector at 159B81B10)."""
+        import capstone
+        from capstone.x86 import X86_OP_MEM, X86_OP_REG, X86_OP_IMM, X86_REG_RIP
+        md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_64)
+        md.detail = True
+        table, count = CRT_INITIALIZERS
+        ran = 0
+        for i in range(count):
+            fn = self.q(table + 8 * i)
+            if not fn:
+                continue
+            code = bytes(self.mu.mem_read(fn, 0x100))
+            pure = False
+            for ins in md.disasm(code, fn):
+                if ins.mnemonic == "ret":
+                    pure = True
+                    break
+                if not ins.mnemonic.startswith("mov") or len(ins.operands) != 2:
+                    break
+                dst, src = ins.operands
+                if dst.type == X86_OP_MEM and dst.mem.base == X86_REG_RIP and src.type in (X86_OP_REG, X86_OP_IMM):
+                    continue
+                if dst.type == X86_OP_REG and (src.type == X86_OP_IMM or
+                                               (src.type == X86_OP_MEM and src.mem.base == X86_REG_RIP)):
+                    continue
+                break
+            if pure:
+                self.call(fn)
+                ran += 1
+        return ran
+
     def call(self, fn, *args):
         mu = self.mu
         sp = STACK - 0x10000

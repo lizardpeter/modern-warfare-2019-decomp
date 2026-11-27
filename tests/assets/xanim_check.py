@@ -32,6 +32,8 @@ from oodle import Oodle  # noqa: E402
 
 CALC_PARTS, CALC_PARTS_BIG, CALC_NON_LOOP_END = 0x1440FA240, 0x1440FEC20, 0x1440F6600
 CALC_ABS_DELTA = 0x1440E9950
+MODES = {1: {"last": 0x1440F4320, "small": 0x1440F7890, "big": 0x1440FBA80},    # dispatcher mode 1: blend
+         2: {"last": 0x1440F57D0, "small": 0x1440F8F20, "big": 0x1440FD4B0}}    # mode 2: additive
 TIMES = (0.0, 0.1, 0.25, 0.5, 0.731, 0.999, 1.0)
 
 
@@ -39,20 +41,23 @@ def f32_bits(x):
     return struct.unpack("<I", struct.pack("<f", x))[0]
 
 
-def game_calc(emu, header, nbones, t, scratch):
+def game_calc(emu, header, nbones, t, scratch, mode=0, prior=None):
     mu = emu.mu
     bone_map, mask, out = scratch, scratch + 0x400, scratch + 0x800
     mu.mem_write(bone_map, struct.pack(f"<{nbones}H", *range(nbones)))
     mu.mem_write(mask, b"\0" * 0x40)
-    mu.mem_write(out, b"\0" * (0x20 * nbones))
+    mu.mem_write(out, prior.tobytes() if prior is not None else b"\0" * (0x20 * nbones))
     frames = struct.unpack("<H", mu.mem_read(header + 0x7E, 2))[0]
+    w = 0.75 if mode else 1.0
     if t == 1.0 or frames == 0:
-        mu.reg_write(UC_X86_REG_XMM2, f32_bits(1.0))      # its third argument is the weight
-        emu.call(CALC_NON_LOOP_END, header, bone_map, 0, out, mask)
+        mu.reg_write(UC_X86_REG_XMM2, f32_bits(w))      # its third argument is the weight
+        emu.call(MODES[mode]["last"] if mode else CALC_NON_LOOP_END, header, bone_map, 0, out, mask)
     else:
         mu.reg_write(UC_X86_REG_XMM2, f32_bits(t))
-        mu.reg_write(UC_X86_REG_XMM3, f32_bits(1.0))
-        emu.call(CALC_PARTS if frames < 0x100 else CALC_PARTS_BIG, header, bone_map, 0, 0, out, mask)
+        mu.reg_write(UC_X86_REG_XMM3, f32_bits(w))
+        f = (MODES[mode]["small"] if frames < 0x100 else MODES[mode]["big"]) if mode else \
+            (CALC_PARTS if frames < 0x100 else CALC_PARTS_BIG)
+        emu.call(f, header, bone_map, 0, 0, out, mask)
     return np.frombuffer(bytes(mu.mem_read(out, 0x20 * nbones)), dtype=np.float32).reshape(-1, 8)
 
 
@@ -84,6 +89,7 @@ def main():
         header, data = ff[:zone.HEADER_SIZE], zone.decompress(ff, o)
     emu = zone_emu.ZoneEmu(a.exe, data, header)
     emu.load()
+    emu.run_constant_initializers()     # the evaluators read math constants set by static initializers
     scratch = emu.pool = (emu.pool + 0xFFF) & ~0xFFF
     emu.pool += 0x20000
     read = lambda p, n: bytes(emu.mu.mem_read(p, n))
@@ -105,6 +111,17 @@ def main():
                     bad = np.nonzero((want.view(np.uint32) != got.view(np.uint32)).any(1))[0]
                     print(f"{anim.name} t={t} ({anim.numframes} intervals, classes {anim.bone_count}): "
                           f"{len(bad)} bones differ, first {bad[0]}: game {want[bad[0]]} ours {got[bad[0]]}")
+        for mode, t in [(m, t) for m in (1, 2) for t in TIMES]:   # on top of the animation's pose at t = 0.4
+            base = xanim.calc_parts(anim, 0.4, bones=n)
+            want = game_calc(emu, h, n, t, scratch, mode=mode, prior=base)
+            got = xanim.calc_parts(anim, t, weight=0.75, bones=n, mode=mode, out=base.copy())
+            checked += 1
+            if want.tobytes() != got.tobytes():
+                failed += 1
+                if failed <= 10:
+                    bad = np.nonzero((want.view(np.uint32) != got.view(np.uint32)).any(1))[0]
+                    print(f"{anim.name} mode {mode} t={t}: {len(bad)} bones differ, first {bad[0]}: "
+                          f"game {want[bad[0]]} ours {got[bad[0]]}")
         if anim.flags & (xanim.FLAG_DELTA_2D | xanim.FLAG_DELTA_3D):
             for t in TIMES:
                 want, got = game_delta(emu, h, t, scratch), xanim.calc_abs_delta(anim, t)

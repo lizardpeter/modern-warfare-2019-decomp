@@ -104,3 +104,8 @@ def asset_types():
             continue
         rows[int(f[0])] = (f[1], int(f[5], 16) if f[5] else 0)
     return rows
+
+# The CRT's table of C++ dynamic initializers (__xc_a..__xc_z; 7,012 entries). Many only store constants into
+# globals (e.g. 140582BC0 sets the four-float vector 1.0 at 159B81B10, 140582BB0 the sign mask at 159B82100), which
+# the game's math code reads; the emulator runs those (zone_emu.ZoneEmu.run_constant_initializers).
+CRT_INITIALIZERS = (0x1475DB5E0, 7012)
