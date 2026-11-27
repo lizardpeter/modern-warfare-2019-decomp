@@ -147,16 +147,19 @@ def site_element(site):
     return 1
 
 
+def _counters():
+    return collections.defaultdict(collections.Counter)
+
+
 class Evidence:
     """Observations merged over every zone traced."""
 
     def __init__(self):
         self.sizes = collections.defaultdict(collections.Counter)    # loader -> {size: visits}
         self.instances = collections.Counter()                       # struct loader -> instances seen
-        self.fields = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
-        self.count_obs = collections.defaultdict(list)               # (loader, off) -> [(values at offsets, n bytes)]
+        self.fields = collections.defaultdict(_counters)
+        self.counts = {}                                             # (site, off) -> count-field evidence
         self.sstr = collections.defaultdict(collections.Counter)     # loader -> {offset: times}
-        self.bodies = {}                                             # (zone, instance address) -> bytes
         self.zone = 0
 
     def add_zone(self, z, visits, sfields, adds):
@@ -220,7 +223,8 @@ class Evidence:
             for k, obs in linked.get(L, {}).items():
                 for fb, n, child in obs:
                     self.fields[L][k][('ptr', (child,))] += 1
-                    self.count_obs[(L, k)].append(((self.zone, fb), n))
+                    e = site_constant(child) or site_element(child) or 1
+                    self.observe_count(L, k, mem.read(fb, size), n, e)
             for b in bases[L]:
                 body = mem.read(b, size)
                 for k in range(0, size - 7, 8):
@@ -242,13 +246,6 @@ class Evidence:
                         self.fields[L][k][('string',)] += 1
                         continue
                     self.fields[L][k][('data',)] += 1
-        # count fields are read from the instances' final bytes (kept only for instances with a linked pointer)
-        for L, offs in linked.items():
-            size = site_constant(L)
-            for obs in offs.values():
-                for fb, n, child in obs:
-                    if (self.zone, fb) not in self.bodies:
-                        self.bodies[(self.zone, fb)] = mem.read(fb, size)
         self.zone += 1
 
     def struct_size(self, L):
@@ -278,38 +275,34 @@ class Evidence:
                     best = g or 1
         return best
 
+    def observe_count(self, L, k, body, n, e):
+        """Narrow the count-field candidates of pointer field k with one instance (its bytes, n bytes pointed to,
+        element size e)."""
+        st = self.counts.get((L, k))
+        if st is None:
+            cands = {(o, w) for w in (4, 2, 1) for o in range(0, len(body) - w + 1, w)
+                     if not (o <= k < o + 8 or k <= o < k + 8)}
+            st = self.counts[(L, k)] = {'e': e, 'values': set(), 'cands': cands, 'bad': False}
+        if e != st['e'] or n % e:
+            st['bad'] = True
+            return
+        c = n // e
+        st['values'].add(c)
+        fmt = {1: '<B', 2: '<H', 4: '<I'}
+        st['cands'] = {(o, w) for o, w in st['cands'] if struct.unpack_from(fmt[w], body, o)[0] == c}
+
     def count_field(self, L, k):
         """(offset, width, element size) of the header field equal on every instance to the number of elements the
         pointer at k leads to; (None, None, e) when every instance had exactly one element."""
-        obs = self.count_obs.get((L, k))
-        if not obs:
+        st = self.counts.get((L, k))
+        if not st or st['bad']:
             return None
-        e = self.element_size(L, k)
-        if not e or any(n % e for _, n in obs):
-            return None
-        if all(n == e for _, n in obs):
-            return None, None, e
-        if len({n for _, n in obs}) < 2:
+        if st['values'] == {1}:
+            return None, None, st['e']
+        if len(st['values']) < 2 or not st['cands']:
             return None       # one count value only: any field holding it would match, so none is claimed
-        size = site_constant(L)
-        bodies = [(self.bodies[b], n) for b, n in obs]
-        for w, fmt in ((4, '<I'), (2, '<H'), (1, '<B')):
-            for o in range(0, size - w + 1, w):
-                if o <= k < o + 8 or k <= o < k + 8:
-                    continue
-                if all(struct.unpack_from(fmt, h, o)[0] == n // e for h, n in bodies):
-                    return o, w, e
-        return None
-
-
-def type_names():
-    rows = {}
-    for line in (OUT / 'asset_types.tsv').read_text().splitlines():
-        f = line.split('\t')
-        if line.startswith('#') or f[0] == 'type' or len(f) < 4 or not f[3]:
-            continue
-        rows[int(f[3], 16)] = f[1]
-    return rows
+        o, w = sorted(st['cands'], key=lambda c: (-c[1], c[0]))[0]
+        return o, w, st['e']
 
 
 def site_ids(ev):
@@ -411,10 +404,18 @@ def write(ev):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('zones', nargs='+', help='zone.ff[:zone.fp[:decompressed]]')
+    ap.add_argument('zones', nargs='*', help='zone.ff[:zone.fp[:decompressed]]')
     ap.add_argument('--oodle', default=None)
+    ap.add_argument('--evidence', help='accumulate across runs: read this file if it exists, then write it back')
+    ap.add_argument('--write-only', action='store_true', help='write the layouts from --evidence, tracing nothing')
     a = ap.parse_args()
-    ev = Evidence()
+    import pickle
+    import layouts      # pickle the evidence as layouts.Evidence, not __main__.Evidence, so other scripts can read it
+    ev = layouts.Evidence()
+    if a.evidence and Path(a.evidence).exists():
+        ev = pickle.loads(Path(a.evidence).read_bytes())
+    if a.write_only:
+        a.zones = []
     oodle = None
     for spec in a.zones:
         parts = spec.split(':')
@@ -436,6 +437,8 @@ def main():
         z, visits, sfields, adds = trace(data, header)
         ev.add_zone(z, visits, sfields, adds)
         print(f'{Path(parts[0]).name}: {len(z.assets)} assets, {len(visits)} struct visits')
+    if a.evidence:
+        Path(a.evidence).write_bytes(pickle.dumps(ev))
     n, t = write(ev)
     print(f'{n} field rows over {sum(1 for L in ev.sizes if ev.struct_size(L))} structs, {t} asset types -> {OUT}')
 

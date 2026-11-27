@@ -47451,7 +47451,7 @@ def F_142EAF320(a0=0, *_):
                     _t53 = ((_ld(0x14bceaf90, 8, False)) & 0xffffffffffffffff)
                     _st(_t52, 8, _t53)
                     F_142EAB350(0, ((((_t54 := _ld(0x14bceb2e8, 8, False)), _ld(_t54, 4, False))[1]) & 0xffffffffffffffff))
-                    R.untranslated(0x1467373d0)
+                    H[0x1467373d0](R, [((v_puVar3 + (4) * 4) & 0xffffffffffffffff), _ld(0x14bceb2e8, 8, False)])
                 _t55 = ((v_uVar1) & 0xffffffffffffffff)
                 _st(0x14bceaf90, 8, _t55)
                 F_143760620()
@@ -63119,7 +63119,7 @@ def F_142E82DE0(a0=0, *_):
             _t14 = ((_ld(0x14bce7698, 8, False)) & 0xffffffffffffffff)
             _st(v_puVar3, 8, _t14)
             F_142E460F0(0, ((((((_t15 := ((_ld(0x14bce9590, 8, False) + (1) * 8) & 0xffffffffffffffff)), _ld(_t15, 8, False))[1]) & 0xffffffff)) & 0xffffffffffffffff))
-            R.untranslated(0x1467247a0)
+            H[0x1467247a0](R, [v_puVar3, _ld(0x14bce95f8, 8, False)])
             _t16 = ((v_uVar2) & 0xffffffffffffffff)
             _st(0x14bce7698, 8, _t16)
             if (((1 if (((v_uVar1) & 0xffffffffffffffff)) == (((0xffffffffffffffff) & 0xffffffffffffffff)) else 0)) != 0):
@@ -63261,7 +63261,7 @@ def F_142E82FE0(a0=0, *_):
             _t14 = ((_ld(0x14bce7698, 8, False)) & 0xffffffffffffffff)
             _st(v_puVar3, 8, _t14)
             F_142E460F0(0, ((((((_t15 := ((_ld(0x14bce9588, 8, False) + (1) * 8) & 0xffffffffffffffff)), _ld(_t15, 8, False))[1]) & 0xffffffff)) & 0xffffffffffffffff))
-            R.untranslated(0x146724800)
+            H[0x146724800](R, [v_puVar3, _ld(0x14bce95e8, 8, False)])
             _t16 = ((v_uVar2) & 0xffffffffffffffff)
             _st(0x14bce7698, 8, _t16)
             if (((1 if (((v_uVar1) & 0xffffffffffffffff)) == (((0xffffffffffffffff) & 0xffffffffffffffff)) else 0)) != 0):

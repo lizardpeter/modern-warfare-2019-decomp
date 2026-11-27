@@ -38,9 +38,25 @@ shared by many types.
 ## Coverage
 
 Only what the traced zones contain is listed: a field never non-zero in them is not shown, and asset types they do
-not contain have no page yet. Traced so far: the patched `mp_t_gun_course` and the three character transient zones
-(436 structs across 54 asset types). Re-run with more zones as the remaining archives arrive; types no zone
-contains will be taken from their loader code.
+not contain have no page yet. Traced so far: the patched `mp_t_gun_course` and every zone of the five archives on
+hand (data.000, .006, .016, .017, .047) that loads as it is: 3,108 of 3,128, mostly transient zones (character
+bodies and heads, weapon and attachment models, vehicles, co-op). Result: 451 structs across 55 asset types. Re-run
+with more zones as the remaining archives arrive; types no zone contains will be taken from their loader code.
+
+Not loaded (the game's own loaders fail on them too, so it is not the translation):
+
+- 16 transient zones whose loading runs past the end of their data: nine Cold War (`t9`) weapon attachments and
+  seven character bodies (e.g. `mp_aw_att_wm_ar_t9fasthandling_receiver_lod1_s2_l23_tr`,
+  `mp_bd_body_mp_western_kyle_4_1_lod0_l15_tr`). Same header version and kind as zones that load; no patch file.
+  Inside the first xmodelsurfs the loader converts index-buffer data as an offset. *Unknown*; the leading guess is
+  zones built for 1.63 whose surface struct changed by 1.67 (the target exe), to be tested with the TU63 exe.
+- 3 dedicated-server zones (`srv_cp_*`) compressed with codec 5, which tools/assets/zone.py does not decode yet.
 
 Checked by hand against the code: `xanim` (docs/assets/animations.md) matches field for field, including which
 counts are u8, u16 and u32.
+
+**Startup state found on the way.** Block 5 has an offset tracker the game sets up at start (DB init 1437591D0 →
+142DF1600, from the exe's per-block table at 147B477C0: only block 5, slot 0). It records the alignment padding block
+5 does not store, so offsets into it resolve (142DF0FE0). The emulator and the translated loaders both lacked it, and
+matched each other byte for byte anyway; they now both set it (the emulator by running 142DF1600 itself). Every
+checked zone still passes.

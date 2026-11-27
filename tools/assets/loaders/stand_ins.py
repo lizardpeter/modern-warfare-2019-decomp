@@ -29,6 +29,10 @@ SKIPPED = {
     0x14661AB10: "renderer: create an index buffer (u16 indices, e.g. 'bsp index buffer')",
     0x14661ABA0: "renderer: create an index buffer from a byte size",
     0x1466A4350: "renderer: create a texture (reads width/height/depth at +0xC/+0x10/+0xE, mips at +0x14)",
+    0x1467373D0: "renderer: create a reflection probe texture ('<raw reflection probe>', 256x256, 6 faces) and write its "
+                 "handle to +8 of the probe",
+    0x146724800: "renderer: create a vertex shader from its bytecode (+0x18 data, +0x20 size)",
+    0x1467247A0: "renderer: create a shader of another stage from its bytecode (+0x18 data, +0x20 size)",
     0x146590BC0: "renderer: decrypt a GPU buffer's debug name (XOR string at 14A483F58) and create the buffer",
     0x146590C50: "renderer: fill +0x130 with renderer pool indices (143118EC0 / 143118EA0: position in the renderer's "
                  "own resource pools) and create that GPU buffer, named by an XOR string at 14A483F28",
@@ -63,6 +67,14 @@ TRANSLATED_OUTSIDE = {
     0x1466A66B0: "image byte +0x32",
     0x1472161D0: "texture header magic check (0xD6000000 family)",
 }
+
+# Startup state the loaders depend on: DB init 1437591D0 calls 142DF1600, which points each block's offset tracker
+# (14BCC4790 + 8 * block) at slot n of the tracker buffers (14BCC4860 + n * 0x6020) when the exe's table at
+# 147B477C0 gives one (0x7FFFFFFF = none). In TU67 only block 5 has one, slot 0. The tracker records the alignment
+# padding block 5 does not store (142DF1380) so offsets into it resolve (142DF0FE0); some zones need it.
+SETUP_TRACKERS = 0x142DF1600
+TRACKER_POINTERS, TRACKER_BUFFERS, TRACKER_SIZE = 0x14BCC4790, 0x14BCC4860, 0x6020
+TRACKED_BLOCKS = {5: 0}       # block -> tracker slot (147B477C0)
 
 # C runtime functions the loaders call; hand-written assembly Ghidra cannot render, so they get their standard meaning
 MEMCPY = 0x1474213E0          # memcpy(dst, src, n), e.g. from 142DFEDA0

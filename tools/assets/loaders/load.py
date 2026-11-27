@@ -45,6 +45,9 @@ class ZoneLoad:
         table = self.pool
         self.pool += 0x100
         self.mem.write(table, b''.join(struct.pack('<QQ', a, s) for a, s in blocks))
+        # startup state 142DF1600 sets from the exe's table (stand_ins.py): the blocks with an offset tracker
+        for block, slot in S.TRACKED_BLOCKS.items():
+            self.mem.write(S.TRACKER_POINTERS + 8 * block, struct.pack('<Q', S.TRACKER_BUFFERS + slot * S.TRACKER_SIZE))
         self.command_buffer, self.command_list = self.pool, self.pool + S.COMMAND_BUFFER_SIZE
         self.mem.write(S.COMMAND_BUFFER_VARS, struct.pack('<QIIIIQ', self.command_buffer, S.COMMAND_BUFFER_SIZE,
                                                           0, 0, 0, self.command_list))

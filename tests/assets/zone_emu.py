@@ -105,6 +105,7 @@ class ZoneEmu:
         mu.mem_write(COMMAND_BUFFER_VARS, struct.pack("<QIIIIQ", self.command_buffer, COMMAND_BUFFER_SIZE, 0, 0, 0,
                                                       self.command_list))
         self.pool += COMMAND_BUFFER_SIZE + 0x400 * 16
+        self.call(SETUP_TRACKERS)          # startup state: the game's own 142DF1600 (stand_ins.py)
         self.call(INIT_STREAMS, table)
         self.call(RESET_TRACKERS)
 

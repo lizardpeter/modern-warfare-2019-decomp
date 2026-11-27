@@ -35,8 +35,8 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
 - **Zones load from the original files alone** with the translated loaders (tools/assets/loaders/, docs/assets/
   loader-translation.md): TU67's decompiled loaders run as Python and match the game's own code byte for byte on
   three character zones and the whole `mp_t_gun_course` map (tests/assets/loaders_check.py).
-- **Layouts of every asset type in the traced zones** (docs/assets/layouts.md): 436 structs across 54 types from
-  the game's own loaders: sizes, pointers, counts, strings, asset references.
+- **Layouts of every asset type in the traced zones** (docs/assets/layouts.md): every struct of every asset type in the traced zones, from
+  the game's own loaders over 3,109 zones: sizes, pointers, counts, strings, asset references (451 structs, 55 types).
 - **Animations**: the XAnimParts header and everything it points to are located (docs/assets/animations.md); the
   track encoding is next.
 
