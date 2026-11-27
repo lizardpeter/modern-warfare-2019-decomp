@@ -37,8 +37,10 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
   three character zones and the whole `mp_t_gun_course` map (tests/assets/loaders_check.py).
 - **Layouts of every asset type in the traced zones** (docs/assets/layouts.md): every struct, from the game's own
   loaders, over 3,109 zones so far: sizes, pointers, counts, strings, asset references (451 structs, 55 types).
-- **Models** (docs/assets/models.md): surfaces' vertex counts, positions (21-bit packed, per-axis scale) and the
-  subdivision-surface data are decoded; other vertex streams, indices and weights next.
+- **Models** (docs/assets/models.md): positions, triangles, UVs, colours, the tangent frame (quaternion per
+  vertex), blended and rigid skin weights (up to 8 bones), the skeleton (names, hierarchy, local and bind pose) and
+  LOD distances are decoded; `tools/assets/xmodel.py` reads them from the original zones (2,512 surfaces checked).
+  Open: the second direction at +0x2C (likely baked occlusion), +0x3C, streamed surfaces.
 - **Encrypted strings**: 18,464 string literals the exe keeps XOR-encrypted, decrypted
   (analysis/ModernWarfare_TU67/strings_encrypted.tsv, tools/strings_encrypted.py); they name what code is for.
 - **Animations**: the XAnimParts header and everything it points to are located (docs/assets/animations.md); the
