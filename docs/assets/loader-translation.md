@@ -100,9 +100,28 @@ the last divergence on `mp_t_gun_course` (asset 7,676, whose bone entries hold x
 `DAT_14bce6f30 + 0x1a` is byte 0x68). The `// ptradd` lines (element size of each pointer addition on a global) are
 recorded too; the types alone were enough so far.
 
+## The generated reader
+
+`tools/assets/loaders/generate.py` writes **analysis/ModernWarfare_TU67/assets/loaders_gen.py**: every translated
+function as plain Python, from the same typed reading of the C as compiler.py (which stays as the reference). CI
+regenerates it and fails if the committed file differs. It covers 887 functions:
+
+- **What is translated** (stand_ins.py `TRANSLATED_*`): the loader address ranges, plus 11 helpers outside them that
+  the loaders were measured to run (a size computation, a stream-position query, texture-format checks, …). A call
+  to anything else is generated as a run-time error naming the function, so a path the translation does not cover
+  is reported, never skipped. Generating everything reachable instead pulls in error handlers and the C runtime.
+- Functions without `goto`, `switch` or `continue` are structured Python; the others run block by block with a
+  program counter, so every C jump keeps its meaning.
+- Ghidra's `POPCOUNT` (set-bit count) joined the pseudo-operators; it appears in one loader not reached by the
+  checked zones.
+- C lets a call pass more arguments than the callee declares (142EAB290 calls the empty 1466A4340 with two); the
+  extra ones are ignored, as by the C.
+
+It passes tests/assets/loaders_check.py on all four zones (the default engine of load.py), and loads the 296 MB
+`mp_t_gun_course` in **9.8 s** against 169 s for the closures.
+
 ## Next
 
-1. **Generate code instead of compiling at run time**, then port the generator's output to Rust for Forge. The
-   stand-ins become the reader's own documented primitives (zones.md 8).
+1. A Rust backend for the generator, for Forge, checked the same way (its memory against the emulator's).
 2. More zones as the remaining archives arrive (weapons: `common_mp`), each run through loaders_check.py.
-3. Speed: 164 s for a 296 MB map in Python; the generated code should be much faster.
+3. Then the per-type readers on top: weapons, characters, animations, maps.

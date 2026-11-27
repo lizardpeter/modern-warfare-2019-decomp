@@ -46,6 +46,24 @@ BLOCK_COUNT = 8
 COMMAND_BUFFER_VARS, COMMAND_BUFFER_SIZE = 0x14BCC42F0, 0x8000000
 
 
+# What gets translated: the loader address ranges (target.toml commit_signatures) plus these helpers outside them
+# that the loaders were measured to execute (all four checked zones; generate.py). A call to anything else is
+# generated as a run-time error naming the function, so an untranslated path is reported, never skipped.
+TRANSLATED_RANGES = ((0x142DE0000, 0x142EC0000), (0x14311A000, 0x14311F000), (0x143750000, 0x143770000))
+TRANSLATED_OUTSIDE = {
+    0x142FD53C0: "deferred-command data size from a header's count (142DFEDA0)",
+    0x14311F170: "current stream-skip record (block, size) from 1527E22C8",
+    0x143795BD0: "a load-mode flag (153642730)",
+    0x1465F7110: "calls 1465F7490 (skipped GPU setup)",
+    0x1465FBA40: "texture-format check wrapper around 1472161D0",
+    0x146627410: "next deferred-command sequence number (157907158 + 1)",
+    0x1466A38D0: "per-format value by texture type",
+    0x1466A4340: "empty",
+    0x1466A6210: "image flags check (+0x18)",
+    0x1466A66B0: "image byte +0x32",
+    0x1472161D0: "texture header magic check (0xD6000000 family)",
+}
+
 # C runtime functions the loaders call; hand-written assembly Ghidra cannot render, so they get their standard meaning
 MEMCPY = 0x1474213E0          # memcpy(dst, src, n), e.g. from 142DFEDA0
 

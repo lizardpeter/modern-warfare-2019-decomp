@@ -42,3 +42,9 @@ jobs:
           python3 tools/graph/sync.py >/dev/null
           git diff --exit-code -- STATUS.md analysis/graph || {
             echo "::error::generated files are stale: run tools/status.py and tools/graph/sync.py"; exit 1; }
+      - name: Generated zone loaders are current
+        run: |
+          pip install --quiet pycparser==3.00
+          python3 tools/assets/loaders/generate.py
+          git diff --exit-code -- analysis/ModernWarfare_TU67/assets/loaders_gen.py || {
+            echo "::error::loaders_gen.py differs from what tools/assets/loaders/generate.py writes"; exit 1; }

@@ -70,6 +70,9 @@ def ghidra_op(name, afs, args):
     """Ghidra's pseudo-operators (Ghidra docs, "Decompiler: pseudo-operators"): CONCATxy(a, b) joins an x-byte a
     above a y-byte b; SUBxy(v, k) is y bytes of the x-byte v starting at byte k; ZEXTxy / SEXTxy widen x bytes to y."""
     import re
+    if name == 'POPCOUNT':          # number of set bits
+        v = afs[0]
+        return I32, lambda env: bin(v(env) & 0xFFFFFFFFFFFFFFFF).count('1')
     m = re.fullmatch(r'(CONCAT|SUB|ZEXT|SEXT)(\d)(\d+)', name)
     if not m:
         return None

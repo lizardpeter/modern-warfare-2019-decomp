@@ -26,11 +26,11 @@ _SOURCE = None
 
 
 class ZoneLoad:
-    def __init__(self, data, header, mem=None):
+    def __init__(self, data, header, mem=None, generated=True):
         global _SOURCE
-        if _SOURCE is None:
+        if _SOURCE is None and not generated:
             _SOURCE = (pseudocode(), recorded_types())
-        src, rec = _SOURCE
+        src, rec = _SOURCE if not generated else (None, None)
         self.mem = mem if mem is not None else Mem()
         self.data, self.pos = data, 0
         self.types = S.asset_types()
@@ -54,9 +54,24 @@ class ZoneLoad:
             hooks[a] = lambda m, args: 0
         for a, t in S.WRAPPERS.items():
             hooks[a] = lambda m, args, t=t: self._wrapper(t, args)
-        self.machine = Machine(self.mem, src.get, hooks, rec)
-        self.machine.call(S.INIT_STREAMS, [table])
-        self.machine.call(S.RESET_TRACKERS, [])
+        if generated:
+            # the generated reader (analysis/<build>/assets/loaders_gen.py, written by generate.py)
+            import importlib.util
+            from runtime import Runtime
+            spec = importlib.util.spec_from_file_location('loaders_gen', S.ROOT / 'analysis' / 'ModernWarfare_TU67' /
+                                                          'assets' / 'loaders_gen.py')
+            gen = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(gen)
+            rt = Runtime(self.mem, gen.FUNCS, hooks)
+            gen.bind(rt, hooks)
+            self.machine = rt
+            self._call = lambda va, args: gen.FUNCS[va](*args)
+        else:
+            # the reference: the same C compiled to closures at run time (compiler.py)
+            self.machine = Machine(self.mem, src.get, hooks, rec)
+            self._call = self.machine.call
+        self._call(S.INIT_STREAMS, [table])
+        self._call(S.RESET_TRACKERS, [])
 
     # --- stand-ins (stand_ins.py) ---
     def _read(self, m, args):
@@ -100,7 +115,7 @@ class ZoneLoad:
     def load(self):
         dst = self.pool
         self.pool += 0x100
-        return self.machine.call(S.LOAD_ASSET_LIST, [0, dst, 0, 0])
+        return self._call(S.LOAD_ASSET_LIST, [0, dst, 0, 0])
 
     def name(self, header):
         p = struct.unpack('<Q', self.mem.read(header, 8))[0]
