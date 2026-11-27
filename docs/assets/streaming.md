@@ -1,8 +1,9 @@
 # Streamed data (`.xpak`)
 
 Model surfaces, image mips and other large data are not in the zones but in `.xpak` files. Measured on the install's
-CASC data; the reading code is in 1445D9xxx (the header check below). Status: the **container** (header, index) and the **chunk format** are decoded; how a zone asset finds its key
-is not yet.
+CASC data; the reading code is in 1445D9xxx (the header check below). Status: the **container** (header, index) and the **chunk format** are decoded (`tools/assets/xpak.py`). Images
+store their keys in their header and decode (docs/assets/images.md); how a streamed model surface finds its key is
+not yet known.
 
 ## How much is streamed
 
@@ -38,8 +39,9 @@ about 996 MB, often in different archives.
 ## Index (24 bytes per entry, sorted by key)
 
 `{u64 key, u64 offset, u64 size | 0x8000000000000000}`, e.g. in `pak_escape4`: key 0x152A4A96E773B at 0x34EC6500,
-size 0x5280. The 17 packs whose index is in the uploaded archives hold 28,659 keys; none of the zones checked so far
-(`mp_t_gun_course`, `mp_escape4_00002_tr`) store any of them as an 8-byte value.
+size 0x5280. The 17 packs whose index is in the uploaded archives hold 28,659 keys. Of the keys stored in `mp_t_gun_course`,
+all are image stream keys (3,377 found: 3,224 at image +0x38, the rest at +0x60/+0x88/+0xB0); no model surface
+key is stored anywhere in that zone's memory, and xmodelsurfs +0x10 (a 64-bit hash) is not one either.
 
 ## Items (DecompressSingleBlock, 143C97CE0)
 
