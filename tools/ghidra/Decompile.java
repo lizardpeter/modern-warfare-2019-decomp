@@ -66,7 +66,9 @@ public class Decompile extends GhidraScript {
 		DecompInterface ifc = new DecompInterface();
 		ifc.setOptions(new DecompileOptions());
 		ifc.toggleCCode(true);
-		ifc.toggleSyntaxTree(false);
+		// the syntax tree carries the decompiler's types (HighFunction, the variable tokens' varnodes): without it the
+		// "globals" and "ptradd" records below are empty, as they were on the first three runs that asked for them
+		ifc.toggleSyntaxTree(true);
 		ifc.setSimplificationStyle("decompile");
 		if (!ifc.openProgram(currentProgram)) {
 			throw new IllegalStateException("decompiler failed to open program: " + ifc.getLastMessage());
