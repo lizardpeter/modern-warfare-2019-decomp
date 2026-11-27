@@ -41,14 +41,29 @@ table's version. Kind 0 zones are often at an older version (`englisheng_common`
 (`.fp`, section 7) brings to the current version**. The check runs on the patched header, so they load. (An earlier
 version of this document called them stale leftovers; that was wrong.)
 
-## 3. Signed block (0x8004 bytes)
+## 3. Signed unit and hash chain
 
-At 0x88: `IWffs100`, 4 zero bytes, then high-entropy data to 0x808C (measured, every file). Checked by 142DED590
-(compares `IWffs100`); the rest is *unverified* (by its size, a signature and hash table).
+After the header the file is read in **0x4000-byte units** (142DED8E0), each passed to 142DED590, which keeps a
+two-level SHA-256 chain. `tools/assets/zone.stream()` follows it and verifies every hash. Measured on
+`mp_t_gun_course` (326 MB), `proxywar` and `mp_downtown_gw` (all three hashes levels match on every unit).
 
-## 4. Stream (from 0x808C)
+| Unit | Content | Check (142DED590) |
+|---|---|---|
+| 0 | the signed unit: `IWffs100`, 4 bytes 0, at +0xC SHA-256 of bytes 0x12C..0x1970, at +0x2C a 0x100-byte signature, at +0x12C the zone name (0x40 bytes, NUL-padded; e.g. `mp_t_gun_course`), at +0x16C 4 bytes, at +0x170 **192 SHA-256 hashes**, one per hash table; the rest of the unit unused | magic; SHA-256 at +0xC; signature by 142DED760 (*not checked by the reader*: needs the game's key); name compared with the zone requested |
+| 1 | hash table 0: **512 SHA-256 hashes**, one per following data unit | its SHA-256 equals the signed unit's entry 0 |
+| 2–513 | 512 data units (8 MB) | each SHA-256 equals its table entry |
+| 514 | hash table 1 | equals the signed unit's entry 1 |
+| … | and so on; the last data unit may be short | |
 
-Read by 142DEF240 (state struct fields +0x8E8B8 onward).
+The function's own hash is 143754AE0 (SHA-256, confirmed by matching values). The data units joined together are
+the zone's data. (An earlier version of this document took the signed unit for a 0x8004-byte block and missed the
+hash tables, so zones over 8 MB failed to decode partway: `mp_downtown_gw`, `proxywar`, `mp_t_gun_course`. With the
+tables skipped they decode completely.)
+
+## 4. Stream (the data, from file offset 0x8088 when the zone has no more than 8 MB)
+
+Read by 142DEF240 (state struct fields +0x8E8B8 onward). The data starts with 4 bytes `02 49 57 43` ("\x02IWC",
+every zone read), then:
 
 - 8-byte stream header: u32 total decompressed size; bytes 4–6 (`00 00 01` measured); byte 7 the codec
   (142DEF29F): 1 stored (memcpy, 142DEF0C0), 4 and 5 through 147248D50 (*unidentified*), 6 and 7 Oodle
@@ -60,9 +75,8 @@ Read by 142DEF240 (state struct fields +0x8E8B8 onward).
   verbosity=0, 0, 0, 0, 0, decoderMemory, 0x6C0B8, threadPhase=3)`; anything but a non-zero result fails the
   load. Blocks decompress to 0x10000 bytes (measured), the last to the remainder.
 
-Measured: 186 of the 188 zones in data.000 decompress to exactly header +0x20 bytes. The two that do not,
-`mp_downtown_gw` and `proxywar`, have data-carrying patches (section 7): their base stream on its own is not the
-zone the game loads. The first zone of
+Measured: all 188 zones in data.000 and `mp_t_gun_course` decompress to exactly header +0x20 bytes, with every
+SHA-256 in the chain matching. The first zone of
 data.000 leaves 0x2BD0 bytes after its last block (*unidentified*).
 
 ## 5. Zone data: the asset list
@@ -124,23 +138,47 @@ attachment, xmodel, xanim, material, image, soundbank).
 ## 7. Fastfile patches (`.fp`)
 
 Every one of the install's 2,934 `.fp` files pairs with a `.ff` of the same name: 1,162 change only the header
-(328 bytes), 1,772 carry data (`common_mp.fp` 178 MB). Read by 143755450 together with the base zone.
+(328 bytes), 1,772 carry data (`common_mp.fp` 178 MB). Read by 143755450 together with the base zone; 143755060
+gives each patch a reader whose source is the base (patch handle +0x190) or the previous patch (+0x188), at most two
+patches (142DEE970).
 
 | Offset | Size | Field |
 |---|---|---|
 | 0 | 8 | `IWffd100` |
 | 8 | 4 | 6 |
 | 0xC | 4 | must be 4, else DEV ERROR 0x1798 (143755450) |
-| 0x10–0x37 | | sizes, *partly identified*: `mp_t_gun_course.fp` has +0x10 0x200000, +0x18 0x7FC45EF, +0x20 0x1FC71C, +0x28 0x6C8000 (the patch body size), +0x30 0x84E185 (the decompressed delta size) |
+| 0x10 | 8 | target window size: 0x200000 (`mp_t_gun_course`) |
+| 0x18 | 8 | *unidentified* (0x7FC45EF) |
+| 0x20 | 8 | *unidentified* (0x1FC71C) |
+| 0x28 | 8 | patch body size in the file (0x6C8000) |
+| 0x30 | 8 | decompressed delta size (0x84E185) |
 | 0x38 | 0x88 | the base zone's header, which must match the `.ff` byte for byte (memcmp, else DEV ERROR 0x1799) |
 | 0xC0 | 0x88 | the patched header: replaces the base header, and is what the format-version check (143754F20) sees |
-| 0x148 | | for data patches: an `IWffs100` signed block (0x8004 bytes) and a compressed block stream, as in a zone (section 4) |
+| 0x148 | | data patches only: the same unit layout as a zone (section 3: signed unit, hash tables, data units) holding the same block stream (section 4: `\x02IWC`, stream header, Oodle blocks) |
 
 Measured: `srv_cp_arms_dealer.fp` (header only) changes only +0xC (0x10B7 → 0x10C1). `mp_t_gun_course.fp` changes
-version, decompressed size (0x136EA2B2 → 0x11AC2F37) and most block sizes; its stream (133 blocks) decompresses to
-exactly +0x30 bytes, leaving 0x39A8 bytes after the last block.
+version (0x100C → 0x10C1), decompressed size (0x136EA2B2 → 0x11AC2F37) and most block sizes; its stream decompresses
+to exactly +0x30 bytes.
 
-**The decompressed patch is VCDIFF** (RFC 3284 magic `D6 C3 C4 00`), applied to the decompressed base zone. Its header
-indicator is 0x0C, which standard VCDIFF does not define (0x04 is xdelta3's application header; 0x08 is unknown), so
-it is a variant: the decoder in the exe is to be found and followed before a reader is written. The game ships no
-default code table as data (searched), so it is likely built at run time, as xdelta3 does.
+### The delta: VCDIFF with two extensions
+
+The decompressed patch is VCDIFF (RFC 3284) that turns the **decompressed base zone into the decompressed patched
+zone**. Measured on `mp_t_gun_course.fp` by decoding it; the decoder in the exe is not found yet (it is not in the
+zone stream module 142DE*/142DF*, and the exe has no default code table as data, so it is built at run time).
+
+- Header: `D6 C3 C4 00`, header indicator 0x0C (no code table, no secondary compressor, no application header data
+  follows; bits 0x04 and 0x08 are outside the RFC and their header-level meaning is *unknown*), then windows.
+- Window: indicator byte. 0x01 VCD_SOURCE as in the RFC (source segment length, then position, as varints, into the
+  base zone). **0x04: one more varint after the source fields** (*meaning unknown*; 0x28D4 in window 1, 0x2C1D in the
+  copy-only windows). **0x08: a 4-byte trailer after the window** (*unidentified*: not adler32, crc32, xxh32 or xxh64
+  of the window's output, its encoding or the source slice). Then the RFC window: delta length, target length,
+  delta indicator, the three section lengths, the sections, with the RFC default code table and address caches.
+- `mp_t_gun_course.fp`: 142 windows, back to back, ending exactly at the end of the delta; their target lengths sum
+  to 0x11AC2F37, the patched size; 2 MB each except the last. Window 0 decoded with the default code table gives
+  `E8 04 00 00 … FE FF …`: a zone asset list (0x4E8 strings, 0x24BA assets), against the base's 0x4DD strings and
+  0x1640 assets. Windows 4–11 are 14-byte copies of 2 MB from the base.
+- Source segments are large (window 0: 0x76EC9DC bytes from 0x2716; window 1: 0x76EC684 from 0x2A6E; both end at
+  0x76EF0F2).
+
+Next: find the decoder (it reads the bytes in this layout, so the 0x04 and 0x08 fields will show their meaning),
+then `tools/assets/fastfile_patch.py` applies a patch and `zone.py` reads the patched zone.
