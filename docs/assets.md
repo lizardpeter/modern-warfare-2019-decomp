@@ -29,7 +29,29 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
   run in the emulator).
 - **Asset list and headers**: the asset list is parsed, and every type's loader and header size is extracted from the
   code into analysis/ModernWarfare_TU67/assets/asset_types.tsv (114 of 122 types).
-- Next: each header's fields, type by type, then `.xpak`.
+- **Whole zones load in the emulator with the game's own loaders** (tests/assets/zone_emu.py, docs/assets/zones.md
+  8–9): the patched `mp_t_gun_course` loads to its last byte, 12,235 assets with their names. This is the ground truth
+  for every per-type reader, and already lets any asset be inspected exactly as the game holds it in memory.
+- **Animations**: the XAnimParts header and everything it points to are located (docs/assets/animations.md); the
+  track encoding is next.
+
+## Plan (priority: weapons, characters, animations, maps)
+
+1. **Per type, from its loader**: the header and pointed-to layout (Load_<T> in asset_types.tsv), then the meaning
+   of the fields from the code that uses them, each checked on assets the emulator loaded. Order: xanim, xmodel and
+   xmodelsurfs (characters are xmodels: the `mp_bd_*` body and `mp_hd_*` head transient zones), weapon, attachment
+   and camo, then the map assets (gfx_map, col_map, com_map, map_ents), image and material along the way.
+2. **A stand-alone reader.** A zone has no index: reaching any asset means loading every asset before it, so a
+   reader that runs without the game needs every type's loader (about 2,800 generated functions in TU67's
+   142DF0000–142EC0000, far too many to port by hand as ghosts-decomp did with its PDB). The loaders are
+   machine-generated and regular, so the plan is to translate them mechanically from the code into the Python
+   reader (and the same description into the Forge importer), checked against the emulator byte for byte on whole
+   zones. Until then, the emulator is the only complete walker.
+3. **Streamed data** (`.xpak`: images, model surfaces, animations): after the zone readers.
+
+Zones measured so far are those whose base and patch are in the archives present locally (data.000, .006, .016,
+.017, .047): most zones are base files that need a `.fp` patch, and the patches are spread over the other archives
+(`common_mp.fp`, which holds the multiplayer weapons, is in data.066).
 
 ## Asset types
 
