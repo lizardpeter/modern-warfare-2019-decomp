@@ -42,6 +42,8 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
   `tools/assets/gfx_map.py` reads them. Most of a map's model surfaces are streamed (`.xpak`), which is next.
 - **Images** (docs/assets/images.md): header, streams and formats (RGBA8, BC1, BC4, BC7) decoded; 3,224 of the gun
   course's images decode from the uploaded packs (`tools/assets/image.py`, `tools/assets/xpak.py`).
+- **Materials** (docs/assets/materials.md): texture table with slot meanings (colour, normal, emissive, height, per
+  layer) and constants; map zones hold references, the full materials are in `techsets_<map>` zones.
 - **Streamed data** (docs/assets/streaming.md): `.xpak` header, index and chunk format (Oodle/LZ4/stored) decoded;
   items are the same blobs as in-zone data. Which key an asset uses is still open.
 - **Animations** (docs/assets/animations.md): bone tracks (9 classes, frame index tables) and root motion decoded;
