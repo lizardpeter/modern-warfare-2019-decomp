@@ -11,6 +11,27 @@ void FUN_146000420(void)
 
 
 // 146000430  FUN_146000430  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_155fe7258 155fe7258 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_14a45e000 14a45e000 HighGlobal uint (4)
+// global DAT_155914818 155914818 HighGlobal longlong (8)
+// global DAT_153253434 153253434 HighGlobal int (4)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_90fcb05c unique:10002f66 HighGlobal undefined4 (4)
+// global DAT_14a45e004 14a45e004 HighGlobal uint (4)
+// global uRam000000008773f1b4 8773f1b4 HighGlobal undefined1 (1)
+// global DAT_155914dd8 155914dd8 HighGlobal int (4)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global DAT_153253438 153253438 HighGlobal int (4)
+// global DAT_153253424 153253424 HighGlobal int (4)
+// global DAT_14a45e054 14a45e054 HighGlobal uint (4)
+// global _DAT_14a45e058 14a45e058 HighGlobal uint (4)
+// global _DAT_14a45e05c 14a45e05c HighGlobal uint (4)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x00014600a64e) overlaps instruction at (ram,0x00014600a64b)
@@ -12275,6 +12296,15 @@ code_r0x000146025d2e:
 
 
 // 14600A704  FUN_14600a704  (line unknown)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global DAT_155914dd8 155914dd8 HighGlobal int (4)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_14a45e004 14a45e004 HighGlobal uint (4)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global DAT_14a45e054 14a45e054 HighGlobal uint (4)
+// global DAT_153253424 153253424 HighGlobal int (4)
+// global _DAT_14a45e058 14a45e058 HighGlobal uint (4)
+// global _DAT_14a45e05c 14a45e05c HighGlobal uint (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -12894,6 +12924,15 @@ LAB_14600b808:
 
 
 // 14600A973  FUN_14600a973  (line unknown)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global DAT_155914dd8 155914dd8 HighGlobal int (4)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_14a45e004 14a45e004 HighGlobal uint (4)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global DAT_14a45e054 14a45e054 HighGlobal uint (4)
+// global DAT_153253424 153253424 HighGlobal int (4)
+// global _DAT_14a45e058 14a45e058 HighGlobal uint (4)
+// global _DAT_14a45e05c 14a45e05c HighGlobal uint (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -13520,6 +13559,11 @@ LAB_14600b808:
 
 
 // 146025FC0  FUN_146025fc0  (line unknown)
+// global _tls_index 159dd8450 HighGlobal uint (4)
+// global DAT_14a45e04c 14a45e04c HighGlobal uint (4)
+// global DAT_14a45e050 14a45e050 HighGlobal undefined4 (4)
+// global ThreadLocalStoragePointer ff00000058 HighGlobal void * (8)
+// global DAT_14bbf1f28 14bbf1f28 HighGlobal int (4)
 
 void FUN_146025fc0(longlong param_1)
 
@@ -13583,6 +13627,9 @@ void FUN_146025fc0(longlong param_1)
 
 
 // 146026180  FUN_146026180  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_15594ad6c 15594ad6c HighGlobal int (4)
 
 void FUN_146026180(int param_1,longlong param_2)
 
@@ -13671,6 +13718,24 @@ void FUN_146026180(int param_1,longlong param_2)
 
 
 // 14602EE19  FUN_14602ee19  (line unknown)
+// global DAT_147afb072 147afb072 HighGlobal byte * (8)
+// global pcRam00000000bc7e9311 unique:1000efa4 HighGlobal undefined * (8)
+// global uRam00000000cc1eb0e2 cc1eb0e2 HighGlobal undefined8 (8)
+// global _DAT_abed4f12 register:00000000 HighGlobal undefined4 (4)
+// global DAT_14bbbe374 14bbbe374 HighGlobal ushort (2)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global uRam0000000000050688 00050688 HighGlobal undefined4 (4)
+// global DAT_158533d08 158533d08 HighGlobal undefined8 (8)
+// global DAT_1532981cc 1532981cc HighGlobal int (4)
+// global DAT_155914dd8 155914dd8 HighGlobal int (4)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global uRamffffffffba9e5313 ffffffffba9e5313 HighGlobal undefined8 (8)
+// global DAT_a58f90ec a58f90ec HighGlobal undefined1 (1)
+// global DAT_bc908826 bc908826 HighGlobal undefined1 (1)
+// global pcRam00000000ed5fe2c4 unique:1000efac HighGlobal undefined * (8)
+// global uRam00000000bbdab427 bbdab427 HighGlobal undefined8 (8)
 
 /* WARNING: Instruction at (ram,0x0001460484e3) overlaps instruction at (ram,0x0001460484db)
     */
@@ -34511,6 +34576,24 @@ LAB_1460607f6:
 
 
 // 14602EEC2  FUN_14602eec2  (line unknown)
+// global DAT_14bbbe374 14bbbe374 HighGlobal ushort (2)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global uRam0000000000050688 00050688 HighGlobal undefined4 (4)
+// global DAT_158533d08 158533d08 HighGlobal undefined8 (8)
+// global DAT_1532981cc 1532981cc HighGlobal int (4)
+// global DAT_155914dd8 155914dd8 HighGlobal int (4)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global uRamffffffffba9e5313 ffffffffba9e5313 HighGlobal undefined8 (8)
+// global DAT_147afb072 147afb072 HighGlobal byte * (8)
+// global DAT_a58f90ec a58f90ec HighGlobal undefined1 (1)
+// global DAT_bc908826 bc908826 HighGlobal undefined1 (1)
+// global pcRam00000000ed5fe2c4 unique:1000efa4 HighGlobal undefined * (8)
+// global uRam00000000bbdab427 bbdab427 HighGlobal undefined8 (8)
+// global pcRam00000000bc7e9311 unique:1000ef9c HighGlobal undefined * (8)
+// global uRam00000000cc1eb0e2 cc1eb0e2 HighGlobal undefined8 (8)
+// global _DAT_abed4f12 register:00000000 HighGlobal undefined4 (4)
 
 /* WARNING: Instruction at (ram,0x0001460484e3) overlaps instruction at (ram,0x0001460484db)
     */
@@ -55272,6 +55355,7 @@ LAB_1460607f6:
 
 
 // 146060AF0  FUN_146060af0  (line unknown)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
 
 void FUN_146060af0(int param_1,longlong param_2)
 
@@ -55364,6 +55448,10 @@ void FUN_146060af0(int param_1,longlong param_2)
 
 
 // 146060D80  FUN_146060d80  (line unknown)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global SUB_14000049e register:00000000 HighGlobal undefined4 (4)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x0001460673f3) overlaps instruction at (ram,0x0001460673eb)
@@ -57674,6 +57762,15 @@ LAB_14606ae7e:
 
 
 // 14606AF60  FUN_14606af60  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global DAT_155fe7498 155fe7498 HighGlobal longlong (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_155fe7210 155fe7210 HighGlobal longlong (8)
+// global DAT_155fe7208 155fe7208 HighGlobal longlong (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x00014607cec0) overlaps instruction at (ram,0x00014607cebb)
@@ -60743,6 +60840,13 @@ void FUN_146080720(undefined4 param_1)
 
 
 // 146080790  FUN_146080790  (line unknown)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_cbb16fb8 unique:000a8e00 HighGlobal undefined8 (8)
+// global _DAT_79b8e36ba2cfbfa 79b8e36ba2cfbfa HighGlobal int (4)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global uRam00000000ea9527d9 ea9527d9 HighGlobal undefined8 (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x00014608f0cf) overlaps instruction at (ram,0x00014608f0ce)
@@ -70672,6 +70776,11 @@ LAB_14608fa94:
 
 
 // 1460948D0  FUN_1460948d0  (line unknown)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global caseD_1 unique:0000d300 HighGlobal undefined4 (4)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 
@@ -73929,6 +74038,12 @@ LAB_14609a1d2:
 
 
 // 14609F5D0  FUN_14609f5d0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a479a48 14a479a4b HighGlobal char (1)
+// global DAT_14a479a48 14a479a48 HighGlobal uint (4)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 
@@ -76851,6 +76966,7 @@ LAB_1460a4aca:
 
 
 // 1460A4BE0  FUN_1460a4be0  (line unknown)
+// global DAT_158533d08 158533d08 HighGlobal undefined8 (8)
 
 void FUN_1460a4be0(undefined4 param_1,longlong param_2,longlong param_3)
 
@@ -76958,6 +77074,10 @@ LAB_1460a4d9c:
 
 
 // 1460A4E60  FUN_1460a4e60  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_155e16128 155e16128 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 void FUN_1460a4e60(void)
 
@@ -77240,6 +77360,7 @@ void FUN_1460a5620(undefined8 param_1,undefined4 param_2,undefined8 param_3,long
 
 
 // 1460A5710  FUN_1460a5710  (line unknown)
+// global DAT_155ddc520 155ddc520 HighGlobal undefined8 (8)
 
 void FUN_1460a5710(void)
 
@@ -77624,6 +77745,15 @@ undefined8 * FUN_1460a61c0(undefined8 *param_1,ulonglong param_2)
 
 
 // 1460A61F0  FUN_1460a61f0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1536bbe2c 1536bbe2c HighGlobal int (4)
+// global DAT_1536bbe34 1536bbe34 HighGlobal undefined4 (4)
+// global DAT_155e1d678 155e1d678 HighGlobal undefined8 (8)
+// global DAT_1536bbe20 1536bbe20 HighGlobal undefined4 (4)
+// global DAT_155ed0268 155ed0268 HighGlobal undefined8 (8)
+// global DAT_155ed0270 155ed0270 HighGlobal ushort * (8)
+// global DAT_1536bc624 1536bc624 HighGlobal undefined4 (4)
+// global DAT_1536bc650 1536bc650 HighGlobal undefined4 (4)
 
 void FUN_1460a61f0(undefined8 param_1,ushort *param_2,undefined8 param_3,longlong param_4,
                   char param_5,ushort *param_6,ushort *param_7,ushort *param_8,ushort *param_9,
@@ -77946,6 +78076,18 @@ int FUN_1460a69d0(undefined8 param_1,longlong param_2,ulonglong param_3,undefine
 
 
 // 1460A6A70  FUN_1460a6a70  (line unknown)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_155e12428 155e12428 HighGlobal longlong (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_140000cd0 140000cd0 HighGlobal uint (4)
+// global _DAT_88e78737019f3b8e unique:0000d300 HighGlobal int (4)
+// global DAT_155e13698 155e13698 HighGlobal longlong (8)
+// global DAT_153253438 153253438 HighGlobal int (4)
+// global DAT_153253434 153253434 HighGlobal int (4)
 
 /* WARNING: Instruction at (ram,0x0001460aa13a) overlaps instruction at (ram,0x0001460aa137)
     */
@@ -83166,6 +83308,19 @@ LAB_1460b5ae6:
 
 
 // 1460B5BC0  FUN_1460b5bc0  (line unknown)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_155e12428 155e12428 HighGlobal longlong (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global _SUB_14000049e 14000049e HighGlobal undefined1[10] (10)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_ba2cfd29 unique:0000a500 HighGlobal undefined * (8)
+// global DAT_155e13698 155e13698 HighGlobal longlong (8)
+// global DAT_153253434 153253434 HighGlobal int (4)
+// global DAT_1533c90e0 1533c90e0 HighGlobal longlong (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -88361,6 +88516,10 @@ LAB_1460c4e0d:
 
 
 // 1460C4FB0  FUN_1460c4fb0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_1533c8bc0 1533c8bc0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 ulonglong FUN_1460c4fb0(longlong param_1,ushort param_2,longlong param_3,longlong param_4,
                        longlong param_5)
@@ -88539,6 +88698,12 @@ LAB_1460c5672:
 
 
 // 1460C5780  FUN_1460c5780  (line unknown)
+// global DAT_1536bbba0 1536bbba0 HighGlobal int (4)
+// global DAT_1536bbe2c 1536bbe2c HighGlobal int (4)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_1558c9da8 1558c9da8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 ulonglong FUN_1460c5780(longlong param_1,ushort param_2,longlong param_3,uint *param_4,
                        longlong param_5,ushort *param_6,byte param_7)
@@ -88749,6 +88914,11 @@ LAB_1460c5e79:
 
 
 // 1460C6000  FUN_1460c6000  (line unknown)
+// global DAT_155e12428 155e12428 HighGlobal longlong (8)
+// global DAT_153253424 153253424 HighGlobal int (4)
+// global _DAT_14a45e058 14a45e058 HighGlobal uint (4)
+// global _DAT_14a45e05c 14a45e05c HighGlobal uint (4)
+// global DAT_14a45e054 14a45e054 HighGlobal uint (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -88805,6 +88975,20 @@ FUN_1460c6000(undefined8 param_1,undefined8 param_2,undefined2 param_3,undefined
 
 
 // 1460C6120  FUN_1460c6120  (line unknown)
+// global DAT_155fea2e8 155fea2e8 HighGlobal longlong * (8)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_155fea310 155fea310 HighGlobal ulonglong (8)
+// global DAT_155fea2f8 155fea2f8 HighGlobal longlong * (8)
+// global DAT_155fea300 155fea300 HighGlobal longlong * (8)
+// global DAT_155fea308 155fea308 HighGlobal longlong * (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_1533c91b0 1533c91b0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_14a479cf8 14a479cfb HighGlobal char (1)
+// global DAT_14a479cf8 14a479cf8 HighGlobal uint (4)
 
 undefined8
 FUN_1460c6120(undefined8 param_1,char param_2,short param_3,undefined8 *param_4,ushort param_5,
@@ -89163,6 +89347,11 @@ void FUN_1460c6c40(undefined8 param_1,longlong param_2,int param_3,char param_4)
 
 
 // 1460C6CA0  FUN_1460c6ca0  (line unknown)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global caseD_1 140000000 HighGlobal char (1)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -91449,6 +91638,10 @@ LAB_1460cbb0b:
 
 
 // 1460CBBB0  FUN_1460cbbb0  (line unknown)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x0001460ce910) overlaps instruction at (ram,0x0001460ce90f)
@@ -93787,6 +93980,32 @@ longlong FUN_1460d0ae0(longlong param_1,int param_2)
 
 
 // 1460D0B00  FUN_1460d0b00  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_155e12428 155e12428 HighGlobal longlong (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global SUB_14000049e 14000049e HighGlobal undefined4 (4)
+// global SUB_14000049e 1400004a0 HighGlobal undefined2 (2)
+// global DAT_1400004aa 1400004aa HighGlobal undefined8 (8)
+// global _DAT_1400004a2 unique:10003168 HighGlobal undefined2 (2)
+// global DAT_1400004a6 unique:1000316c HighGlobal undefined2 (2)
+// global DAT_1400004b2 unique:10003176 HighGlobal undefined8 (8)
+// global _DAT_1400004ba unique:10003188 HighGlobal undefined1[10] (10)
+// global _DAT_1400004c4 unique:1000319c HighGlobal undefined1[10] (10)
+// global _DAT_1400004ce unique:100031b0 HighGlobal undefined1[10] (10)
+// global _DAT_1400004d8 unique:100031c4 HighGlobal undefined1[10] (10)
+// global _DAT_1400004e2 unique:100031d8 HighGlobal undefined1[10] (10)
+// global _DAT_1400004ec unique:100031ec HighGlobal undefined1[10] (10)
+// global _DAT_1400004f6 unique:10003200 HighGlobal undefined1[10] (10)
+// global _DAT_140000500 unique:10003214 HighGlobal undefined1[10] (10)
+// global SUB_14000049e 14000049f HighGlobal undefined3 (3)
+// global DAT_aba26e45 aba26e45 HighGlobal undefined1 (1)
+// global DAT_15389a788 15389a788 HighGlobal char * (8)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_140000cd0 unique:00023c00 HighGlobal uint (4)
+// global _DAT_140000cd1 140000cd1 HighGlobal undefined3 (3)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -98925,6 +99144,8 @@ void FUN_1460df9d0(undefined8 param_1,undefined8 param_2)
 
 
 // 1460DF9E0  FUN_1460df9e0  (line unknown)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
 
 void FUN_1460df9e0(undefined8 param_1,undefined4 param_2)
 
@@ -99027,6 +99248,14 @@ undefined8 * FUN_1460dfb60(undefined8 *param_1,ulonglong param_2)
 
 
 // 1460DFB90  FUN_1460dfb90  (line unknown)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_e75548351d118aae e75548351d118aae HighGlobal int (4)
+// global DAT_155ec4700 155ec4700 HighGlobal longlong * (8)
+// global DAT_155e12428 155e12428 HighGlobal longlong (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x0001460ee47d) overlaps instruction at (ram,0x0001460ee476)
@@ -106615,6 +106844,14 @@ undefined8 FUN_1460f4260(void)
 
 
 // 1460F4270  FUN_1460f4270  (line unknown)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_155e12428 155e12428 HighGlobal longlong (8)
+// global DAT_147afb072 147afb072 HighGlobal ulonglong (8)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_147afb15b 147afb15b HighGlobal ulonglong (8)
+// global _DAT_140000cd0 unique:0000d300 HighGlobal uint (4)
+// global DAT_155ec4700 155ec4700 HighGlobal longlong * (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x0001460f543d) overlaps instruction at (ram,0x0001460f5437)
@@ -111378,6 +111615,8 @@ longlong FUN_1460fdd20(longlong param_1)
 
 
 // 1460FDD30  FUN_1460fdd30  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
 
 void FUN_1460fdd30(int param_1,undefined4 param_2,char param_3,float *param_4,float *param_5)
 
@@ -111477,6 +111716,7 @@ LAB_1460fe020:
 
 
 // 1460FE060  FUN_1460fe060  (line unknown)
+// global DAT_153253434 153253434 HighGlobal int (4)
 
 void FUN_1460fe060(int param_1,longlong param_2)
 

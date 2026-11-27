@@ -13,6 +13,16 @@ void FUN_141a01d55(void)
 
 
 // 141A3FB00  FUN_141a3fb00  (line unknown)
+// global DAT_147b0a2a9 147b0a2a9 HighGlobal byte (1)
+// global DAT_147b0a290 147b0a290 HighGlobal byte (1)
+// global DAT_147b0a29c 147b0a29c HighGlobal byte (1)
+// global DAT_147b0a2a8 147b0a2a8 HighGlobal byte (1)
+// global DAT_147b0a293 147b0a293 HighGlobal byte (1)
+// global DAT_147b0a2a0 147b0a2a0 HighGlobal byte (1)
+// global DAT_147b0a29d 147b0a29d HighGlobal byte (1)
+// global DAT_147b0a29f 147b0a29f HighGlobal byte (1)
+// global DAT_147b0a294 147b0a294 HighGlobal byte (1)
+// global DAT_147b0a297 147b0a297 HighGlobal byte (1)
 
 undefined8 FUN_141a3fb00(undefined8 param_1)
 
@@ -608,6 +618,15 @@ LAB_141a41740:
 
 
 // 141A41760  FUN_141a41760  (line unknown)
+// global DAT_147b0a2c4 147b0a2cb HighGlobal byte (1)
+// global DAT_147b0a2c4 147b0a2c9 HighGlobal undefined2 (2)
+// global DAT_147b0a2c4 147b0a2c4 HighGlobal undefined4 (4)
+// global DAT_147b0a2bc 147b0a2c3 HighGlobal undefined1 (1)
+// global DAT_147b0a2bc 147b0a2c0 HighGlobal undefined4 (4)
+// global DAT_147b0a2bc 147b0a2bc HighGlobal uint (4)
+// global DAT_147b0a2b4 147b0a2b8 HighGlobal undefined4 (4)
+// global DAT_147b0a2b4 147b0a2b4 HighGlobal uint (4)
+// global DAT_147b0a2b0 147b0a2b0 HighGlobal byte (1)
 
 undefined8 FUN_141a41760(undefined8 param_1)
 
@@ -1191,6 +1210,16 @@ LAB_141a4315f:
 
 
 // 141A431B0  FUN_141a431b0  (line unknown)
+// global DAT_147b0a22d 147b0a22d HighGlobal byte (1)
+// global DAT_147b0a229 147b0a229 HighGlobal byte (1)
+// global DAT_147b0a231 147b0a231 HighGlobal byte (1)
+// global DAT_147b0a232 147b0a232 HighGlobal byte (1)
+// global DAT_147b0a227 147b0a227 HighGlobal byte (1)
+// global DAT_147b0a23f 147b0a23f HighGlobal byte (1)
+// global DAT_147b0a220 147b0a220 HighGlobal byte (1)
+// global DAT_147b0a248 147b0a248 HighGlobal byte (1)
+// global DAT_147b0a244 147b0a244 HighGlobal byte (1)
+// global DAT_147b0a243 147b0a243 HighGlobal byte (1)
 
 undefined8 FUN_141a431b0(undefined8 param_1)
 
@@ -1787,6 +1816,16 @@ LAB_141a43fdc:
 
 
 // 141A44BA0  FUN_141a44ba0  (line unknown)
+// global DAT_147b0a258 147b0a258 HighGlobal byte (1)
+// global DAT_147b0a284 147b0a284 HighGlobal byte (1)
+// global DAT_147b0a275 147b0a275 HighGlobal byte (1)
+// global DAT_147b0a254 147b0a254 HighGlobal byte (1)
+// global DAT_147b0a25e 147b0a25e HighGlobal byte (1)
+// global DAT_147b0a255 147b0a255 HighGlobal byte (1)
+// global DAT_147b0a252 147b0a252 HighGlobal byte (1)
+// global DAT_147b0a28a 147b0a28a HighGlobal byte (1)
+// global DAT_147b0a27b 147b0a27b HighGlobal byte (1)
+// global DAT_147b0a250 147b0a250 HighGlobal byte (1)
 
 undefined8 FUN_141a44ba0(undefined8 param_1)
 

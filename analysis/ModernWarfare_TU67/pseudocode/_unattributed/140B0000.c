@@ -198,6 +198,11 @@ LAB_140b093f3:
 // not decompiled: fragment: inside 140B0EBD0-140B0EC27, jump references only
 
 // 140B0EC30  FUN_140b0ec30  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14b900528 14b900528 HighGlobal short * (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 /* WARNING: Removing unreachable block (ram,0x000140b0ec85) */
 /* WARNING: Removing unreachable block (ram,0x000140b0eca9) */
@@ -1278,6 +1283,10 @@ LAB_140b1065c:
 
 
 // 140B10690  FUN_140b10690  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14b900528 14b900528 HighGlobal short * (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_14b900518 14b900518 HighGlobal IMAGE_DOS_HEADER * (8)
 
 void FUN_140b10690(IMAGE_DOS_HEADER *param_1,uint param_2)
 
@@ -3660,6 +3669,8 @@ void FUN_140b19334(void)
 // not decompiled: fragment: inside 140B19080-140B1A14F, jump references only
 
 // 140B1A150  FUN_140b1a150  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global _DAT_fffff78000000900 unique:0000d400 HighGlobal undefined8 (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -3735,6 +3746,7 @@ undefined8 FUN_140b1a150(void)
 
 
 // 140B1AB10  FUN_140b1ab10  (line unknown)
+// global DAT_147afb72f 147afb72f HighGlobal ulonglong (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Instruction at (ram,0x000140b1ab43) overlaps instruction at (ram,0x000140b1ab3f)
@@ -3839,6 +3851,7 @@ void FUN_140b1ae00(undefined8 param_1,undefined2 param_2)
 
 
 // 140B1AED0  FUN_140b1aed0  (line unknown)
+// global DAT_14b940b90 14b940b90 HighGlobal longlong (8)
 
 undefined8 FUN_140b1aed0(void)
 
@@ -3906,6 +3919,7 @@ void FUN_140b1afa0(void)
 
 
 // 140B1B070  FUN_140b1b070  (line unknown)
+// global cRame84dcc80ebcc5bf2 unique:10000132 HighGlobal char (1)
 
 void FUN_140b1b070(byte param_1)
 
@@ -4238,6 +4252,7 @@ void FUN_140b1ce00(undefined8 param_1,longlong param_2)
 
 
 // 140B1CEC0  FUN_140b1cec0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal int * (8)
 
 /* WARNING: Control flow encountered bad instruction data */
 
@@ -4379,6 +4394,8 @@ void FUN_140b20640(void)
 
 
 // 140B20C50  FUN_140b20c50  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_158561d38 158561d38 HighGlobal undefined1 (1)
 
 void FUN_140b20c50(int param_1,longlong param_2)
 
@@ -4749,6 +4766,9 @@ int * FUN_140b20f50(longlong param_1,int *param_2,longlong param_3)
 
 
 // 140B219E0  tls_callback_5  (line unknown)
+// global DAT_14b940ba0 register:00000000 HighGlobal FARPROC (8)
+// global _DAT_14b940b98 register:00000000 HighGlobal FARPROC (8)
+// global DAT_14b940ba8 14b940ba8 HighGlobal longlong (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -4882,6 +4902,7 @@ void FUN_140b2a339(void)
 // not decompiled: fragment: inside 140B21A80-140B2DB8C, jump references only
 
 // 140B2B3DD  FUN_140b2b3dd  (line unknown)
+// global DAT_142165720 142165720 HighGlobal int (4)
 
 void FUN_140b2b3dd(void)
 
@@ -5184,6 +5205,125 @@ void FUN_140b30f10(void)
 
 
 // 140B30F30  FUN_140b30f30  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global ThreadLocalStoragePointer ff00000058 HighGlobal void * (8)
+// global _tls_index 159dd8450 HighGlobal uint (4)
+// global DAT_14b948ae8 14b948ae8 HighGlobal int (4)
+// global DAT_14b948a90 14b948a90 HighGlobal FARPROC (8)
+// global DAT_14b900538 14b900538 HighGlobal HMODULE (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_14b948a58 14b948a58 HighGlobal FARPROC (8)
+// global DAT_14b948ad8 14b948ad8 HighGlobal uint * (8)
+// global DAT_14b948ae0 14b948ae0 HighGlobal uint * (8)
+// global DAT_14b948a98 14b948a98 HighGlobal FARPROC (8)
+// global ClientId ff00000040 HighGlobal int (4)
+// global ClientId ff00000048 HighGlobal undefined4 (4)
+// global DAT_14b948a68 14b948a68 HighGlobal FARPROC (8)
+// global DAT_14b948a78 14b948a78 HighGlobal FARPROC (8)
+// global DAT_14b948a60 unique:100081d2 HighGlobal FARPROC (8)
+// global DAT_14b948a80 14b948a80 HighGlobal FARPROC (8)
+// global DAT_14b900550 14b900550 HighGlobal FARPROC (8)
+// global DAT_14b948aa0 14b948aa0 HighGlobal FARPROC (8)
+// global DAT_14b948a88 14b948a88 HighGlobal FARPROC (8)
+// global DAT_14b948ab8 14b948ab8 HighGlobal FARPROC (8)
+// global DAT_14b948ab0 14b948ab0 HighGlobal HMODULE (8)
+// global DAT_14b948ac8 14b948ac8 HighGlobal FARPROC (8)
+// global DAT_14b948ac0 14b948ac0 HighGlobal HMODULE (8)
+// global DAT_14b948aa8 14b948aa8 HighGlobal FARPROC (8)
+// global DAT_14b900528 14b900528 HighGlobal HMODULE (8)
+// global DAT_14b948ad0 14b948ad0 HighGlobal uint * (8)
+// global DAT_14b948a50 14b948a50 HighGlobal FARPROC (8)
+// global DAT_14b948a70 14b948a70 HighGlobal FARPROC (8)
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b948ad8 2 4
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b948ab0 15 4
+// ptradd PTRADD 14b948ab0 34 4
+// ptradd PTRSUB 14b948ab0 0 1
+// ptradd PTRADD 14b948ac0 15 4
+// ptradd PTRADD 14b948ac0 34 4
+// ptradd PTRSUB 14b948ac0 0 1
+// ptradd PTRADD 14b948ac0 15 4
+// ptradd PTRADD 14b948ac0 34 4
+// ptradd PTRSUB 14b948ac0 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900528 15 4
+// ptradd PTRADD 14b900528 34 4
+// ptradd PTRSUB 14b900528 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b948ad8 2 4
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
 
 void FUN_140b30f30(void)
 
@@ -13388,6 +13528,27 @@ LAB_140b47694:
 
 
 // 140B495A0  FUN_140b495a0  (line unknown)
+// global DAT_14b948a90 14b948a90 HighGlobal FARPROC (8)
+// global DAT_14b900538 14b900538 HighGlobal HMODULE (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_147b09734 147b09734 HighGlobal undefined1 (1)
+// global DAT_147b09735 147b09735 HighGlobal undefined1 (1)
+// global DAT_14b948a58 14b948a58 HighGlobal FARPROC (8)
+// global DAT_14b948a98 14b948a98 HighGlobal FARPROC (8)
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
+// ptradd PTRADD 14b900538 15 4
+// ptradd PTRADD 14b900538 34 4
+// ptradd PTRSUB 14b900538 0 1
 
 uint FUN_140b495a0(void)
 

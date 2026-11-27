@@ -93,6 +93,8 @@ ulonglong FUN_1419169b0(short param_1)
 
 
 // 141916A3E  FUN_141916a3e  (line unknown)
+// global cRam000000000000039e unique:0000d100 HighGlobal char (1)
+// global _DAT_00000000 unique:00023c00 HighGlobal uint (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -199,6 +201,7 @@ char * FUN_141916a3e(longlong param_1)
 
 
 // 141994BAE  FUN_141994bae  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal int * (8)
 
 void FUN_141994bae(void)
 

@@ -39,6 +39,7 @@ void FUN_1425303b0(undefined8 param_1,undefined2 param_2)
 
 
 // 142595210  FUN_142595210  (line unknown)
+// global _DAT_fd22be67fa733f7 fd22be67fa733f7 HighGlobal int (4)
 
 /* WARNING: Control flow encountered bad instruction data */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */

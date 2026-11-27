@@ -22,6 +22,7 @@ void FUN_1476b5450(undefined8 param_1,undefined2 param_2)
 
 
 // 1476F636F  FUN_1476f636f  (line unknown)
+// global DAT_c00000000146eb3c c00000000146eb3c HighGlobal byte (1)
 
 /* WARNING: Control flow encountered bad instruction data */
 

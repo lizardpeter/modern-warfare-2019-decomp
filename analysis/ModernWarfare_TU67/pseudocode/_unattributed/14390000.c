@@ -498,6 +498,7 @@ longlong FUN_1439013d0(longlong param_1,longlong param_2)
 
 
 // 143901A70  FUN_143901a70  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -590,6 +591,7 @@ void FUN_143901a70(undefined4 *param_1)
 
 
 // 143901D00  FUN_143901d00  (line unknown)
+// global DAT_153743070 153743070 HighGlobal undefined1 (1)
 
 undefined1 FUN_143901d00(void)
 
@@ -599,6 +601,9 @@ undefined1 FUN_143901d00(void)
 
 
 // 143901D10  FUN_143901d10  (line unknown)
+// global DAT_153743070 153743070 HighGlobal char (1)
+// global DAT_153743074 153743074 HighGlobal int (4)
+// global _DAT_153743078 153743078 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -642,6 +647,8 @@ void FUN_143901df0(void)
 
 
 // 143901E00  FUN_143901e00  (line unknown)
+// global DAT_1537431b8 1537431b8 HighGlobal uint (4)
+// global DAT_153743070 153743070 HighGlobal char (1)
 
 ulonglong FUN_143901e00(int param_1)
 
@@ -947,6 +954,7 @@ undefined8 FUN_1439024e0(void)
 
 
 // 143902520  FUN_143902520  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 ulonglong FUN_143902520(undefined8 param_1,code *param_2,code *param_3,undefined4 *param_4,
                        int param_5)
@@ -1038,6 +1046,9 @@ undefined8 FUN_143902670(undefined8 param_1)
 
 
 // 1439026C0  FUN_1439026c0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a371120 14a371123 HighGlobal char (1)
+// global DAT_14a371120 14a371120 HighGlobal uint (4)
 
 void FUN_1439026c0(longlong param_1,undefined8 param_2)
 
@@ -1121,6 +1132,9 @@ void FUN_1439026c0(longlong param_1,undefined8 param_2)
 
 
 // 1439028B0  FUN_1439028b0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a371120 14a371123 HighGlobal char (1)
+// global DAT_14a371120 14a371120 HighGlobal uint (4)
 
 void FUN_1439028b0(longlong param_1,undefined8 param_2,undefined4 param_3)
 
@@ -1435,6 +1449,8 @@ void FUN_143902f30(undefined8 param_1,undefined8 param_2,float *param_3)
 
 
 // 143902FE0  FUN_143902fe0  (line unknown)
+// global DAT_155d09998 155d09998 HighGlobal char (1)
+// global DAT_155d09990 155d09990 HighGlobal HCRYPTPROV (8)
 
 void FUN_143902fe0(undefined8 param_1,undefined8 param_2,undefined4 param_3,int *param_4)
 
@@ -1592,6 +1608,7 @@ ulonglong FUN_143903240(ulonglong param_1,undefined8 param_2,int param_3,ulonglo
 
 
 // 1439033A0  FUN_1439033a0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_1439033a0(undefined8 param_1)
 
@@ -1640,6 +1657,11 @@ void FUN_143903450(void)
 
 
 // 143903490  FUN_143903490  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a371138 14a37113b HighGlobal char (1)
+// global DAT_14a371138 14a371138 HighGlobal uint (4)
+// global DAT_14a371150 14a371153 HighGlobal char (1)
+// global DAT_14a371150 14a371150 HighGlobal uint (4)
 
 void FUN_143903490(char *param_1,longlong param_2,int param_3,int *param_4)
 
@@ -1846,6 +1868,8 @@ void FUN_1439037c0(int param_1,char param_2)
 
 
 // 143903840  FUN_143903840  (line unknown)
+// global DAT_15384cd8c 15384cd8c HighGlobal int (4)
+// global DAT_15384cd90 15384cd90 HighGlobal int (4)
 
 void FUN_143903840(undefined4 param_1,char param_2)
 
@@ -1885,6 +1909,17 @@ void FUN_143903840(undefined4 param_1,char param_2)
 
 
 // 143903960  FUN_143903960  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a3710a8 14a3710ab HighGlobal char (1)
+// global DAT_14a3710a8 14a3710a8 HighGlobal uint (4)
+// global DAT_14a3710c0 14a3710c3 HighGlobal char (1)
+// global DAT_14a3710c0 14a3710c0 HighGlobal uint (4)
+// global DAT_14a3710d8 14a3710db HighGlobal char (1)
+// global DAT_14a3710d8 14a3710d8 HighGlobal uint (4)
+// global DAT_14a3710f0 14a3710f3 HighGlobal char (1)
+// global DAT_14a3710f0 14a3710f0 HighGlobal uint (4)
+// global DAT_14a371108 14a37110b HighGlobal char (1)
+// global DAT_14a371108 14a371108 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -2072,6 +2107,10 @@ void FUN_143903df0(void)
 
 
 // 143903E00  FUN_143903e00  (line unknown)
+// global DAT_15384cd94 register:00000008 HighGlobal int (4)
+// global DAT_1537bd940 1537bd940 HighGlobal int (4)
+// global _DAT_15384cd98 register:00000000 HighGlobal undefined4 (4)
+// global DAT_15384cd8a 15384cd8a HighGlobal undefined1 (1)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -2309,6 +2348,7 @@ void FUN_1439042b0(int param_1,int param_2)
 
 
 // 143904410  FUN_143904410  (line unknown)
+// global DAT_1537bd901 1537bd901 HighGlobal undefined1 (1)
 
 undefined1 FUN_143904410(void)
 
@@ -2348,6 +2388,7 @@ longlong FUN_143904450(int param_1,int param_2)
 
 
 // 143904490  FUN_143904490  (line unknown)
+// global DAT_1536bd080 1536bd080 HighGlobal undefined4 (4)
 
 ulonglong FUN_143904490(undefined4 param_1)
 
@@ -2420,6 +2461,13 @@ undefined * FUN_143904660(int param_1)
 
 
 // 143904730  FUN_143904730  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1537bd95a 1537bd95a HighGlobal char (1)
+// global DAT_1537bd901 1537bd901 HighGlobal char (1)
+// global DAT_1537bd900 1537bd900 HighGlobal char (1)
+// global DAT_1537bd95b 1537bd95b HighGlobal char (1)
+// global DAT_1537bd920 1537bd920 HighGlobal int (4)
+// global _DAT_1537bd924 1537bd924 HighGlobal int (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -2510,6 +2558,11 @@ void FUN_143904730(int param_1)
 
 
 // 1439049B0  FUN_1439049b0  (line unknown)
+// global DAT_158533d08 158533d08 HighGlobal undefined8 (8)
+// global DAT_14a371010 14a371013 HighGlobal char (1)
+// global DAT_14a371010 14a371010 HighGlobal uint (4)
+// global DAT_14a371028 14a37102b HighGlobal char (1)
+// global DAT_14a371028 14a371028 HighGlobal uint (4)
 
 void FUN_1439049b0(int param_1,int param_2)
 
@@ -2577,6 +2630,8 @@ void FUN_143904b00(uint param_1,int param_2,longlong param_3)
 
 
 // 143904B40  FUN_143904b40  (line unknown)
+// global DAT_15594ad64 15594ad64 HighGlobal char (1)
+// global DAT_15594ad48 15594ad48 HighGlobal int (4)
 
 void FUN_143904b40(int param_1)
 
@@ -2609,6 +2664,7 @@ undefined8 FUN_143904bf0(void)
 
 
 // 143904C00  FUN_143904c00  (line unknown)
+// global DAT_1536bd080 1536bd080 HighGlobal undefined4 (4)
 
 undefined4 FUN_143904c00(longlong param_1)
 
@@ -2877,6 +2933,8 @@ undefined4 FUN_143905070(int param_1,int param_2)
 
 
 // 1439050A0  FUN_1439050a0  (line unknown)
+// global DAT_1537bd940 1537bd940 HighGlobal int (4)
+// global _DAT_15384cd98 15384cd98 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -2891,6 +2949,7 @@ int FUN_1439050a0(void)
 
 
 // 1439050D0  FUN_1439050d0  (line unknown)
+// global DAT_15384cd94 15384cd94 HighGlobal undefined4 (4)
 
 undefined4 FUN_1439050d0(void)
 
@@ -2900,6 +2959,7 @@ undefined4 FUN_1439050d0(void)
 
 
 // 1439050E0  FUN_1439050e0  (line unknown)
+// global DAT_15384cd88 15384cd88 HighGlobal undefined1 (1)
 
 undefined1 FUN_1439050e0(void)
 
@@ -2909,6 +2969,7 @@ undefined1 FUN_1439050e0(void)
 
 
 // 1439050F0  FUN_1439050f0  (line unknown)
+// global DAT_1537bd95a 1537bd95a HighGlobal undefined1 (1)
 
 undefined1 FUN_1439050f0(void)
 
@@ -2976,6 +3037,15 @@ ulonglong FUN_1439051f0(int param_1,int param_2)
 
 
 // 143905230  FUN_143905230  (line unknown)
+// global _DAT_1537bd918 register:00000000 HighGlobal undefined8 (8)
+// global DAT_14a371048 14a37104b HighGlobal char (1)
+// global DAT_14a371048 14a371048 HighGlobal uint (4)
+// global DAT_14a371060 14a371063 HighGlobal char (1)
+// global DAT_14a371060 14a371060 HighGlobal uint (4)
+// global _DAT_15384cd80 15384cd80 HighGlobal undefined4 (4)
+// global _DAT_15384cd84 15384cd84 HighGlobal undefined4 (4)
+// global _DAT_1537bd910 1537bd910 HighGlobal undefined8 (8)
+// global _DAT_1537bd908 1537bd908 HighGlobal undefined8 (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -3061,6 +3131,7 @@ undefined1 FUN_143905510(int param_1,undefined4 param_2,int param_3)
 
 
 // 143905560  FUN_143905560  (line unknown)
+// global DAT_15384cd8a 15384cd8a HighGlobal undefined1 (1)
 
 undefined1 FUN_143905560(void)
 
@@ -3087,6 +3158,8 @@ undefined1 FUN_143905570(int param_1)
 
 
 // 1439055A0  FUN_1439055a0  (line unknown)
+// global DAT_155d09998 155d09998 HighGlobal char (1)
+// global DAT_155d09990 155d09990 HighGlobal undefined8 (8)
 
 void FUN_1439055a0(int param_1,int param_2,char *param_3)
 
@@ -3153,6 +3226,8 @@ LAB_1439056eb:
 
 
 // 143905790  FUN_143905790  (line unknown)
+// global DAT_155d09998 155d09998 HighGlobal char (1)
+// global DAT_155d09990 155d09990 HighGlobal undefined8 (8)
 
 void FUN_143905790(int param_1,undefined4 param_2,int param_3)
 
@@ -3327,6 +3402,7 @@ void FUN_143905bb0(undefined8 param_1,int param_2,undefined4 param_3,undefined8 
 
 
 // 143905CD0  FUN_143905cd0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_143905cd0(undefined4 param_1,undefined8 param_2)
 
@@ -3359,6 +3435,8 @@ void FUN_143905cd0(undefined4 param_1,undefined8 param_2)
 
 
 // 143905D90  FUN_143905d90  (line unknown)
+// global DAT_15594ad48 15594ad48 HighGlobal uint (4)
+// global DAT_15594ad64 15594ad64 HighGlobal char (1)
 
 undefined8 FUN_143905d90(void)
 
@@ -3386,6 +3464,8 @@ undefined8 FUN_143905db0(int param_1)
 
 
 // 143905E20  FUN_143905e20  (line unknown)
+// global DAT_155d09998 155d09998 HighGlobal char (1)
+// global DAT_155d09990 155d09990 HighGlobal undefined8 (8)
 
 ulonglong FUN_143905e20(int param_1,int param_2)
 
@@ -3460,6 +3540,12 @@ undefined1 FUN_143906010(void)
 
 
 // 143906020  FUN_143906020  (line unknown)
+// global DAT_1537bd900 register:00000008 HighGlobal char (1)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_1558cb0c0 1558cb0c0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_1537bd901 1537bd901 HighGlobal char (1)
 
 void FUN_143906020(int param_1)
 
@@ -3851,6 +3937,10 @@ void FUN_143906cc0(int param_1,int param_2,int param_3,undefined1 param_4)
 
 
 // 143906CF0  FUN_143906cf0  (line unknown)
+// global DAT_14a371078 14a37107b HighGlobal char (1)
+// global DAT_14a371078 14a371078 HighGlobal uint (4)
+// global DAT_14a371090 14a371093 HighGlobal char (1)
+// global DAT_14a371090 14a371090 HighGlobal uint (4)
 
 void FUN_143906cf0(void)
 
@@ -3926,6 +4016,14 @@ void FUN_143906de0(int param_1,undefined8 param_2,undefined4 param_3,int param_4
 
 
 // 143906EB0  FUN_143906eb0  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
+// global DAT_1536c9490 1536c9490 HighGlobal undefined8 * (8)
+// global DAT_1536c43c0 1536c43c0 HighGlobal int (4)
+// global DAT_1536c9498 1536c9498 HighGlobal undefined8 * (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_1558cace0 1558cace0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 void FUN_143906eb0(int param_1,char param_2,byte param_3,int param_4)
 
@@ -4721,6 +4819,7 @@ code_r0x00014390836a:
 
 
 // 143908410  FUN_143908410  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 void FUN_143908410(void)
 
@@ -4737,6 +4836,12 @@ void FUN_143908410(void)
 
 
 // 143908450  FUN_143908450  (line unknown)
+// global DAT_1537bd95b 1537bd95b HighGlobal char (1)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d7d8 15384d7d8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_1537bd95c register:00000000 HighGlobal int (4)
 
 longlong FUN_143908450(int param_1)
 
@@ -4984,6 +5089,15 @@ LAB_143909065:
 
 
 // 1439091D0  FUN_1439091d0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1537bd901 1537bd901 HighGlobal char (1)
+// global DAT_15384cd88 15384cd88 HighGlobal char (1)
+// global DAT_1537bd95c 1537bd95c HighGlobal int (4)
+// global DAT_15384cd89 15384cd89 HighGlobal undefined1 (1)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d7d8 15384d7d8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -5329,6 +5443,10 @@ LAB_14390a12e:
 
 
 // 14390A170  FUN_14390a170  (line unknown)
+// global DAT_15384cd94 register:00000008 HighGlobal int (4)
+// global DAT_1537bd940 1537bd940 HighGlobal int (4)
+// global _DAT_15384cd98 register:00000000 HighGlobal undefined4 (4)
+// global DAT_15384cd8a 15384cd8a HighGlobal undefined1 (1)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -5413,6 +5531,7 @@ LAB_14390a27d:
 
 
 // 14390A370  FUN_14390a370  (line unknown)
+// global DAT_1537bd95a 1537bd95a HighGlobal undefined1 (1)
 
 ulonglong FUN_14390a370(longlong param_1)
 
@@ -5456,6 +5575,7 @@ undefined8 FUN_14390a480(void)
 
 
 // 14390B120  FUN_14390b120  (line unknown)
+// global DAT_1537bd900 1537bd900 HighGlobal undefined1 (1)
 
 undefined1 FUN_14390b120(void)
 
@@ -5465,6 +5585,9 @@ undefined1 FUN_14390b120(void)
 
 
 // 14390B140  FUN_14390b140  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_15384cde0 15384cde0 HighGlobal int (4)
+// global _DAT_15384cde4 15384cde4 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -5644,6 +5767,7 @@ void FUN_14390b140(int param_1)
 
 
 // 14390B550  FUN_14390b550  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -5712,6 +5836,11 @@ undefined1 FUN_14390b6a0(int param_1)
 
 
 // 14390B6B0  FUN_14390b6b0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_1558cae58 1558cae58 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_1558c97f8 1558c97f8 HighGlobal longlong (8)
 
 void FUN_14390b6b0(longlong param_1)
 
@@ -6030,6 +6159,12 @@ undefined1 FUN_14390c590(longlong param_1)
 
 
 // 14390C5A0  FUN_14390c5a0  (line unknown)
+// global DAT_15384ce90 15384ce90 HighGlobal undefined4 (4)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384ce94 15384ce94 HighGlobal int (4)
+// global DAT_1558cace8 1558cace8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 bool FUN_14390c5a0(int param_1)
 
@@ -6232,6 +6367,8 @@ undefined1 FUN_14390d800(int param_1)
 
 
 // 14390D880  FUN_14390d880  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_15384ce90 15384ce90 HighGlobal int (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -6303,6 +6440,7 @@ ulonglong FUN_14390df80(short *param_1,short *param_2,int param_3)
 
 
 // 14390DFD0  FUN_14390dfd0  (line unknown)
+// global DAT_1533d4d34 1533d4d34 HighGlobal int (4)
 
 void FUN_14390dfd0(undefined8 param_1,undefined4 param_2,undefined2 *param_3,int param_4)
 
@@ -6342,6 +6480,14 @@ undefined4 FUN_14390e040(int param_1)
 
 
 // 14390E050  FUN_14390e050  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dab0 15384dab0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384da80 15384da80 HighGlobal longlong (8)
+// global DAT_15384db40 15384db40 HighGlobal longlong (8)
+// global DAT_15384db30 15384db30 HighGlobal longlong (8)
+// global DAT_15384db10 15384db10 HighGlobal longlong (8)
 
 ulonglong FUN_14390e050(char param_1,uint param_2)
 
@@ -6872,6 +7018,11 @@ LAB_14390ec20:
 
 
 // 14390FE30  FUN_14390fe30  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384daa8 15384daa8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384dad8 15384dad8 HighGlobal longlong (8)
 
 ulonglong FUN_14390fe30(char param_1)
 
@@ -7175,6 +7326,14 @@ LAB_1439109ee:
 
 
 // 143910B40  FUN_143910b40  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dab8 15384dab8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384da88 15384da88 HighGlobal longlong (8)
+// global DAT_15384db40 15384db40 HighGlobal longlong (8)
+// global DAT_15384db28 15384db28 HighGlobal longlong (8)
+// global DAT_15384db18 15384db18 HighGlobal longlong (8)
 
 ulonglong FUN_143910b40(char param_1,uint param_2)
 
@@ -7705,6 +7864,11 @@ LAB_143911710:
 
 
 // 143912920  FUN_143912920  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dae8 15384dae8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384db00 15384db00 HighGlobal longlong (8)
 
 ulonglong FUN_143912920(char param_1)
 
@@ -7945,6 +8109,11 @@ LAB_1439134c5:
 
 
 // 1439134E0  FUN_1439134e0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384daf8 15384daf8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384dae0 15384dae0 HighGlobal longlong (8)
 
 uint FUN_1439134e0(char param_1,uint param_2)
 
@@ -8152,6 +8321,11 @@ LAB_143913ffd:
 
 
 // 143914020  FUN_143914020  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384da98 15384da98 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384dac8 15384dac8 HighGlobal longlong (8)
 
 ulonglong FUN_143914020(char param_1)
 
@@ -8362,6 +8536,13 @@ LAB_1439145df:
 
 
 // 143914B80  FUN_143914b80  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dad0 15384dad0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384daa0 15384daa0 HighGlobal longlong (8)
+// global DAT_15384db40 15384db40 HighGlobal longlong (8)
+// global DAT_15384db38 15384db38 HighGlobal longlong (8)
 
 ulonglong FUN_143914b80(char param_1,uint param_2)
 
@@ -8786,6 +8967,12 @@ LAB_143916240:
 
 
 // 143916260  FUN_143916260  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dac0 15384dac0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384da90 15384da90 HighGlobal longlong (8)
+// global DAT_15384db20 15384db20 HighGlobal longlong (8)
 
 ulonglong FUN_143916260(char param_1)
 
@@ -9122,6 +9309,7 @@ undefined8 FUN_143917300(int param_1)
 
 
 // 143917320  FUN_143917320  (line unknown)
+// global DAT_15384cf4a 15384cf4a HighGlobal undefined1 (1)
 
 undefined1 FUN_143917320(void)
 
@@ -9131,6 +9319,7 @@ undefined1 FUN_143917320(void)
 
 
 // 143917330  FUN_143917330  (line unknown)
+// global DAT_15384cf4a 15384cf4a HighGlobal undefined1 (1)
 
 void FUN_143917330(undefined1 param_1)
 
@@ -9197,6 +9386,7 @@ void FUN_1439173c0(longlong param_1)
 
 
 // 1439173E0  FUN_1439173e0  (line unknown)
+// global _DAT_15384cf60 15384cf60 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -9331,6 +9521,13 @@ ulonglong FUN_143917560(longlong param_1,int param_2,uint param_3)
 
 
 // 143917590  FUN_143917590  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d8c8 15384d8c8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d8d0 15384d8d0 HighGlobal undefined8 (8)
+// global DAT_14a371960 14a371963 HighGlobal char (1)
+// global DAT_14a371960 14a371960 HighGlobal uint (4)
 
 void FUN_143917590(void)
 
@@ -9468,6 +9665,8 @@ LAB_143917b72:
 
 
 // 143917C20  FUN_143917c20  (line unknown)
+// global DAT_14a3727a0 14a3727a3 HighGlobal char (1)
+// global DAT_14a3727a0 14a3727a0 HighGlobal uint (4)
 
 undefined1 * FUN_143917c20(void)
 
@@ -9491,6 +9690,8 @@ undefined1 * FUN_143917c20(void)
 
 
 // 143917C80  FUN_143917c80  (line unknown)
+// global DAT_14a372428 14a37242b HighGlobal char (1)
+// global DAT_14a372428 14a372428 HighGlobal uint (4)
 
 undefined1 * FUN_143917c80(void)
 
@@ -9526,6 +9727,7 @@ void FUN_143917ce0(undefined8 *param_1)
 
 
 // 143917D10  FUN_143917d10  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 undefined1 * FUN_143917d10(int param_1)
 
@@ -9539,6 +9741,13 @@ undefined1 * FUN_143917d10(int param_1)
 
 
 // 143917D40  FUN_143917d40  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_153859de0 153859de0 HighGlobal int (4)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
+// global DAT_1536c9490 1536c9490 HighGlobal undefined8 * (8)
+// global DAT_15384d890 15384d890 HighGlobal int (4)
+// global DAT_1536c43c0 1536c43c0 HighGlobal int (4)
+// global DAT_1536c9498 1536c9498 HighGlobal undefined8 * (8)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -9815,6 +10024,28 @@ void FUN_1439181f0(void)
 
 
 // 143918230  FUN_143918230  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1558cb030 1558cb030 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_1558cb000 1558cb000 HighGlobal longlong (8)
+// global DAT_1558cb008 1558cb008 HighGlobal longlong (8)
+// global DAT_1558cb010 1558cb010 HighGlobal longlong (8)
+// global DAT_1558cb020 1558cb020 HighGlobal longlong (8)
+// global DAT_15389a304 15389a304 HighGlobal char (1)
+// global DAT_15389a300 15389a300 HighGlobal int (4)
+// global DAT_1558cb018 1558cb018 HighGlobal longlong (8)
+// global DAT_15389a306 15389a306 HighGlobal char (1)
+// global DAT_15389a305 15389a305 HighGlobal char (1)
+// global ThreadLocalStoragePointer ff00000058 HighGlobal void * (8)
+// global _tls_index 159dd8450 HighGlobal uint (4)
+// global DAT_15389a308 15389a308 HighGlobal int (4)
+// global DAT_14a372790 14a372790 HighGlobal int (4)
+// global PTR_DAT_14a372768 14a372768 HighGlobal undefined * (8)
+// global DAT_14a372770 14a372770 HighGlobal longlong (8)
+// global DAT_1558cb038 1558cb038 HighGlobal longlong (8)
+// global DAT_1558cb028 1558cb028 HighGlobal longlong (8)
 
 void FUN_143918230(void)
 
@@ -10698,6 +10929,7 @@ LAB_14391ac99:
 
 
 // 14391AD00  FUN_14391ad00  (line unknown)
+// global DAT_15384d890 15384d890 HighGlobal int (4)
 
 void FUN_14391ad00(void)
 
@@ -10717,6 +10949,11 @@ void FUN_14391ad00(void)
 
 
 // 14391AD40  FUN_14391ad40  (line unknown)
+// global DAT_1559152e8 1559152e8 HighGlobal char (1)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 void FUN_14391ad40(void)
 
@@ -10815,6 +11052,10 @@ void FUN_14391ad40(void)
 
 
 // 14391B2D0  FUN_14391b2d0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d388 15384d388 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 undefined8 FUN_14391b2d0(undefined4 param_1)
 
@@ -10975,6 +11216,10 @@ LAB_14391b8af:
 
 
 // 14391BA40  FUN_14391ba40  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d230 15384d230 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 ulonglong FUN_14391ba40(ulonglong param_1)
 
@@ -11118,6 +11363,8 @@ void FUN_14391c080(void)
 
 
 // 14391C0B0  FUN_14391c0b0  (line unknown)
+// global DAT_15384d7b0 15384d7b0 HighGlobal undefined8 (8)
+// global DAT_15384ddc0 15384ddc0 HighGlobal undefined1 (1)
 
 void FUN_14391c0b0(void)
 
@@ -11131,6 +11378,9 @@ void FUN_14391c0b0(void)
 
 
 // 14391C0F0  FUN_14391c0f0  (line unknown)
+// global DAT_14be71f00 14be71f00 HighGlobal int (4)
+// global DAT_1557a6b28 1557a6b28 HighGlobal double (8)
+// global _DAT_1557a6b30 1557a6b30 HighGlobal double (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -11181,6 +11431,7 @@ void FUN_14391c0f0(void)
 
 
 // 14391C200  FUN_14391c200  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_14391c200(char *param_1,char *param_2)
 
@@ -11270,6 +11521,8 @@ LAB_14391c2ec:
 
 
 // 14391C370  FUN_14391c370  (line unknown)
+// global DAT_15384d7a4 15384d7a4 HighGlobal int (4)
+// global DAT_153859dcc register:00000000 HighGlobal undefined4 (4)
 
 void FUN_14391c370(void)
 
@@ -11315,6 +11568,10 @@ void FUN_14391c3f0(void)
 
 
 // 14391C410  FUN_14391c410  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
+// global _tls_index 159dd8450 HighGlobal uint (4)
+// global ThreadLocalStoragePointer ff00000058 HighGlobal void * (8)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -11365,6 +11622,7 @@ ulonglong FUN_14391c410(void)
 
 
 // 1439339B0  FUN_1439339b0  (line unknown)
+// global DAT_15384d890 15384d890 HighGlobal int (4)
 
 bool FUN_1439339b0(void)
 
@@ -11374,6 +11632,7 @@ bool FUN_1439339b0(void)
 
 
 // 1439339C0  FUN_1439339c0  (line unknown)
+// global DAT_15384d7a4 15384d7a4 HighGlobal int (4)
 
 bool FUN_1439339c0(void)
 
@@ -11383,6 +11642,17 @@ bool FUN_1439339c0(void)
 
 
 // 1439339D0  FUN_1439339d0  (line unknown)
+// global DAT_14a372458 14a37245b HighGlobal char (1)
+// global DAT_14a372458 14a372458 HighGlobal uint (4)
+// global _DAT_15384d7a8 register:00000000 HighGlobal undefined4 (4)
+// global DAT_15384d7a4 15384d7a4 HighGlobal int (4)
+// global DAT_15384d890 15384d890 HighGlobal int (4)
+// global DAT_14a372478 14a37247b HighGlobal char (1)
+// global DAT_14a372478 14a372478 HighGlobal uint (4)
+// global DAT_15384d878 15384d878 HighGlobal int (4)
+// global DAT_155914c2c 155914c2c HighGlobal int (4)
+// global DAT_153859dcc 153859dcc HighGlobal undefined4 (4)
+// global DAT_15384dd94 unique:10000422 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -11522,6 +11792,10 @@ void FUN_143933d30(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
 
 
 // 143933D60  FUN_143933d60  (line unknown)
+// global DAT_1536c95b0 1536c95b0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global iRam0000000000010000 00010000 HighGlobal int (4)
+// global iRam0000000000010004 00010004 HighGlobal int (4)
 
 ulonglong FUN_143933d60(void)
 
@@ -11756,6 +12030,7 @@ ulonglong FUN_143933d60(void)
 
 
 // 14393D7E0  FUN_14393d7e0  (line unknown)
+// global DAT_153859dc0 153859dc0 HighGlobal undefined4 (4)
 
 void FUN_14393d7e0(void)
 
@@ -11766,6 +12041,13 @@ void FUN_14393d7e0(void)
 
 
 // 14393D890  FUN_14393d890  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_158562518 158562518 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_158562508 158562508 HighGlobal undefined8 (8)
+// global DAT_158562520 158562520 HighGlobal longlong (8)
 
 void FUN_14393d890(void)
 
@@ -11904,6 +12186,7 @@ LAB_14393de97:
 
 
 // 143957FC0  FUN_143957fc0  (line unknown)
+// global DAT_153859ddc 153859ddc HighGlobal undefined4 (4)
 
 void FUN_143957fc0(void)
 
@@ -11914,6 +12197,7 @@ void FUN_143957fc0(void)
 
 
 // 143957FD0  FUN_143957fd0  (line unknown)
+// global DAT_153859dc4 153859dc4 HighGlobal int (4)
 
 void FUN_143957fd0(int param_1)
 
@@ -12064,6 +12348,14 @@ undefined8 FUN_143958270(void)
 
 
 // 143958280  FUN_143958280  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_155914798 155914798 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_159b33f70 159b33f70 HighGlobal int (4)
+// global DAT_159b33f7c 159b33f7c HighGlobal int (4)
+// global DAT_1559147b0 1559147b0 HighGlobal longlong (8)
+// global DAT_1559147a8 1559147a8 HighGlobal longlong (8)
 
 int FUN_143958280(void)
 
@@ -12394,6 +12686,13 @@ LAB_14395939b:
 
 
 // 1439593D0  FUN_1439593d0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_14a371d54 14a371d54 HighGlobal uint (4)
+// global _DAT_15384d894 15384d894 HighGlobal uint (4)
+// global DAT_15384d858 15384d858 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d220 15384d220 HighGlobal longlong (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -12626,6 +12925,12 @@ LAB_143959f21:
 
 
 // 143959FA0  FUN_143959fa0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d228 15384d228 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d858 15384d858 HighGlobal longlong (8)
+// global DAT_15384d220 15384d220 HighGlobal longlong (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -13049,6 +13354,13 @@ LAB_14395b1ab:
 
 
 // 14395B660  FUN_14395b660  (line unknown)
+// global DAT_14a371d54 14a371d54 HighGlobal uint (4)
+// global _DAT_15384d894 15384d894 HighGlobal uint (4)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d858 15384d858 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d220 15384d220 HighGlobal longlong (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -13290,6 +13602,10 @@ LAB_14395c240:
 
 
 // 14395C250  FUN_14395c250  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dbd8 15384dbd8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 ulonglong FUN_14395c250(void)
 
@@ -13432,6 +13748,8 @@ void FUN_14395cb30(int param_1)
 
 
 // 14395CBA0  FUN_14395cba0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_153859ddc 153859ddc HighGlobal int (4)
 
 void FUN_14395cba0(void)
 
@@ -13527,6 +13845,7 @@ void FUN_14395d2e0(longlong param_1)
 
 
 // 14395E490  FUN_14395e490  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -13547,6 +13866,10 @@ undefined8 FUN_14395e490(void)
 
 
 // 14397AD90  FUN_14397ad90  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d238 15384d238 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 ulonglong FUN_14397ad90(void)
 
@@ -13679,6 +14002,7 @@ LAB_14397b368:
 
 
 // 14397B390  FUN_14397b390  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
 
 undefined4 FUN_14397b390(void)
 
@@ -13688,6 +14012,7 @@ undefined4 FUN_14397b390(void)
 
 
 // 14397B3A0  FUN_14397b3a0  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
 
 undefined4 FUN_14397b3a0(void)
 
@@ -13714,6 +14039,7 @@ undefined1 FUN_14397b3b0(void)
 
 
 // 14397B3D0  FUN_14397b3d0  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
 
 undefined8 FUN_14397b3d0(void)
 
@@ -13745,6 +14071,8 @@ undefined8 FUN_14397b3d0(void)
 
 
 // 14397B430  FUN_14397b430  (line unknown)
+// global DAT_153859dcc 153859dcc HighGlobal undefined4 (4)
+// global DAT_15384d7a4 15384d7a4 HighGlobal int (4)
 
 void FUN_14397b430(void)
 
@@ -13763,6 +14091,7 @@ void FUN_14397b430(void)
 
 
 // 14397B470  FUN_14397b470  (line unknown)
+// global DAT_15384dd98 15384dd98 HighGlobal int (4)
 
 void FUN_14397b470(void)
 
@@ -13776,6 +14105,7 @@ void FUN_14397b470(void)
 
 
 // 14397B4A0  FUN_14397b4a0  (line unknown)
+// global DAT_15384dd98 15384dd98 HighGlobal undefined4 (4)
 
 void FUN_14397b4a0(void)
 
@@ -13786,6 +14116,7 @@ void FUN_14397b4a0(void)
 
 
 // 14397B4B0  FUN_14397b4b0  (line unknown)
+// global DAT_15384dd98 15384dd98 HighGlobal int (4)
 
 bool FUN_14397b4b0(void)
 
@@ -13854,6 +14185,7 @@ LAB_14397b6da:
 
 
 // 14397B750  FUN_14397b750  (line unknown)
+// global DAT_15384d074 15384d074 HighGlobal undefined1 (1)
 
 undefined8 FUN_14397b750(short param_1)
 
@@ -13866,6 +14198,229 @@ undefined8 FUN_14397b750(short param_1)
 
 
 // 14397BAD0  FUN_14397bad0  (line unknown)
+// global _DAT_15384d8a8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d8b0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8b8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8c0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8c8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8d0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d8d8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8e0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8e8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8f0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8f8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d900 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d908 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d910 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d918 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d920 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d928 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d930 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d938 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d940 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d948 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d950 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d958 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d960 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d968 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d970 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d978 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d980 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d988 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d990 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d998 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9a0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9a8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9b0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9b8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9c0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9c8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9d0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d9d8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d9e0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d9e8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9f0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d9f8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da00 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da08 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da10 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da18 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da20 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da28 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384da30 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384da38 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da40 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da48 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da50 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da58 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da60 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384da68 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384da70 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da78 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da80 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da88 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da90 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384da98 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384daa0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384daa8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dab0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dab8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dac0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dac8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dad0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dad8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dae0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dae8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384daf0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384daf8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db00 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384db08 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db10 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db18 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db20 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db28 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db30 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db38 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db40 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db48 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db50 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db58 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db60 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384db68 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db70 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db78 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db80 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db88 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384db90 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384db98 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dba0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dba8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dbb0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dbb8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dbc0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dbc8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dbd0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dbd8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dbe0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dbe8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dbf0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dbf8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc00 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dc08 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc10 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dc18 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc20 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dc28 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc30 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc38 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc40 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc48 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc50 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc58 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc60 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc68 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc70 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc78 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc80 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc88 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dc90 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dc98 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dca0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dca8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dcb0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcb8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcc0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcc8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcd0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcd8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dce0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dce8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcf0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dcf8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dd00 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd08 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dd10 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dd18 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dd20 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384dd28 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd30 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd38 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd40 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd48 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd50 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd58 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd60 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2d0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2d8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2e0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2e8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2f0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2f8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d300 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d308 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d310 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d318 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d320 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d328 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d330 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d338 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d340 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d348 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d350 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d358 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d360 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d368 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d370 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d378 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d380 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd68 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384dd70 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d810 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d218 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d850 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d888 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d880 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d858 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d220 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d228 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d230 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d870 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d248 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d238 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d860 register:00000000 HighGlobal undefined8 (8)
+// global DAT_14a372720 14a372723 HighGlobal char (1)
+// global DAT_14a372720 14a372720 HighGlobal uint (4)
+// global _DAT_15384d240 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d790 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d250 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d258 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d260 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d268 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d7c8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7d0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7d8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7e0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7e8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7f0 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d7f8 register:00000000 HighGlobal undefined8 (8)
+// global _DAT_15384d800 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d270 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d278 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d280 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d288 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d290 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d298 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2a0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2a8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2b0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2b8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2c0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d2c8 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d808 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d898 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d8a0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7b0 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15384d7b8 register:00000000 HighGlobal undefined8 (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -14160,6 +14715,11 @@ void FUN_14397d9f0(void)
 
 
 // 14397DA80  FUN_14397da80  (line unknown)
+// global DAT_15384d84c register:00000000 HighGlobal undefined4 (4)
+// global _DAT_15384dda0 15384dda0 HighGlobal undefined8 (8)
+// global _DAT_15384ddb0 15384ddb0 HighGlobal undefined8 (8)
+// global DAT_15384dda8 15384dda8 HighGlobal undefined4 (4)
+// global DAT_15384ddb8 15384ddb8 HighGlobal undefined4 (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -14176,6 +14736,9 @@ void FUN_14397da80(void)
 
 
 // 14397DAB0  FUN_14397dab0  (line unknown)
+// global DAT_15384d830 15384d830 HighGlobal undefined4 (4)
+// global DAT_15384d818 15384d818 HighGlobal undefined1 (1)
+// global DAT_15384d834 15384d834 HighGlobal undefined1 (1)
 
 void FUN_14397dab0(void)
 
@@ -14198,6 +14761,16 @@ void FUN_14397dad0(void)
 
 
 // 14397DAF0  FUN_14397daf0  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
+// global DAT_14bbbe374 14bbbe374 HighGlobal undefined2 (2)
+// global DAT_14bbbe378 14bbbe378 HighGlobal undefined2 (2)
+// global DAT_15384d878 15384d878 HighGlobal undefined4 (4)
+// global DAT_14a371d54 register:00000010 HighGlobal uint (4)
+// global _DAT_14a371d58 14a371d58 HighGlobal int (4)
+// global _DAT_15384d894 register:00000000 HighGlobal uint (4)
+// global DAT_15384d818 15384d818 HighGlobal undefined1 (1)
+// global DAT_15384d834 15384d834 HighGlobal undefined1 (1)
+// global DAT_15384d830 15384d830 HighGlobal undefined4 (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -14285,6 +14858,12 @@ void FUN_14397daf0(char param_1)
 
 
 // 14397DD10  FUN_14397dd10  (line unknown)
+// global DAT_153859de0 153859de0 HighGlobal int (4)
+// global DAT_153859dc0 153859dc0 HighGlobal undefined4 (4)
+// global DAT_14a3724b8 14a3724bb HighGlobal char (1)
+// global DAT_14a3724b8 14a3724b8 HighGlobal uint (4)
+// global DAT_14a3724d0 14a3724d3 HighGlobal char (1)
+// global DAT_14a3724d0 14a3724d0 HighGlobal uint (4)
 
 undefined4 FUN_14397dd10(void)
 
@@ -14392,6 +14971,13 @@ LAB_14397de17:
 
 
 // 14397DF30  FUN_14397df30  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a3726b0 14a3726b3 HighGlobal char (1)
+// global DAT_14a3726b0 14a3726b0 HighGlobal uint (4)
+// global DAT_14a372698 14a37269b HighGlobal char (1)
+// global DAT_14a372698 14a372698 HighGlobal uint (4)
+// global DAT_14a372668 14a37266b HighGlobal char (1)
+// global DAT_14a372668 14a372668 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -14473,6 +15059,7 @@ void FUN_14397df30(void)
 
 
 // 14397E110  FUN_14397e110  (line unknown)
+// global DAT_153855dc0 153855dc0 HighGlobal char (1)
 
 void FUN_14397e110(undefined1 *param_1)
 
@@ -14504,6 +15091,23 @@ void FUN_14397e110(undefined1 *param_1)
 
 
 // 14397E180  FUN_14397e180  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_15384dd94 15384dd94 HighGlobal int (4)
+// global DAT_14a3723b8 14a3723bb HighGlobal char (1)
+// global DAT_14a3723b8 14a3723b8 HighGlobal uint (4)
+// global PTR_DAT_14a372240 14a372240 HighGlobal undefined * (8)
+// global DAT_14a3723d0 14a3723d3 HighGlobal char (1)
+// global DAT_14a3723d0 14a3723d0 HighGlobal uint (4)
+// global DAT_14a3723e8 14a3723eb HighGlobal char (1)
+// global DAT_14a3723e8 14a3723e8 HighGlobal uint (4)
+// global DAT_14a372408 14a37240b HighGlobal char (1)
+// global DAT_14a372408 14a372408 HighGlobal uint (4)
+// global DAT_15384d7b0 15384d7b0 HighGlobal longlong (8)
+// global DAT_15384d7b8 15384d7b8 HighGlobal undefined8 (8)
+// global DAT_14a372378 14a37237b HighGlobal char (1)
+// global DAT_14a372378 14a372378 HighGlobal uint (4)
+// global DAT_14a372398 14a37239b HighGlobal char (1)
+// global DAT_14a372398 14a372398 HighGlobal uint (4)
 
 void FUN_14397e180(byte *param_1)
 
@@ -14675,6 +15279,7 @@ LAB_14397e4e2:
 
 
 // 14397E550  FUN_14397e550  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal undefined4 (4)
 
 void FUN_14397e550(undefined4 param_1)
 
@@ -14687,6 +15292,13 @@ void FUN_14397e550(undefined4 param_1)
 
 
 // 14397E560  FUN_14397e560  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_15384d7b0 15384d7b0 HighGlobal longlong (8)
+// global DAT_15384d7b8 15384d7b8 HighGlobal undefined8 (8)
+// global DAT_14a372378 14a37237b HighGlobal char (1)
+// global DAT_14a372378 14a372378 HighGlobal uint (4)
+// global DAT_14a372398 14a37239b HighGlobal char (1)
+// global DAT_14a372398 14a372398 HighGlobal uint (4)
 
 void FUN_14397e560(undefined8 param_1,undefined8 param_2)
 
@@ -14738,6 +15350,7 @@ void FUN_14397e560(undefined8 param_1,undefined8 param_2)
 
 
 // 14397E6F0  FUN_14397e6f0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -14764,6 +15377,19 @@ ulonglong FUN_14397e6f0(undefined4 param_1,undefined4 param_2)
 
 
 // 143988410  FUN_143988410  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a372598 14a37259b HighGlobal char (1)
+// global DAT_14a372598 14a372598 HighGlobal uint (4)
+// global DAT_14a3725a8 14a3725ab HighGlobal char (1)
+// global DAT_14a3725a8 14a3725a8 HighGlobal uint (4)
+// global DAT_14a3725c0 14a3725c3 HighGlobal char (1)
+// global DAT_14a3725c0 14a3725c0 HighGlobal uint (4)
+// global DAT_14a3725d8 14a3725db HighGlobal char (1)
+// global DAT_14a3725d8 14a3725d8 HighGlobal uint (4)
+// global DAT_14a3725f0 14a3725f3 HighGlobal char (1)
+// global DAT_14a3725f0 14a3725f0 HighGlobal uint (4)
+// global DAT_14a372608 14a37260b HighGlobal char (1)
+// global DAT_14a372608 14a372608 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -15016,6 +15642,9 @@ LAB_143988593:
 
 
 // 143988E70  FUN_143988e70  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a3726d0 14a3726d3 HighGlobal char (1)
+// global DAT_14a3726d0 14a3726d0 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -15199,6 +15828,11 @@ LAB_1439892e0:
 
 
 // 143989430  FUN_143989430  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a372640 14a372643 HighGlobal char (1)
+// global DAT_14a372640 14a372640 HighGlobal uint (4)
+// global DAT_14a372650 14a372653 HighGlobal char (1)
+// global DAT_14a372650 14a372650 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -15342,6 +15976,23 @@ void FUN_143989760(undefined8 param_1)
 
 
 // 143989780  FUN_143989780  (line unknown)
+// global DAT_14a371d54 register:00000010 HighGlobal uint (4)
+// global _DAT_14a371d58 14a371d58 HighGlobal int (4)
+// global _DAT_15384d894 register:00000000 HighGlobal uint (4)
+// global DAT_15384d830 15384d830 HighGlobal float (4)
+// global DAT_15384d818 15384d818 HighGlobal undefined1 (1)
+// global DAT_15384d834 15384d834 HighGlobal undefined1 (1)
+// global DAT_15384d820 15384d820 HighGlobal float (4)
+// global DAT_15384d83c 15384d83c HighGlobal float (4)
+// global _DAT_15384d81c 15384d81c HighGlobal undefined4 (4)
+// global _DAT_15384d838 15384d838 HighGlobal undefined4 (4)
+// global DAT_15384d824 15384d824 HighGlobal float (4)
+// global DAT_15384d840 15384d840 HighGlobal float (4)
+// global DAT_15384d828 15384d828 HighGlobal int (4)
+// global DAT_15384d84c 15384d84c HighGlobal int (4)
+// global DAT_15384d82c 15384d82c HighGlobal int (4)
+// global DAT_15384d844 15384d844 HighGlobal int (4)
+// global DAT_15384d848 15384d848 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -15386,6 +16037,7 @@ void FUN_143989780(float param_1,float param_2,int param_3)
 
 
 // 143989920  FUN_143989920  (line unknown)
+// global DAT_153859dc4 153859dc4 HighGlobal undefined4 (4)
 
 void FUN_143989920(undefined4 param_1)
 
@@ -15396,6 +16048,7 @@ void FUN_143989920(undefined4 param_1)
 
 
 // 143989930  FUN_143989930  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
 
 void FUN_143989930(undefined8 param_1)
 
@@ -15427,6 +16080,9 @@ void FUN_143989980(void)
 
 
 // 143989990  FUN_143989990  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
+// global DAT_14a372358 14a37235b HighGlobal char (1)
+// global DAT_14a372358 14a372358 HighGlobal uint (4)
 
 void FUN_143989990(void)
 
@@ -15496,6 +16152,16 @@ void FUN_143989a70(undefined8 param_1)
 
 
 // 143989AE0  FUN_143989ae0  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dc38 15384dc38 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384dda0 register:00000080 HighGlobal int (4)
+// global DAT_15384dda4 register:00000010 HighGlobal int (4)
+// global DAT_15384dda8 register:00000008 HighGlobal int (4)
+// global DAT_15384ddb0 register:00001300 HighGlobal float (4)
+// global DAT_15384ddb4 register:00001280 HighGlobal float (4)
+// global DAT_15384ddb8 register:00001240 HighGlobal float (4)
 
 void FUN_143989ae0(int param_1,int param_2,int *param_3,float *param_4)
 
@@ -15664,6 +16330,9 @@ LAB_14398a0d5:
 
 
 // 14398A290  FUN_14398a290  (line unknown)
+// global DAT_14a372580 14a372583 HighGlobal char (1)
+// global DAT_14a372580 14a372580 HighGlobal uint (4)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 undefined8 FUN_14398a290(undefined8 *param_1,undefined8 *param_2)
 
@@ -15789,6 +16458,7 @@ LAB_14398a428:
 
 
 // 14398A470  FUN_14398a470  (line unknown)
+// global DAT_155914c24 155914c24 HighGlobal int (4)
 
 void FUN_14398a470(void)
 
@@ -15831,6 +16501,7 @@ void FUN_14398a470(void)
 
 
 // 14398A520  FUN_14398a520  (line unknown)
+// global DAT_153859dd0 153859dd0 HighGlobal int (4)
 
 void FUN_14398a520(void)
 
@@ -15851,6 +16522,12 @@ void FUN_14398a520(void)
 
 
 // 14398A560  FUN_14398a560  (line unknown)
+// global DAT_14a371d50 register:00001200 HighGlobal float (4)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d228 15384d228 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global _DAT_153859dc8 register:00001240 HighGlobal float (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -16086,6 +16763,9 @@ LAB_14398b19f:
 
 
 // 14398B1D0  FUN_14398b1d0  (line unknown)
+// global DAT_1536c95b0 1536c95b0 HighGlobal ulonglong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_155914d3c 155914d3c HighGlobal uint (4)
 
 ulonglong FUN_14398b1d0(int param_1,longlong param_2)
 
@@ -16265,6 +16945,18 @@ LAB_14398ff04:
 
 
 // 14398FF80  FUN_14398ff80  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_14a371d54 14a371d54 HighGlobal uint (4)
+// global _DAT_15384d894 15384d894 HighGlobal uint (4)
+// global DAT_15384d858 15384d858 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d818 15384d818 HighGlobal char (1)
+// global DAT_15384d82c 15384d82c HighGlobal int (4)
+// global DAT_15384d828 15384d828 HighGlobal int (4)
+// global DAT_15384d824 15384d824 HighGlobal float (4)
+// global DAT_15384d820 15384d820 HighGlobal float (4)
+// global _DAT_14a371d58 14a371d58 HighGlobal int (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -16417,6 +17109,10 @@ LAB_1439905a3:
 
 
 // 143990690  FUN_143990690  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384dbd0 15384dbd0 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 ulonglong FUN_143990690(void)
 
@@ -16536,6 +17232,12 @@ LAB_143990c57:
 
 
 // 143990C70  FUN_143990c70  (line unknown)
+// global DAT_15384d834 15384d834 HighGlobal char (1)
+// global DAT_15384d848 15384d848 HighGlobal int (4)
+// global DAT_15384d844 15384d844 HighGlobal int (4)
+// global DAT_15384d830 register:00001280 HighGlobal float (4)
+// global DAT_15384d840 15384d840 HighGlobal float (4)
+// global DAT_15384d83c 15384d83c HighGlobal float (4)
 
 void FUN_143990c70(float param_1)
 
@@ -16556,6 +17258,8 @@ void FUN_143990c70(float param_1)
 
 
 // 143990D20  FUN_143990d20  (line unknown)
+// global DAT_14a3727d8 14a3727db HighGlobal char (1)
+// global DAT_14a3727d8 14a3727d8 HighGlobal uint (4)
 
 void FUN_143990d20(undefined8 param_1,undefined8 param_2)
 
@@ -16590,6 +17294,9 @@ void FUN_143990d20(undefined8 param_1,undefined8 param_2)
 
 
 // 143990DF0  FUN_143990df0  (line unknown)
+// global DAT_15384ddbc 15384ddbc HighGlobal int (4)
+// global _tls_index 159dd8450 HighGlobal uint (4)
+// global ThreadLocalStoragePointer ff00000058 HighGlobal void * (8)
 
 undefined8 FUN_143990df0(void)
 
@@ -16663,6 +17370,7 @@ void FUN_143990f70(void)
 
 
 // 143991010  FUN_143991010  (line unknown)
+// global DAT_1536c43c0 1536c43c0 HighGlobal int (4)
 
 undefined1 * FUN_143991010(int param_1)
 
@@ -16676,6 +17384,7 @@ undefined1 * FUN_143991010(int param_1)
 
 
 // 143991040  FUN_143991040  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_143991040(int *param_1,undefined8 *param_2,int param_3)
 
@@ -16781,6 +17490,10 @@ LAB_143991150:
 
 
 // 1439911E0  FUN_1439911e0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_15389a710 15389a710 HighGlobal char (1)
+// global DAT_14a372818 14a37281b HighGlobal char (1)
+// global DAT_14a372818 14a372818 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -16843,6 +17556,16 @@ void FUN_1439911e0(void)
 
 
 // 143991340  FUN_143991340  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d270 15384d270 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d280 15384d280 HighGlobal longlong (8)
+// global DAT_15384d290 15384d290 HighGlobal longlong (8)
+// global DAT_15384d2a0 15384d2a0 HighGlobal longlong (8)
+// global DAT_15384d298 15384d298 HighGlobal longlong (8)
+// global DAT_15384d288 15384d288 HighGlobal longlong (8)
+// global DAT_15384d278 15384d278 HighGlobal longlong (8)
 
 ulonglong FUN_143991340(int param_1)
 
@@ -17506,6 +18229,14 @@ LAB_143991900:
 
 
 // 143993810  FUN_143993810  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d2a8 15384d2a8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_15384d2b0 15384d2b0 HighGlobal longlong (8)
+// global DAT_15384d2b8 15384d2b8 HighGlobal longlong (8)
+// global DAT_15384d2c0 15384d2c0 HighGlobal longlong (8)
+// global DAT_15384d2c8 15384d2c8 HighGlobal longlong (8)
 
 void FUN_143993810(int param_1)
 
@@ -18015,6 +18746,8 @@ LAB_143995165:
 
 
 // 143995190  FUN_143995190  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_143995190(void)
 
@@ -18261,6 +18994,8 @@ ulonglong FUN_143995190(void)
 
 
 // 14399A990  FUN_14399a990  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_14399a990(void)
 
@@ -18403,6 +19138,9 @@ void FUN_1439a0240(void)
 
 
 // 1439A0250  FUN_1439a0250  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_15389a7a8 15389a7a8 HighGlobal int (4)
 
 ulonglong FUN_1439a0250(undefined8 param_1,undefined2 param_2,undefined8 param_3,int param_4,
                        undefined8 param_5,char param_6,int param_7)
@@ -18639,6 +19377,9 @@ void FUN_1439aace0(int param_1)
 
 
 // 1439AAE60  FUN_1439aae60  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_15389a7a8 15389a7a8 HighGlobal int (4)
 
 /* WARNING: Removing unreachable block (ram,0x0001439b074a) */
 /* WARNING: Removing unreachable block (ram,0x0001439b075e) */
@@ -18837,6 +19578,8 @@ ulonglong FUN_1439aae60(int param_1,char param_2)
 
 
 // 1439BAAF0  FUN_1439baaf0  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_1439baaf0(int param_1,undefined8 param_2,undefined8 param_3)
 
@@ -18934,6 +19677,7 @@ ulonglong FUN_1439baaf0(int param_1,undefined8 param_2,undefined8 param_3)
 
 
 // 1439BFE50  FUN_1439bfe50  (line unknown)
+// global DAT_15389a7a0 15389a7a0 HighGlobal longlong (8)
 
 longlong FUN_1439bfe50(void)
 
@@ -18949,6 +19693,7 @@ longlong FUN_1439bfe50(void)
 
 
 // 1439BFE80  FUN_1439bfe80  (line unknown)
+// global DAT_15389a7a0 15389a7a0 HighGlobal longlong (8)
 
 longlong FUN_1439bfe80(int param_1)
 
@@ -18961,6 +19706,9 @@ longlong FUN_1439bfe80(int param_1)
 
 
 // 1439BFEA0  FUN_1439bfea0  (line unknown)
+// global DAT_15389c478 15389c478 HighGlobal uint (4)
+// global DAT_15389a784 15389a784 HighGlobal uint (4)
+// global DAT_15389a7a8 15389a7a8 HighGlobal int (4)
 
 ulonglong FUN_1439bfea0(void)
 
@@ -19003,6 +19751,9 @@ LAB_1439bff0c:
 
 
 // 1439BFF40  FUN_1439bff40  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_15389a784 15389a784 HighGlobal uint (4)
 
 ulonglong FUN_1439bff40(ulonglong param_1,undefined8 param_2,undefined8 param_3)
 
@@ -19104,6 +19855,9 @@ ulonglong FUN_1439bff40(ulonglong param_1,undefined8 param_2,undefined8 param_3)
 
 
 // 1439C52A0  FUN_1439c52a0  (line unknown)
+// global DAT_1528d29e8 1528d29e8 HighGlobal longlong (8)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_1439c52a0(longlong param_1)
 
@@ -19203,6 +19957,8 @@ ulonglong FUN_1439c52a0(longlong param_1)
 
 
 // 1439CA620  FUN_1439ca620  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_1439ca620(int param_1)
 
@@ -19299,6 +20055,7 @@ ulonglong FUN_1439ca620(int param_1)
 
 
 // 1439CF980  FUN_1439cf980  (line unknown)
+// global _DAT_15389a798 15389a798 HighGlobal longlong (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -19316,6 +20073,10 @@ longlong FUN_1439cf980(void)
 
 
 // 1439CF9B0  FUN_1439cf9b0  (line unknown)
+// global DAT_15389a784 15389a784 HighGlobal uint (4)
+// global DAT_15389a7a8 unique:00008e00 HighGlobal int (4)
+// global DAT_15389c478 15389c478 HighGlobal undefined4 (4)
+// global _DAT_15389d480 15389d480 HighGlobal undefined4 (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -19370,6 +20131,11 @@ void FUN_1439cf9b0(void)
 
 
 // 1439CFBD0  FUN_1439cfbd0  (line unknown)
+// global DAT_15389a784 unique:100003bf HighGlobal uint (4)
+// global DAT_15389a788 unique:100003c3 HighGlobal longlong (8)
+// global _DAT_15389a798 register:00000000 HighGlobal undefined8 (8)
+// global DAT_15389a7a0 register:00000000 HighGlobal void * (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -19475,6 +20241,9 @@ void * FUN_1439cfbd0(undefined8 param_1,uint param_2)
 
 
 // 1439D4420  FUN_1439d4420  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global DAT_15389a7a8 15389a7a8 HighGlobal int (4)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_1439d4420(int param_1)
 
@@ -19606,6 +20375,9 @@ ulonglong FUN_1439d4420(int param_1)
 
 
 // 1439D9900  FUN_1439d9900  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global DAT_15389a7a8 15389a7a8 HighGlobal int (4)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_1439d9900(uint param_1)
 
@@ -19728,6 +20500,9 @@ void FUN_1439decf0(uint param_1)
 
 
 // 1439DED10  FUN_1439ded10  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_15389a7a8 15389a7a8 HighGlobal int (4)
 
 ulonglong FUN_1439ded10(undefined8 param_1,undefined2 param_2,undefined8 param_3,uint param_4,
                        char param_5)
@@ -19910,6 +20685,7 @@ bool FUN_1439e9b10(int param_1)
 
 
 // 1439E9B40  FUN_1439e9b40  (line unknown)
+// global _DAT_15389d480 15389d480 HighGlobal undefined4 (4)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -19922,6 +20698,10 @@ void FUN_1439e9b40(void)
 
 
 // 1439E9B50  FUN_1439e9b50  (line unknown)
+// global DAT_15389a784 15389a784 HighGlobal undefined4 (4)
+// global DAT_15389a788 15389a788 HighGlobal undefined8 (8)
+// global _DAT_15389a798 15389a798 HighGlobal undefined8 (8)
+// global DAT_15389a7a0 15389a7a0 HighGlobal undefined8 (8)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -19937,6 +20717,8 @@ undefined1 FUN_1439e9b50(void)
 
 
 // 1439E9B80  FUN_1439e9b80  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
 
 ulonglong FUN_1439e9b80(void)
 
@@ -20200,6 +20982,10 @@ ulonglong FUN_1439e9b80(void)
 
 
 // 1439EF3D0  FUN_1439ef3d0  (line unknown)
+// global DAT_15389a788 15389a788 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_155e13688 155e13688 HighGlobal ulonglong (8)
+// global DAT_147afb112 147afb112 HighGlobal ulonglong (8)
 
 ulonglong FUN_1439ef3d0(void)
 
@@ -20482,6 +21268,22 @@ LAB_1439f4c2a:
 
 
 // 1439F4CD0  FUN_1439f4cd0  (line unknown)
+// global DAT_14a372a88 14a372a8b HighGlobal char (1)
+// global DAT_14a372a88 14a372a88 HighGlobal uint (4)
+// global DAT_14a372aa0 14a372aa3 HighGlobal char (1)
+// global DAT_14a372aa0 14a372aa0 HighGlobal uint (4)
+// global DAT_14a372ab8 14a372abb HighGlobal char (1)
+// global DAT_14a372ab8 14a372ab8 HighGlobal uint (4)
+// global DAT_14a372ac8 14a372acb HighGlobal char (1)
+// global DAT_14a372ac8 14a372ac8 HighGlobal uint (4)
+// global DAT_14a372ae0 14a372ae3 HighGlobal char (1)
+// global DAT_14a372ae0 14a372ae0 HighGlobal uint (4)
+// global DAT_14a372af8 14a372afb HighGlobal char (1)
+// global DAT_14a372af8 14a372af8 HighGlobal uint (4)
+// global DAT_14a372b10 14a372b13 HighGlobal char (1)
+// global DAT_14a372b10 14a372b10 HighGlobal uint (4)
+// global DAT_14a372b28 14a372b2b HighGlobal char (1)
+// global DAT_14a372b28 14a372b28 HighGlobal uint (4)
 
 void FUN_1439f4cd0(void)
 
@@ -20602,6 +21404,8 @@ void FUN_1439f4cd0(void)
 
 
 // 1439F5000  FUN_1439f5000  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -20641,6 +21445,7 @@ void FUN_1439f5000(undefined1 param_1)
 
 
 // 1439F50D0  FUN_1439f50d0  (line unknown)
+// global DAT_15389d5d4 15389d5d4 HighGlobal undefined1 (1)
 
 void FUN_1439f50d0(void)
 
@@ -20651,6 +21456,7 @@ void FUN_1439f50d0(void)
 
 
 // 1439F50E0  FUN_1439f50e0  (line unknown)
+// global DAT_15389d5d4 15389d5d4 HighGlobal undefined1 (1)
 
 void FUN_1439f50e0(void)
 
@@ -20661,6 +21467,7 @@ void FUN_1439f50e0(void)
 
 
 // 1439F50F0  FUN_1439f50f0  (line unknown)
+// global PTR_DAT_14a372a58 14a372a58 HighGlobal undefined * (8)
 
 undefined1 FUN_1439f50f0(int param_1)
 
@@ -20679,6 +21486,7 @@ undefined1 FUN_1439f50f0(int param_1)
 
 
 // 1439F5160  FUN_1439f5160  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 void FUN_1439f5160(undefined1 *param_1,int param_2)
 
@@ -20733,6 +21541,7 @@ void FUN_1439f5160(undefined1 *param_1,int param_2)
 
 
 // 1439F5270  FUN_1439f5270  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 undefined8 FUN_1439f5270(void)
 
@@ -20756,6 +21565,8 @@ undefined8 FUN_1439f5270(void)
 
 
 // 1439F52F0  FUN_1439f52f0  (line unknown)
+// global DAT_15389d5d4 15389d5d4 HighGlobal char (1)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 undefined4 * FUN_1439f52f0(void)
 
@@ -20808,6 +21619,8 @@ undefined4 * FUN_1439f52f0(void)
 
 
 // 1439F5410  FUN_1439f5410  (line unknown)
+// global DAT_15389d5d4 15389d5d4 HighGlobal char (1)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal uint (4)
 
 undefined4 * FUN_1439f5410(void)
 
@@ -20860,6 +21673,8 @@ undefined4 * FUN_1439f5410(void)
 
 
 // 1439F5530  FUN_1439f5530  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -20891,6 +21706,7 @@ undefined8 FUN_1439f5530(undefined1 param_1,ulonglong param_2)
 
 
 // 1439F5650  FUN_1439f5650  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 undefined8 FUN_1439f5650(void)
 
@@ -20919,6 +21735,8 @@ undefined8 FUN_1439f5650(void)
 
 
 // 1439F5700  FUN_1439f5700  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal int (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -20959,6 +21777,7 @@ ulonglong FUN_1439f5700(undefined1 param_1)
 
 
 // 1439F5830  FUN_1439f5830  (line unknown)
+// global DAT_1536bf2f0 1536bf2f0 HighGlobal uint (4)
 
 undefined8 FUN_1439f5830(void)
 
@@ -21065,6 +21884,9 @@ ulonglong FUN_1439f5a00(void)
 
 
 // 1439F5A50  FUN_1439f5a50  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 undefined8 FUN_1439f5a50(longlong param_1)
 
@@ -22136,6 +22958,8 @@ LAB_1439f933e:
 
 
 // 1439F93B0  FUN_1439f93b0  (line unknown)
+// global DAT_14a372a68 14a372a6b HighGlobal char (1)
+// global DAT_14a372a68 14a372a68 HighGlobal uint (4)
 
 void FUN_1439f93b0(undefined4 *param_1,undefined4 *param_2)
 
@@ -22204,6 +23028,9 @@ float FUN_1439f9480(longlong param_1,undefined4 param_2)
 
 
 // 1439F94B0  FUN_1439f94b0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14a372b40 14a372b43 HighGlobal char (1)
+// global DAT_14a372b40 14a372b40 HighGlobal uint (4)
 
 /* WARNING: Function: _alloca_probe replaced with injection: alloca_probe */
 
@@ -22378,6 +23205,7 @@ LAB_1439f98af:
 
 
 // 1439F98D0  FUN_1439f98d0  (line unknown)
+// global DAT_15389d6b8 15389d6b8 HighGlobal undefined8 (8)
 
 undefined8 FUN_1439f98d0(void)
 
@@ -22387,6 +23215,7 @@ undefined8 FUN_1439f98d0(void)
 
 
 // 1439F98E0  FUN_1439f98e0  (line unknown)
+// global DAT_15389d6c0 15389d6c0 HighGlobal undefined4 (4)
 
 undefined4 FUN_1439f98e0(void)
 
@@ -22396,6 +23225,8 @@ undefined4 FUN_1439f98e0(void)
 
 
 // 1439F98F0  FUN_1439f98f0  (line unknown)
+// global DAT_15389d6c0 15389d6c0 HighGlobal undefined4 (4)
+// global DAT_15389d6b8 unique:10000009 HighGlobal void * (8)
 
 void FUN_1439f98f0(void *param_1)
 
@@ -22417,6 +23248,8 @@ void FUN_1439f9920(void)
 
 
 // 1439F9930  FUN_1439f9930  (line unknown)
+// global DAT_15389d6b8 15389d6b8 HighGlobal undefined8 (8)
+// global DAT_15389d6c0 15389d6c0 HighGlobal undefined4 (4)
 
 void FUN_1439f9930(void)
 
@@ -22573,6 +23406,12 @@ void FUN_1439f9b80(int *param_1,int param_2)
 
 
 // 1439F9BB0  FUN_1439f9bb0  (line unknown)
+// global DAT_14bbbe378 14bbbe378 HighGlobal ushort (2)
+// global DAT_14bafef20 14bafef20 HighGlobal uint (4)
+// global DAT_14bafef1c 14bafef1c HighGlobal uint (4)
+// global DAT_153253430 153253430 HighGlobal uint (4)
+// global DAT_153253420 153253420 HighGlobal uint (4)
+// global DAT_14bafef00 14bafef00 HighGlobal uint (4)
 
 uint FUN_1439f9bb0(int param_1)
 
@@ -22797,6 +23636,7 @@ float FUN_1439f9ef0(void)
 
 
 // 1439F9F10  FUN_1439f9f10  (line unknown)
+// global DAT_1538a16cf 1538a16cf HighGlobal undefined1 (1)
 
 undefined1 * FUN_1439f9f10(int *param_1)
 
@@ -23577,6 +24417,7 @@ void FUN_1439faed0(undefined4 *param_1,longlong param_2)
 
 
 // 1439FAF40  FUN_1439faf40  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_1439faf40(undefined8 *param_1,int *param_2)
 
@@ -24011,6 +24852,7 @@ undefined8 FUN_1439fb710(uint param_1,float param_2,byte param_3)
 
 
 // 1439FB760  FUN_1439fb760  (line unknown)
+// global DAT_15389d6c8 15389d6c8 HighGlobal undefined1 (1)
 
 undefined1 FUN_1439fb760(void)
 
@@ -24771,6 +25613,8 @@ LAB_1439fc447:
 
 
 // 1439FC490  FUN_1439fc490  (line unknown)
+// global DAT_14a3734d0 14a3734d3 HighGlobal char (1)
+// global DAT_14a3734d0 14a3734d0 HighGlobal uint (4)
 
 void FUN_1439fc490(undefined8 param_1,longlong param_2)
 
@@ -24837,6 +25681,7 @@ void FUN_1439fc520(int *param_1,longlong param_2)
 
 
 // 1439FC5C0  FUN_1439fc5c0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_1439fc5c0(int *param_1,ushort *param_2)
 
@@ -25325,6 +26170,7 @@ LAB_1439fcf2d:
 
 
 // 1439FCF80  FUN_1439fcf80  (line unknown)
+// global DAT_1538a66f4 1538a66f4 HighGlobal uint (4)
 
 void FUN_1439fcf80(undefined8 *param_1,longlong param_2)
 
@@ -25349,6 +26195,7 @@ void FUN_1439fcf80(undefined8 *param_1,longlong param_2)
 
 
 // 1439FD000  FUN_1439fd000  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_1439fd000(undefined8 param_1,undefined8 param_2)
 
@@ -25365,6 +26212,8 @@ void FUN_1439fd000(undefined8 param_1,undefined8 param_2)
 
 
 // 1439FD030  FUN_1439fd030  (line unknown)
+// global DAT_1538a66f4 1538a66f4 HighGlobal int (4)
+// global DAT_1538a66f0 1538a66f0 HighGlobal uint (4)
 
 ulonglong FUN_1439fd030(undefined8 *param_1,longlong param_2)
 
@@ -25400,6 +26249,8 @@ ulonglong FUN_1439fd030(undefined8 *param_1,longlong param_2)
 
 
 // 1439FD120  FUN_1439fd120  (line unknown)
+// global DAT_14bbfb744 14bbfb744 HighGlobal int (4)
+// global DAT_14bbfb740 14bbfb740 HighGlobal int (4)
 
 int FUN_1439fd120(int param_1)
 
@@ -25674,6 +26525,7 @@ uint FUN_1439fd6c0(longlong param_1,undefined4 param_2)
 
 
 // 1439FD7C0  FUN_1439fd7c0  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 void FUN_1439fd7c0(int *param_1,uint param_2,longlong param_3,undefined *param_4)
 
@@ -25849,6 +26701,11 @@ ulonglong FUN_1439fdad0(int *param_1,longlong param_2)
 
 
 // 1439FDB80  FUN_1439fdb80  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_155517c98 155517c98 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
 
 void FUN_1439fdb80(undefined8 param_1,undefined8 param_2)
 
@@ -26064,6 +26921,7 @@ void * FUN_1439fe3f0(int *param_1)
 
 
 // 1439FE4C0  FUN_1439fe4c0  (line unknown)
+// global DAT_1538a6728 1538a6728 HighGlobal undefined8 * (8)
 
 undefined8 * FUN_1439fe4c0(undefined8 *param_1)
 
@@ -26097,6 +26955,11 @@ undefined8 * FUN_1439fe540(undefined8 *param_1,ulonglong param_2)
 
 
 // 1439FE570  FUN_1439fe570  (line unknown)
+// global DAT_14b900510 14b900510 HighGlobal uint * (8)
+// global DAT_15384d9c8 15384d9c8 HighGlobal longlong (8)
+// global ProcessEnvironmentBlock ff00000060 HighGlobal void * (8)
+// global DAT_147b04b50 147b04b50 HighGlobal ushort (2)
+// global DAT_1534ac7a4 1534ac7a4 HighGlobal int (4)
 
 undefined8 FUN_1439fe570(void)
 
@@ -26221,6 +27084,12 @@ LAB_1439feb48:
 
 
 // 1439FEB90  FUN_1439feb90  (line unknown)
+// global DAT_1538a6728 1538a6728 HighGlobal undefined8 * (8)
+// global PTR_PTR_14a0cd9c0 14a0cd9c0 HighGlobal undefined * (8)
+// ptradd PTRADD 1538a6728 45 8
+// ptradd PTRADD 14a0cd9c0 40 1
+// ptradd PTRADD 14a0cd9c0 32 1
+// ptradd PTRADD 1538a6728 45 8
 
 undefined8 FUN_1439feb90(char param_1,int param_2,int *param_3)
 
@@ -26318,6 +27187,7 @@ longlong FUN_1439fed60(longlong param_1)
 
 
 // 1439FED70  FUN_1439fed70  (line unknown)
+// global DAT_14b8dc208 14b8dc208 HighGlobal ulonglong (8)
 
 undefined8 FUN_1439fed70(longlong param_1)
 
@@ -26420,6 +27290,9 @@ undefined8 FUN_1439ff720(void)
 
 
 // 1439FF7B0  FUN_1439ff7b0  (line unknown)
+// global PTR_PTR_14a0cd9c0 14a0cd9c0 HighGlobal undefined * (8)
+// ptradd PTRADD 14a0cd9c0 40 1
+// ptradd PTRADD 14a0cd9c0 32 1
 
 void FUN_1439ff7b0(void)
 
