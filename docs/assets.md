@@ -48,6 +48,8 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
   bytecode not yet.
 - **Physics and collision** (docs/assets/physics.md): Havok 2018.2 tagfiles whose types are in a separate compendium
   (probably the `physicslibrary` asset in the common zones, not uploaded yet).
+- **Sound** (docs/assets/sound.md): `.sabs` banks decoded, Opus audio (all 705 sounds of the gun course's bank);
+  `tools/assets/sabs.py` writes WAV. Aliases in the zones' sound banks not yet.
 - **Streamed data** (docs/assets/streaming.md): `.xpak` header, index and chunk format (Oodle/LZ4/stored) decoded;
   items are the same blobs as in-zone data. Which key an asset uses is still open.
 - **Animations** (docs/assets/animations.md): bone tracks (9 classes, frame index tables) and root motion decoded;
