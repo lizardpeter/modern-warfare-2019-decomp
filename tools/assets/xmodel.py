@@ -50,8 +50,15 @@ def positions(blob, s, nv):
 
 
 def tangent_frame(blob, s, nv):
-    """+0x34: smallest-three quaternion, 10/10/9 bits, bit 29 bitangent sign, bits 30-31 the dropped component."""
-    u = np.frombuffer(blob, dtype=np.uint32, count=nv, offset=_u32(s, 0x34)).astype(np.int64)
+    """+0x34: one packed tangent frame per vertex (unpack_tangent_frame)."""
+    return unpack_tangent_frame(np.frombuffer(blob, dtype=np.uint32, count=nv, offset=_u32(s, 0x34)))
+
+
+def unpack_tangent_frame(packed):
+    """Smallest-three quaternion per u32: 10/10/9 bits, bit 29 bitangent sign, bits 30-31 the dropped component.
+    Returns (normals, tangents, bitangent signs); the normal is the rotation's Z axis, the tangent its X axis."""
+    u = np.asarray(packed, dtype=np.uint32).astype(np.int64)
+    nv = len(u)
     a = ((u & 1023) / 511.5 - 1) / np.sqrt(2)
     b = (((u >> 10) & 1023) / 511.5 - 1) / np.sqrt(2)
     c = (((u >> 20) & 511) / 255.5 - 1) / np.sqrt(2)
