@@ -5033,10 +5033,10 @@ undefined8 FUN_1442b7e30(int param_1,int param_2)
 
 // 1442B7E50  FUN_1442b7e50  (line unknown)
 
-undefined * FUN_1442b7e50(undefined8 param_1)
+undefined * FUN_1442b7e50(char *param_1)
 
 {
-  FUN_143758070(0x1e,param_1);
+  FUN_143758070(0x1e,param_1,1);
   return &DAT_1558b11c0;
 }
 

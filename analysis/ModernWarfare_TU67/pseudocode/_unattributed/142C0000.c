@@ -60534,7 +60534,7 @@ void FUN_142cd1520(void)
     do {
       if (pcVar4[-8] != '\0') {
         if (*pcVar4 != '\0') {
-          uVar3 = FUN_143758070(9,pcVar4);
+          uVar3 = FUN_143758070(9,pcVar4,1);
           FUN_1458cc2e0(0,*(undefined4 *)(pcVar4 + -4),uVar3);
         }
         if (*(int *)(pcVar4 + 0x104) != 0) {

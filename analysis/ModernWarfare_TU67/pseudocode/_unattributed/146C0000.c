@@ -5394,7 +5394,7 @@ void FUN_146c11990(undefined8 param_1)
               }
               goto LAB_146c11bf9;
             }
-            lVar10 = FUN_143758070(0x29,pcVar11);
+            lVar10 = FUN_143758070(0x29,pcVar11,0);
             if (lVar10 != 0) {
               pcVar11 = (char *)FUN_14267ae70(*(undefined8 *)(lVar10 + 8));
               goto LAB_146c11bf9;
@@ -35087,7 +35087,7 @@ void FUN_146c4ffd0(longlong param_1,int param_2,int param_3,undefined8 *param_4)
     FUN_143023910((longlong)param_4 + 0x34,&DAT_1477e8bc8);
     iVar5 = FUN_143f05570("ONLINE/FAVORITE_FRIEND_NOT_LINKED");
     if (iVar5 == 0) {
-      lVar8 = FUN_143758070(0x29,"ONLINE/FAVORITE_FRIEND_NOT_LINKED");
+      lVar8 = FUN_143758070(0x29,"ONLINE/FAVORITE_FRIEND_NOT_LINKED",0);
       if ((lVar8 == 0) ||
          (pcVar7 = (char *)FUN_14267ae70(*(undefined8 *)(lVar8 + 8)), pcVar7 == (char *)0x0)) {
         pcVar7 = (char *)FUN_143f04440("ONLINE/FAVORITE_FRIEND_NOT_LINKED");

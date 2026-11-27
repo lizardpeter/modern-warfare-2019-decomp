@@ -27544,10 +27544,10 @@ ulonglong FUN_144e6d4c0(longlong param_1,uint param_2)
 
 // 144E6D4E0  FUN_144e6d4e0  (line unknown)
 
-void FUN_144e6d4e0(undefined8 param_1)
+void FUN_144e6d4e0(char *param_1)
 
 {
-  FUN_143758070(0x2d,param_1);
+  FUN_143758070(0x2d,param_1,0);
   return;
 }
 
@@ -27557,7 +27557,7 @@ void FUN_144e6d4e0(undefined8 param_1)
 void FUN_144e6d4f0(void)
 
 {
-  FUN_143758070(0x2e,&DAT_1475fc908);
+  FUN_143758070(0x2e,"void",0);
   return;
 }
 

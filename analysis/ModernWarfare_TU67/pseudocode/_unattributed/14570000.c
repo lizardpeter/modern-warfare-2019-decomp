@@ -16185,7 +16185,7 @@ LAB_1457336b5:
           if (iVar5 == 0) {
             cVar1 = *pcVar16;
             if ((cVar1 == '\0') || (pcVar16[1] != '\0')) {
-              lVar9 = FUN_143758070(0x29,pcVar16);
+              lVar9 = FUN_143758070(0x29,pcVar16,0);
               if (lVar9 == 0) goto LAB_1457338d9;
               pcVar16 = (char *)FUN_14267ae70(*(undefined8 *)(lVar9 + 8));
             }
@@ -16214,7 +16214,7 @@ LAB_1457338ea:
         }
         goto LAB_145733951;
       }
-      lVar8 = FUN_143758070(0x29,pcVar16);
+      lVar8 = FUN_143758070(0x29,pcVar16,0);
       if (lVar8 != 0) {
         pcVar16 = (char *)FUN_14267ae70(*(undefined8 *)(lVar8 + 8));
         goto LAB_145733951;
@@ -16228,7 +16228,7 @@ LAB_145733951:
   }
   else {
     FUN_143f421b0(*(undefined8 *)((&DAT_1533d75f0)[*local_548] + 0x20),&local_548);
-    pcVar7 = (char *)FUN_143f421f0(local_548,local_558,0x11);
+    pcVar7 = (char *)FUN_143f421f0(local_548,local_558);
     if (*pcVar7 == '\0') goto LAB_1457338ea;
     iVar5 = FUN_143f05570(pcVar7);
     pcVar16 = pcVar7;
@@ -16240,7 +16240,7 @@ LAB_145733951:
         }
         goto LAB_145733782;
       }
-      lVar9 = FUN_143758070(0x29,pcVar7);
+      lVar9 = FUN_143758070(0x29,pcVar7,0);
       if (lVar9 != 0) {
         pcVar16 = (char *)FUN_14267ae70(*(undefined8 *)(lVar9 + 8));
         goto LAB_145733782;
@@ -16269,7 +16269,7 @@ LAB_1457337c1:
           if (iVar5 == 0) {
             cVar1 = *pcVar20;
             if ((cVar1 == '\0') || (pcVar20[1] != '\0')) {
-              lVar9 = FUN_143758070(0x29,pcVar20);
+              lVar9 = FUN_143758070(0x29,pcVar20,0);
               if (lVar9 == 0) goto LAB_145733adf;
               pcVar20 = (char *)FUN_14267ae70(*(undefined8 *)(lVar9 + 8));
             }
@@ -16399,7 +16399,7 @@ LAB_145733adf:
     puVar10 = &DAT_14a471ff4;
     if (iVar5 == 0) {
       if ((DAT_14a471ff4 == '\0') || (DAT_14a471ff5 != '\0')) {
-        lVar9 = FUN_143758070(0x29,&DAT_14a471ff4);
+        lVar9 = FUN_143758070(0x29,&DAT_14a471ff4,0);
         puVar10 = puVar17;
         if (lVar9 != 0) {
           puVar10 = (undefined *)FUN_14267ae70(*(undefined8 *)(lVar9 + 8));

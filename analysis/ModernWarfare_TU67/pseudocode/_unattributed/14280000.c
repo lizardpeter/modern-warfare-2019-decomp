@@ -86266,11 +86266,12 @@ undefined8 FUN_1428de1a0(char param_1)
 void FUN_1428de1d0(char param_1)
 
 {
-  int iVar1;
+  bool bVar1;
+  undefined3 extraout_var;
   
   if (param_1 != '\0') {
-    iVar1 = FUN_143760300(0x33,"transient_world_validated");
-    DAT_14bbbe37a = iVar1 != 0;
+    bVar1 = FUN_143760300(0x33,"transient_world_validated");
+    DAT_14bbbe37a = CONCAT31(extraout_var,bVar1) != 0;
     return;
   }
   DAT_14bbbe37a = 0;
@@ -98552,10 +98553,10 @@ LAB_1428f847e:
 
 // 1428F8540  FUN_1428f8540  (line unknown)
 
-void FUN_1428f8540(undefined8 param_1)
+void FUN_1428f8540(char *param_1)
 
 {
-  FUN_143758070(0x28,param_1);
+  FUN_143758070(0x28,param_1,1);
   return;
 }
 

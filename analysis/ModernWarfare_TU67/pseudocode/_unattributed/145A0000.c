@@ -62776,7 +62776,7 @@ void FUN_145a83950(undefined8 param_1,undefined8 param_2,longlong param_3,char *
   if (iVar4 == 0) {
     cVar1 = *param_4;
     if ((cVar1 == '\0') || (param_4[1] != '\0')) {
-      lVar5 = FUN_143758070(0x29,param_4);
+      lVar5 = FUN_143758070(0x29,param_4,0);
       if (lVar5 == 0) {
         param_4 = (char *)0x0;
       }

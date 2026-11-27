@@ -16113,12 +16113,9 @@ undefined1 FUN_147313fc0(longlong param_1,undefined8 param_2)
 {
   undefined1 uVar1;
   longlong lVar2;
-  ushort uVar3;
-  ulonglong uVar4;
-  longlong lVar5;
-  ulonglong uVar6;
-  wchar_t *pwVar7;
-  uint uVar8;
+  ulonglong uVar3;
+  longlong lVar4;
+  ulonglong uVar5;
   HLOCAL local_38;
   ulonglong local_30;
   undefined **local_28;
@@ -16129,11 +16126,11 @@ undefined1 FUN_147313fc0(longlong param_1,undefined8 param_2)
   local_20 = *(uint *)(param_1 + 8);
   if (((local_20 & 0x1fff0000) == 0x40000) && (0x21f < (local_20 & 0xffff))) {
     lVar2 = FUN_14745f2c0((local_20 & 0xffff) - 0x220);
-    lVar5 = -1;
+    lVar4 = -1;
     do {
-      lVar5 = lVar5 + 1;
-    } while (*(char *)(lVar2 + lVar5) != '\0');
-    thunk_EXT_FUN_15d518268(param_2,lVar2,lVar5);
+      lVar4 = lVar4 + 1;
+    } while (*(char *)(lVar2 + lVar4) != '\0');
+    thunk_EXT_FUN_15d518268(param_2,lVar2,lVar4);
     uVar1 = 1;
   }
   else {
@@ -16141,37 +16138,29 @@ undefined1 FUN_147313fc0(longlong param_1,undefined8 param_2)
     local_18 = (longlong *)0x0;
     pvStack_10 = (HLOCAL)0x0;
     FormatMessageW(0x1300,(LPCVOID)0x0,local_20,0x400,(LPWSTR)&pvStack_10,0,(va_list *)0x0);
-    uVar6 = 0xffffffffffffffff;
-    uVar4 = uVar6;
+    uVar5 = 0xffffffffffffffff;
+    uVar3 = uVar5;
     if (pvStack_10 == (HLOCAL)0x0) {
       pvStack_10 = LocalAlloc(0,0x40);
       if (pvStack_10 != (HLOCAL)0x0) {
-        if ((local_20 + 0x7ffbfe00 < 0xfe00) && (uVar3 = (short)local_20 - 0x200, uVar3 != 0)) {
-          pwVar7 = L"IDispatch error #%d";
-          uVar8 = (uint)uVar3;
-        }
-        else {
-          pwVar7 = L"Unknown error 0x%0lX";
-          uVar8 = local_20;
-        }
-        swprintf_s(pvStack_10,0x20,pwVar7,uVar8);
+        swprintf_s();
       }
     }
     else {
       do {
-        uVar4 = uVar4 + 1;
-      } while (*(short *)((longlong)pvStack_10 + uVar4 * 2) != 0);
-      if (((1 < uVar4) && (*(short *)((longlong)pvStack_10 + uVar4 * 2 + -2) == 10)) &&
-         (*(undefined2 *)((longlong)pvStack_10 + uVar4 * 2 + -2) = 0,
-         *(short *)((longlong)pvStack_10 + uVar4 * 2 + -4) == 0xd)) {
-        *(undefined2 *)((longlong)pvStack_10 + uVar4 * 2 + -4) = 0;
+        uVar3 = uVar3 + 1;
+      } while (*(short *)((longlong)pvStack_10 + uVar3 * 2) != 0);
+      if (((1 < uVar3) && (*(short *)((longlong)pvStack_10 + uVar3 * 2 + -2) == 10)) &&
+         (*(undefined2 *)((longlong)pvStack_10 + uVar3 * 2 + -2) = 0,
+         *(short *)((longlong)pvStack_10 + uVar3 * 2 + -4) == 0xd)) {
+        *(undefined2 *)((longlong)pvStack_10 + uVar3 * 2 + -4) = 0;
       }
     }
     do {
-      uVar6 = uVar6 + 1;
-    } while (*(short *)((longlong)pvStack_10 + uVar6 * 2) != 0);
+      uVar5 = uVar5 + 1;
+    } while (*(short *)((longlong)pvStack_10 + uVar5 * 2) != 0);
     local_38 = pvStack_10;
-    local_30 = uVar6;
+    local_30 = uVar5;
     uVar1 = FUN_147313c30(param_2,&local_38);
     local_28 = &PTR_FUN_1477a1d70;
     if (local_18 != (longlong *)0x0) {
@@ -17528,44 +17517,33 @@ longlong FUN_147315cc0(longlong param_1)
   LPWSTR lpBuffer;
   ulonglong uVar1;
   HLOCAL pvVar2;
-  ushort uVar3;
-  longlong lVar4;
-  wchar_t *pwVar5;
-  uint uVar6;
+  longlong lVar3;
   
   lpBuffer = (LPWSTR)(param_1 + 0x18);
   if (*(longlong *)lpBuffer == 0) {
     FormatMessageW(0x1300,(LPCVOID)0x0,*(DWORD *)(param_1 + 8),0x400,lpBuffer,0,(va_list *)0x0);
-    lVar4 = *(longlong *)lpBuffer;
-    if (lVar4 != 0) {
+    lVar3 = *(longlong *)lpBuffer;
+    if (lVar3 != 0) {
       uVar1 = 0xffffffffffffffff;
       do {
         uVar1 = uVar1 + 1;
-      } while (*(short *)(lVar4 + uVar1 * 2) != 0);
-      if ((1 < uVar1) && (*(short *)(lVar4 + -2 + uVar1 * 2) == 10)) {
-        *(undefined2 *)(lVar4 + -2 + uVar1 * 2) = 0;
-        lVar4 = *(longlong *)lpBuffer;
-        if (*(short *)(lVar4 + -4 + uVar1 * 2) == 0xd) {
-          *(undefined2 *)(lVar4 + -4 + uVar1 * 2) = 0;
+      } while (*(short *)(lVar3 + uVar1 * 2) != 0);
+      if ((1 < uVar1) && (*(short *)(lVar3 + -2 + uVar1 * 2) == 10)) {
+        *(undefined2 *)(lVar3 + -2 + uVar1 * 2) = 0;
+        lVar3 = *(longlong *)lpBuffer;
+        if (*(short *)(lVar3 + -4 + uVar1 * 2) == 0xd) {
+          *(undefined2 *)(lVar3 + -4 + uVar1 * 2) = 0;
           return *(longlong *)lpBuffer;
         }
       }
-      return lVar4;
+      return lVar3;
     }
     pvVar2 = LocalAlloc(0,0x40);
     *(HLOCAL *)lpBuffer = pvVar2;
     if (pvVar2 == (HLOCAL)0x0) {
       return 0;
     }
-    uVar6 = *(uint *)(param_1 + 8);
-    if ((uVar6 + 0x7ffbfe00 < 0xfe00) && (uVar3 = (short)uVar6 - 0x200, uVar3 != 0)) {
-      uVar6 = (uint)uVar3;
-      pwVar5 = L"IDispatch error #%d";
-    }
-    else {
-      pwVar5 = L"Unknown error 0x%0lX";
-    }
-    swprintf_s(pvVar2,0x20,pwVar5,uVar6);
+    swprintf_s();
   }
   return *(longlong *)lpBuffer;
 }

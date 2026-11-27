@@ -32812,13 +32812,13 @@ LAB_144c4bd4c:
 
 // 144C4BDA0  FUN_144c4bda0  (line unknown)
 
-void FUN_144c4bda0(undefined8 param_1)
+void FUN_144c4bda0(void)
 
 {
   undefined1 local_res10 [24];
   
   AcquireSRWLockExclusive((PSRWLOCK)&DAT_155d05130);
-  FUN_144c4c0c0(DAT_155d05138,local_res10,param_1);
+  FUN_144c4c0c0(DAT_155d05138,local_res10);
                     /* WARNING: Could not recover jumptable at 0x000144c4bdd6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
   ReleaseSRWLockExclusive((PSRWLOCK)&DAT_155d05130);

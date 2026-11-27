@@ -45947,7 +45947,7 @@ void FUN_14048f140(void)
 void FUN_14048f170(void)
 
 {
-  FUN_142ebfbb0(&DAT_14bd2be40);
+  FUN_142ebfbb0((undefined8 *)&DAT_14bd2be40);
   atexit(FUN_1475cf7a0);
   return;
 }

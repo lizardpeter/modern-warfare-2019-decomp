@@ -98726,7 +98726,7 @@ void FUN_1469e4970(undefined8 param_1)
   if (iVar2 == 0) {
     cVar1 = *pcVar3;
     if ((cVar1 == '\0') || (pcVar3[1] != '\0')) {
-      lVar4 = FUN_143758070(0x29,pcVar3);
+      lVar4 = FUN_143758070(0x29,pcVar3,0);
       if (lVar4 == 0) goto LAB_1469e4aca;
       pcVar5 = (char *)FUN_14267ae70(*(undefined8 *)(lVar4 + 8));
     }
@@ -98823,7 +98823,7 @@ void FUN_1469e4b10(undefined8 param_1)
   if (iVar5 == 0) {
     cVar3 = *pcVar6;
     if ((cVar3 == '\0') || (pcVar6[1] != '\0')) {
-      lVar14 = FUN_143758070(0x29,pcVar6);
+      lVar14 = FUN_143758070(0x29,pcVar6,0);
       pcVar7 = pcVar17;
       if (lVar14 == 0) goto LAB_1469e4da8;
       pcVar7 = (char *)FUN_14267ae70(*(undefined8 *)(lVar14 + 8));
@@ -98841,7 +98841,7 @@ void FUN_1469e4b10(undefined8 param_1)
       do {
         iVar4 = FUN_147279ab0(param_1,iVar5);
         if (iVar4 != 0) {
-          pcVar8 = (char *)FUN_14727a9c0(param_1,iVar5,0);
+          pcVar8 = (char *)FUN_14727a9c0(param_1,iVar5);
           if ((*pcVar8 == '\x1f') || (iVar4 = FUN_147279a60(param_1,iVar5), iVar4 != 0)) {
             auStack_880[local_888[0]] = pcVar8;
           }
@@ -98856,7 +98856,7 @@ void FUN_1469e4b10(undefined8 param_1)
                 }
                 goto LAB_1469e4cde;
               }
-              lVar14 = FUN_143758070(0x29,pcVar8);
+              lVar14 = FUN_143758070(0x29,pcVar8,0);
               if (lVar14 != 0) {
                 pcVar9 = (char *)FUN_14267ae70(*(undefined8 *)(lVar14 + 8));
                 goto LAB_1469e4cde;
@@ -108998,7 +108998,7 @@ undefined8 FUN_1469f7260(undefined8 param_1)
 
 {
   int iVar1;
-  undefined8 uVar2;
+  char *pcVar2;
   longlong lVar3;
   
   iVar1 = FUN_147279930();
@@ -109008,8 +109008,8 @@ undefined8 FUN_1469f7260(undefined8 param_1)
   }
   FUN_14727fc30(param_1,&DAT_1477e8bc8);
 LAB_1469f7290:
-  uVar2 = FUN_14727a9c0(param_1,1);
-  lVar3 = FUN_143758070(9,uVar2);
+  pcVar2 = (char *)FUN_14727a9c0(param_1,1);
+  lVar3 = FUN_143758070(9,pcVar2,0);
   if (lVar3 != 0) {
     FUN_143cba350(lVar3,1,4);
   }

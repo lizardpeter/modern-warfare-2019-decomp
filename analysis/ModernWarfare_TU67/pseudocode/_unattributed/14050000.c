@@ -22520,7 +22520,7 @@ void FUN_140528c30(void)
 void FUN_140528c70(void)
 
 {
-  FUN_142df6270(&DAT_155ff27a0);
+  FUN_142df6270((undefined8 *)&DAT_155ff27a0);
   _DAT_155ff27a0 = &PTR_FUN_1476673e0;
   thunk_EXT_FUN_16038ac0a(&DAT_155ff2840);
   _DAT_155ff28c0 = 0xffffffff;

@@ -6416,10 +6416,10 @@ void FUN_144108140(uint param_1,char *param_2)
 
 // 1441081A0  FUN_1441081a0  (line unknown)
 
-void FUN_1441081a0(undefined8 param_1)
+void FUN_1441081a0(char *param_1)
 
 {
-  FUN_143758070(0x57,param_1);
+  FUN_143758070(0x57,param_1,1);
   return;
 }
 
@@ -13050,10 +13050,10 @@ uint FUN_14410f620(longlong param_1)
 
 // 14410F700  FUN_14410f700  (line unknown)
 
-void FUN_14410f700(undefined8 param_1)
+void FUN_14410f700(char *param_1)
 
 {
-  FUN_143758070(100,param_1);
+  FUN_143758070(100,param_1,0);
   return;
 }
 
@@ -13102,10 +13102,10 @@ undefined4 FUN_14410f750(longlong param_1)
 
 // 14410F760  FUN_14410f760  (line unknown)
 
-void FUN_14410f760(undefined8 param_1)
+void FUN_14410f760(char *param_1)
 
 {
-  FUN_143758070(9,param_1);
+  FUN_143758070(9,param_1,1);
   return;
 }
 
@@ -43344,7 +43344,7 @@ void FUN_14417fb30(int param_1)
       DAT_1558b0ec8 = iVar4;
     }
     iVar4 = FUN_146424690(param_1);
-    thunk_FUN_142df6930(&DAT_155ff27a0 + (longlong)param_1 * 0x2130,DAT_1558b0ec8);
+    thunk_FUN_142df6930((longlong)(&DAT_155ff27a0 + (longlong)param_1 * 0x2130));
     uVar6 = FUN_143125cf0();
     FUN_143126960(uVar6,param_1);
     puVar2 = DAT_14b900510;

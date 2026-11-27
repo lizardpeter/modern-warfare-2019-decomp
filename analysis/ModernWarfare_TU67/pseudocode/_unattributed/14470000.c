@@ -5519,7 +5519,7 @@ void FUN_1447471c0(undefined4 param_1,char *param_2,char *param_3,undefined4 par
   if (iVar3 == 0) {
     cVar1 = *param_2;
     if ((cVar1 == '\0') || (param_2[1] != '\0')) {
-      lVar5 = FUN_143758070(0x29,param_2);
+      lVar5 = FUN_143758070(0x29,param_2,0);
       if (lVar5 == 0) {
         pcVar4 = (char *)0x0;
       }
@@ -5541,7 +5541,7 @@ void FUN_1447471c0(undefined4 param_1,char *param_2,char *param_3,undefined4 par
       }
       goto LAB_1447472b6;
     }
-    lVar5 = FUN_143758070(0x29,param_3);
+    lVar5 = FUN_143758070(0x29,param_3,0);
     if (lVar5 != 0) {
       param_3 = (char *)FUN_14267ae70(*(undefined8 *)(lVar5 + 8));
       goto LAB_1447472b6;

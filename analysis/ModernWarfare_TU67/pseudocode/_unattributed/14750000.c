@@ -107184,7 +107184,7 @@ void FUN_1475c4d80(undefined8 param_1,longlong param_2)
 
 // 1475C5300  FUN_1475c5300  (line unknown)
 
-void FUN_1475c5300(undefined8 param_1,longlong param_2)
+void FUN_1475c5300(undefined8 *param_1,longlong param_2)
 
 {
   FUN_142deb780(param_1,*(undefined8 *)(param_2 + 0x30));
@@ -120701,8 +120701,8 @@ void FUN_1475d6470(void)
     (**(code **)*DAT_155ff2838)(DAT_155ff2838,1);
     DAT_155ff2838 = (undefined8 *)0x0;
   }
-  FUN_142df6890(&DAT_155ff27a0);
-  FUN_142df6290(&DAT_155ff27a0);
+  FUN_142df6890(0x155ff27a0);
+  FUN_142df6290((undefined8 *)&DAT_155ff27a0);
   return;
 }
 

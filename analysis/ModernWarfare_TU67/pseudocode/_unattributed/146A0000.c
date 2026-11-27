@@ -1565,7 +1565,7 @@ void FUN_146a08690(undefined4 param_1,longlong param_2,undefined8 param_3,undefi
   if (iVar2 == 0) {
     cVar1 = *pcVar4;
     if ((cVar1 == '\0') || (pcVar4[1] != '\0')) {
-      lVar3 = FUN_143758070(0x29,pcVar4);
+      lVar3 = FUN_143758070(0x29,pcVar4,0);
       if (lVar3 == 0) {
         pcVar4 = (char *)0x0;
       }
@@ -35020,7 +35020,7 @@ undefined8 FUN_146a624a0(undefined8 param_1)
     }
     DAT_14b719e70 = DAT_14b719e70 & 0xffffff;
   }
-  FUN_14727a580(param_1,0xfffffffe,&DAT_14b719e74);
+  FUN_14727a580(param_1,0xfffffffe);
   FUN_14727a800(param_1);
   *(undefined8 **)(lVar2 + 0x108) = puVar3;
   *puVar3 = 0;
@@ -35041,7 +35041,7 @@ undefined8 FUN_146a624a0(undefined8 param_1)
   iVar1 = FUN_143f05570(&DAT_14b719e54);
   if (iVar1 == 0) {
     if ((DAT_14b719e54 == '\0') || (DAT_14b719e55 != '\0')) {
-      lVar2 = FUN_143758070(0x29,&DAT_14b719e54);
+      lVar2 = FUN_143758070(0x29,&DAT_14b719e54,0);
       if (lVar2 == 0) {
         puVar7 = (undefined *)0x0;
       }

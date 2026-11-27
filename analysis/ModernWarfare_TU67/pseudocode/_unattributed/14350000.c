@@ -26333,7 +26333,7 @@ LAB_14356e706:
     if ((int)uVar17 < iVar5) {
       uVar10 = uVar17;
     }
-    FUN_143758070(3,*(undefined8 *)(pfVar9 + (longlong)(int)uVar10 * 4 + 2));
+    FUN_143758070(3,*(char **)(pfVar9 + (longlong)(int)uVar10 * 4 + 2),0);
   }
   FUN_147419690(local_58 ^ (ulonglong)auStack_d8);
   return;

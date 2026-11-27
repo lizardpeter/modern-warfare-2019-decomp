@@ -72051,7 +72051,7 @@ void FUN_1453c4770(int param_1,longlong param_2,undefined8 param_3,int param_4,i
   undefined1 local_e8;
   longlong local_e0;
   char local_d8 [64];
-  undefined1 local_98 [64];
+  char local_98 [64];
   ulonglong local_58;
   
   local_58 = DAT_14b8dc208 ^ (ulonglong)auStack_108;
@@ -72072,7 +72072,7 @@ void FUN_1453c4770(int param_1,longlong param_2,undefined8 param_3,int param_4,i
   }
   FUN_147229d50(local_98,0x40,"vision/%s.vision",param_3);
   FUN_147229d50(local_d8,0x40,"vision/%s.vision",param_2);
-  uVar5 = FUN_143758070(0x33,local_98);
+  uVar5 = FUN_143758070(0x33,local_98,1);
   local_e0 = (longlong)param_5 * 0x48;
   pcVar8 = &DAT_155eb1f38 + local_e0;
   pcVar7 = pcVar8;
@@ -72321,13 +72321,14 @@ void FUN_1453c4e80(ulonglong param_1)
   byte bVar4;
   char *pcVar5;
   longlong lVar6;
+  ulonglong extraout_RAX;
   ulonglong uVar7;
   byte bVar8;
   int iVar9;
   ulonglong uVar10;
   undefined1 auStack_98 [32];
   longlong local_78 [2];
-  undefined1 local_68 [64];
+  char local_68 [64];
   ulonglong local_28;
   
   local_28 = DAT_14b8dc208 ^ (ulonglong)auStack_98;
@@ -72342,11 +72343,12 @@ void FUN_1453c4e80(ulonglong param_1)
       if (*pcVar5 == '\0') break;
       lVar1 = (ulonglong)DAT_155eb1f28 * 9;
       FUN_147229d50(local_68,0x40,"vision/%s.vision",pcVar5);
-      lVar6 = FUN_143758070(0x33,local_68);
-      uVar7 = FUN_1437596f0(0x33,local_68);
+      lVar6 = FUN_143758070(0x33,local_68,1);
+      FUN_1437596f0(0x33,local_68);
       bVar8 = DAT_155eb1f2a;
-      if ((int)uVar7 != 0) goto LAB_1453c504d;
+      if ((int)extraout_RAX != 0) goto LAB_1453c504d;
       uVar10 = (ulonglong)DAT_155eb1f2a;
+      uVar7 = extraout_RAX;
       if (DAT_155eb1f2a != 0) {
         do {
           cVar3 = (char)uVar7;
