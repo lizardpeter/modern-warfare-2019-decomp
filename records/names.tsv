@@ -232,3 +232,8 @@ ModernWarfare_TU67	142E40520	function		Load_WeapontriggerPtr		structure	high	Loa
 ModernWarfare_TU67	142E40460	function		Load_Weapontrigger		structure	high	struct loader called by Load_WeapontriggerPtr after the block push; reads 0x38 bytes
 ModernWarfare_TU67	142E67930	function		Load_DwidataPtr		structure	high	Load_XAssetHeader case 119 (dwidata)
 ModernWarfare_TU67	142E67870	function		Load_Dwidata		structure	high	struct loader called by Load_DwidataPtr after the block push; reads 0x58 bytes
+ModernWarfare_TU67	143F212C0	function		VCDIFF_Decode		behaviour	high	checks D6 C3 C4, header indicator & 0xF3, window indicator bits 1/4/8, delta indicator 0, folded-XXH64 window checksum (errors 0x91-0x9A); applying its rules reproduces mp_t_gun_course.fp exactly
+ModernWarfare_TU67	143F211C0	function		VCDIFF_DecodeAddress		behaviour	high	COPY address by mode from near (4) and same (3x256) caches, called from 143F212C0
+ModernWarfare_TU67	142DEEA30	function		DB_PatchDecode		calls	medium	calls 143F212C0 with source read 142DEED10, delta read 142DEEBF0, output 142DEEEC0
+ModernWarfare_TU67	142DEED10	function		DB_PatchReadSource		calls	medium	source callback passed to 143F212C0 by 142DEEA30
+ModernWarfare_TU67	142DEEBF0	function		DB_PatchReadDelta		calls	medium	delta callback passed to 143F212C0 by 142DEEA30

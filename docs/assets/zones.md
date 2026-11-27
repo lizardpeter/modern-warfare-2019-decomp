@@ -163,22 +163,36 @@ to exactly +0x30 bytes.
 ### The delta: VCDIFF with two extensions
 
 The decompressed patch is VCDIFF (RFC 3284) that turns the **decompressed base zone into the decompressed patched
-zone**. Measured on `mp_t_gun_course.fp` by decoding it; the decoder in the exe is not found yet (it is not in the
-zone stream module 142DE*/142DF*, and the exe has no default code table as data, so it is built at run time).
+zone**. Decoder: **143F212C0**, called by 142DEEA30 as `(handle, handle+0xE8, source read 142DEED10, delta read
+142DEEBF0, output 142DEEEC0)`. Applied by `tools/assets/fastfile_patch.py`, which follows every rule below and
+verifies every checksum.
 
-- Header: `D6 C3 C4 00`, header indicator 0x0C (no code table, no secondary compressor, no application header data
-  follows; bits 0x04 and 0x08 are outside the RFC and their header-level meaning is *unknown*), then windows.
-- Window: indicator byte. 0x01 VCD_SOURCE as in the RFC (source segment length, then position, as varints, into the
-  base zone). **0x04: one more varint after the source fields** (*meaning unknown*; 0x28D4 in window 1, 0x2C1D in the
-  copy-only windows). **0x08: a 4-byte trailer after the window** (*unidentified*: not adler32, crc32, xxh32 or xxh64
-  of the window's output, its encoding or the source slice). Then the RFC window: delta length, target length,
-  delta indicator, the three section lengths, the sections, with the RFC default code table and address caches.
-- `mp_t_gun_course.fp`: 142 windows, back to back, ending exactly at the end of the delta; their target lengths sum
-  to 0x11AC2F37, the patched size; 2 MB each except the last. Window 0 decoded with the default code table gives
-  `E8 04 00 00 … FE FF …`: a zone asset list (0x4E8 strings, 0x24BA assets), against the base's 0x4DD strings and
-  0x1640 assets. Windows 4–11 are 14-byte copies of 2 MB from the base.
-- Source segments are large (window 0: 0x76EC9DC bytes from 0x2716; window 1: 0x76EC684 from 0x2A6E; both end at
-  0x76EF0F2).
+- **Header**: `D6 C3 C4 00` (else DEV ERROR 0x91), then the header indicator, which must satisfy
+  `(ind & 0xF3) == 0` (else 0x92): no RFC bit (secondary compressor, code table, application data) is accepted;
+  only 0x04 and 0x08 may be set, and the decoder ignores them at header level (it stores the byte at state+8 and
+  skips 5 bytes). Retail patches use 0x0C.
+- **Window indicator**: `ind & 3` is 0 (no source) or 1 (VCD_SOURCE: varints source length, then source position,
+  into the base zone's decompressed data); 3 is DEV ERROR 0x94, 2 (VCD_TARGET) is 0x95.
+  - **0x04 — source read start.** One more varint, `start`, after the source fields. The game asks its source
+    callback for `srclen + (srcpos - start)` bytes from `start` and then advances its pointer by `srcpos - start`,
+    so the segment COPY uses is still `base[srcpos : srcpos + srclen]`: the field only says where the read begins
+    (`start <= srcpos`; window 1: 0x28D4 against 0x2A6E).
+  - **0x08 — chained checksum.** The delta read covers `deltalen + 4` (`deltalen + ((ind >> 1) & 4)`): a
+    little-endian u32 follows the window. It equals `fold(XXH64(window output, seed))` with
+    `fold(h) = (h >> 32) ^ (h & 0xFFFFFFFF)`; mismatch is DEV ERROR 0x9A. The seed is state+0xC: 0 for the first
+    window, then the previous window's checksum. (The earlier note here that it was not xxh64 was wrong: it was
+    tested unseeded and unfolded.)
+- Then the RFC window: delta length, target length, delta indicator (must be 0, else 0x98: no compressed
+  sections), add/instruction/address section lengths, the sections.
+- **Instructions**: a 256 × 16-byte table at 1554E0EA0 (two 8-byte halves per opcode: `short` type 0 NOOP, 1 ADD,
+  2 RUN, else COPY; mode `(e >> 16) & 0xFFFF`; size `e >> 32`, 0 = varint follows). It is in `.data` and zero in
+  the file, so it is built at run time; the RFC default code table reproduces every window of `mp_t_gun_course.fp`
+  with every checksum matching, so it is that table. COPY addresses come from 143F211C0 (RFC near cache 4, same
+  cache 3 × 256; 0x1828-byte state): below `srclen` from the source segment, above it from this window's output.
+- `mp_t_gun_course.fp`: 142 windows, back to back, ending exactly at the end of the delta; 2 MB of output each
+  except the last, summing to 0x11AC2F37, the patched header's size (+0x20). Applied in 38 s (Python); the result
+  parses as a zone (1,256 script strings, 9,402 assets, against the base's 0x4DD and 0x1640). Windows 4–11 are
+  14-byte copies of 2 MB from the base. Source segments are large (window 0: 0x76EC9DC bytes from 0x2716).
 
-Next: find the decoder (it reads the bytes in this layout, so the 0x04 and 0x08 fields will show their meaning),
-then `tools/assets/fastfile_patch.py` applies a patch and `zone.py` reads the patched zone.
+Unknown still: header fields +0x18 and +0x20, and how the game chains a second patch (142DEE970 allows two; the
+install has at most one per zone).

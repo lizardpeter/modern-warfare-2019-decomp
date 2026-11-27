@@ -22,8 +22,8 @@ streamed data is in `.xpak` packages. Containers are documented in docs/assets/z
 - **CASC archives**: read (`tools/assets/casc_archive.py`); **every file by name** through the build config, local
   indices and TVFS (`tools/assets/casc.py`): 72,833 files, of which 58,726 zones, 4,910 `.xpak`, 5,629 `.sabs` sound
   banks and 2,934 `.fp` patches. The 1.63 install spans 163 archives (about 163 GB).
-- **Fastfile patches**: a zone is its `.ff` plus, often, a `.fp` VCDIFF patch (docs/assets/zones.md 7); the patch
-  decoder is next.
+- **Fastfile patches**: a zone is its `.ff` plus, often, a `.fp` VCDIFF patch with two extensions (docs/assets/zones.md
+  7), applied by `tools/assets/fastfile_patch.py` from the game's decoder 143F212C0, every window checksum verified.
 - **Zones**: header, signed block and compressed stream read and checked against TU67's code; every zone at its
   current format version decompresses to its declared size (`tools/assets/zone.py`, with the game's own Oodle
   run in the emulator).
