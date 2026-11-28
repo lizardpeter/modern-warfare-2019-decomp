@@ -94,6 +94,50 @@ class Bank:
         return channels, bytes(pcm[:s.samples * channels * 2])
 
 
+@dataclass
+class AliasEntry:
+    file: str            # e.g. "ambient\\amb_mp_quarry_interior_lr.SL.75.36000.all"
+    sound_id: int        # the .sabs entry id
+    params: bytes        # 0xB0 bytes (volumes, distances, …; *fields not named*)
+    names: tuple         # the 0x28-byte record at +0x10: four name strings (142E69120)
+
+
+def read_aliases(read, header: int):
+    """Sound aliases of a soundbank asset (0x200 bytes, loader 142EB6360): +0x20 u64 count and +0x28 array of
+    0x20-byte alias lists {name, u32 hash (+0x08), entries (+0x10), u32 entry count (+0x18)} (142E68EC0); each
+    entry 0x20 bytes {file name, u32 sound id (+0x08), u32 (+0x0C), record (+0x10), params (+0x18)}
+    (142E68C50). Returns {alias name: [AliasEntry]}."""
+    q = lambda a: struct.unpack("<Q", read(a, 8))[0]
+
+    def cstr(p):
+        if not p:
+            return None
+        out = bytearray()
+        while True:
+            chunk = read(p + len(out), 64)
+            i = chunk.find(b"\0")
+            if i >= 0:
+                out += chunk[:i]
+                return out.decode("latin1")
+            out += chunk
+
+    out = {}
+    count, lists = q(header + 0x20), q(header + 0x28)
+    for i in range(count):
+        lst = read(lists + 0x20 * i, 0x20)
+        name = cstr(struct.unpack_from("<Q", lst, 0)[0])
+        entries, n = struct.unpack_from("<Q", lst, 0x10)[0], struct.unpack_from("<i", lst, 0x18)[0]
+        items = []
+        for k in range(n):
+            e = read(entries + 0x20 * k, 0x20)
+            rec, par = struct.unpack_from("<QQ", e, 0x10)
+            names = tuple(cstr(struct.unpack_from("<Q", read(rec, 0x28), o)[0]) for o in (0, 8, 0x18, 0x20)) if rec else ()
+            items.append(AliasEntry(cstr(struct.unpack_from("<Q", e, 0)[0]), struct.unpack_from("<I", e, 8)[0],
+                                    read(par, 0xB0) if par else b"", names))
+        out[name] = items
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("bank")

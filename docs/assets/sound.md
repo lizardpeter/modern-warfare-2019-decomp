@@ -2,8 +2,9 @@
 
 Audio is in `.sabs` files (5,629 in the install; 1,074 in the uploaded archives), per map, mode and language
 (`mp_t_gun_course.sabs`, `englisheng_mp_t_gun_course.sabs`, `patch_…`). Measured on `mp_t_gun_course.sabs`
-(15,155,328 bytes, 705 sounds); read by `tools/assets/sabs.py`. Status: **all 705 sounds decode**; how the zone's
-`soundbank` aliases name them (ids, volumes, variations) is not yet decoded.
+(15,155,328 bytes, 705 sounds); read by `tools/assets/sabs.py`. Status: **all 705 sounds decode**, and the zone's
+`soundbank` aliases are linked to them by id; the alias parameters (volume, distances, …) are located but not
+named.
 
 ## Header
 
@@ -39,3 +40,15 @@ The packet table holds one u32 offset per packet (relative to the first packet);
 Opus packet}` and decodes to 960 samples (20 ms at 48 kHz). Measured on all 705 sounds: every length prefix equals
 its packet's size minus 2, and the decoded length exceeds the stored sample count by 960–1,919 samples (the
 encoder's lead-in and padding; the reader keeps the first `+0x0C` samples).
+
+## Aliases (soundbank asset, 0x200 bytes; loader 142EB6360)
+
++0x20 u64 count, +0x28 array of 0x20-byte **alias lists** (142E68EC0): `{name, u32 hash, entries, u32 count}`.
+Each **entry** (0x20, 142E68C50): `{file name, u32 sound id (+0x08), u32 (+0x0C), record (+0x10), params (+0x18)}`;
+the record is 0x28 bytes of names (142E69120: strings at +0x00, +0x08, +0x18, +0x20), the params 0xB0 bytes
+(floats such as 1.0, 5000, 25000: volume and distance values, *not named yet*).
+
+Measured on `mp_t_gun_course.all`: 894 aliases with 17,078 entries naming 2,470 distinct sound ids. **All 705 ids
+of `mp_t_gun_course.sabs` are among them** (2,282 entries); the rest are in the common and language banks
+(`englisheng_mp_t_gun_course.sabs` and others not uploaded yet). File names look like
+`ambient\amb_mp_quarry_interior_lr.SL.75.36000.all`. `tools/assets/sabs.py` `read_aliases` reads them.
